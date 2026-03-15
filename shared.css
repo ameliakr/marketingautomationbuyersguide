@@ -1,5 +1,5 @@
 /* ── SHARED STYLES ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; }
 :root {
   --ink: #1a1a1a;
   --muted: #6b6b6b;
@@ -32,7 +32,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── FOOTER ── */
 .site-footer { border-top: 1px solid var(--rule); margin-top: 48px; padding: 20px 0 24px; }
-.footer-inner { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; white-space: nowrap; }
+.footer-inner { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; }
 .footer-disclosure { font-size: 12px; color: #a0a0a0; line-height: 1.5; }
 .footer-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-start; align-items: center; }
 .footer-links a { font-size: 12px; color: #a0a0a0; text-decoration: none; transition: color 0.15s; }
@@ -167,4 +167,9 @@ hr.divider { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
   .pricing-card { grid-template-columns: 1fr; gap: 12px; }
   .pricing-cta { align-items: flex-start; }
   .mig-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .detail-label { min-width: unset; }
+  .footer-links { flex-wrap: wrap; }
+  .footer-inner { max-width: 100%; }
+  .wrap, .wrap-mid, .wrap-narrow { max-width: 100%; }
+  .home-hero, .cta-list { max-width: 100%; }
 }
