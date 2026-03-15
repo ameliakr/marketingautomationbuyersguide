@@ -32,7 +32,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── FOOTER ── */
 .site-footer { border-top: 1px solid var(--rule); margin-top: auto; padding: 20px 0 24px; }
-.footer-inner { max-width: 520px; margin: 0 auto; padding: 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; }
+.footer-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; white-space: nowrap; }
 .footer-disclosure { font-size: 12px; color: #a0a0a0; line-height: 1.5; }
 .footer-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-start; align-items: center; }
 .footer-links a { font-size: 12px; color: #a0a0a0; text-decoration: none; transition: color 0.15s; }
@@ -73,7 +73,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── CTA ROWS (homepage) ── */
 .cta-list { max-width: 520px; margin: 0 auto; }
-.home-hero { max-width: 520px; margin: 0 auto 56px; text-align: left; }
+.home-hero { max-width: 520px; margin: 0 auto 32px; text-align: left; }
 .cta-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: color 0.15s; font-weight: 400; }
 .cta-item:first-child { border-top: 1px solid var(--rule); }
 .cta-item:hover { color: var(--accent); }
