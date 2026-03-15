@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Migrate from Mailchimp to ActiveCampaign (2026 Guide)</title>
+<meta name="description" content="Step-by-step guide to migrating from Mailchimp to ActiveCampaign. What transfers, what you need to rebuild, and how long it takes.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+<meta property="og:title" content="How to Migrate from Mailchimp to ActiveCampaign (2026 Guide)">
+<meta property="og:description" content="Step-by-step guide to migrating from Mailchimp to ActiveCampaign. What transfers, what you need to rebuild, and how long it takes.">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.article-wrap { max-width: 680px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin: 48px 0 16px; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 32px 0 12px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul, .article-body ol { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--rule); }
+.quick-table th:first-child { color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.quick-table td:first-child { color: var(--muted); font-size: 13px; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.cell-partial { color: var(--partial); font-weight: 500; }
+.step-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: #f8f8f6; }
+.step-block-num { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.step-block-title { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+.step-block-time { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+.step-block p { font-size: 14px; line-height: 1.7; margin-bottom: 0; color: var(--ink); }
+.warning-box { border: 1px solid #f5c6c6; background: #fce8e8; padding: 18px 20px; margin: 28px 0; }
+.warning-box-title { font-size: 12px; font-weight: 600; color: var(--no); letter-spacing: 0.04em; margin-bottom: 8px; }
+.warning-box p { font-size: 13px; color: #7a1a1a; line-height: 1.6; margin-bottom: 0; }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-left: 4px; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; cursor: pointer; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row.coming .related-row-title { color: var(--muted); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+.related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">All Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">All Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/articles.html">Articles</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="article-wrap">
+
+    <div class="article-hero">
+      <h1>How to Migrate from Mailchimp to ActiveCampaign</h1>
+      <div class="article-meta">
+        <span class="article-tag tool">Mailchimp</span>
+        <span class="article-tag tool">ActiveCampaign</span>
+        <span class="article-tag">Migration</span>
+        <span class="article-tag">Updated March 2026</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>Migrating from Mailchimp to ActiveCampaign is one of the most common moves in email marketing. Mailchimp is where most people start. ActiveCampaign is where they go when they need more automation power, a built-in CRM, or better segmentation.</p>
+
+      <p>The migration is not complicated, but it does take planning. Your contacts transfer easily. Your automations do not - ActiveCampaign's workflow engine works differently from Mailchimp's, and you will need to rebuild your sequences from scratch. If you have complex automation logic, budget a full day for the rebuild.</p>
+
+      <p>This guide walks you through the entire process step by step, including what to do before you cancel Mailchimp.</p>
+
+      <h2>What transfers and what does not</h2>
+
+      <table class="quick-table">
+        <thead>
+          <tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
+          <tr><td>Tags</td><td class="cell-partial">Partial</td><td>Export as custom fields, remap in ActiveCampaign</td></tr>
+          <tr><td>Custom fields</td><td class="cell-yes">Yes</td><td>Map fields during import</td></tr>
+          <tr><td>Segments</td><td class="cell-no">No</td><td>Recreate using ActiveCampaign tags and conditions</td></tr>
+          <tr><td>Unsubscribe history</td><td class="cell-yes">Yes</td><td>Include suppression list in export</td></tr>
+          <tr><td>Email templates</td><td class="cell-partial">Partial</td><td>Export HTML and rebuild or recreate in AC editor</td></tr>
+          <tr><td>Automation workflows</td><td class="cell-no">No</td><td>Must be rebuilt manually in ActiveCampaign</td></tr>
+          <tr><td>Campaign history and analytics</td><td class="cell-no">No</td><td>Download reports from Mailchimp before cancelling</td></tr>
+          <tr><td>Forms and landing pages</td><td class="cell-no">No</td><td>Recreate in ActiveCampaign or use existing tools</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Before you start</h2>
+
+      <p>Do not cancel Mailchimp before you have finished setting up ActiveCampaign and confirmed everything is working. Run both accounts in parallel during the transition. This costs a little extra for a month but protects you from gaps in your email program.</p>
+
+      <p>Start your <a href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">ActiveCampaign free trial</a> before you do anything else. The trial gives you 14 days to set up your account and test everything before committing.</p>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Start your free 14-day ActiveCampaign trial before beginning the migration.</span>
+        <div>
+          <a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a>
+          <div class="inline-cta-note">affiliate link</div>
+        </div>
+      </div>
+
+      <h2>Step-by-step migration guide</h2>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 1</div>
+        <div class="step-block-title">Export your contacts from Mailchimp</div>
+        <div class="step-block-time">15-30 minutes</div>
+        <p>Go to Audience in Mailchimp, select your audience, and click Export Audience. Download the CSV. Make sure you include all custom merge fields and tags. Also export your unsubscribe list separately - you will need to suppress these contacts in ActiveCampaign to stay compliant.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 2</div>
+        <div class="step-block-title">Document your automation workflows</div>
+        <div class="step-block-time">30 minutes to 2 hours depending on complexity</div>
+        <p>Go through every active automation in Mailchimp and document it - screenshot each workflow or write down the trigger, conditions, and actions in order. You will not be able to access Mailchimp after you cancel, so do this now. Pay particular attention to timing delays, branching logic, and any conditional splits.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 3</div>
+        <div class="step-block-title">Save your email templates</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Export the HTML of any email templates you want to reuse. In Mailchimp, open each template, click Edit, then export or copy the HTML. ActiveCampaign has its own template builder - you can either import the HTML directly or rebuild templates using their drag-and-drop editor, which is more flexible.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 4</div>
+        <div class="step-block-title">Download your campaign reports</div>
+        <div class="step-block-time">15 minutes</div>
+        <p>Export your historical campaign performance data from Mailchimp Reports before you cancel. This data will not transfer to ActiveCampaign and you will lose access to it once your Mailchimp account closes.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 5</div>
+        <div class="step-block-title">Set up your ActiveCampaign account</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Complete your account setup in ActiveCampaign: authenticate your sending domain, verify your email address, and configure your account settings. Domain authentication is critical for deliverability - do not skip it. ActiveCampaign has a setup checklist in the dashboard that walks you through each step.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 6</div>
+        <div class="step-block-title">Import your contacts</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Import your CSV into ActiveCampaign under Contacts. Map each column to the correct field - pay close attention to custom fields and make sure they match what you set up in the previous step. Import your unsubscribe list separately as a suppression list. After importing, review the import report and fix any errors before moving on.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 7</div>
+        <div class="step-block-title">Rebuild your automations</div>
+        <div class="step-block-time">1-4 hours depending on complexity</div>
+        <p>This is the most time-intensive step. ActiveCampaign's automation builder is more powerful than Mailchimp's but works differently. Use your documentation from Step 2 to rebuild each workflow. Start with your highest-priority automations - typically your welcome series and any active nurture sequences - and work down. Test each automation by triggering it with a test contact before activating it.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 8</div>
+        <div class="step-block-title">Update your forms and signup pages</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Replace your Mailchimp signup forms with ActiveCampaign forms on your website. ActiveCampaign has an embeddable form builder and also integrates with most landing page tools. Update any popup tools, website embeds, or third-party integrations that were pointed at Mailchimp.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 9</div>
+        <div class="step-block-title">Test everything before going live</div>
+        <div class="step-block-time">1-2 hours</div>
+        <p>Send test emails from ActiveCampaign to yourself. Trigger each automation manually using a test contact and verify the sequence fires correctly. Check all links, unsubscribe functionality, and that your domain authentication is passing. Do not cancel Mailchimp until you have done this.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 10</div>
+        <div class="step-block-title">Cancel Mailchimp</div>
+        <div class="step-block-time">5 minutes</div>
+        <p>Once ActiveCampaign is fully set up and tested, cancel your Mailchimp account. Check your Mailchimp billing date first - if you are close to a renewal, you may want to wait a day or two to avoid being charged for another month. In Mailchimp, go to Account then Settings then Pause or Delete Account.</p>
+      </div>
+
+      <div class="warning-box">
+        <div class="warning-box-title">Before you cancel Mailchimp</div>
+        <p>Make sure you have exported your contacts, campaign history, and templates. Once your account is closed you cannot recover this data. If you have connected integrations (Shopify, WordPress, Zapier) update them to point to ActiveCampaign first or they will stop working.</p>
+      </div>
+
+      <h2>How long does the migration take?</h2>
+
+      <p>For most small businesses, the full migration takes half a day to a full day. The contact import itself takes under an hour. The rebuild of automations is where the time goes. If you have a simple welcome series and a few campaigns, you can be fully live in ActiveCampaign within a few hours. If you have complex multi-step automation sequences, budget a full day.</p>
+
+      <h2>Common issues to watch out for</h2>
+
+      <p><strong>Domain authentication.</strong> If you skip domain authentication in ActiveCampaign, your emails may land in spam. Complete the SPF, DKIM, and DMARC setup before sending your first campaign. ActiveCampaign walks you through this in the account setup.</p>
+
+      <p><strong>Tag mapping.</strong> Mailchimp uses groups and tags. ActiveCampaign uses tags and custom fields. The concepts are similar but the structure is different. Spend time mapping your Mailchimp tags to ActiveCampaign tags before importing so your segmentation logic works correctly.</p>
+
+      <p><strong>Automation triggers.</strong> ActiveCampaign has more trigger options than Mailchimp but they are named differently. Your "Customer Journey" automations in Mailchimp will need to be recreated as "Automations" in ActiveCampaign with equivalent triggers. The logic is the same but you will need to find the right trigger in ActiveCampaign for each step.</p>
+
+      <h2>Is ActiveCampaign worth switching to?</h2>
+
+      <p>If you have outgrown Mailchimp's automation capabilities or need a CRM alongside your email marketing, yes. ActiveCampaign's automation builder is significantly more powerful, its segmentation is more granular, and the built-in CRM means you can manage deals and contacts in the same place as your campaigns.</p>
+
+      <p>If you are only sending basic newsletters and do not need complex automation, the switch may not be worth the effort. <a href="/comparison-mailchimp-vs-mailerlite.html">Mailchimp vs MailerLite</a> might be a better comparison if you are looking for something simpler.</p>
+
+      <h2>The bottom line</h2>
+
+      <p>Migrating from Mailchimp to <a href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">ActiveCampaign</a> is a half-day project for most businesses. The contacts import quickly and cleanly. The automations take more work but the rebuild is worth it - ActiveCampaign's workflow engine is considerably more capable than what you are leaving behind.</p>
+
+      <p>Not sure if ActiveCampaign is the right destination? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> and get a recommendation based on your specific situation.</p>
+
+      <div class="useful-links-section">
+        <div class="useful-links-title">Useful next steps</div>
+        <div class="useful-links-sub">Everything you need to get started.</div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Start your free ActiveCampaign trial</span>
+          <span><a class="useful-link-url" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a><span class="useful-link-note">affiliate link</span></span>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">See ActiveCampaign pricing</span>
+          <a class="useful-link-url" href="https://try.activecampaign.com/9lravfc5vzsu" target="_blank">View pricing →</a>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Compare Mailchimp vs ActiveCampaign</span>
+          <a class="useful-link-url" href="/comparison-mailchimp-vs-mailerlite.html">Read comparison →</a>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Use the migration effort estimator</span>
+          <a class="useful-link-url" href="/guides.html">Open estimator →</a>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Not sure ActiveCampaign is right for you?</span>
+          <a class="useful-link-url" href="/quiz.html">Take the quiz →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="related-section" id="related-section"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you. This keeps the site free and independent.</p>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <span class="dot">·</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">·</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">·</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+      <span class="dot">·</span>
+      <span class="footer-copy">© 2026 Marketing Automation Buyer's Guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const THIS_ARTICLE_TOOLS = ["mailchimp", "activecampaign"];
+const THIS_ARTICLE_URL = window.location.pathname;
+const ALL_ARTICLES = [
+  { title: "Mailchimp vs ActiveCampaign", url: "/comparison-mailchimp-vs-moosend.html", tools: ["mailchimp", "activecampaign"], status: "live" },
+  { title: "ActiveCampaign vs HubSpot", url: "/comparison-activecampaign-vs-hubspot.html", tools: ["activecampaign", "hubspot"], status: "live" },
+  { title: "ActiveCampaign vs MailerLite", url: "/comparison-activecampaign-vs-mailerlite.html", tools: ["activecampaign", "mailerlite"], status: "live" },
+  { title: "ActiveCampaign vs Moosend", url: "/comparison-activecampaign-vs-moosend.html", tools: ["activecampaign", "moosend"], status: "live" },
+  { title: "How to Migrate from Mailchimp to Moosend", url: "/migration-mailchimp-to-moosend.html", tools: ["mailchimp", "moosend"], status: "live" },
+  { title: "How to Migrate from Mailchimp to MailerLite", url: null, tools: ["mailchimp", "mailerlite"], status: "coming" },
+  { title: "How to Migrate from Mailchimp to HubSpot", url: null, tools: ["mailchimp", "hubspot"], status: "coming" },
+];
+const TOOL_LABELS = { mailchimp: "Mailchimp", activecampaign: "ActiveCampaign", mailerlite: "MailerLite", moosend: "Moosend", hubspot: "HubSpot" };
+function renderRelated() {
+  const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0, 5);
+  if (related.length === 0) return;
+  const section = document.getElementById('related-section');
+  let html = `<div class="related-title">Related articles</div><div class="related-sub">More on Mailchimp and ActiveCampaign</div>`;
+  related.forEach(a => {
+    const toolStr = a.tools.map(t => TOOL_LABELS[t] || t).join(' vs ');
+    if (a.status === 'live') {
+      html += `<a class="related-row live" href="${a.url}"><div class="related-row-left"><span class="related-row-title">${a.title}</span><span class="related-row-tools">${toolStr}</span></div><span class="related-row-arrow">→</span></a>`;
+    } else {
+      html += `<div class="related-row coming"><div class="related-row-left"><span class="related-row-title">${a.title}</span><span class="related-row-tools">${toolStr}</span></div><span class="related-coming">Coming soon</span></div>`;
+    }
+  });
+  section.innerHTML = html;
+}
+renderRelated();
+</script>
+
+</body>
+</html>

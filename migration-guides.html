@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Automation Setup & Migration Guides 2026 - Get Started Fast</title>
+<meta name="description" content="Find out exactly what setting up or switching to a new marketing automation tool involves. Pick your destination platform for a step-by-step effort estimate.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+<meta property="og:title" content="Marketing Automation Setup & Migration Guides">
+<meta property="og:description" content="Pick your destination tool and find out exactly what setup or migration will involve.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+.setup-hero { text-align: center; margin-bottom: 48px; }
+.setup-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
+.setup-hero h1 em { font-style: italic; color: var(--accent); }
+.setup-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 460px; margin: 0 auto; }
+
+/* ── ESTIMATOR ── */
+.estimator { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 48px; }
+.estimator-inner { max-width: 640px; margin: 0 auto; }
+.estimator-title { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; }
+.estimator-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.estimator-pickers { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-bottom: 20px; }
+.picker-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.tool-select { width: 100%; padding: 12px 14px; border: 1px solid var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; cursor: pointer; }
+.tool-select:focus { outline: none; border-color: var(--ink); }
+.arrow-divider { text-align: center; font-size: 22px; color: var(--muted); padding-top: 20px; }
+.estimate-btn { display: block; width: 100%; max-width: 220px; margin: 0 auto; padding: 12px 24px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: opacity 0.15s; }
+.estimate-btn:hover { opacity: 0.85; }
+
+/* ── RESULT ── */
+.estimate-result { display: none; margin-top: 32px; border-top: 1px solid var(--rule); padding-top: 28px; }
+.estimate-result.visible { display: block; }
+.estimate-headline { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.estimate-route { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; }
+.difficulty-badge { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; padding: 5px 12px; }
+.difficulty-badge.easy { background: #e8f5e9; color: #2c5f2e; }
+.difficulty-badge.moderate { background: #fff8e1; color: #7f6a00; }
+.difficulty-badge.hard { background: #fce8e8; color: #c0392b; }
+.estimate-time { font-size: 13px; color: var(--muted); }
+.estimate-time span { color: var(--ink); font-weight: 500; }
+.estimate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 24px; }
+.estimate-cell { background: white; padding: 20px; }
+.estimate-cell-title { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.estimate-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 13px; line-height: 1.5; }
+.estimate-item:last-child { margin-bottom: 0; }
+.estimate-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.dot-yes { background: var(--yes); }
+.dot-no { background: var(--no); }
+.dot-warn { background: #f0a500; }
+.estimate-what-you-lose { background: #fce8e8; border: 1px solid #f5c6c6; padding: 16px 20px; margin-bottom: 20px; }
+.estimate-what-you-lose-title { font-size: 12px; font-weight: 600; color: var(--no); margin-bottom: 8px; letter-spacing: 0.04em; }
+.estimate-what-you-lose p { font-size: 13px; color: #7a1a1a; line-height: 1.6; }
+.estimate-steps { margin-bottom: 24px; }
+.estimate-steps-title { font-size: 14px; font-weight: 500; margin-bottom: 14px; }
+.step-row { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.step-row:last-child { border-bottom: none; }
+.step-num { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--muted); flex-shrink: 0; width: 24px; }
+.step-content { flex: 1; }
+.step-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+.step-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.step-time { font-size: 11px; color: var(--muted); margin-top: 4px; font-style: italic; }
+.estimate-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.estimate-cta-primary { padding: 10px 20px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
+.estimate-cta-primary:hover { opacity: 0.85; }
+.estimate-cta-secondary { padding: 10px 20px; border: 1px solid var(--rule); color: var(--muted); font-size: 13px; transition: all 0.15s; text-decoration: none; }
+.estimate-cta-secondary:hover { border-color: var(--ink); color: var(--ink); }
+
+@media (max-width: 600px) {
+  .estimator-pickers { grid-template-columns: 1fr; }
+  .arrow-divider { display: none; }
+  .estimate-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">All Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">All Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/articles.html">Articles</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="wrap">
+
+    <div class="setup-hero wrap-narrow">
+      <h1>Guides</h1>
+    </div>
+
+    <div class="estimator">
+      <div class="estimator-inner">
+        <div class="estimator-pickers">
+          <div>
+            <div class="picker-label">I'm currently using</div>
+            <select class="tool-select" id="from-tool">
+              <option value="">Select your current tool...</option>
+              <option value="nothing">Nothing yet (starting fresh)</option>
+              <option value="mailchimp">Mailchimp</option>
+              <option value="activecampaign">ActiveCampaign</option>
+              <option value="mailerlite">MailerLite</option>
+              <option value="moosend">Moosend</option>
+              <option value="getresponse">GetResponse</option>
+              <option value="kit">ConvertKit / Kit</option>
+              <option value="hubspot">HubSpot</option>
+              <option value="brevo">Brevo</option>
+              <option value="omnisend">Omnisend</option>
+              <option value="klaviyo">Klaviyo</option>
+              <option value="keap">Keap</option>
+            </select>
+          </div>
+          <div class="arrow-divider">→</div>
+          <div>
+            <div class="picker-label">I want to move to</div>
+            <select class="tool-select" id="to-tool">
+              <option value="">Select your destination tool...</option>
+              <option value="moosend">Moosend</option>
+              <option value="activecampaign">ActiveCampaign</option>
+              <option value="mailerlite">MailerLite</option>
+              <option value="mailchimp">Mailchimp</option>
+              <option value="getresponse">GetResponse</option>
+              <option value="kit">ConvertKit / Kit</option>
+              <option value="hubspot">HubSpot</option>
+              <option value="brevo">Brevo</option>
+              <option value="omnisend">Omnisend</option>
+              <option value="klaviyo">Klaviyo</option>
+              <option value="keap">Keap</option>
+            </select>
+          </div>
+        </div>
+        <button class="estimate-btn" onclick="buildEstimate()">Show me →</button>
+        <div class="estimate-result" id="estimate-result"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wrap-narrow" style="text-align:center; padding: 20px 24px 56px;">
+    <p style="font-size:14px; color:var(--muted);"><a href="/articles.html?type=migration" style="color:var(--accent);">Browse all setup and migration guides →</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you. This keeps the site free and independent.</p>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <span class="dot">·</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">·</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">·</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+      <span class="dot">·</span>
+      <span class="footer-copy">© 2026 Marketing Automation Buyer's Guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const TOOL_DATA = {
+  mailchimp:      { name: "Mailchimp",        exportEasy: true,  automationComplex: "low",    hasCRM: false, hasCustomFields: true },
+  activecampaign: { name: "ActiveCampaign",   exportEasy: true,  automationComplex: "high",   hasCRM: true,  hasCustomFields: true },
+  mailerlite:     { name: "MailerLite",        exportEasy: true,  automationComplex: "low",    hasCRM: false, hasCustomFields: true },
+  moosend:        { name: "Moosend",           exportEasy: true,  automationComplex: "medium", hasCRM: false, hasCustomFields: true },
+  getresponse:    { name: "GetResponse",       exportEasy: true,  automationComplex: "medium", hasCRM: false, hasCustomFields: true },
+  kit:            { name: "ConvertKit / Kit",  exportEasy: true,  automationComplex: "low",    hasCRM: false, hasCustomFields: false },
+  hubspot:        { name: "HubSpot",           exportEasy: true,  automationComplex: "high",   hasCRM: true,  hasCustomFields: true },
+  brevo:          { name: "Brevo",             exportEasy: true,  automationComplex: "medium", hasCRM: true,  hasCustomFields: true },
+  omnisend:       { name: "Omnisend",          exportEasy: true,  automationComplex: "medium", hasCRM: false, hasCustomFields: true },
+  klaviyo:        { name: "Klaviyo",           exportEasy: true,  automationComplex: "high",   hasCRM: false, hasCustomFields: true },
+  keap:           { name: "Keap",              exportEasy: false, automationComplex: "high",   hasCRM: true,  hasCustomFields: true },
+  nothing:        { name: "Nothing (fresh start)", exportEasy: true, automationComplex: "none", hasCRM: false, hasCustomFields: false }
+};
+
+const DEST_DATA = {
+  moosend:        { name: "Moosend",        importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://trymoo.moosend.com/4e0kl2a449hd",           trialLabel: "Try Moosend free", affiliate: true  },
+  activecampaign: { name: "ActiveCampaign", importEasy: true,  learningCurve: "high",   hasCRM: true,  trialUrl: "https://try.activecampaign.com/d1eqanrpv66o-rvs4jt", trialLabel: "Try ActiveCampaign free", affiliate: true  },
+  mailerlite:     { name: "MailerLite",     importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://www.mailerlite.com",                         trialLabel: "Try MailerLite free", affiliate: false },
+  mailchimp:      { name: "Mailchimp",      importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://www.mailchimp.com",                          trialLabel: "Try Mailchimp free", affiliate: false },
+  getresponse:    { name: "GetResponse",    importEasy: true,  learningCurve: "medium", hasCRM: false, trialUrl: "https://www.getresponse.com",                        trialLabel: "Try GetResponse free", affiliate: false },
+  kit:            { name: "Kit",            importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://kit.com",                                    trialLabel: "Try Kit free", affiliate: false },
+  hubspot:        { name: "HubSpot",        importEasy: true,  learningCurve: "medium", hasCRM: true,  trialUrl: "https://www.hubspot.com",                            trialLabel: "Try HubSpot free", affiliate: false },
+  brevo:          { name: "Brevo",          importEasy: true,  learningCurve: "low",    hasCRM: true,  trialUrl: "https://www.brevo.com",                              trialLabel: "Try Brevo free", affiliate: false },
+  omnisend:       { name: "Omnisend",       importEasy: true,  learningCurve: "medium", hasCRM: false, trialUrl: "https://www.omnisend.com",                           trialLabel: "Try Omnisend free", affiliate: false },
+  klaviyo:        { name: "Klaviyo",        importEasy: true,  learningCurve: "medium", hasCRM: false, trialUrl: "https://www.klaviyo.com",                            trialLabel: "Try Klaviyo free", affiliate: false },
+  keap:           { name: "Keap",           importEasy: false, learningCurve: "high",   hasCRM: true,  trialUrl: "https://www.keap.com",                               trialLabel: "Try Keap free", affiliate: false }
+};
+
+function getDifficulty(from, to) {
+  if (from.key === 'nothing') return 'easy';
+  let score = 0;
+  if (from.automationComplex === 'high') score += 2;
+  if (from.automationComplex === 'medium') score += 1;
+  if (from.hasCRM) score += 2;
+  if (!to.importEasy) score += 1;
+  if (to.learningCurve === 'high') score += 2;
+  if (to.learningCurve === 'medium') score += 1;
+  if (score <= 2) return 'easy';
+  if (score <= 5) return 'moderate';
+  return 'hard';
+}
+
+function getTime(from, to) {
+  if (from.key === 'nothing') return '2-4 hours';
+  const diff = getDifficulty(from, to);
+  if (diff === 'easy') return '2-4 hours';
+  if (diff === 'moderate') return 'half a day to a full day';
+  return '1-3 days';
+}
+
+function buildEstimate() {
+  const fromKey = document.getElementById('from-tool').value;
+  const toKey = document.getElementById('to-tool').value;
+  if (!fromKey || !toKey) { alert('Please select both your current tool and destination tool.'); return; }
+  if (fromKey === toKey) { alert('Please select two different tools.'); return; }
+
+  const from = { key: fromKey, ...TOOL_DATA[fromKey] };
+  const to = { key: toKey, ...DEST_DATA[toKey] };
+  const difficulty = getDifficulty(from, to);
+  const time = getTime(from, to);
+  const isFromNothing = fromKey === 'nothing';
+
+  const losses = [];
+  if (!isFromNothing) {
+    if (from.automationComplex === 'high' && to.learningCurve === 'low') {
+      losses.push(from.name + ' has a sophisticated automation engine. ' + to.name + ' is simpler - some of your existing workflows may not be fully replicable.');
+    }
+    if (from.hasCRM && !to.hasCRM) {
+      losses.push(from.name + ' has a built-in CRM. ' + to.name + ' does not. CRM data (deals, pipeline, notes) will not transfer and you will need a separate CRM.');
+    }
+  }
+
+  const steps = [];
+  if (!isFromNothing) {
+    steps.push({ num: 1, title: 'Export your contacts', desc: 'Download your full subscriber list as a CSV from ' + from.name + '. Include all custom fields and tags.', time: '15-30 min' });
+    steps.push({ num: 2, title: 'Export your templates', desc: 'Save any email templates you want to reuse. Most tools let you export HTML which you can import or rebuild in ' + to.name + '.', time: '30-60 min' });
+    if (from.automationComplex !== 'none') {
+      steps.push({ num: 3, title: 'Document your automations', desc: 'Before cancelling ' + from.name + ', screenshot every automation workflow. You will need to rebuild these.', time: '30 min - 2 hours' });
+    }
+  }
+
+  const n = isFromNothing ? 1 : steps.length + 1;
+  steps.push({ num: n, title: 'Set up your ' + to.name + ' account', desc: 'Start your free trial and complete account setup including sender authentication and domain verification.', time: '30-60 min' });
+  steps.push({ num: n+1, title: isFromNothing ? 'Import your contacts' : 'Import your contacts', desc: isFromNothing ? 'Upload your existing list if you have one, or set up your signup forms to start collecting.' : 'Upload your CSV into ' + to.name + '. Map your custom fields carefully and review the import report.', time: '30-60 min' });
+  if (!isFromNothing && from.automationComplex !== 'none') {
+    steps.push({ num: n+2, title: 'Rebuild your automations', desc: 'Recreate your workflows in ' + to.name + '. Start with the highest-priority ones first.', time: difficulty === 'hard' ? '4-8 hours' : '1-3 hours' });
+  }
+  steps.push({ num: steps.length+1, title: 'Test before going live', desc: 'Send test emails, trigger automations manually, and check all links. Do not cancel ' + (isFromNothing ? 'anything' : from.name) + ' until everything is confirmed working.', time: '1-2 hours' });
+  if (!isFromNothing) {
+    steps.push({ num: steps.length+1, title: 'Cancel ' + from.name, desc: 'Once ' + to.name + ' is fully working, cancel your ' + from.name + ' subscription. Check your billing date to avoid being charged for another month.', time: '5 min' });
+  }
+
+  const diffLabel = difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+
+  let html = `
+    <div class="estimate-headline">
+      <span class="estimate-route">${from.name} → ${to.name}</span>
+      <span class="difficulty-badge ${difficulty}">${diffLabel}</span>
+      <span class="estimate-time">Estimated time: <span>${time}</span></span>
+    </div>
+    <div class="estimate-grid">
+      <div class="estimate-cell">
+        <div class="estimate-cell-title">Transfers easily</div>
+        <div class="estimate-item"><div class="estimate-dot dot-yes"></div><div>Contacts and email addresses</div></div>
+        <div class="estimate-item"><div class="estimate-dot dot-yes"></div><div>Tags and segments (with remapping)</div></div>
+        <div class="estimate-item"><div class="estimate-dot dot-yes"></div><div>Custom field data (if mapped correctly)</div></div>
+        <div class="estimate-item"><div class="estimate-dot dot-yes"></div><div>Unsubscribe history</div></div>
+      </div>
+      <div class="estimate-cell">
+        <div class="estimate-cell-title">Requires manual work</div>
+        ${from.automationComplex !== 'none' ? '<div class="estimate-item"><div class="estimate-dot dot-warn"></div><div>Automation workflows must be rebuilt</div></div>' : ''}
+        <div class="estimate-item"><div class="estimate-dot dot-warn"></div><div>Email templates need redesigning</div></div>
+        <div class="estimate-item"><div class="estimate-dot dot-warn"></div><div>Forms and signup pages need updating</div></div>
+        <div class="estimate-item"><div class="estimate-dot dot-warn"></div><div>Integrations need reconnecting</div></div>
+        ${from.hasCRM && !to.hasCRM ? '<div class="estimate-item"><div class="estimate-dot dot-no"></div><div>CRM data cannot transfer (no CRM in ' + to.name + ')</div></div>' : ''}
+      </div>
+    </div>
+    ${losses.length > 0 ? `<div class="estimate-what-you-lose"><div class="estimate-what-you-lose-title">Worth knowing before you switch</div>${losses.map(l => '<p>' + l + '</p>').join('')}</div>` : ''}
+    <div class="estimate-steps">
+      <div class="estimate-steps-title">Step-by-step checklist</div>
+      ${steps.map(s => `<div class="step-row"><div class="step-num">${s.num}</div><div class="step-content"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div><div class="step-time">${s.time}</div></div></div>`).join('')}
+    </div>
+    <div class="estimate-cta">
+      <a class="estimate-cta-primary" href="${to.trialUrl}" target="_blank">${to.trialLabel} →</a>
+      ${from.key !== 'nothing' ? `<a class="estimate-cta-secondary" href="/comparisons.html">Compare ${from.name} vs ${to.name} →</a>` : ''}
+    </div>
+    ${to.affiliate ? '<p style="font-size:10px;color:var(--muted);font-style:italic;margin-top:8px;">affiliate link</p>' : ''}
+  `;
+
+  const result = document.getElementById('estimate-result');
+  result.innerHTML = html;
+  result.classList.add('visible');
+  result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Marketing Automation Tools 2026 - Find Your Fit</title>
+<meta name="description" content="Browse every major email marketing and automation platform. Filter by who you are - blogger, e-commerce store, service business, or enterprise team.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+  <meta property="og:url" content="https://www.marketingautomationbuyersguide.com/all-tools.html">
+  <meta property="og:title" content="Every Marketing Automation Tool - Find Your Fit">
+  <meta property="og:description" content="Browse all 28 major email marketing platforms. Filter by business type to find tools built for you.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Every Marketing Automation Tool - Find Your Fit">
+  <meta name="twitter:description" content="Browse all 28 major email marketing platforms. Filter by business type to find tools built for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+.tools-hero { text-align: center; margin-bottom: 48px; }
+.tools-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
+.tools-hero h1 em { font-style: italic; color: var(--accent); }
+.tools-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+
+/* ── WHO ARE YOU FILTER ── */
+.who-filter { margin-bottom: 40px; }
+.who-filter-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; text-align: center; }
+.who-pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 12px; }
+.who-pill { font-size: 13px; padding: 8px 18px; border: 1px solid var(--rule); background: white; color: var(--ink); cursor: pointer; transition: all 0.15s; }
+.who-pill:hover { border-color: var(--ink); }
+.who-pill.active { background: var(--ink); color: white; border-color: var(--ink); }
+.who-desc { text-align: center; font-size: 13px; color: var(--muted); min-height: 20px; transition: opacity 0.2s; }
+.results-bar { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--rule); margin-bottom: 0; }
+.results-bar-count { font-size: 13px; color: var(--muted); }
+.results-bar-count span { color: var(--ink); font-weight: 500; }
+.results-bar-reset { font-size: 12px; color: var(--muted); cursor: pointer; text-decoration: underline; }
+.results-bar-reset:hover { color: var(--ink); }
+
+/* ── TOOL ROWS ── */
+.tools-list { margin-bottom: 64px; }
+.tool-item { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--rule); align-items: start; transition: background 0.15s; }
+.tool-item.hidden { display: none; }
+.tool-item-left { display: flex; flex-direction: column; gap: 6px; }
+.tool-item-name { font-size: 15px; font-weight: 500; }
+.tool-item-name a { color: var(--accent); }
+.tool-item-name a:hover { text-decoration: underline; }
+.tool-item-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.tool-item-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.tool-tag { font-size: 11px; padding: 2px 8px; background: #f5f5f3; color: var(--muted); }
+.tool-tag.highlight { background: #f1f8f1; color: var(--accent); }
+.tool-item-right { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 2px; }
+.tool-price { font-size: 13px; font-weight: 500; white-space: nowrap; }
+.tool-free { font-size: 11px; padding: 2px 8px; }
+.tool-free.yes { background: var(--free-bg); color: var(--free-text); }
+.tool-free.no { background: var(--nofree-bg); color: var(--nofree-text); }
+.tool-review-link { font-size: 12px; color: var(--accent); white-space: nowrap; }
+.tool-review-link:hover { text-decoration: underline; }
+.tool-coming { font-size: 11px; color: var(--muted); font-style: italic; }
+.tier-divider { padding: 28px 0 12px; }
+.tier-divider-title { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+
+@media (max-width: 600px) {
+  .tool-item { grid-template-columns: 1fr; }
+  .tool-item-right { align-items: flex-start; flex-direction: row; flex-wrap: wrap; gap: 8px; }
+}
+
+.extra-filters { background: #f8f8f6; border: 1px solid var(--rule); padding: 16px 20px; margin-bottom: 20px; }
+.extra-filter-row { display: flex; flex-wrap: wrap; gap: 20px; }
+.extra-filter-group { display: flex; flex-direction: column; gap: 8px; }
+.extra-filter-label { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.extra-filter-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.xpill { font-size: 12px; padding: 4px 11px; border: 1px solid var(--rule); background: white; color: var(--ink); cursor: pointer; transition: all 0.15s; user-select: none; }
+.xpill:hover { border-color: var(--ink); }
+.xpill.active { background: var(--ink); color: white; border-color: var(--ink); }
+.extra-filter-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 12px; color: var(--muted); }
+.extra-clear { cursor: pointer; text-decoration: underline; color: var(--muted); background: none; border: none; font-size: 12px; font-family: "DM Sans", sans-serif; }
+.extra-clear:hover { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">All Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">All Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/articles.html">Articles</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="wrap-narrow">
+
+    <div class="tools-hero">
+      <h1>All Tools</h1>
+      <p class="hero-sub">Browse and filter every major marketing automation platform.</p>
+    </div>
+
+    <!-- ALL FILTERS -->
+    <div class="extra-filters">
+      <div class="extra-filter-row">
+        <div class="extra-filter-group">
+          <span class="extra-filter-label">I am a(n)...</span>
+          <div class="extra-filter-pills">
+            <span class="xpill who-pill" data-who="blogger" onclick="filterWho(this)">Blogger or creator</span>
+            <span class="xpill who-pill" data-who="ecommerce" onclick="filterWho(this)">E-commerce store</span>
+            <span class="xpill who-pill" data-who="service" onclick="filterWho(this)">Service business</span>
+            <span class="xpill who-pill" data-who="b2b" onclick="filterWho(this)">B2B / SaaS company</span>
+            <span class="xpill who-pill" data-who="agency" onclick="filterWho(this)">Agency or freelancer</span>
+            <span class="xpill who-pill" data-who="enterprise" onclick="filterWho(this)">Enterprise team</span>
+          </div>
+        </div>
+        <div class="extra-filter-group">
+          <span class="extra-filter-label">Budget</span>
+          <div class="extra-filter-pills">
+            <span class="xpill" data-filter="budget" data-value="free" onclick="toggleFilter(this)">Free plan</span>
+            <span class="xpill" data-filter="budget" data-value="low" onclick="toggleFilter(this)">Under $20/mo</span>
+            <span class="xpill" data-filter="budget" data-value="mid" onclick="toggleFilter(this)">$20-$100/mo</span>
+            <span class="xpill" data-filter="budget" data-value="high" onclick="toggleFilter(this)">$100+/mo</span>
+          </div>
+        </div>
+        <div class="extra-filter-group">
+          <span class="extra-filter-label">Must have</span>
+          <div class="extra-filter-pills">
+            <span class="xpill" data-filter="feature" data-value="crm" onclick="toggleFilter(this)">CRM</span>
+            <span class="xpill" data-filter="feature" data-value="sms" onclick="toggleFilter(this)">SMS</span>
+            <span class="xpill" data-filter="feature" data-value="webinars" onclick="toggleFilter(this)">Webinars</span>
+            <span class="xpill" data-filter="feature" data-value="ecommerce" onclick="toggleFilter(this)">E-commerce</span>
+            <span class="xpill" data-filter="feature" data-value="landing" onclick="toggleFilter(this)">Landing pages</span>
+            <span class="xpill" data-filter="feature" data-value="freetrial" onclick="toggleFilter(this)">Free trial</span>
+          </div>
+        </div>
+      </div>
+      <div class="who-desc" id="who-desc" style="font-size:12px;color:var(--muted);margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);display:none;"></div>
+      <div class="extra-filter-footer">
+        <span id="active-filters-note"></span>
+        <span class="extra-clear" onclick="clearFilters()" id="extra-clear" style="display:none;">Clear filters</span>
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <span class="results-bar-count"><span id="tool-count">28</span> tools</span>
+      <span class="results-bar-reset" onclick="resetWho()">Show all</span>
+    </div>
+
+    <!-- TOOL LIST -->
+    <div class="tools-list" id="tools-list">
+
+      <div class="tier-divider"><div class="tier-divider-title">Small & mid-size businesses</div></div>
+
+      <div class="tool-item" data-who="blogger ecommerce service b2b agency" data-budget="low" data-features="ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-moosend.html">Moosend</a></div>
+          <div class="tool-item-desc">Affordable automation with a clean interface, good for growing lists on a budget. Solid automation builder, e-commerce integrations, and landing pages at one of the lowest price points on the market.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Email automation</span>
+            <span class="tool-tag highlight">Landing pages</span>
+            <span class="tool-tag highlight">E-commerce</span>
+            <span class="tool-tag">No CRM</span>
+            <span class="tool-tag">No SMS</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $9/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-moosend.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="service b2b agency ecommerce" data-budget="mid" data-features="crm sms ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-activecampaign.html">ActiveCampaign</a></div>
+          <div class="tool-item-desc">The most powerful CRM and automation combo at the SMB price point. Steep learning curve but unmatched flexibility. Best for businesses that have outgrown simple email tools and need real automation logic.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">CRM built-in</span>
+            <span class="tool-tag highlight">SMS</span>
+            <span class="tool-tag highlight">Advanced automation</span>
+            <span class="tool-tag highlight">E-commerce</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $15/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-activecampaign.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="blogger service agency ecommerce" data-budget="free low" data-features="ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-mailerlite.html">MailerLite</a></div>
+          <div class="tool-item-desc">The go-to recommendation for beginners. Simple interface, genuinely useful free plan, and enough features for most small businesses. Doesn't try to do everything, but does the basics very well.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan</span>
+            <span class="tool-tag highlight">Beginner-friendly</span>
+            <span class="tool-tag highlight">Landing pages</span>
+            <span class="tool-tag">No CRM</span>
+            <span class="tool-tag">No SMS</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $9/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-mailerlite.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="blogger ecommerce service agency" data-budget="free low" data-features="ecommerce landing">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-mailchimp.html">Mailchimp</a></div>
+          <div class="tool-item-desc">The most recognized name in email marketing. Better than its reputation suggests for small businesses, but pricing gets expensive fast as your list grows. Good starting point if you want familiarity.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan</span>
+            <span class="tool-tag highlight">Well-known brand</span>
+            <span class="tool-tag highlight">E-commerce</span>
+            <span class="tool-tag">No SMS</span>
+            <span class="tool-tag">Gets expensive</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $13/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-mailchimp.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="ecommerce service b2b agency" data-budget="free low mid" data-features="sms webinars ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-getresponse.html">GetResponse</a></div>
+          <div class="tool-item-desc">Stands out for including webinars and a website builder alongside email and automation. Good all-in-one option for businesses that want to run events or courses without adding another tool.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan</span>
+            <span class="tool-tag highlight">Webinars</span>
+            <span class="tool-tag highlight">SMS</span>
+            <span class="tool-tag highlight">Landing pages</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $15/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-getresponse.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="blogger" data-budget="free low" data-features="landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-kit.html">ConvertKit / Kit</a></div>
+          <div class="tool-item-desc">Built specifically for creators and bloggers who sell digital products. The free plan is genuinely generous (up to 10,000 subscribers). Not the right fit for e-commerce or businesses with a sales team.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan (10k subs)</span>
+            <span class="tool-tag highlight">Built for creators</span>
+            <span class="tool-tag highlight">Paid newsletters</span>
+            <span class="tool-tag">No CRM</span>
+            <span class="tool-tag">No SMS</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $25/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-kit.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="ecommerce" data-budget="free low mid" data-features="sms ecommerce freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-omnisend.html">Omnisend</a></div>
+          <div class="tool-item-desc">Designed from the ground up for e-commerce. Excellent abandoned cart automations, SMS built-in, and deep Shopify/WooCommerce integration. Not the right tool if you're not running an online store.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">E-commerce focused</span>
+            <span class="tool-tag highlight">SMS built-in</span>
+            <span class="tool-tag highlight">Shopify/WooCommerce</span>
+            <span class="tool-tag">No landing pages</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $16/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-omnisend.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="blogger ecommerce service b2b agency" data-budget="free low mid" data-features="crm sms ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-brevo.html">Brevo</a></div>
+          <div class="tool-item-desc">Unique pricing model - you pay per email sent, not per contact. This makes it excellent value for businesses with large lists that don't email frequently. Includes SMS, CRM, and transactional email.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan</span>
+            <span class="tool-tag highlight">Pay per send (not per contact)</span>
+            <span class="tool-tag highlight">SMS + CRM included</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $9/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-brevo.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="blogger ecommerce service b2b agency enterprise" data-budget="free low mid high" data-features="crm sms ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-hubspot.html">HubSpot</a></div>
+          <div class="tool-item-desc">The most complete platform on this list. Free CRM + email marketing is genuinely useful for small teams. Paid tiers scale all the way to enterprise. Gets expensive fast but hard to beat as a full suite.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan + CRM</span>
+            <span class="tool-tag highlight">Scales to enterprise</span>
+            <span class="tool-tag highlight">All-in-one</span>
+            <span class="tool-tag">Expensive at scale</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $15/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-hubspot.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="ecommerce" data-budget="free low mid" data-features="sms ecommerce freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-klaviyo.html">Klaviyo</a></div>
+          <div class="tool-item-desc">The gold standard for e-commerce email and SMS. Deep revenue attribution, best-in-class segmentation, and the strongest Shopify integration available. Premium pricing but delivers premium results for stores that use it well.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Best e-commerce analytics</span>
+            <span class="tool-tag highlight">SMS built-in</span>
+            <span class="tool-tag highlight">Revenue attribution</span>
+            <span class="tool-tag">Higher price point</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From ~$20/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-klaviyo.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="service b2b agency" data-budget="free low" data-features="landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-aweber.html">AWeber</a></div>
+          <div class="tool-item-desc">One of the oldest email platforms around. Reliable, straightforward, and well-supported. Doesn't have the most modern feature set but works well for businesses that just need solid email marketing without complexity.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan</span>
+            <span class="tool-tag highlight">Easy to use</span>
+            <span class="tool-tag">Dated interface</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $12.50/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-aweber.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="service agency" data-budget="low mid" data-features="sms ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-constantcontact.html">Constant Contact</a></div>
+          <div class="tool-item-desc">Strong for local businesses, events, and nonprofits. Includes event registration tools, social media integration, and a good support team. Email quality is reliable but automation is less sophisticated than competitors.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Event management</span>
+            <span class="tool-tag highlight">Social tools</span>
+            <span class="tool-tag">Limited automation</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $12/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-constantcontact.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="blogger agency" data-budget="mid" data-features="ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-flodesk.html">Flodesk</a></div>
+          <div class="tool-item-desc">Beautiful email templates and a flat-rate pricing model (pay the same regardless of list size). Popular with photographers, designers, and creatives. Limited automation compared to other tools but the aesthetic is unmatched.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Flat-rate pricing</span>
+            <span class="tool-tag highlight">Beautiful templates</span>
+            <span class="tool-tag">Limited automation</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">$38/mo flat</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-flodesk.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tier-divider"><div class="tier-divider-title">Mid-market</div></div>
+
+      <div class="tool-item" data-who="agency service b2b" data-budget="low mid" data-features="ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-campaignmonitor.html">Campaign Monitor</a></div>
+          <div class="tool-item-desc">Clean, well-designed platform with a strong focus on email aesthetics and segmentation. Popular with agencies managing multiple client accounts. Less automation depth than ActiveCampaign but easier to use.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Agency-friendly</span>
+            <span class="tool-tag highlight">Beautiful templates</span>
+            <span class="tool-tag highlight">Strong segmentation</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $11/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-campaignmonitor.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="b2b ecommerce" data-budget="enterprise" data-features="sms ecommerce">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-iterable.html">Iterable</a></div>
+          <div class="tool-item-desc">Cross-channel marketing automation built for fast-growing consumer brands. Strong data capabilities and multi-channel journey building. Requires technical resources to get the most out of it.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Cross-channel</span>
+            <span class="tool-tag highlight">Data-driven</span>
+            <span class="tool-tag">Technical setup required</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">Custom pricing</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-iterable.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="b2b ecommerce agency" data-budget="high enterprise" data-features="sms ecommerce landing">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-dotdigital.html">Dotdigital</a></div>
+          <div class="tool-item-desc">Omnichannel marketing automation with strong personalization and data tools. Good for mid-size businesses that have outgrown SMB tools but aren't ready for full enterprise platforms.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Omnichannel</span>
+            <span class="tool-tag highlight">Personalization</span>
+            <span class="tool-tag highlight">SMS + email</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">Custom pricing</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-dotdigital.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="b2b service" data-budget="mid high" data-features="sms landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-ortto.html">Ortto</a></div>
+          <div class="tool-item-desc">Visual customer journey builder with an built-in CDP and analytics. Lets you track the full customer journey and trigger campaigns based on real behavior. Newer platform but growing fast.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Built-in CDP</span>
+            <span class="tool-tag highlight">Visual journeys</span>
+            <span class="tool-tag highlight">Behavior-based</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $99/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-ortto.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="service b2b" data-budget="high" data-features="crm sms landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-keap.html">Keap</a></div>
+          <div class="tool-item-desc">CRM, email automation, and payment collection in one platform. Built for service businesses with complex follow-up needs. Expensive but comprehensive for coaches, consultants, and small agencies.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">CRM + automation</span>
+            <span class="tool-tag highlight">Payments built-in</span>
+            <span class="tool-tag highlight">Service business focus</span>
+            <span class="tool-tag">High starting price</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $249/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-keap.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="service b2b agency" data-budget="free low" data-features="crm ecommerce landing freetrial">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-zoho.html">Zoho Campaigns</a></div>
+          <div class="tool-item-desc">Excellent value if you're already using Zoho's ecosystem. Generous free plan, low paid pricing, and tight CRM integration. Less compelling if you're not a Zoho user.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Free plan (2k contacts)</span>
+            <span class="tool-tag highlight">Very affordable</span>
+            <span class="tool-tag highlight">Zoho CRM integration</span>
+            <span class="tool-tag">Best for Zoho users</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $3/mo</span>
+          <span class="tool-free yes">Free plan</span>
+          <a class="tool-review-link" href="/review-zoho.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tier-divider"><div class="tier-divider-title">Enterprise</div></div>
+
+      <div class="tool-item" data-who="enterprise" data-budget="enterprise" data-features="crm sms ecommerce landing">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-hubspot-enterprise.html">HubSpot Enterprise</a></div>
+          <div class="tool-item-desc">The full HubSpot suite at enterprise scale. Advanced reporting, custom objects, multi-touch attribution, and team management. Powerful but requires significant investment and dedicated ops resources.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Full marketing suite</span>
+            <span class="tool-tag highlight">Advanced reporting</span>
+            <span class="tool-tag highlight">B2B + B2C</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $3,600/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-hubspot-enterprise.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="enterprise" data-budget="enterprise" data-features="crm sms ecommerce">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-salesforce.html">Salesforce Marketing Cloud</a></div>
+          <div class="tool-item-desc">Enterprise-grade omnichannel marketing for large teams. Exceptional data capabilities and AI personalization. Requires dedicated Salesforce admins and significant implementation resources.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Omnichannel</span>
+            <span class="tool-tag highlight">AI personalization</span>
+            <span class="tool-tag highlight">Salesforce native</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">Custom pricing</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-salesforce.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="enterprise b2b" data-budget="enterprise" data-features="crm ecommerce">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-marketo.html">Adobe Marketo</a></div>
+          <div class="tool-item-desc">The leading B2B marketing automation platform for complex, long sales cycles. Best-in-class lead scoring and account-based marketing. Requires technical resources and Marketo-certified admins.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">B2B specialist</span>
+            <span class="tool-tag highlight">Lead scoring</span>
+            <span class="tool-tag highlight">ABM</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">Custom pricing</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-marketo.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="enterprise b2b" data-budget="enterprise" data-features="crm">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-eloqua.html">Oracle Eloqua</a></div>
+          <div class="tool-item-desc">Enterprise marketing automation for complex B2B organizations. Advanced lead scoring, targeting, and attribution. Best suited for large teams with dedicated marketing ops resources.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Enterprise B2B</span>
+            <span class="tool-tag highlight">Advanced targeting</span>
+            <span class="tool-tag highlight">Oracle native</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">Custom pricing</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-eloqua.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="enterprise b2b" data-budget="enterprise" data-features="crm">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-pardot.html">Pardot (Salesforce)</a></div>
+          <div class="tool-item-desc">B2B marketing automation built natively into Salesforce. Excellent choice if your sales team already lives in Salesforce CRM. Tight lead-to-revenue tracking and ROI reporting.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Salesforce native</span>
+            <span class="tool-tag highlight">B2B automation</span>
+            <span class="tool-tag highlight">Revenue tracking</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $1,250/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-pardot.html">Read review →</a>
+        </div>
+      </div>
+
+      <div class="tool-item" data-who="enterprise" data-budget="enterprise" data-features="crm sms ecommerce">
+        <div class="tool-item-left">
+          <div class="tool-item-name"><a href="/review-dynamics365.html">Microsoft Dynamics 365</a></div>
+          <div class="tool-item-desc">Marketing automation for organizations already running on the Microsoft stack. Deep Teams, Office 365, and Dynamics CRM integration. Natural fit for Microsoft-first enterprises.</div>
+          <div class="tool-item-tags">
+            <span class="tool-tag highlight">Microsoft native</span>
+            <span class="tool-tag highlight">Teams integration</span>
+            <span class="tool-tag highlight">Enterprise scale</span>
+          </div>
+        </div>
+        <div class="tool-item-right">
+          <span class="tool-price">From $1,500/mo</span>
+          <span class="tool-free no">No free plan</span>
+          <a class="tool-review-link" href="/review-dynamics365.html">Read review →</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="wrap-narrow" style="text-align:center; padding: 20px 24px 56px;">
+    <p style="font-size:14px; color:var(--muted);"><a href="/articles.html?type=review" style="color:var(--accent);">Browse all tool reviews →</a></p>
+  </div>
+</main>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+      </div>
+    
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you. This keeps the site free and independent.</p>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <span class="dot">·</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">·</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">·</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+      <span class="dot">·</span>
+      <span class="footer-copy">© 2026 Marketing Automation Buyer's Guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const WHO_DESCS = {
+  blogger: "Showing tools well-suited for bloggers, newsletter creators, and digital product sellers.",
+  ecommerce: "Showing tools built for or highly compatible with online stores.",
+  service: "Showing tools that work well for service-based businesses, coaches, and consultants.",
+  b2b: "Showing tools suited to B2B companies, SaaS products, and lead-based sales.",
+  agency: "Showing tools popular with agencies and freelancers managing clients.",
+  enterprise: "Showing enterprise-grade platforms for large teams with dedicated ops resources."
+};
+
+let activeWho = null;
+const activeFilters = { budget: [], feature: [] };
+
+function toggleFilter(el) {
+  const type = el.dataset.filter;
+  const val = el.dataset.value;
+  const idx = activeFilters[type].indexOf(val);
+  if (idx > -1) { activeFilters[type].splice(idx, 1); el.classList.remove('active'); }
+  else { activeFilters[type].push(val); el.classList.add('active'); }
+  applyAllFilters();
+}
+
+function clearFilters() {
+  activeFilters.budget = [];
+  activeFilters.feature = [];
+  activeWho = null;
+  document.querySelectorAll('.xpill').forEach(p => p.classList.remove('active'));
+  const desc = document.getElementById('who-desc');
+  desc.textContent = '';
+  desc.style.display = 'none';
+  applyAllFilters();
+}
+
+function applyAllFilters() {
+  const hasExtra = activeFilters.budget.length > 0 || activeFilters.feature.length > 0;
+  document.getElementById('extra-clear').style.display = hasExtra ? 'inline' : 'none';
+
+  const items = document.querySelectorAll('.tool-item');
+  let count = 0;
+
+  items.forEach(item => {
+    const whoData = item.dataset.who || '';
+    const budgetData = item.dataset.budget || '';
+    const featureData = item.dataset.features || '';
+
+    let show = true;
+
+    // Who filter
+    if (activeWho && !whoData.includes(activeWho)) show = false;
+
+    // Budget filter (any selected must match)
+    if (activeFilters.budget.length > 0) {
+      const matchesBudget = activeFilters.budget.some(b => budgetData.includes(b));
+      if (!matchesBudget) show = false;
+    }
+
+    // Feature filters (ALL selected must match)
+    if (activeFilters.feature.length > 0) {
+      const matchesAll = activeFilters.feature.every(f => featureData.includes(f));
+      if (!matchesAll) show = false;
+    }
+
+    item.classList.toggle('hidden', !show);
+    if (show) count++;
+  });
+
+  document.getElementById('tool-count').textContent = count;
+
+  // Update active filters note
+  const parts = [];
+  if (activeWho) parts.push(activeWho);
+  if (activeFilters.budget.length > 0) parts.push(activeFilters.budget.join(' or '));
+  if (activeFilters.feature.length > 0) parts.push(activeFilters.feature.join(' + '));
+  document.getElementById('active-filters-note').textContent = count + ' tools match your filters';
+
+  // Hide empty tier dividers
+  document.querySelectorAll('.tier-divider').forEach(div => {
+    let next = div.nextElementSibling;
+    let hasVisible = false;
+    while (next && !next.classList.contains('tier-divider')) {
+      if (!next.classList.contains('hidden') && next.classList.contains('tool-item')) hasVisible = true;
+      next = next.nextElementSibling;
+    }
+    div.classList.toggle('hidden', !hasVisible);
+  });
+}
+
+// Override filterWho and resetWho to use unified filter
+function filterWho(el) {
+  const who = el.dataset.who;
+  if (activeWho === who) { activeWho = null; el.classList.remove('active'); document.getElementById('who-desc').style.display='none'; document.getElementById('who-desc').textContent = ''; }
+  else {
+    activeWho = who;
+    document.querySelectorAll('.who-pill').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    const desc = document.getElementById('who-desc');
+    desc.textContent = WHO_DESCS[who];
+    desc.style.display = 'block';
+  }
+  applyAllFilters();
+}
+
+function resetWho() {
+  activeWho = null;
+  document.querySelectorAll('.who-pill').forEach(p => p.classList.remove('active'));
+  const desc = document.getElementById('who-desc');
+  desc.textContent = '';
+  desc.style.display = 'none';
+  applyAllFilters();
+}
+</script>
+</body>
+</html>

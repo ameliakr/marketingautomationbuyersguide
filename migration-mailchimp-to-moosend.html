@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Migrate from Mailchimp to Moosend (2026 Guide)</title>
+<meta name="description" content="Step-by-step guide to migrating from Mailchimp to Moosend. What transfers, what you rebuild, and how to do it without losing subscribers.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+<meta property="og:title" content="How to Migrate from Mailchimp to Moosend (2026 Guide)">
+<meta property="og:description" content="Step-by-step guide to migrating from Mailchimp to Moosend. What transfers, what you rebuild, and how to do it without losing subscribers.">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.article-wrap { max-width: 680px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin: 48px 0 16px; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 32px 0 12px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul, .article-body ol { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--rule); }
+.quick-table th:first-child { color: var(--muted); font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.quick-table td:first-child { color: var(--muted); font-size: 13px; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.cell-partial { color: var(--partial); font-weight: 500; }
+.step-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: #f8f8f6; }
+.step-block-num { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.step-block-title { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+.step-block-time { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+.step-block p { font-size: 14px; line-height: 1.7; margin-bottom: 0; color: var(--ink); }
+.warning-box { border: 1px solid #f5c6c6; background: #fce8e8; padding: 18px 20px; margin: 28px 0; }
+.warning-box-title { font-size: 12px; font-weight: 600; color: var(--no); letter-spacing: 0.04em; margin-bottom: 8px; }
+.warning-box p { font-size: 13px; color: #7a1a1a; line-height: 1.6; margin-bottom: 0; }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-left: 4px; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; cursor: pointer; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row.coming .related-row-title { color: var(--muted); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+.related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">All Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/articles.html">Articles</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">All Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/articles.html">Articles</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="article-wrap">
+
+    <div class="article-hero">
+      <h1>How to Migrate from Mailchimp to Moosend</h1>
+      <div class="article-meta">
+        <span class="article-tag tool">Mailchimp</span>
+        <span class="article-tag tool">Moosend</span>
+        <span class="article-tag">Migration</span>
+        <span class="article-tag">Updated March 2026</span>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>Moosend is one of the most popular destinations for people leaving Mailchimp. It starts at the same price point, has a stronger automation builder, and doesn't impose the kind of contact-count pricing that catches Mailchimp users off guard as their lists grow.</p>
+
+      <p>The migration itself is one of the more manageable platform switches you can make. Moosend imports contacts cleanly from a CSV, the interface is intuitive, and you can have your first campaign live within a few hours of signing up.</p>
+
+      <p>This guide walks you through every step, including what to export before you cancel Mailchimp and what to watch out for during the import.</p>
+
+      <h2>What transfers and what does not</h2>
+
+      <table class="quick-table">
+        <thead>
+          <tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
+          <tr><td>Tags</td><td class="cell-partial">Partial</td><td>Export as a column in your CSV, import as custom fields or tags in Moosend</td></tr>
+          <tr><td>Custom fields</td><td class="cell-yes">Yes</td><td>Map during import</td></tr>
+          <tr><td>Segments</td><td class="cell-no">No</td><td>Recreate using Moosend's segment builder</td></tr>
+          <tr><td>Unsubscribe history</td><td class="cell-yes">Yes</td><td>Import suppression list separately</td></tr>
+          <tr><td>Email templates</td><td class="cell-partial">Partial</td><td>Export HTML and rebuild in Moosend's editor</td></tr>
+          <tr><td>Automation workflows</td><td class="cell-no">No</td><td>Must be rebuilt manually in Moosend</td></tr>
+          <tr><td>Campaign history</td><td class="cell-no">No</td><td>Download reports from Mailchimp before cancelling</td></tr>
+          <tr><td>Forms</td><td class="cell-no">No</td><td>Recreate in Moosend or your existing form tool</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Before you start</h2>
+
+      <p>Start your <a href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Moosend free trial</a> before doing anything else. You get 30 days with full access to all features - plenty of time to set everything up and test it before you commit. Keep Mailchimp running until you have confirmed that Moosend is fully working.</p>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Moosend's 30-day free trial gives you full access to set up and test before you switch.</span>
+        <div>
+          <a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a>
+          <div class="inline-cta-note">affiliate link</div>
+        </div>
+      </div>
+
+      <h2>Step-by-step migration guide</h2>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 1</div>
+        <div class="step-block-title">Export your contacts from Mailchimp</div>
+        <div class="step-block-time">15-30 minutes</div>
+        <p>Go to Audience in Mailchimp and export your full audience as a CSV. Make sure you include all merge fields (custom fields) and tags. Export your unsubscribe and bounce lists separately - you will need to suppress these in Moosend to stay compliant and protect your deliverability.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 2</div>
+        <div class="step-block-title">Document your automations</div>
+        <div class="step-block-time">15-60 minutes</div>
+        <p>Go through every active Customer Journey or automation in Mailchimp and write down or screenshot each one. Note the trigger, any conditions or splits, the email content, and the timing delays. You will not be able to access Mailchimp after cancellation, so do this before anything else.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 3</div>
+        <div class="step-block-title">Export your email templates</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Save the HTML of any email templates you want to reuse. In Mailchimp, open each template and export or copy the HTML. Moosend's template editor supports HTML import, or you can rebuild templates using their drag-and-drop editor which is clean and fast to work with.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 4</div>
+        <div class="step-block-title">Download your campaign reports</div>
+        <div class="step-block-time">10-15 minutes</div>
+        <p>Export your historical campaign data from Mailchimp Reports. Open rates, click rates, and subscriber growth data will not transfer to Moosend and you will lose access once your Mailchimp account is closed.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 5</div>
+        <div class="step-block-title">Set up your Moosend account</div>
+        <div class="step-block-time">30-45 minutes</div>
+        <p>Complete your Moosend account setup. Authenticate your sending domain by adding the SPF and DKIM records to your domain's DNS settings. This is the most important step for deliverability - emails from an unauthenticated domain are far more likely to land in spam. Moosend's setup guide walks you through the DNS changes step by step.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 6</div>
+        <div class="step-block-title">Import your contacts</div>
+        <div class="step-block-time">20-45 minutes</div>
+        <p>In Moosend, go to Audience and create a new mailing list, then import your CSV. Map each column to the correct field. If you have tags in Mailchimp, decide whether to map them to Moosend custom fields or recreate them as segments. Import your suppression list (unsubscribes and bounces) separately to prevent sending to contacts who have opted out.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 7</div>
+        <div class="step-block-title">Rebuild your automations</div>
+        <div class="step-block-time">1-3 hours</div>
+        <p>Use Moosend's automation builder to recreate your workflows. Moosend's trigger and action options are more extensive than Mailchimp's. Start with your welcome series and any high-priority nurture sequences. Test each automation with a test subscriber before activating it.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 8</div>
+        <div class="step-block-title">Update your signup forms</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Replace your Mailchimp forms with Moosend forms on your website. Moosend has an embeddable form builder and integrates with most website platforms. Update any popups, landing page tools, or third-party integrations that were pointed at Mailchimp.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 9</div>
+        <div class="step-block-title">Test before going live</div>
+        <div class="step-block-time">1-2 hours</div>
+        <p>Send test campaigns to yourself. Trigger your automations manually using a test contact and verify each sequence fires correctly. Check all links, verify unsubscribe functionality works, and confirm your domain authentication is passing. Do not cancel Mailchimp until this is done.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 10</div>
+        <div class="step-block-title">Cancel Mailchimp</div>
+        <div class="step-block-time">5 minutes</div>
+        <p>Once everything is working in Moosend, cancel your Mailchimp account. Check your billing date first to avoid being charged for an extra month. In Mailchimp, go to Account then Settings then Pause or Delete Account.</p>
+      </div>
+
+      <div class="warning-box">
+        <div class="warning-box-title">Before you cancel Mailchimp</div>
+        <p>Export your full contact list, suppression list, campaign history, and any templates you want to keep. Update all connected integrations (Shopify, WordPress, Zapier, etc.) to point to Moosend. Once your Mailchimp account is closed, none of this data is recoverable.</p>
+      </div>
+
+      <h2>How long does the migration take?</h2>
+
+      <p>Most businesses can complete the full migration in two to four hours. The contact import is fast - under an hour for most list sizes. The time goes into rebuilding automations and updating your forms and integrations. If you are only running a simple welcome sequence, you can realistically be fully live in Moosend within an afternoon.</p>
+
+      <h2>Why people switch from Mailchimp to Moosend</h2>
+
+      <p>The most common reasons are pricing and automation depth. Mailchimp's pricing scales quickly as your list grows and the free plan is limited to 500 contacts. Moosend starts at $9/mo and gives you more automation capability at every tier. If you have been bumping against Mailchimp's automation limitations - wanting more complex branching logic, more trigger options, or better e-commerce integration - Moosend is a meaningful upgrade.</p>
+
+      <p>For a full side-by-side breakdown, read the <a href="/comparison-mailchimp-vs-moosend.html">Mailchimp vs Moosend comparison</a>.</p>
+
+      <h2>The bottom line</h2>
+
+      <p>Migrating from Mailchimp to <a href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Moosend</a> is one of the more painless platform switches you can make. Your contacts import cleanly, the interface is intuitive, and the automation builder is a genuine step up from what you are leaving behind.</p>
+
+      <p>Still weighing your options? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> and get a recommendation based on your specific situation.</p>
+
+      <div class="useful-links-section">
+        <div class="useful-links-title">Useful next steps</div>
+        <div class="useful-links-sub">Everything you need to get started.</div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Start your free Moosend trial</span>
+          <span><a class="useful-link-url" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Try Moosend free →</a><span class="useful-link-note">affiliate link</span></span>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Compare Mailchimp vs Moosend</span>
+          <a class="useful-link-url" href="/comparison-mailchimp-vs-moosend.html">Read comparison →</a>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">See Moosend pricing</span>
+          <a class="useful-link-url" href="/pricing.html">View pricing →</a>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Use the migration effort estimator</span>
+          <a class="useful-link-url" href="/guides.html">Open estimator →</a>
+        </div>
+        <div class="useful-link-row">
+          <span class="useful-link-label">Not sure Moosend is right for you?</span>
+          <a class="useful-link-url" href="/quiz.html">Take the quiz →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="related-section" id="related-section"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you. This keeps the site free and independent.</p>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <span class="dot">·</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">·</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">·</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+      <span class="dot">·</span>
+      <span class="footer-copy">© 2026 Marketing Automation Buyer's Guide</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const THIS_ARTICLE_TOOLS = ["mailchimp", "moosend"];
+const THIS_ARTICLE_URL = window.location.pathname;
+const ALL_ARTICLES = [
+  { title: "Mailchimp vs Moosend", url: "/comparison-mailchimp-vs-moosend.html", tools: ["mailchimp", "moosend"], status: "live" },
+  { title: "Moosend vs MailerLite", url: "/comparison-moosend-vs-mailerlite.html", tools: ["moosend", "mailerlite"], status: "live" },
+  { title: "ActiveCampaign vs Moosend", url: "/comparison-activecampaign-vs-moosend.html", tools: ["activecampaign", "moosend"], status: "live" },
+  { title: "How to Migrate from Mailchimp to ActiveCampaign", url: "/migration-mailchimp-to-activecampaign.html", tools: ["mailchimp", "activecampaign"], status: "live" },
+  { title: "How to Migrate from Mailchimp to MailerLite", url: null, tools: ["mailchimp", "mailerlite"], status: "coming" },
+  { title: "How to Migrate from Mailchimp to HubSpot", url: null, tools: ["mailchimp", "hubspot"], status: "coming" },
+];
+const TOOL_LABELS = { mailchimp: "Mailchimp", moosend: "Moosend", mailerlite: "MailerLite", activecampaign: "ActiveCampaign", hubspot: "HubSpot" };
+function renderRelated() {
+  const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0, 5);
+  if (related.length === 0) return;
+  const section = document.getElementById('related-section');
+  let html = `<div class="related-title">Related articles</div><div class="related-sub">More on Mailchimp and Moosend</div>`;
+  related.forEach(a => {
+    const toolStr = a.tools.map(t => TOOL_LABELS[t] || t).join(' vs ');
+    if (a.status === 'live') {
+      html += `<a class="related-row live" href="${a.url}"><div class="related-row-left"><span class="related-row-title">${a.title}</span><span class="related-row-tools">${toolStr}</span></div><span class="related-row-arrow">→</span></a>`;
+    } else {
+      html += `<div class="related-row coming"><div class="related-row-left"><span class="related-row-title">${a.title}</span><span class="related-row-tools">${toolStr}</span></div><span class="related-coming">Coming soon</span></div>`;
+    }
+  });
+  section.innerHTML = html;
+}
+renderRelated();
+</script>
+
+</body>
+</html>
