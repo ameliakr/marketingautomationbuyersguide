@@ -46,9 +46,9 @@
 .comparison-result { display: none; }
 .comparison-result.visible { display: block; }
 
-.comp-header { display: grid; grid-template-columns: 180px 1fr 1fr; margin-bottom: 0; border: 1px solid var(--rule); border-bottom: 2px solid var(--ink); }
-.comp-header-cell { padding: 20px 24px; }
-.comp-header-cell.label { width: 180px; }
+.comp-header { display: table; width: 100%; margin-bottom: 0; border: 1px solid var(--rule); border-bottom: 2px solid var(--ink); border-collapse: collapse; }
+.comp-header-cell { display: table-cell; padding: 20px 24px; vertical-align: top; }
+.comp-header-cell.label { width: 180px; background: #fafaf8; border-right: 1px solid var(--rule); }
 .comp-header-cell.tool { background: #f8f8f6; }
 .comp-tool-name { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; }
 .comp-tool-tagline { font-size: 12px; color: var(--muted); line-height: 1.5; }
