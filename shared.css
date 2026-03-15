@@ -173,3 +173,11 @@ hr.divider { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
   .wrap, .wrap-mid, .wrap-narrow { max-width: 100%; }
   .home-hero, .cta-list { max-width: 100%; }
 }
+
+.useful-links { border-top: 1px solid var(--rule); padding-top: 24px; margin-bottom: 32px; }
+.useful-links-title { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
+.link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.link-row:last-child { border-bottom: none; }
+.link-label { color: var(--muted); }
+.link-url { color: var(--accent); font-weight: 500; }
+.link-url:hover { text-decoration: underline; }
