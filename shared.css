@@ -31,7 +31,7 @@ a { text-decoration: none; color: inherit; }
 .mobile-menu a { display: block; padding: 14px 24px; font-size: 14px; color: var(--muted); border-bottom: 1px solid var(--rule); }
 
 /* ── FOOTER ── */
-.site-footer { border-top: 1px solid var(--rule); margin-top: auto; padding: 20px 0 24px; }
+.site-footer { border-top: 1px solid var(--rule); margin-top: 48px; padding: 20px 0 24px; }
 .footer-inner { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; white-space: nowrap; }
 .footer-disclosure { font-size: 12px; color: #a0a0a0; line-height: 1.5; }
 .footer-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-start; align-items: center; }
