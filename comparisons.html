@@ -46,7 +46,7 @@
 .comparison-result { display: none; }
 .comparison-result.visible { display: block; }
 
-.comp-header { display: table; width: 100%; margin-bottom: 0; border: 1px solid var(--rule); border-bottom: 2px solid var(--ink); border-collapse: collapse; }
+.comp-header { display: none; }  /* replaced by thead */
 .comp-header-cell { display: table-cell; padding: 20px 24px; vertical-align: top; }
 .comp-header-cell.label { width: 180px; background: #fafaf8; border-right: 1px solid var(--rule); }
 .comp-header-cell.tool { background: #f8f8f6; }
@@ -56,10 +56,12 @@
 .comp-tool-cta:hover { opacity: 0.85; }
 .comp-affiliate { font-size: 10px; color: var(--muted); font-style: italic; display: block; margin-top: 4px; }
 
-.comp-table { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); border-top: none; margin-bottom: 40px; table-layout: fixed; }
+.comp-table { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); margin-bottom: 40px; table-layout: fixed; }
 .comp-table tr { border-bottom: 1px solid var(--rule); }
 .comp-table tr:last-child { border-bottom: none; }
 .comp-table tr.cat-row td { background: #efefec; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 8px 24px; }
+.comp-table thead th { padding: 20px 24px; vertical-align: top; background: #f8f8f6; border-bottom: 2px solid var(--ink); text-align: left; font-weight: 400; }
+.comp-table thead th:first-child { width: 180px; background: white; border-right: 1px solid var(--rule); }
 .comp-table td { padding: 14px 24px; vertical-align: top; }
 .comp-table td:first-child { width: 180px; font-size: 13px; color: var(--muted); background: #fafaf8; border-right: 1px solid var(--rule); }
 .comp-table td:not(:first-child) { font-size: 14px; }
@@ -216,10 +218,10 @@
       </div>
     
 
-  <div class="wrap-narrow" style="margin-top: 48px; padding-bottom: 0;">
+  <div class="wrap-narrow" style="margin-top: 16px; padding-bottom: 0;">
     <div class="useful-links">
       <div class="useful-links-title">Useful next steps</div>
-      <div class="link-row"><span class="link-label">Get a personalised tool recommendation</span><a class="link-url" href="/quiz.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Get a personalized tool recommendation</span><a class="link-url" href="/quiz.html">View →</a></div>
       <div class="link-row"><span class="link-label">Browse all tool reviews</span><a class="link-url" href="/all-tools.html">View →</a></div>
       <div class="link-row"><span class="link-label">Compare pricing across all tools</span><a class="link-url" href="/pricing.html">View →</a></div>
       <div class="link-row"><span class="link-label">Browse migration guides</span><a class="link-url" href="/guides.html">View →</a></div>
@@ -227,7 +229,7 @@
   </div>
 <footer class="site-footer">
   <div class="footer-inner">
-    <p class="footer-disclosure">We earn a commission on some links at no cost to you. This keeps the site free and independent.</p>
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
       <a href="/about.html">About</a>
       <span class="dot">|</span>
@@ -803,12 +805,10 @@ function buildComparison() {
   const tools = keys.map(k => TOOLS[k]);
   const n = tools.length;
 
-  // Build header
-  const header = document.getElementById('comp-header');
-  const colTemplate = '180px' + ' 1fr'.repeat(n);
-  header.style.gridTemplateColumns = colTemplate;
-  header.innerHTML = '<div class="comp-header-cell label"></div>' +
-    tools.map((t, i) => `<div class="comp-header-cell tool" id="header-${i}">${toolHeader(t)}</div>`).join('');
+  // Build header as thead
+  const thead = '<thead><tr><th></th>' +
+    tools.map(t => `<th>${toolHeader(t)}</th>`).join('') +
+    '</tr></thead>';
 
   // Build table — colspan for cat rows = n+1
   let rows = '';
@@ -820,7 +820,7 @@ function buildComparison() {
       rows += `<tr><td>${row.label}</td>${cells}</tr>`;
     }
   }
-  document.getElementById('comp-table').innerHTML = rows;
+  document.getElementById('comp-table').innerHTML = thead + '<tbody>' + rows + '</tbody>';
 
   // Build verdict
   document.getElementById('verdict-section').innerHTML = tools.map(t =>

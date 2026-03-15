@@ -176,8 +176,8 @@ hr.divider { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
 
 .useful-links { border-top: 1px solid var(--rule); padding-top: 24px; margin-bottom: 32px; }
 .useful-links-title { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
-.link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.link-row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .link-row:last-child { border-bottom: none; }
-.link-label { color: var(--muted); }
-.link-url { color: var(--accent); font-weight: 500; }
+.link-label { color: var(--muted); flex-shrink: 1; }
+.link-url { color: var(--accent); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
 .link-url:hover { text-decoration: underline; }
