@@ -139,19 +139,34 @@
               <select class="tool-select" id="setup-tool">
                 <option value="">Select a tool...</option>
                 <option value="activecampaign">ActiveCampaign</option>
+                <option value="marketo">Adobe Marketo</option>
+                <option value="aweber">AWeber</option>
                 <option value="brevo">Brevo</option>
+                <option value="campaignmonitor">Campaign Monitor</option>
+                <option value="kit">ConvertKit / Kit</option>
+                <option value="constantcontact">Constant Contact</option>
+                <option value="dotdigital">Dotdigital</option>
+                <option value="dynamics365">Microsoft Dynamics 365</option>
+                <option value="flodesk">Flodesk</option>
                 <option value="getresponse">GetResponse</option>
                 <option value="hubspot">HubSpot</option>
-                <option value="kit">ConvertKit / Kit</option>
+                <option value="hubspot-enterprise">HubSpot Enterprise</option>
+                <option value="iterable">Iterable</option>
+                <option value="keap">Keap</option>
                 <option value="klaviyo">Klaviyo</option>
                 <option value="mailchimp">Mailchimp</option>
                 <option value="mailerlite">MailerLite</option>
                 <option value="moosend">Moosend</option>
+                <option value="eloqua">Oracle Eloqua</option>
                 <option value="omnisend">Omnisend</option>
+                <option value="ortto">Ortto</option>
+                <option value="pardot">Pardot (Salesforce)</option>
+                <option value="salesforce">Salesforce Marketing Cloud</option>
+                <option value="zoho">Zoho Campaigns</option>
               </select>
             </div>
           </div>
-          <button class="estimate-btn" onclick="buildSetup()">Show me →</button>
+          <button class="estimate-btn" onclick="buildSetup()">Go →</button>
           <div class="estimate-result" id="setup-result"></div>
         </div>
 
@@ -162,10 +177,13 @@
               <div class="picker-label">I'm currently using</div>
               <select class="tool-select" id="from-tool">
                 <option value="">Select your current tool...</option>
-                <option value="nothing">Nothing yet (starting fresh)</option>
                 <option value="activecampaign">ActiveCampaign</option>
+                <option value="aweber">AWeber</option>
                 <option value="brevo">Brevo</option>
+                <option value="campaignmonitor">Campaign Monitor</option>
+                <option value="constantcontact">Constant Contact</option>
                 <option value="kit">ConvertKit / Kit</option>
+                <option value="flodesk">Flodesk</option>
                 <option value="getresponse">GetResponse</option>
                 <option value="hubspot">HubSpot</option>
                 <option value="keap">Keap</option>
@@ -174,6 +192,7 @@
                 <option value="mailerlite">MailerLite</option>
                 <option value="moosend">Moosend</option>
                 <option value="omnisend">Omnisend</option>
+                <option value="zoho">Zoho Campaigns</option>
               </select>
             </div>
             <div class="arrow-divider">→</div>
@@ -182,8 +201,12 @@
               <select class="tool-select" id="to-tool">
                 <option value="">Select your destination tool...</option>
                 <option value="activecampaign">ActiveCampaign</option>
+                <option value="aweber">AWeber</option>
                 <option value="brevo">Brevo</option>
+                <option value="campaignmonitor">Campaign Monitor</option>
+                <option value="constantcontact">Constant Contact</option>
                 <option value="kit">ConvertKit / Kit</option>
+                <option value="flodesk">Flodesk</option>
                 <option value="getresponse">GetResponse</option>
                 <option value="hubspot">HubSpot</option>
                 <option value="keap">Keap</option>
@@ -192,10 +215,11 @@
                 <option value="mailerlite">MailerLite</option>
                 <option value="moosend">Moosend</option>
                 <option value="omnisend">Omnisend</option>
+                <option value="zoho">Zoho Campaigns</option>
               </select>
             </div>
           </div>
-          <button class="estimate-btn" onclick="buildEstimate()">Show me →</button>
+          <button class="estimate-btn" onclick="buildEstimate()">Go →</button>
           <div class="estimate-result" id="estimate-result"></div>
         </div>
 
@@ -392,6 +416,216 @@ const SETUP_DATA = {
       { num: 6, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '30-45 min' },
     ]
   },
+  aweber: {
+    name: 'AWeber', time: '1-2 hours', difficulty: 'easy',
+    trialUrl: 'https://www.aweber.com', trialLabel: 'Try AWeber free', affiliate: false,
+    staticPage: '/setup-aweber.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at aweber.com. Free plan available up to 500 subscribers.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your domain', desc: 'Add DKIM records in your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Create a list', desc: 'Set up your first subscriber list with sender details.', time: '5-10 min' },
+      { num: 4, title: 'Import subscribers', desc: 'Upload your CSV and map fields.', time: '10-20 min' },
+      { num: 5, title: 'Create a signup form', desc: 'Build and embed a form on your website.', time: '15-20 min' },
+      { num: 6, title: 'Set up a welcome automation', desc: 'Create a welcome campaign triggered on subscription.', time: '20-30 min' },
+      { num: 7, title: 'Send your first broadcast', desc: 'Write and send your first email.', time: '15-20 min' },
+    ]
+  },
+  campaignmonitor: {
+    name: 'Campaign Monitor', time: '1-2 hours', difficulty: 'easy',
+    trialUrl: 'https://www.campaignmonitor.com', trialLabel: 'Try Campaign Monitor', affiliate: false,
+    staticPage: '/setup-campaignmonitor.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at campaignmonitor.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your domain', desc: 'Add DKIM records to your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Create a list', desc: 'Set up your subscriber list.', time: '5-10 min' },
+      { num: 4, title: 'Import subscribers', desc: 'Upload your CSV and map fields.', time: '10-20 min' },
+      { num: 5, title: 'Build your template', desc: 'Create a branded email template in the drag-and-drop builder.', time: '30-60 min' },
+      { num: 6, title: 'Set up a welcome automation', desc: 'Create a welcome journey triggered on subscription.', time: '20-30 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email.', time: '20-30 min' },
+    ]
+  },
+  constantcontact: {
+    name: 'Constant Contact', time: '1-2 hours', difficulty: 'easy',
+    trialUrl: 'https://www.constantcontact.com', trialLabel: 'Try Constant Contact free', affiliate: false,
+    staticPage: '/setup-constantcontact.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at constantcontact.com for a free trial.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your domain', desc: 'Add DKIM records to your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Create a contact list', desc: 'Set up your first list.', time: '5-10 min' },
+      { num: 4, title: 'Import contacts', desc: 'Upload your CSV and map fields.', time: '10-20 min' },
+      { num: 5, title: 'Set up a signup form', desc: 'Create and embed a form on your website.', time: '10-15 min' },
+      { num: 6, title: 'Create a welcome automation', desc: 'Set up a welcome email triggered on list join.', time: '20-30 min' },
+      { num: 7, title: 'Send your first email', desc: 'Create and send your first campaign.', time: '15-20 min' },
+    ]
+  },
+  flodesk: {
+    name: 'Flodesk', time: '1-2 hours', difficulty: 'easy',
+    trialUrl: 'https://www.flodesk.com', trialLabel: 'Try Flodesk free', affiliate: false,
+    staticPage: '/setup-flodesk.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at flodesk.com for a 30-day free trial.', time: '5-10 min' },
+      { num: 2, title: 'Set up your brand', desc: 'Add your logo, colors, and fonts in Brand Settings.', time: '10-15 min' },
+      { num: 3, title: 'Authenticate your domain', desc: 'Add DKIM records to your DNS settings.', time: '15-30 min' },
+      { num: 4, title: 'Import subscribers', desc: 'Upload your CSV and assign to a segment.', time: '10-15 min' },
+      { num: 5, title: 'Create a signup form', desc: 'Build a form and embed it on your site.', time: '15-20 min' },
+      { num: 6, title: 'Build a welcome workflow', desc: 'Create an automated welcome sequence.', time: '20-30 min' },
+      { num: 7, title: 'Send your first email', desc: 'Create and send your first email.', time: '15-20 min' },
+    ]
+  },
+  keap: {
+    name: 'Keap', time: 'Half a day', difficulty: 'moderate',
+    trialUrl: 'https://www.keap.com', trialLabel: 'Try Keap free', affiliate: false,
+    staticPage: '/setup-keap.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Start your free trial at keap.com.', time: '10-15 min' },
+      { num: 2, title: 'Authenticate your domain', desc: 'Add DKIM records in your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Set up your pipeline', desc: 'Configure your CRM pipeline stages to reflect your sales process.', time: '30-60 min' },
+      { num: 4, title: 'Configure custom fields', desc: 'Add custom fields for your contact and company records.', time: '20-30 min' },
+      { num: 5, title: 'Import contacts', desc: 'Upload your CSV and map fields carefully.', time: '20-40 min' },
+      { num: 6, title: 'Build your first automation', desc: 'Create a welcome sequence in the automation builder.', time: '45-90 min' },
+      { num: 7, title: 'Send your first broadcast', desc: 'Create and send your first email broadcast.', time: '20-30 min' },
+    ]
+  },
+  zoho: {
+    name: 'Zoho Campaigns', time: '1-2 hours', difficulty: 'easy',
+    trialUrl: 'https://www.zoho.com/campaigns', trialLabel: 'Try Zoho Campaigns free', affiliate: false,
+    staticPage: '/setup-zoho.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at zoho.com/campaigns. Free plan available.', time: '5-10 min' },
+      { num: 2, title: 'Connect Zoho CRM', desc: 'If you use Zoho CRM, connect it via Integrations settings.', time: '15-30 min' },
+      { num: 3, title: 'Authenticate your domain', desc: 'Add DKIM records to your DNS settings.', time: '15-30 min' },
+      { num: 4, title: 'Create a mailing list', desc: 'Set up your first contact list.', time: '5-10 min' },
+      { num: 5, title: 'Import contacts', desc: 'Upload your CSV or sync from Zoho CRM.', time: '10-20 min' },
+      { num: 6, title: 'Create a workflow', desc: 'Build your first welcome automation.', time: '20-30 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '15-20 min' },
+    ]
+  },
+  dotdigital: {
+    name: 'Dotdigital', time: '2-4 hours', difficulty: 'moderate',
+    trialUrl: 'https://dotdigital.com', trialLabel: 'Try Dotdigital', affiliate: false,
+    staticPage: '/setup-dotdigital.html',
+    steps: [
+      { num: 1, title: 'Set up your account', desc: 'Complete account setup with your Dotdigital account team.', time: '15-30 min' },
+      { num: 2, title: 'Configure sending domain', desc: 'Add DKIM records and configure IP warming if on dedicated IPs.', time: '1-2 days' },
+      { num: 3, title: 'Import contacts', desc: 'Upload your CSV and map fields to Dotdigital contact data.', time: '20-40 min' },
+      { num: 4, title: 'Set up address books', desc: 'Organize contacts into address books for targeting.', time: '10-15 min' },
+      { num: 5, title: 'Configure signup forms', desc: 'Build forms and connect to address books.', time: '20-30 min' },
+      { num: 6, title: 'Build a welcome program', desc: 'Create your first automation program.', time: '30-60 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '20-30 min' },
+    ]
+  },
+  iterable: {
+    name: 'Iterable', time: '1-2 weeks', difficulty: 'hard',
+    trialUrl: 'https://iterable.com', trialLabel: 'Contact Iterable', affiliate: false,
+    staticPage: '/setup-iterable.html',
+    steps: [
+      { num: 1, title: 'Complete account provisioning', desc: 'Work with your Iterable account team to provision your account.', time: '1-2 days' },
+      { num: 2, title: 'Set up your data model', desc: 'Define user fields and event schema with your engineering team.', time: '1-3 days' },
+      { num: 3, title: 'Configure sending infrastructure', desc: 'Set up sending domains and follow IP warming schedule.', time: '1-2 days' },
+      { num: 4, title: 'Integrate data sources', desc: 'Connect via API or native integrations with your engineering team.', time: '2-5 days' },
+      { num: 5, title: 'Import your user base', desc: 'Upload users via CSV or API.', time: '1-2 days' },
+      { num: 6, title: 'Build your first journey', desc: 'Create your first workflow starting with a welcome series.', time: '1-2 days' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '30-60 min' },
+    ]
+  },
+  ortto: {
+    name: 'Ortto', time: '2-4 hours', difficulty: 'moderate',
+    trialUrl: 'https://ortto.com', trialLabel: 'Try Ortto free', affiliate: false,
+    staticPage: '/setup-ortto.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at ortto.com for a free trial.', time: '5-10 min' },
+      { num: 2, title: 'Configure data sources', desc: 'Connect your website, product, and third-party data sources.', time: '1-3 hours' },
+      { num: 3, title: 'Authenticate your domain', desc: 'Add DKIM records to your DNS settings.', time: '15-30 min' },
+      { num: 4, title: 'Import contacts', desc: 'Upload your CSV and map fields.', time: '15-30 min' },
+      { num: 5, title: 'Set up capture forms', desc: 'Create signup forms and connect to journeys.', time: '15-20 min' },
+      { num: 6, title: 'Build your first journey', desc: 'Create a welcome journey with email steps.', time: '30-60 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '15-20 min' },
+    ]
+  },
+  'hubspot-enterprise': {
+    name: 'HubSpot Enterprise', time: '1-2 weeks', difficulty: 'hard',
+    trialUrl: 'https://www.hubspot.com', trialLabel: 'Contact HubSpot sales', affiliate: false,
+    staticPage: '/setup-hubspot-enterprise.html',
+    steps: [
+      { num: 1, title: 'Complete account setup with HubSpot', desc: 'Work with your HubSpot account team to provision and configure your account.', time: '1-2 days' },
+      { num: 2, title: 'Configure your CRM data model', desc: 'Set up contact, company, and deal properties and lifecycle stages.', time: '1-3 days' },
+      { num: 3, title: 'Authenticate sending domains', desc: 'Add DKIM records for all your sending domains.', time: '15-30 min' },
+      { num: 4, title: 'Import contacts and companies', desc: 'Import via CSV and map fields carefully.', time: '1-2 days' },
+      { num: 5, title: 'Set up tracking and integrations', desc: 'Install tracking code and connect key integrations.', time: '1-2 days' },
+      { num: 6, title: 'Build core workflows', desc: 'Create your priority nurture and lifecycle workflows.', time: '2-5 days' },
+      { num: 7, title: 'Configure reporting dashboards', desc: 'Set up your key marketing performance dashboards.', time: '1-2 days' },
+    ]
+  },
+  salesforce: {
+    name: 'Salesforce Marketing Cloud', time: 'Weeks to months', difficulty: 'hard',
+    trialUrl: 'https://www.salesforce.com/products/marketing-cloud', trialLabel: 'Contact Salesforce sales', affiliate: false,
+    staticPage: '/setup-salesforce.html',
+    steps: [
+      { num: 1, title: 'Engage Salesforce and a certified partner', desc: 'Work with Salesforce and a certified SFMC partner to scope your implementation.', time: '1-2 weeks' },
+      { num: 2, title: 'Configure business unit structure', desc: 'Set up business units, user roles, and permissions.', time: '1-3 days' },
+      { num: 3, title: 'Set up sender authentication', desc: 'Configure SAP with dedicated IPs, DKIM, and custom tracking domain.', time: '1-2 days' },
+      { num: 4, title: 'Build data extensions', desc: 'Design and create your data extensions (contact lists).', time: '2-5 days' },
+      { num: 5, title: 'Connect Salesforce CRM', desc: 'Configure Marketing Cloud Connect sync with Sales Cloud.', time: '1-3 days' },
+      { num: 6, title: 'Build journeys in Journey Builder', desc: 'Create your key customer journeys starting with welcome.', time: '3-10 days' },
+      { num: 7, title: 'Configure Automation Studio', desc: 'Set up data imports, SQL queries, and file transfers.', time: '2-5 days' },
+    ]
+  },
+  marketo: {
+    name: 'Adobe Marketo', time: 'Weeks to months', difficulty: 'hard',
+    trialUrl: 'https://business.adobe.com/products/marketo', trialLabel: 'Contact Marketo sales', affiliate: false,
+    staticPage: '/setup-marketo.html',
+    steps: [
+      { num: 1, title: 'Complete provisioning with Adobe', desc: 'Work with your Adobe team to provision and configure your instance.', time: '1-2 weeks' },
+      { num: 2, title: 'Configure instance settings', desc: 'Set up branding, email settings, workspaces, and partitions.', time: '1-2 days' },
+      { num: 3, title: 'Set up email deliverability', desc: 'Configure dedicated IPs with DKIM and follow IP warming schedule.', time: '1-3 days' },
+      { num: 4, title: 'Design your database structure', desc: 'Create custom fields and define your lead scoring model.', time: '2-3 days' },
+      { num: 5, title: 'Import your database', desc: 'Import contacts via CSV or configure CRM sync.', time: '1-2 days' },
+      { num: 6, title: 'Connect your CRM', desc: 'Configure the native Salesforce or Dynamics sync.', time: '1-3 days' },
+      { num: 7, title: 'Build your first programs', desc: 'Create your first nurture programs starting with welcome.', time: '3-7 days' },
+    ]
+  },
+  eloqua: {
+    name: 'Oracle Eloqua', time: 'Weeks to months', difficulty: 'hard',
+    trialUrl: 'https://www.oracle.com/cx/marketing/automation', trialLabel: 'Contact Oracle sales', affiliate: false,
+    staticPage: '/setup-eloqua.html',
+    steps: [
+      { num: 1, title: 'Engage Oracle and implementation partner', desc: 'Work with Oracle and a certified implementation partner to scope your project.', time: '1-2 weeks' },
+      { num: 2, title: 'Configure your instance', desc: 'Set up user roles, security groups, and instance settings.', time: '1-3 days' },
+      { num: 3, title: 'Set up email infrastructure', desc: 'Configure sending domains with DKIM and follow IP warming schedule.', time: '2-3 days' },
+      { num: 4, title: 'Design your contact model', desc: 'Define contact fields, account fields, and custom objects.', time: '2-5 days' },
+      { num: 5, title: 'Import and sync your data', desc: 'Import contacts via CSV or configure CRM sync.', time: '2-5 days' },
+      { num: 6, title: 'Build your first campaign canvas', desc: 'Use Campaign Canvas to build your first nurture campaign.', time: '3-7 days' },
+      { num: 7, title: 'Configure lead scoring', desc: 'Set up explicit and implicit scoring rules with your sales team.', time: '1-2 days' },
+    ]
+  },
+  pardot: {
+    name: 'Pardot (Salesforce)', time: '2-5 days', difficulty: 'hard',
+    trialUrl: 'https://www.salesforce.com/products/marketing-cloud/marketing-automation', trialLabel: 'Contact Salesforce sales', affiliate: false,
+    staticPage: '/setup-pardot.html',
+    steps: [
+      { num: 1, title: 'Configure Pardot with Salesforce', desc: 'Work with your Salesforce admin to connect Pardot and configure the sync.', time: '1-3 days' },
+      { num: 2, title: 'Set up email authentication', desc: 'Configure sending domains with DKIM and add tracker domains.', time: '15-30 min' },
+      { num: 3, title: 'Configure Pardot settings', desc: 'Set up company profile, email settings, and visitor filters.', time: '1-2 hours' },
+      { num: 4, title: 'Import your prospects', desc: 'Upload contacts as Pardot Prospects via CSV.', time: '1-2 hours' },
+      { num: 5, title: 'Build forms and landing pages', desc: 'Create Pardot forms for your key conversion points.', time: '1-2 hours' },
+      { num: 6, title: 'Set up lead scoring and grading', desc: 'Configure scoring rules aligned with your sales team.', time: '1-2 hours' },
+      { num: 7, title: 'Build your first engagement program', desc: 'Create your first nurture program in Engagement Studio.', time: '2-4 hours' },
+    ]
+  },
+  dynamics365: {
+    name: 'Microsoft Dynamics 365', time: '2-5 days', difficulty: 'hard',
+    trialUrl: 'https://dynamics.microsoft.com/en-us/marketing', trialLabel: 'Contact Microsoft sales', affiliate: false,
+    staticPage: '/setup-dynamics365.html',
+    steps: [
+      { num: 1, title: 'Provision your Dynamics 365 environment', desc: 'Work with Microsoft or a certified partner to provision the Marketing module.', time: '1-3 days' },
+      { num: 2, title: 'Configure email sending', desc: 'Set up sending domains with DKIM and follow IP warming schedule.', time: '1-2 days' },
+      { num: 3, title: 'Set up marketing segments', desc: 'Create dynamic and static segments for your audiences.', time: '1-2 hours' },
+      { num: 4, title: 'Configure lead scoring', desc: 'Define scoring rules aligned with your sales team.', time: '1-2 hours' },
+      { num: 5, title: 'Build marketing forms and pages', desc: 'Create forms for your key conversion points.', time: '2-4 hours' },
+      { num: 6, title: 'Create your first customer journey', desc: 'Build a welcome journey using the canvas builder.', time: '2-4 hours' },
+      { num: 7, title: 'Configure event management', desc: 'Set up webinar and event management if relevant.', time: '2-4 hours' },
+    ]
+  },
   omnisend: {
     name: 'Omnisend',
     time: '2-3 hours',
@@ -424,7 +658,12 @@ const TOOL_DATA = {
   omnisend:       { name: 'Omnisend',          exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },
   klaviyo:        { name: 'Klaviyo',           exportEasy: true,  automationComplex: 'high',   hasCRM: false, hasCustomFields: true },
   keap:           { name: 'Keap',              exportEasy: false, automationComplex: 'high',   hasCRM: true,  hasCustomFields: true },
-  nothing:        { name: 'Nothing (fresh start)', exportEasy: true, automationComplex: 'none', hasCRM: false, hasCustomFields: false }
+  nothing:        { name: 'Nothing (fresh start)', exportEasy: true, automationComplex: 'none', hasCRM: false, hasCustomFields: false },
+  aweber:          { name: 'AWeber',           exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: true },
+  campaignmonitor: { name: 'Campaign Monitor', exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: true },
+  constantcontact: { name: 'Constant Contact', exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: true },
+  flodesk:         { name: 'Flodesk',          exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: false },
+  zoho:            { name: 'Zoho Campaigns',   exportEasy: true,  automationComplex: 'medium', hasCRM: true,  hasCustomFields: true }
 };
 
 const DEST_DATA = {
@@ -438,7 +677,12 @@ const DEST_DATA = {
   brevo:          { name: 'Brevo',          importEasy: true,  learningCurve: 'low',    hasCRM: true,  trialUrl: 'https://www.brevo.com',                              trialLabel: 'Try Brevo free', affiliate: false, staticPage: '/setup-brevo.html' },
   omnisend:       { name: 'Omnisend',       importEasy: true,  learningCurve: 'medium', hasCRM: false, trialUrl: 'https://www.omnisend.com',                           trialLabel: 'Try Omnisend free', affiliate: false, staticPage: '/setup-omnisend.html' },
   klaviyo:        { name: 'Klaviyo',        importEasy: true,  learningCurve: 'medium', hasCRM: false, trialUrl: 'https://www.klaviyo.com',                            trialLabel: 'Try Klaviyo free', affiliate: false, staticPage: '/setup-klaviyo.html' },
-  keap:           { name: 'Keap',           importEasy: false, learningCurve: 'high',   hasCRM: true,  trialUrl: 'https://www.keap.com',                               trialLabel: 'Try Keap free', affiliate: false, staticPage: null }
+  keap:            { name: 'Keap',            importEasy: false, learningCurve: 'high',   hasCRM: true,  trialUrl: 'https://www.keap.com',                        trialLabel: 'Try Keap free',           affiliate: false, staticPage: null },
+  aweber:          { name: 'AWeber',          importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://www.aweber.com',                       trialLabel: 'Try AWeber free',         affiliate: false, staticPage: '/setup-aweber.html' },
+  campaignmonitor: { name: 'Campaign Monitor',importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://www.campaignmonitor.com',               trialLabel: 'Try Campaign Monitor',    affiliate: false, staticPage: '/setup-campaignmonitor.html' },
+  constantcontact: { name: 'Constant Contact',importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://www.constantcontact.com',               trialLabel: 'Try Constant Contact free',affiliate: false, staticPage: '/setup-constantcontact.html' },
+  flodesk:         { name: 'Flodesk',         importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://www.flodesk.com',                       trialLabel: 'Try Flodesk free',        affiliate: false, staticPage: '/setup-flodesk.html' },
+  zoho:            { name: 'Zoho Campaigns',  importEasy: true,  learningCurve: 'medium', hasCRM: true,  trialUrl: 'https://www.zoho.com/campaigns',                trialLabel: 'Try Zoho Campaigns free', affiliate: false, staticPage: '/setup-zoho.html' }
 };
 
 // Migration article links
@@ -452,8 +696,36 @@ const MIGRATION_ARTICLES = {
   'mailchimp|kit':            '/migration-mailchimp-to-kit.html',
   'activecampaign|hubspot':   '/migration-activecampaign-to-hubspot.html',
   'hubspot|activecampaign':   '/migration-hubspot-to-activecampaign.html',
-  'keap|activecampaign':      '/migration-keap-to-activecampaign.html',
-  'klaviyo|omnisend':         '/migration-klaviyo-to-omnisend.html',
+  'keap|activecampaign':         '/migration-keap-to-activecampaign.html',
+  'klaviyo|omnisend':            '/migration-klaviyo-to-omnisend.html',
+  'mailchimp|aweber':            '/migration-mailchimp-to-aweber.html',
+  'mailchimp|constantcontact':   '/migration-mailchimp-to-constantcontact.html',
+  'mailchimp|flodesk':           '/migration-mailchimp-to-flodesk.html',
+  'mailchimp|klaviyo':           '/migration-mailchimp-to-klaviyo.html',
+  'mailchimp|omnisend':          '/migration-mailchimp-to-omnisend.html',
+  'mailchimp|zoho':              '/migration-mailchimp-to-zoho.html',
+  'activecampaign|brevo':        '/migration-activecampaign-to-brevo.html',
+  'activecampaign|mailerlite':   '/migration-activecampaign-to-mailerlite.html',
+  'activecampaign|moosend':      '/migration-activecampaign-to-moosend.html',
+  'activecampaign|getresponse':  '/migration-activecampaign-to-getresponse.html',
+  'hubspot|brevo':               '/migration-hubspot-to-brevo.html',
+  'hubspot|mailerlite':          '/migration-hubspot-to-mailerlite.html',
+  'hubspot|moosend':             '/migration-hubspot-to-moosend.html',
+  'klaviyo|mailchimp':           '/migration-klaviyo-to-mailchimp.html',
+  'klaviyo|activecampaign':      '/migration-klaviyo-to-activecampaign.html',
+  'brevo|activecampaign':        '/migration-brevo-to-activecampaign.html',
+  'brevo|mailerlite':            '/migration-brevo-to-mailerlite.html',
+  'brevo|mailchimp':             '/migration-brevo-to-mailchimp.html',
+  'mailerlite|activecampaign':   '/migration-mailerlite-to-activecampaign.html',
+  'mailerlite|mailchimp':        '/migration-mailerlite-to-mailchimp.html',
+  'mailerlite|moosend':          '/migration-mailerlite-to-moosend.html',
+  'getresponse|activecampaign':  '/migration-getresponse-to-activecampaign.html',
+  'getresponse|mailerlite':      '/migration-getresponse-to-mailerlite.html',
+  'getresponse|mailchimp':       '/migration-getresponse-to-mailchimp.html',
+  'constantcontact|mailerlite':  '/migration-constantcontact-to-mailerlite.html',
+  'constantcontact|activecampaign': '/migration-constantcontact-to-activecampaign.html',
+  'constantcontact|mailchimp':   '/migration-constantcontact-to-mailchimp.html',
+  'keap|hubspot':                '/migration-keap-to-hubspot.html',
 };
 
 function buildSetup() {
