@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Setup and Migration Guides | Marketing Automation Buyer's Guide</title>
-<meta name="description" content="Step-by-step setup and migration guides for every major marketing automation platform. Get started or switch tools with confidence.">
+<meta name="description" content="Step-by-step setup and migration guides for every major marketing automation platform. Get started or migrate to a new tool with confidence.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
 <meta property="og:url" content="https://www.marketingautomationbuyersguide.com/guides.html">
@@ -120,12 +120,12 @@
 
     <div class="setup-hero wrap-narrow">
       <h1>Setup and Migration Guides</h1>
-      <p class="hero-sub">Step-by-step guides for setting up or switching to a new marketing automation tool.</p>
+      <p class="hero-sub">Step-by-step guides for setting up or migrating to a new marketing automation tool.</p>
     </div>
 
     <div class="guide-toggle">
       <button class="toggle-btn active" id="btn-setup" onclick="switchMode('setup')">Setting up a new tool</button>
-      <button class="toggle-btn" id="btn-migration" onclick="switchMode('migration')">Switching from another tool</button>
+      <button class="toggle-btn" id="btn-migration" onclick="switchMode('migration')">Migrating from another tool</button>
     </div>
 
     <div class="estimator">
@@ -578,7 +578,7 @@ function buildEstimate() {
         ${from.hasCRM && !to.hasCRM ? '<div class="estimate-item"><div class="estimate-dot dot-no"></div><div>CRM data cannot transfer (no CRM in ' + to.name + ')</div></div>' : ''}
       </div>
     </div>
-    ${losses.length > 0 ? `<div class="estimate-what-you-lose"><div class="estimate-what-you-lose-title">Worth knowing before you switch</div>${losses.map(l => '<p>' + l + '</p>').join('')}</div>` : ''}
+    ${losses.length > 0 ? `<div class="estimate-what-you-lose"><div class="estimate-what-you-lose-title">Worth knowing before you migrate</div>${losses.map(l => '<p>' + l + '</p>').join('')}</div>` : ''}
     <div class="estimate-steps">
       <div class="estimate-steps-title">Step-by-step checklist</div>
       ${steps.map(s => `<div class="step-row"><div class="step-num">${s.num}</div><div class="step-content"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div><div class="step-time">${s.time}</div></div></div>`).join('')}
