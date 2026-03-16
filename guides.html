@@ -3,29 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guides - Setup and Migration | Marketing Automation Buyer's Guide</title>
-<meta name="description" content="Find out exactly what setting up or switching to a new marketing automation tool involves. Pick your destination platform for a step-by-step effort estimate.">
+<title>Setup and Migration Guides | Marketing Automation Buyer's Guide</title>
+<meta name="description" content="Step-by-step setup and migration guides for every major marketing automation platform. Get started or switch tools with confidence.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="Guides">
-<meta property="og:description" content="Pick your destination tool and find out exactly what setup or migration will involve.">
+<meta property="og:url" content="https://www.marketingautomationbuyersguide.com/guides.html">
+<meta property="og:title" content="Setup and Migration Guides">
+<meta property="og:description" content="Step-by-step setup and migration guides for every major marketing automation platform.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Setup and Migration Guides">
+<meta name="twitter:description" content="Step-by-step setup and migration guides for every major marketing automation platform.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-
 .setup-hero { text-align: center; margin-bottom: 48px; }
 .setup-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
 .setup-hero h1 em { font-style: italic; color: var(--accent); }
 .setup-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 460px; margin: 0 auto; }
 
+/* ── TOGGLE ── */
+.guide-toggle { display: flex; gap: 1px; background: var(--rule); border: 1px solid var(--rule); max-width: 380px; margin: 0 auto 40px; }
+.toggle-btn { flex: 1; padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 400; background: white; border: none; cursor: pointer; color: var(--muted); transition: all 0.15s; }
+.toggle-btn.active { background: var(--ink); color: white; font-weight: 500; }
+.toggle-btn:hover:not(.active) { background: #f8f8f6; color: var(--ink); }
+
 /* ── ESTIMATOR ── */
 .estimator { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 48px; }
 .estimator-inner { max-width: 640px; margin: 0 auto; }
-.estimator-title { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; }
-.estimator-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .estimator-pickers { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; margin-bottom: 20px; }
+.estimator-pickers.single { grid-template-columns: 1fr; max-width: 320px; }
 .picker-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 .tool-select { width: 100%; padding: 12px 14px; border: 1px solid var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; cursor: pointer; }
 .tool-select:focus { outline: none; border-color: var(--ink); }
@@ -65,11 +73,13 @@
 .step-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
 .step-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
 .step-time { font-size: 11px; color: var(--muted); margin-top: 4px; font-style: italic; }
-.estimate-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.estimate-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .estimate-cta-primary { padding: 10px 20px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
 .estimate-cta-primary:hover { opacity: 0.85; }
 .estimate-cta-secondary { padding: 10px 20px; border: 1px solid var(--rule); color: var(--muted); font-size: 13px; transition: all 0.15s; text-decoration: none; }
 .estimate-cta-secondary:hover { border-color: var(--ink); color: var(--ink); }
+.full-guide-link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500; }
+.full-guide-link:hover { text-decoration: underline; }
 
 @media (max-width: 600px) {
   .estimator-pickers { grid-template-columns: 1fr; }
@@ -109,52 +119,86 @@
   <div class="wrap">
 
     <div class="setup-hero wrap-narrow">
-      <h1>Guides</h1>
-      <p class="hero-sub">Step-by-step setup and migration guides for every major tool.</p>
+      <h1>Setup and Migration Guides</h1>
+      <p class="hero-sub">Step-by-step guides for setting up or switching to a new marketing automation tool.</p>
+    </div>
+
+    <div class="guide-toggle">
+      <button class="toggle-btn active" id="btn-setup" onclick="switchMode('setup')">Setting up a new tool</button>
+      <button class="toggle-btn" id="btn-migration" onclick="switchMode('migration')">Switching from another tool</button>
     </div>
 
     <div class="estimator">
       <div class="estimator-inner">
-        <div class="estimator-pickers">
-          <div>
-            <div class="picker-label">I'm currently using</div>
-            <select class="tool-select" id="from-tool">
-              <option value="">Select your current tool...</option>
-              <option value="nothing">Nothing yet (starting fresh)</option>
-              <option value="activecampaign">ActiveCampaign</option>
-              <option value="brevo">Brevo</option>
-              <option value="kit">ConvertKit / Kit</option>
-              <option value="getresponse">GetResponse</option>
-              <option value="hubspot">HubSpot</option>
-              <option value="keap">Keap</option>
-              <option value="klaviyo">Klaviyo</option>
-              <option value="mailchimp">Mailchimp</option>
-              <option value="mailerlite">MailerLite</option>
-              <option value="moosend">Moosend</option>
-              <option value="omnisend">Omnisend</option>
-            </select>
+
+        <!-- SETUP MODE -->
+        <div id="setup-pickers">
+          <div class="estimator-pickers single">
+            <div>
+              <div class="picker-label">Which tool are you setting up?</div>
+              <select class="tool-select" id="setup-tool">
+                <option value="">Select a tool...</option>
+                <option value="activecampaign">ActiveCampaign</option>
+                <option value="brevo">Brevo</option>
+                <option value="getresponse">GetResponse</option>
+                <option value="hubspot">HubSpot</option>
+                <option value="kit">ConvertKit / Kit</option>
+                <option value="klaviyo">Klaviyo</option>
+                <option value="mailchimp">Mailchimp</option>
+                <option value="mailerlite">MailerLite</option>
+                <option value="moosend">Moosend</option>
+                <option value="omnisend">Omnisend</option>
+              </select>
+            </div>
           </div>
-          <div class="arrow-divider">→</div>
-          <div>
-            <div class="picker-label">I want to move to</div>
-            <select class="tool-select" id="to-tool">
-              <option value="">Select your destination tool...</option>
-              <option value="activecampaign">ActiveCampaign</option>
-              <option value="brevo">Brevo</option>
-              <option value="kit">ConvertKit / Kit</option>
-              <option value="getresponse">GetResponse</option>
-              <option value="hubspot">HubSpot</option>
-              <option value="keap">Keap</option>
-              <option value="klaviyo">Klaviyo</option>
-              <option value="mailchimp">Mailchimp</option>
-              <option value="mailerlite">MailerLite</option>
-              <option value="moosend">Moosend</option>
-              <option value="omnisend">Omnisend</option>
-            </select>
-          </div>
+          <button class="estimate-btn" onclick="buildSetup()">Show me →</button>
+          <div class="estimate-result" id="setup-result"></div>
         </div>
-        <button class="estimate-btn" onclick="buildEstimate()">Go →</button>
-        <div class="estimate-result" id="estimate-result"></div>
+
+        <!-- MIGRATION MODE -->
+        <div id="migration-pickers" style="display:none;">
+          <div class="estimator-pickers">
+            <div>
+              <div class="picker-label">I'm currently using</div>
+              <select class="tool-select" id="from-tool">
+                <option value="">Select your current tool...</option>
+                <option value="nothing">Nothing yet (starting fresh)</option>
+                <option value="activecampaign">ActiveCampaign</option>
+                <option value="brevo">Brevo</option>
+                <option value="kit">ConvertKit / Kit</option>
+                <option value="getresponse">GetResponse</option>
+                <option value="hubspot">HubSpot</option>
+                <option value="keap">Keap</option>
+                <option value="klaviyo">Klaviyo</option>
+                <option value="mailchimp">Mailchimp</option>
+                <option value="mailerlite">MailerLite</option>
+                <option value="moosend">Moosend</option>
+                <option value="omnisend">Omnisend</option>
+              </select>
+            </div>
+            <div class="arrow-divider">→</div>
+            <div>
+              <div class="picker-label">I want to move to</div>
+              <select class="tool-select" id="to-tool">
+                <option value="">Select your destination tool...</option>
+                <option value="activecampaign">ActiveCampaign</option>
+                <option value="brevo">Brevo</option>
+                <option value="kit">ConvertKit / Kit</option>
+                <option value="getresponse">GetResponse</option>
+                <option value="hubspot">HubSpot</option>
+                <option value="keap">Keap</option>
+                <option value="klaviyo">Klaviyo</option>
+                <option value="mailchimp">Mailchimp</option>
+                <option value="mailerlite">MailerLite</option>
+                <option value="moosend">Moosend</option>
+                <option value="omnisend">Omnisend</option>
+              </select>
+            </div>
+          </div>
+          <button class="estimate-btn" onclick="buildEstimate()">Show me →</button>
+          <div class="estimate-result" id="estimate-result"></div>
+        </div>
+
       </div>
     </div>
 
@@ -163,17 +207,7 @@
   <div class="wrap-narrow" style="text-align:center; padding: 16px 24px 8px;">
     <p style="font-size:14px; color:var(--muted);"><a href="/articles.html?type=migration" style="color:var(--accent);">Browse all setup and migration guides →</a></p>
   </div>
-  
-  <div class="wrap-narrow" style="margin-top: 16px; padding-bottom: 0;">
-    <div class="useful-links">
-      <div class="useful-links-title">Useful next steps</div>
-      <div class="link-row"><span class="link-label">Compare two tools side by side</span><a class="link-url" href="/comparisons.html">View →</a></div>
-      <div class="link-row"><span class="link-label">Get a personalized tool recommendation</span><a class="link-url" href="/quiz.html">View →</a></div>
-      <div class="link-row"><span class="link-label">Browse all tool reviews</span><a class="link-url" href="/all-tools.html">View →</a></div>
-      <div class="link-row"><span class="link-label">Compare pricing across all tools</span><a class="link-url" href="/pricing.html">View →</a></div>
-    </div>
-  </div>
-<footer class="site-footer">
+  <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
@@ -191,34 +225,267 @@
 </footer>
 
 <script>
+function switchMode(mode) {
+  document.getElementById('setup-pickers').style.display = mode === 'setup' ? 'block' : 'none';
+  document.getElementById('migration-pickers').style.display = mode === 'migration' ? 'block' : 'none';
+  document.getElementById('btn-setup').classList.toggle('active', mode === 'setup');
+  document.getElementById('btn-migration').classList.toggle('active', mode === 'migration');
+  document.getElementById('setup-result').classList.remove('visible');
+  document.getElementById('estimate-result').classList.remove('visible');
+}
+
+const SETUP_DATA = {
+  activecampaign: {
+    name: 'ActiveCampaign',
+    time: '2-3 hours',
+    difficulty: 'moderate',
+    trialUrl: 'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt',
+    trialLabel: 'Try ActiveCampaign free',
+    affiliate: true,
+    staticPage: '/setup-activecampaign.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Start your 14-day free trial at activecampaign.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM and DMARC records in your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Set up your CRM', desc: 'Configure pipeline stages, custom fields, and lead scoring.', time: '15-30 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your CSV and map fields to lists and tags.', time: '15-45 min' },
+      { num: 5, title: 'Set up your signup form', desc: 'Create and embed a form on your website.', time: '15-30 min' },
+      { num: 6, title: 'Build your first automation', desc: 'Start with a welcome series using the automation builder.', time: '45-90 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Test and send your first email campaign.', time: '30-45 min' },
+    ]
+  },
+  brevo: {
+    name: 'Brevo',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.brevo.com',
+    trialLabel: 'Try Brevo free',
+    affiliate: false,
+    staticPage: '/setup-brevo.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up for a free account at brevo.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records in your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Import your contacts', desc: 'Upload your CSV and create contact lists.', time: '15-30 min' },
+      { num: 4, title: 'Set up your signup form', desc: 'Create and embed a subscription form.', time: '15-20 min' },
+      { num: 5, title: 'Build your first automation', desc: 'Create a welcome automation using the workflow builder.', time: '20-40 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Build and send your first email campaign.', time: '20-30 min' },
+    ]
+  },
+  getresponse: {
+    name: 'GetResponse',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.getresponse.com',
+    trialLabel: 'Try GetResponse free',
+    affiliate: false,
+    staticPage: '/setup-getresponse.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up for a free account at getresponse.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS.', time: '15-30 min' },
+      { num: 3, title: 'Import your contacts', desc: 'Upload your list and set up contact lists.', time: '15-30 min' },
+      { num: 4, title: 'Set up your signup form', desc: 'Create a form and embed it on your site.', time: '15-20 min' },
+      { num: 5, title: 'Create your first automation', desc: 'Build a welcome sequence in the automation builder.', time: '20-40 min' },
+      { num: 6, title: 'Send your first newsletter', desc: 'Create and send your first email.', time: '20-30 min' },
+    ]
+  },
+  hubspot: {
+    name: 'HubSpot',
+    time: '2-4 hours',
+    difficulty: 'moderate',
+    trialUrl: 'https://www.hubspot.com',
+    trialLabel: 'Try HubSpot free',
+    affiliate: false,
+    staticPage: '/setup-hubspot.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up for a free HubSpot account at hubspot.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Connect your domain and set up DKIM in Email settings.', time: '15-30 min' },
+      { num: 3, title: 'Set up your CRM', desc: 'Configure contact properties, deal stages, and pipelines.', time: '30-60 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your CSV and map to HubSpot contact properties.', time: '15-45 min' },
+      { num: 5, title: 'Create signup forms', desc: 'Build forms and connect them to your website.', time: '15-30 min' },
+      { num: 6, title: 'Set up a workflow', desc: 'Create your first email workflow using the automation tool.', time: '30-60 min' },
+      { num: 7, title: 'Send your first email', desc: 'Create and send a marketing email from the Email tool.', time: '20-30 min' },
+    ]
+  },
+  kit: {
+    name: 'ConvertKit / Kit',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://kit.com',
+    trialLabel: 'Try Kit free',
+    affiliate: false,
+    staticPage: '/setup-kit.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at kit.com — free plan available.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to verify your domain.', time: '15-20 min' },
+      { num: 3, title: 'Import your subscribers', desc: 'Upload your list and apply tags.', time: '10-20 min' },
+      { num: 4, title: 'Create a form or landing page', desc: 'Build a signup form or landing page to grow your list.', time: '15-30 min' },
+      { num: 5, title: 'Set up a welcome sequence', desc: 'Create an automated email sequence for new subscribers.', time: '20-40 min' },
+      { num: 6, title: 'Send your first broadcast', desc: 'Write and send your first email to your list.', time: '15-20 min' },
+    ]
+  },
+  klaviyo: {
+    name: 'Klaviyo',
+    time: '2-3 hours',
+    difficulty: 'moderate',
+    trialUrl: 'https://www.klaviyo.com',
+    trialLabel: 'Try Klaviyo free',
+    affiliate: false,
+    staticPage: '/setup-klaviyo.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at klaviyo.com — free up to 250 contacts.', time: '5-10 min' },
+      { num: 2, title: 'Connect your store', desc: 'Integrate Shopify, WooCommerce, or your e-commerce platform.', time: '15-30 min' },
+      { num: 3, title: 'Authenticate your sending domain', desc: 'Set up DKIM and configure your sending domain.', time: '15-20 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your list or sync from your connected store.', time: '10-20 min' },
+      { num: 5, title: 'Set up core flows', desc: 'Build welcome, abandoned cart, and post-purchase flows.', time: '60-90 min' },
+      { num: 6, title: 'Create signup forms', desc: 'Build popups and embedded forms for your store.', time: '20-30 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '20-30 min' },
+    ]
+  },
+  mailchimp: {
+    name: 'Mailchimp',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.mailchimp.com',
+    trialLabel: 'Try Mailchimp free',
+    affiliate: false,
+    staticPage: '/setup-mailchimp.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at mailchimp.com — free plan available.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Verify your domain by adding DNS records.', time: '15-20 min' },
+      { num: 3, title: 'Create an audience', desc: 'Set up your main contact list (called an Audience in Mailchimp).', time: '5-10 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your CSV to your Audience.', time: '10-20 min' },
+      { num: 5, title: 'Set up a signup form', desc: 'Customize your Mailchimp hosted form or embed one on your site.', time: '10-20 min' },
+      { num: 6, title: 'Create a welcome automation', desc: 'Set up a welcome email triggered when someone subscribes.', time: '20-30 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '20-30 min' },
+    ]
+  },
+  mailerlite: {
+    name: 'MailerLite',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.mailerlite.com',
+    trialLabel: 'Try MailerLite free',
+    affiliate: false,
+    staticPage: '/setup-mailerlite.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at mailerlite.com — free up to 1,000 subscribers.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to verify your domain.', time: '15-20 min' },
+      { num: 3, title: 'Import your subscribers', desc: 'Upload your CSV and create groups.', time: '10-20 min' },
+      { num: 4, title: 'Create a signup form', desc: 'Build an embedded or popup form for your website.', time: '10-15 min' },
+      { num: 5, title: 'Build a welcome automation', desc: 'Create an automated welcome sequence.', time: '20-30 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Create and send your first email.', time: '15-20 min' },
+    ]
+  },
+  moosend: {
+    name: 'Moosend',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://trymoo.moosend.com/4e0kl2a449hd',
+    trialLabel: 'Try Moosend free',
+    affiliate: true,
+    staticPage: '/setup-moosend.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Start your 30-day free trial at moosend.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Create a mailing list', desc: 'Set up your first list and configure list settings.', time: '5-10 min' },
+      { num: 4, title: 'Set up your signup form', desc: 'Create and embed a form on your website.', time: '15-30 min' },
+      { num: 5, title: 'Create your first automation', desc: 'Build a welcome automation using the recipe builder.', time: '30-60 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Create and send your first email campaign.', time: '30-45 min' },
+    ]
+  },
+  omnisend: {
+    name: 'Omnisend',
+    time: '2-3 hours',
+    difficulty: 'moderate',
+    trialUrl: 'https://www.omnisend.com',
+    trialLabel: 'Try Omnisend free',
+    affiliate: false,
+    staticPage: '/setup-omnisend.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at omnisend.com — free plan available.', time: '5-10 min' },
+      { num: 2, title: 'Connect your store', desc: 'Integrate Shopify, WooCommerce, or BigCommerce.', time: '10-20 min' },
+      { num: 3, title: 'Authenticate your sending domain', desc: 'Set up DKIM to verify your sending domain.', time: '15-20 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your list or sync from your connected store.', time: '10-20 min' },
+      { num: 5, title: 'Set up core automations', desc: 'Build welcome, abandoned cart, and order confirmation automations.', time: '45-75 min' },
+      { num: 6, title: 'Create signup forms', desc: 'Build popups and embedded forms.', time: '15-20 min' },
+      { num: 7, title: 'Send your first campaign', desc: 'Create and send your first email or SMS campaign.', time: '20-30 min' },
+    ]
+  }
+};
+
 const TOOL_DATA = {
-  mailchimp:      { name: "Mailchimp",        exportEasy: true,  automationComplex: "low",    hasCRM: false, hasCustomFields: true },
-  activecampaign: { name: "ActiveCampaign",   exportEasy: true,  automationComplex: "high",   hasCRM: true,  hasCustomFields: true },
-  mailerlite:     { name: "MailerLite",        exportEasy: true,  automationComplex: "low",    hasCRM: false, hasCustomFields: true },
-  moosend:        { name: "Moosend",           exportEasy: true,  automationComplex: "medium", hasCRM: false, hasCustomFields: true },
-  getresponse:    { name: "GetResponse",       exportEasy: true,  automationComplex: "medium", hasCRM: false, hasCustomFields: true },
-  kit:            { name: "ConvertKit / Kit",  exportEasy: true,  automationComplex: "low",    hasCRM: false, hasCustomFields: false },
-  hubspot:        { name: "HubSpot",           exportEasy: true,  automationComplex: "high",   hasCRM: true,  hasCustomFields: true },
-  brevo:          { name: "Brevo",             exportEasy: true,  automationComplex: "medium", hasCRM: true,  hasCustomFields: true },
-  omnisend:       { name: "Omnisend",          exportEasy: true,  automationComplex: "medium", hasCRM: false, hasCustomFields: true },
-  klaviyo:        { name: "Klaviyo",           exportEasy: true,  automationComplex: "high",   hasCRM: false, hasCustomFields: true },
-  keap:           { name: "Keap",              exportEasy: false, automationComplex: "high",   hasCRM: true,  hasCustomFields: true },
-  nothing:        { name: "Nothing (fresh start)", exportEasy: true, automationComplex: "none", hasCRM: false, hasCustomFields: false }
+  mailchimp:      { name: 'Mailchimp',        exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: true },
+  activecampaign: { name: 'ActiveCampaign',   exportEasy: true,  automationComplex: 'high',   hasCRM: true,  hasCustomFields: true },
+  mailerlite:     { name: 'MailerLite',        exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: true },
+  moosend:        { name: 'Moosend',           exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },
+  getresponse:    { name: 'GetResponse',       exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },
+  kit:            { name: 'ConvertKit / Kit',  exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: false },
+  hubspot:        { name: 'HubSpot',           exportEasy: true,  automationComplex: 'high',   hasCRM: true,  hasCustomFields: true },
+  brevo:          { name: 'Brevo',             exportEasy: true,  automationComplex: 'medium', hasCRM: true,  hasCustomFields: true },
+  omnisend:       { name: 'Omnisend',          exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },
+  klaviyo:        { name: 'Klaviyo',           exportEasy: true,  automationComplex: 'high',   hasCRM: false, hasCustomFields: true },
+  keap:           { name: 'Keap',              exportEasy: false, automationComplex: 'high',   hasCRM: true,  hasCustomFields: true },
+  nothing:        { name: 'Nothing (fresh start)', exportEasy: true, automationComplex: 'none', hasCRM: false, hasCustomFields: false }
 };
 
 const DEST_DATA = {
-  moosend:        { name: "Moosend",        importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://trymoo.moosend.com/4e0kl2a449hd",           trialLabel: "Try Moosend free", affiliate: true  },
-  activecampaign: { name: "ActiveCampaign", importEasy: true,  learningCurve: "high",   hasCRM: true,  trialUrl: "https://try.activecampaign.com/d1eqanrpv66o-rvs4jt", trialLabel: "Try ActiveCampaign free", affiliate: true  },
-  mailerlite:     { name: "MailerLite",     importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://www.mailerlite.com",                         trialLabel: "Try MailerLite free", affiliate: false },
-  mailchimp:      { name: "Mailchimp",      importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://www.mailchimp.com",                          trialLabel: "Try Mailchimp free", affiliate: false },
-  getresponse:    { name: "GetResponse",    importEasy: true,  learningCurve: "medium", hasCRM: false, trialUrl: "https://www.getresponse.com",                        trialLabel: "Try GetResponse free", affiliate: false },
-  kit:            { name: "Kit",            importEasy: true,  learningCurve: "low",    hasCRM: false, trialUrl: "https://kit.com",                                    trialLabel: "Try Kit free", affiliate: false },
-  hubspot:        { name: "HubSpot",        importEasy: true,  learningCurve: "medium", hasCRM: true,  trialUrl: "https://www.hubspot.com",                            trialLabel: "Try HubSpot free", affiliate: false },
-  brevo:          { name: "Brevo",          importEasy: true,  learningCurve: "low",    hasCRM: true,  trialUrl: "https://www.brevo.com",                              trialLabel: "Try Brevo free", affiliate: false },
-  omnisend:       { name: "Omnisend",       importEasy: true,  learningCurve: "medium", hasCRM: false, trialUrl: "https://www.omnisend.com",                           trialLabel: "Try Omnisend free", affiliate: false },
-  klaviyo:        { name: "Klaviyo",        importEasy: true,  learningCurve: "medium", hasCRM: false, trialUrl: "https://www.klaviyo.com",                            trialLabel: "Try Klaviyo free", affiliate: false },
-  keap:           { name: "Keap",           importEasy: false, learningCurve: "high",   hasCRM: true,  trialUrl: "https://www.keap.com",                               trialLabel: "Try Keap free", affiliate: false }
+  moosend:        { name: 'Moosend',        importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://trymoo.moosend.com/4e0kl2a449hd',           trialLabel: 'Try Moosend free', affiliate: true,  staticPage: '/setup-moosend.html' },
+  activecampaign: { name: 'ActiveCampaign', importEasy: true,  learningCurve: 'high',   hasCRM: true,  trialUrl: 'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt', trialLabel: 'Try ActiveCampaign free', affiliate: true,  staticPage: '/setup-activecampaign.html' },
+  mailerlite:     { name: 'MailerLite',     importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://www.mailerlite.com',                         trialLabel: 'Try MailerLite free', affiliate: false, staticPage: '/setup-mailerlite.html' },
+  mailchimp:      { name: 'Mailchimp',      importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://www.mailchimp.com',                          trialLabel: 'Try Mailchimp free', affiliate: false, staticPage: '/setup-mailchimp.html' },
+  getresponse:    { name: 'GetResponse',    importEasy: true,  learningCurve: 'medium', hasCRM: false, trialUrl: 'https://www.getresponse.com',                        trialLabel: 'Try GetResponse free', affiliate: false, staticPage: '/setup-getresponse.html' },
+  kit:            { name: 'Kit',            importEasy: true,  learningCurve: 'low',    hasCRM: false, trialUrl: 'https://kit.com',                                    trialLabel: 'Try Kit free', affiliate: false, staticPage: '/setup-kit.html' },
+  hubspot:        { name: 'HubSpot',        importEasy: true,  learningCurve: 'medium', hasCRM: true,  trialUrl: 'https://www.hubspot.com',                            trialLabel: 'Try HubSpot free', affiliate: false, staticPage: '/setup-hubspot.html' },
+  brevo:          { name: 'Brevo',          importEasy: true,  learningCurve: 'low',    hasCRM: true,  trialUrl: 'https://www.brevo.com',                              trialLabel: 'Try Brevo free', affiliate: false, staticPage: '/setup-brevo.html' },
+  omnisend:       { name: 'Omnisend',       importEasy: true,  learningCurve: 'medium', hasCRM: false, trialUrl: 'https://www.omnisend.com',                           trialLabel: 'Try Omnisend free', affiliate: false, staticPage: '/setup-omnisend.html' },
+  klaviyo:        { name: 'Klaviyo',        importEasy: true,  learningCurve: 'medium', hasCRM: false, trialUrl: 'https://www.klaviyo.com',                            trialLabel: 'Try Klaviyo free', affiliate: false, staticPage: '/setup-klaviyo.html' },
+  keap:           { name: 'Keap',           importEasy: false, learningCurve: 'high',   hasCRM: true,  trialUrl: 'https://www.keap.com',                               trialLabel: 'Try Keap free', affiliate: false, staticPage: null }
 };
+
+// Migration article links
+const MIGRATION_ARTICLES = {
+  'mailchimp|activecampaign': '/migration-mailchimp-to-activecampaign.html',
+  'mailchimp|moosend':        '/migration-mailchimp-to-moosend.html',
+  'mailchimp|mailerlite':     '/migration-mailchimp-to-mailerlite.html',
+  'mailchimp|hubspot':        '/migration-mailchimp-to-hubspot.html',
+  'mailchimp|brevo':          '/migration-mailchimp-to-brevo.html',
+  'mailchimp|getresponse':    '/migration-mailchimp-to-getresponse.html',
+  'mailchimp|kit':            '/migration-mailchimp-to-kit.html',
+  'activecampaign|hubspot':   '/migration-activecampaign-to-hubspot.html',
+  'hubspot|activecampaign':   '/migration-hubspot-to-activecampaign.html',
+  'keap|activecampaign':      '/migration-keap-to-activecampaign.html',
+  'klaviyo|omnisend':         '/migration-klaviyo-to-omnisend.html',
+};
+
+function buildSetup() {
+  const key = document.getElementById('setup-tool').value;
+  if (!key) { alert('Please select a tool.'); return; }
+  const tool = SETUP_DATA[key];
+  if (!tool) { alert('No setup guide available for this tool yet.'); return; }
+
+  const diffLabel = tool.difficulty.charAt(0).toUpperCase() + tool.difficulty.slice(1);
+
+  let html = `
+    <div class="estimate-headline">
+      <span class="estimate-route">Setting up ${tool.name}</span>
+      <span class="difficulty-badge ${tool.difficulty}">${diffLabel}</span>
+      <span class="estimate-time">Estimated time: <span>${tool.time}</span></span>
+    </div>
+    <div class="estimate-steps">
+      <div class="estimate-steps-title">Step-by-step checklist</div>
+      ${tool.steps.map(s => `<div class="step-row"><div class="step-num">${s.num}</div><div class="step-content"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div><div class="step-time">${s.time}</div></div></div>`).join('')}
+    </div>
+    <div class="estimate-cta">
+      <a class="estimate-cta-primary" href="${tool.trialUrl}" target="_blank">${tool.trialLabel} →</a>
+      ${tool.staticPage ? `<a class="estimate-cta-secondary" href="${tool.staticPage}">Read the full setup guide →</a>` : ''}
+    </div>
+    ${tool.affiliate ? '<p style="font-size:10px;color:var(--muted);font-style:italic;margin-top:8px;">affiliate link</p>' : ''}
+  `;
+
+  const result = document.getElementById('setup-result');
+  result.innerHTML = html;
+  result.classList.add('visible');
+  result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 function getDifficulty(from, to) {
   if (from.key === 'nothing') return 'easy';
@@ -253,6 +520,8 @@ function buildEstimate() {
   const difficulty = getDifficulty(from, to);
   const time = getTime(from, to);
   const isFromNothing = fromKey === 'nothing';
+  const articleKey = fromKey + '|' + toKey;
+  const migrationArticle = MIGRATION_ARTICLES[articleKey] || null;
 
   const losses = [];
   if (!isFromNothing) {
@@ -275,7 +544,7 @@ function buildEstimate() {
 
   const n = isFromNothing ? 1 : steps.length + 1;
   steps.push({ num: n, title: 'Set up your ' + to.name + ' account', desc: 'Start your free trial and complete account setup including sender authentication and domain verification.', time: '30-60 min' });
-  steps.push({ num: n+1, title: isFromNothing ? 'Import your contacts' : 'Import your contacts', desc: isFromNothing ? 'Upload your existing list if you have one, or set up your signup forms to start collecting.' : 'Upload your CSV into ' + to.name + '. Map your custom fields carefully and review the import report.', time: '30-60 min' });
+  steps.push({ num: n+1, title: 'Import your contacts', desc: isFromNothing ? 'Upload your existing list if you have one, or set up your signup forms to start collecting.' : 'Upload your CSV into ' + to.name + '. Map your custom fields carefully and review the import report.', time: '30-60 min' });
   if (!isFromNothing && from.automationComplex !== 'none') {
     steps.push({ num: n+2, title: 'Rebuild your automations', desc: 'Recreate your workflows in ' + to.name + '. Start with the highest-priority ones first.', time: difficulty === 'hard' ? '4-8 hours' : '1-3 hours' });
   }
@@ -316,7 +585,8 @@ function buildEstimate() {
     </div>
     <div class="estimate-cta">
       <a class="estimate-cta-primary" href="${to.trialUrl}" target="_blank">${to.trialLabel} →</a>
-      ${from.key !== 'nothing' ? `<a class="estimate-cta-secondary" href="/comparisons.html">Compare ${from.name} vs ${to.name} →</a>` : ''}
+      ${migrationArticle ? `<a class="estimate-cta-secondary" href="${migrationArticle}">Read the full migration guide →</a>` : ''}
+      ${!migrationArticle && from.key !== 'nothing' ? `<a class="estimate-cta-secondary" href="/comparisons.html">Compare ${from.name} vs ${to.name} →</a>` : ''}
     </div>
     ${to.affiliate ? '<p style="font-size:10px;color:var(--muted);font-style:italic;margin-top:8px;">affiliate link</p>' : ''}
   `;
