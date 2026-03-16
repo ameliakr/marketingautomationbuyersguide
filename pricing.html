@@ -59,10 +59,10 @@
 .card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
 .card-pricing { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; gap: 8px; }
 .price-label { color: var(--muted); }
 .price-value { font-weight: 500; }
-.free-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; }
+.free-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; white-space: nowrap; }
 .free-badge.yes { background: var(--free-bg); color: var(--free-text); }
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 
@@ -77,7 +77,7 @@
 .btn-primary:hover { opacity: 0.85; }
 .btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; }
 .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
-.affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; }
+.affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; line-height: 1; margin: -4px 0; }
 
 /* ── NO RESULTS ── */
 .no-results { display: none; text-align: center; padding: 80px 24px; }
@@ -214,8 +214,8 @@
         </div>
         <div class="card-cta">
           <a class="btn-primary" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Try Moosend free →</a>
-          <a class="btn-secondary" href="https://moosend.com/pricing" target="_blank">View all plans</a>
           <span class="affiliate-tag">affiliate link</span>
+          <a class="btn-secondary" href="https://moosend.com/pricing" target="_blank">View all plans</a>
         </div>
       </div>
 
@@ -246,8 +246,8 @@
         </div>
         <div class="card-cta">
           <a class="btn-primary" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a>
-          <a class="btn-secondary" href="https://try.activecampaign.com/9lravfc5vzsu" target="_blank">View all plans</a>
           <span class="affiliate-tag">affiliate link</span>
+          <a class="btn-secondary" href="https://try.activecampaign.com/9lravfc5vzsu" target="_blank">View all plans</a>
         </div>
       </div>
 
