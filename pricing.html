@@ -44,8 +44,8 @@
 .results-count span { font-weight: 500; color: var(--ink); }
 
 /* ── TOOL CARDS GRID ── */
-.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--rule); margin-bottom: 64px; align-items: start; }
-.tool-card { background: white; padding: 24px; display: flex; flex-direction: column; gap: 16px; transition: background 0.15s; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--rule); margin-bottom: 64px; }
+.tool-card { background: white; padding: 24px; display: flex; flex-direction: column; gap: 16px; transition: background 0.15s; height: 100%; box-sizing: border-box; }
 .tool-card:hover { background: #fafaf8; }
 .tool-card.hidden { display: none; }
 
@@ -66,13 +66,13 @@
 .free-badge.yes { background: var(--free-bg); color: var(--free-text); }
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 
-.card-features { display: flex; flex-wrap: wrap; gap: 5px; }
+.card-features { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; align-content: flex-start; }
 .feature-tag { font-size: 11px; padding: 3px 8px; background: #f5f5f3; color: #bdbdbd; }
 .feature-tag::before { content: '✕ '; font-size: 9px; }
 .feature-tag.has { background: #f1f8f1; color: #2c5f2e; }
 .feature-tag.has::before { content: ''; }
 
-.card-cta { display: flex; flex-direction: column; gap: 7px; }
+.card-cta { display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
 .btn-primary { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; }
 .btn-primary:hover { opacity: 0.85; }
 .btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; }
