@@ -16,7 +16,8 @@
 .last-updated { display: inline-block; font-size: 11px; color: var(--muted); background: #f5f5f3; padding: 4px 10px; margin-top: 12px; letter-spacing: 0.04em; }
 .calc-panel { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .calc-panel-title { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-.calc-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+.calc-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
+.calc-inputs-row2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px 32px; margin-top: 24px; }
 .calc-field { display: flex; flex-direction: column; gap: 8px; }
 .calc-label { font-size: 13px; font-weight: 500; color: var(--ink); }
 .calc-sublabel { font-size: 11px; color: var(--muted); margin-top: -4px; }
@@ -47,7 +48,7 @@
 .card-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
 .card-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
 .card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; min-height: 2.8em; }
-.card-pricing { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.card-pricing { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); min-height: 110px; }
 .price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; gap: 8px; }
 .price-label { color: var(--muted); }
 .price-value { font-weight: 500; }
@@ -55,9 +56,10 @@
 .free-badge.yes { background: var(--free-bg); color: var(--free-text); }
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 .price-row.estimated { display: none; }
-.price-row.estimated.visible { display: flex; }
-.price-estimated-val { font-weight: 500; color: var(--accent); }
-.card-features { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; align-content: flex-start; }
+.price-row.estimated.visible { display: flex; background: #f1f8f1; margin: 4px -14px -14px; padding: 8px 14px; border-top: 1px solid #c8e6c9; }
+.price-estimated-label { color: var(--accent); font-weight: 500; font-size: 12px; }
+.price-estimated-val { font-weight: 600; color: var(--accent); font-size: 15px; }
+.card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; min-height: 72px; }
 .feature-tag { font-size: 11px; padding: 3px 8px; background: #f5f5f3; color: #bdbdbd; }
 .feature-tag.has { background: #f1f8f1; color: #2c5f2e; }
 .card-cta { display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
@@ -91,6 +93,7 @@
 @media (max-width: 640px) {
   .calc-panel { padding: 20px; }
   .calc-inputs { grid-template-columns: 1fr; }
+  .calc-inputs-row2 { grid-template-columns: 1fr; }
   .tools-grid { grid-template-columns: 1fr; }
   .partner-grid { grid-template-columns: 1fr; }
   .partner-card { border-left: 1px solid var(--rule) !important; border-bottom: none; }
@@ -136,7 +139,6 @@
   <div class="calc-panel">
     <div class="calc-panel-title">Calculate your estimated cost</div>
     <div class="calc-inputs">
-
       <div class="calc-field">
         <span class="calc-label">Contact list size</span>
         <span class="calc-sublabel">Total subscribers or contacts</span>
@@ -145,7 +147,6 @@
           <span class="calc-slider-val" id="val-contacts">1,000</span>
         </div>
       </div>
-
       <div class="calc-field">
         <span class="calc-label">Emails per month</span>
         <span class="calc-sublabel">Per contact, on average</span>
@@ -154,7 +155,8 @@
           <span class="calc-slider-val" id="val-sends">4 per contact</span>
         </div>
       </div>
-
+    </div>
+    <div class="calc-inputs-row2">
       <div class="calc-field">
         <span class="calc-label">Business type</span>
         <span class="calc-sublabel">Show tools suited to your use case</span>
@@ -166,7 +168,6 @@
           <option value="service">Service business</option>
         </select>
       </div>
-
       <div class="calc-field">
         <span class="calc-label">Company size</span>
         <span class="calc-sublabel">Filter by platform tier</span>
@@ -177,7 +178,6 @@
           <option value="ent">Enterprise</option>
         </select>
       </div>
-
       <div class="calc-field">
         <span class="calc-label">Must-have features</span>
         <span class="calc-sublabel">Only show tools that include these</span>
@@ -188,7 +188,6 @@
           <label class="calc-checkbox"><input type="checkbox" id="need-ecommerce"> E-commerce features</label>
         </div>
       </div>
-
     </div>
     <div class="calc-actions">
       <button class="calc-btn" onclick="applyFilters()">Calculate →</button>
@@ -302,7 +301,7 @@ function renderCards() {
       ? `<div class="price-row"><span class="price-label">Free trial</span><span class="price-value">${tool.freeTrial}</span></div>`
       : (tool.freeNote ? `<div class="price-row"><span class="price-label">Free plan</span><span class="price-value">${tool.freeNote}</span></div>` : '');
     const startLine = `<div class="price-row"><span class="price-label">Starting price</span><span class="price-value">${tool.startingPrice}</span></div>`;
-    const estimatedLine = `<div class="price-row estimated" id="est-${tool.key}"><span class="price-label">Your estimate</span><span class="price-estimated-val" id="est-val-${tool.key}"></span></div>`;
+    const estimatedLine = `<div class="price-row estimated" id="est-${tool.key}"><span class="price-estimated-label">Your estimate</span><span class="price-estimated-val" id="est-val-${tool.key}"></span></div>`;
     const allFeatures = [{label:'Email automation',key:'automation'},{label:'CRM',key:'crm'},{label:'SMS',key:'sms'},{label:'Landing pages',key:'landing'},{label:'E-commerce',key:'ecommerce'},{label:'Visual automation',key:'automation'}];
     const featureTags = allFeatures.map(f => `<span class="feature-tag ${tool.features.includes(f.key)?'has':''}">${f.label}</span>`).join('');
     const affiliateTag = tool.affiliate ? `<div class="affiliate-tag">affiliate link</div>` : '';
