@@ -37,18 +37,18 @@
 .results-count { font-size: 12px; color: var(--muted); }
 .results-count span { font-weight: 500; color: var(--ink); }
 .results-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; font-style: italic; max-width: 900px; margin-left: auto; margin-right: auto; }
-.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); max-width: 900px; margin-left: auto; margin-right: auto; }
-.tool-card { background: white; padding: 24px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); grid-auto-rows: auto; gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); max-width: 900px; margin-left: auto; margin-right: auto; }
+.tool-card { background: white; padding: 0; display: grid; grid-template-rows: auto auto auto auto auto; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
 .tool-card:hover { background: #fafaf8; }
 .tool-card.hidden { display: none; }
-.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 24px 24px 0; }
 .card-name { font-size: 17px; font-weight: 500; }
 .card-tier { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 3px 7px; border: 1px solid var(--rule); white-space: nowrap; }
 .card-tier.smb { color: var(--accent); border-color: #c8e6c9; background: #f1f8f1; }
 .card-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
 .card-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
-.card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; min-height: 2.8em; }
-.card-pricing { display: flex; flex-direction: column; padding: 14px 0 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; padding: 12px 24px 0; }
+.card-pricing { display: flex; flex-direction: column; padding: 14px 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 12px; }
 .card-pricing-rows { display: flex; flex-direction: column; padding-bottom: 8px; }
 .price-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; gap: 8px; height: 28px; overflow: hidden; }
 .price-label { color: var(--muted); }
@@ -58,14 +58,14 @@
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 .price-row.estimated { display: none; }
 .price-row.estimated.visible { display: flex; }
-.estimate-box { display: none; padding: 8px 14px; background: #f1f8f1; border-top: 1px solid #c8e6c9; margin-top: 8px; }
+.estimate-box { display: none; padding: 8px 24px; background: #f1f8f1; border-top: 1px solid #c8e6c9; margin-top: 8px; }
 .estimate-box.visible { display: flex; justify-content: space-between; align-items: baseline; }
 .price-estimated-label { color: var(--accent); font-weight: 500; font-size: 12px; }
 .price-estimated-val { font-weight: 600; color: var(--accent); font-size: 15px; }
-.card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; min-height: 72px; }
+.card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; padding: 14px 24px 0; }
 .feature-tag { font-size: 11px; padding: 3px 8px; background: #f5f5f3; color: #bdbdbd; }
 .feature-tag.has { background: #f1f8f1; color: #2c5f2e; }
-.card-cta { display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
+.card-cta { display: flex; flex-direction: column; gap: 7px; padding: 14px 24px 24px; }
 .btn-primary { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
 .btn-primary:hover { opacity: 0.85; }
 .btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; text-decoration: none; }
