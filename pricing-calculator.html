@@ -14,7 +14,6 @@
 /* ── HERO ── */
 .calc-hero { text-align: center; margin-bottom: 48px; }
 .calc-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 14px; }
-.calc-hero h1 em { font-style: italic; color: var(--accent); }
 .calc-hero p { font-size: 15px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
 .last-updated { display: inline-block; font-size: 11px; color: var(--muted); background: #f5f5f3; padding: 4px 10px; margin-top: 12px; letter-spacing: 0.04em; }
 
@@ -58,7 +57,7 @@
 .rc-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
 .rc-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
 
-.rc-estimate { padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 6px; }
+.rc-estimate { padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 6px; min-height: 90px; }
 .rc-price-main { display: flex; align-items: baseline; gap: 6px; }
 .rc-price-value { font-size: 22px; font-weight: 500; color: var(--ink); }
 .rc-price-period { font-size: 12px; color: var(--muted); }
@@ -132,7 +131,7 @@
 <main class="page-body">
 
   <div class="calc-hero">
-    <h1>Pricing <em>calculator</em></h1>
+    <h1>Pricing calculator</h1>
     <p>Enter your list size and sending frequency to see estimated monthly costs across all major platforms.</p>
     <span class="last-updated">Pricing updated March 2026</span>
   </div>
@@ -196,10 +195,46 @@
     </div>
   </div>
 
-  <div class="quiz-cta-section">
-    <h2>Not sure which tool is right for you?</h2>
-    <p>Answer six questions and get a personalized recommendation based on your needs and budget.</p>
-    <a class="quiz-cta-btn" href="/quiz.html">Take the quiz →</a>
+  <!-- PARTNER CALLOUT -->
+  <div style="max-width:900px;margin:56px auto 0;border-top:2px solid var(--ink);padding-top:32px;">
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;margin-bottom:6px;">Tools we recommend</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6;">This calculator is free because some of the tools we cover pay us a commission when you sign up through our links. That said, we only feature tools we have actually used and would recommend on their merits. The two below are the platforms we know best and feel most confident recommending. If you are still deciding, they are a good place to start.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;background:white;border:1px solid var(--rule);">
+      <div style="padding:24px;border-right:1px solid var(--rule);">
+        <div style="font-size:16px;font-weight:500;margin-bottom:6px;">Moosend</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">The best value option for small and growing lists. Strong automation, clean interface, and straightforward pricing. No free plan, but a 30-day trial with no card required.</p>
+        <a style="display:block;text-align:center;padding:10px 16px;background:var(--accent);color:white;font-size:13px;font-weight:500;text-decoration:none;margin-bottom:6px;" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Try Moosend free →</a>
+        <div style="text-align:center;font-size:10px;color:var(--muted);font-style:italic;">affiliate link</div>
+      </div>
+      <div style="padding:24px;">
+        <div style="font-size:16px;font-weight:500;margin-bottom:6px;">ActiveCampaign</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">The step up when you need more. Best-in-class automation depth, a built-in CRM, and strong segmentation. Worth the higher price if you are going to use what it offers.</p>
+        <a style="display:block;text-align:center;padding:10px 16px;background:var(--accent);color:white;font-size:13px;font-weight:500;text-decoration:none;margin-bottom:6px;" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a>
+        <div style="text-align:center;font-size:10px;color:var(--muted);font-style:italic;">affiliate link</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USEFUL NEXT STEPS -->
+  <div style="max-width:900px;margin:56px auto 0;border-top:1px solid var(--rule);padding-top:32px;">
+    <div style="font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;margin-bottom:4px;">Useful next steps</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:24px;">More tools to help you decide.</div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
+      <span style="color:var(--muted);">Not sure which tool fits your needs?</span>
+      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/quiz.html">Take the quiz →</a>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
+      <span style="color:var(--muted);">Compare two tools side by side</span>
+      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/comparisons.html">Go to comparisons →</a>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
+      <span style="color:var(--muted);">Setting up a new tool or switching platforms?</span>
+      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/guides.html">Go to guides →</a>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
+      <span style="color:var(--muted);">Browse all tools and pricing tiers</span>
+      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/pricing.html">View full pricing page →</a>
+    </div>
   </div>
 
 </main>
@@ -273,7 +308,7 @@ const TOOLS = [
     tagline: 'Email, SMS, and CRM. Priced by sends, not contacts',
     features: ['crm', 'sms', 'ecommerce', 'landing', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — unlimited contacts, 300 emails/day',
+    freeNote: 'Free plan: unlimited contacts, 300 emails/day',
     pricingModel: 'sends',
     pricingNote: 'Priced by monthly email sends, not contact count',
     trialUrl: 'https://www.brevo.com',
@@ -297,7 +332,7 @@ const TOOLS = [
     tagline: 'Built for creators and solopreneurs',
     features: ['landing', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 10,000 subscribers',
+    freeNote: 'Free plan: up to 10,000 subscribers',
     pricingModel: 'contacts',
     pricingNote: 'Priced by subscriber count',
     trialUrl: 'https://kit.com',
@@ -318,7 +353,7 @@ const TOOLS = [
     tagline: 'Email, landing pages, and webinars',
     features: ['sms', 'ecommerce', 'landing', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 500 contacts',
+    freeNote: 'Free plan: up to 500 contacts',
     pricingModel: 'contacts',
     pricingNote: 'Priced by contact count',
     trialUrl: 'https://www.getresponse.com',
@@ -342,7 +377,7 @@ const TOOLS = [
     tagline: 'Free CRM with a strong free plan',
     features: ['crm', 'sms', 'ecommerce', 'landing', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — unlimited contacts',
+    freeNote: 'Free plan: unlimited contacts',
     pricingModel: 'hybrid',
     pricingNote: 'Starter priced per seat; higher tiers priced by contacts',
     trialUrl: 'https://www.hubspot.com',
@@ -365,7 +400,7 @@ const TOOLS = [
     tagline: 'Best-in-class e-commerce email and SMS',
     features: ['sms', 'ecommerce', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 250 contacts',
+    freeNote: 'Free plan: up to 250 contacts',
     pricingModel: 'contacts',
     pricingNote: 'Priced by contact count',
     trialUrl: 'https://www.klaviyo.com',
@@ -391,9 +426,9 @@ const TOOLS = [
     tagline: 'The most recognizable name in email marketing',
     features: ['ecommerce', 'landing'],
     hasFree: true,
-    freeNote: 'Free plan — up to 500 contacts',
+    freeNote: 'Free plan: up to 500 contacts',
     pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count — gets expensive at larger lists',
+    pricingNote: 'Priced by contact count. Gets expensive at larger lists',
     trialUrl: 'https://www.mailchimp.com',
     plansUrl: 'https://www.mailchimp.com/pricing',
     affiliate: false,
@@ -416,7 +451,7 @@ const TOOLS = [
     tagline: 'Simple, affordable, and easy to learn',
     features: ['ecommerce', 'landing', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 1,000 contacts',
+    freeNote: 'Free plan: up to 1,000 contacts',
     pricingModel: 'contacts',
     pricingNote: 'Priced by contact count',
     trialUrl: 'https://www.mailerlite.com',
@@ -466,7 +501,7 @@ const TOOLS = [
     tagline: 'Email and SMS for e-commerce stores',
     features: ['sms', 'ecommerce', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 250 contacts',
+    freeNote: 'Free plan: up to 250 contacts',
     pricingModel: 'contacts',
     pricingNote: 'Priced by contact count',
     trialUrl: 'https://www.omnisend.com',
@@ -492,7 +527,7 @@ const TOOLS = [
     tagline: 'Simple, reliable email marketing',
     features: ['landing', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 500 subscribers',
+    freeNote: 'Free plan: up to 500 subscribers',
     pricingModel: 'contacts',
     pricingNote: 'Priced by subscriber count',
     trialUrl: 'https://www.aweber.com',
@@ -536,12 +571,12 @@ const TOOLS = [
     key: 'flodesk',
     name: 'Flodesk',
     tier: 'smb',
-    tagline: 'Flat-rate pricing — no surprises as your list grows',
+    tagline: 'Flat-rate pricing, no surprises as your list grows',
     features: ['landing', 'automation'],
     hasFree: false,
     freeTrial: '30-day free trial',
     pricingModel: 'flat',
-    pricingNote: 'Flat rate — price does not change with list size',
+    pricingNote: 'Flat rate: price does not change with list size',
     trialUrl: 'https://www.flodesk.com',
     plansUrl: 'https://www.flodesk.com/pricing',
     affiliate: false,
@@ -554,7 +589,7 @@ const TOOLS = [
     tagline: 'Best if you are already in the Zoho ecosystem',
     features: ['crm', 'ecommerce', 'automation'],
     hasFree: true,
-    freeNote: 'Free plan — up to 2,000 contacts',
+    freeNote: 'Free plan: up to 2,000 contacts',
     pricingModel: 'contacts',
     pricingNote: 'Priced by contact count',
     trialUrl: 'https://www.zoho.com/campaigns',
@@ -604,7 +639,7 @@ const TOOLS = [
     hasFree: false,
     freeTrial: '14-day free trial',
     pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count — starts high',
+    pricingNote: 'Priced by contact count. Starts high',
     trialUrl: 'https://www.keap.com',
     plansUrl: 'https://www.keap.com/pricing',
     affiliate: false,
@@ -672,7 +707,7 @@ function renderResults(results, contacts, sends, totalSends) {
   const enterprise = results.filter(r => r.price === null);
 
   countEl.innerHTML = `<span>${visible.length}</span> tools shown`;
-  noteEl.textContent = `Estimates based on ${contacts.toLocaleString()} contacts, ${sends} emails/contact/month (${totalSends.toLocaleString()} total sends). Actual pricing may vary — always verify on the tool's website.`;
+  noteEl.textContent = `Estimates based on ${contacts.toLocaleString()} contacts, ${sends} emails/contact/month (${totalSends.toLocaleString()} total sends). Actual pricing may vary. Always verify on the tool's website.`;
   entNote.style.display = enterprise.length > 0 ? 'block' : 'none';
 
   if (visible.length === 0) {
