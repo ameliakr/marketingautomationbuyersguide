@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Automation Marketing automation articles: Reviews, Comparisons, and Migration Guides</title>
+<meta name="description" content="Every marketing automation comparison article, searchable and filterable by tool, business size, topic, and pricing.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+  <meta property="og:url" content="https://www.marketingautomationbuyersguide.com/articles.html">
+  <meta property="og:title" content="Marketing Automation Marketing automation articles: Reviews, Comparisons, and Migration Guides">
+  <meta property="og:description" content="Every comparison article on the site. Filter by tool, business size, topic, or pricing.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Marketing Automation Marketing automation articles: Reviews, Comparisons, and Migration Guides">
+  <meta name="twitter:description" content="Every comparison article on the site. Filter by tool, business size, topic, or pricing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+.articles-hero { margin-bottom: 48px; }
+.articles-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; font-weight: 400; margin-bottom: 14px; }
+.articles-hero h1 em { font-style: italic; color: var(--accent); }
+.articles-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 750px; margin: 0; }
+
+/* ── SEARCH ── */
+.search-wrap { margin-bottom: 20px; position: relative; }
+.search-input { width: 100%; padding: 13px 16px 13px 40px; border: 1px solid var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); transition: border-color 0.15s; box-sizing: border-box; }
+.search-input:focus { outline: none; border-color: var(--ink); }
+.search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 14px; pointer-events: none; }
+
+/* ── FILTERS ── */
+.filters-bar { background: #f8f8f6; border: 1px solid var(--rule); padding: 18px 16px; margin-bottom: 24px; box-sizing: border-box; }
+.filters-row { display: flex; flex-wrap: wrap; gap: 20px; }
+.filter-group { display: flex; flex-direction: column; gap: 7px; }
+.filter-group-label { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }
+.filter-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.fpill { font-size: 12px; padding: 4px 11px; border: 1px solid var(--rule); background: white; color: var(--ink); cursor: pointer; transition: all 0.15s; user-select: none; }
+.fpill:hover { border-color: var(--ink); }
+.fpill.active { background: var(--ink); color: white; border-color: var(--ink); }
+.filters-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.results-count { font-size: 12px; color: var(--muted); }
+.results-count span { color: var(--ink); font-weight: 500; }
+.clear-btn { font-size: 12px; color: var(--muted); cursor: pointer; text-decoration: underline; }
+.clear-btn:hover { color: var(--ink); }
+
+/* ── ARTICLE CARDS ── */
+.articles-grid { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+.article-card { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--rule); transition: all 0.2s; }
+.article-card:first-child { border-top: 1px solid var(--rule); }
+.article-card.hidden { display: none; }
+.article-card.live { cursor: pointer; text-decoration: none; color: var(--ink); }
+.article-card.live:hover .ac-title { color: var(--accent); }
+.article-card.live:hover .ac-arrow { transform: translateX(4px); color: var(--accent); }
+.article-card.coming { color: var(--ink); }
+.ac-left { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 0; }
+.ac-title { font-size: 15px; font-weight: 400; transition: color 0.2s; }
+.article-card.coming .ac-title { color: var(--muted); }
+.ac-meta { display: flex; flex-wrap: wrap; gap: 5px; }
+.ac-tag { font-size: 11px; padding: 2px 7px; background: #f5f5f3; color: var(--muted); }
+.ac-tag.tool { background: #f1f8f1; color: var(--accent); }
+.ac-tag.size { background: #f0f7ff; color: #1565c0; }
+.ac-tag.topic { background: #faf0ff; color: #6a1b9a; }
+.ac-tag.pricing { background: #fff8e1; color: #7f6a00; }
+.ac-tag.migration { background: #f0f4ff; color: #1a3a8f; }
+.ac-tag.setup { background: #f0fff4; color: #1a5c3a; }
+.ac-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.ac-arrow { font-size: 16px; color: var(--rule); transition: all 0.2s; }
+.ac-coming-label { font-size: 11px; color: var(--muted); font-style: italic; }
+
+.no-results { display: none; text-align: center; padding: 60px 24px; color: var(--muted); font-size: 14px; }
+.no-results.visible { display: block; }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/articles.html">Articles</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/articles.html">Articles</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="wrap-narrow">
+
+    <div class="articles-hero">
+      <h1>Marketing automation articles</h1>
+      <p class="hero-sub">Independent reviews, platform comparisons, setup guides, and migration guides for marketing automation software. Use the filters to find exactly what you are looking for.</p>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" type="text" id="search-input" placeholder="Search by tool name, e.g. Moosend or ActiveCampaign..." oninput="applyFilters()">
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters-bar">
+      <div class="filters-row">
+
+        <div class="filter-group">
+          <span class="filter-group-label">Article type</span>
+          <div class="filter-pills">
+            <span class="fpill" data-filter="type" data-value="comparison" onclick="toggleFilter(this)">Comparisons</span>
+            <span class="fpill" data-filter="type" data-value="review" onclick="toggleFilter(this)">Reviews</span>
+            <span class="fpill" data-filter="type" data-value="migration" onclick="toggleFilter(this)">Migration guides</span>
+            <span class="fpill" data-filter="type" data-value="setup" onclick="toggleFilter(this)">Setup guides</span>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-group-label">Tool</span>
+          <div class="filter-pills">
+            <span class="fpill" data-filter="tool" data-value="moosend" onclick="toggleFilter(this)">Moosend</span>
+            <span class="fpill" data-filter="tool" data-value="activecampaign" onclick="toggleFilter(this)">ActiveCampaign</span>
+            <span class="fpill" data-filter="tool" data-value="mailerlite" onclick="toggleFilter(this)">MailerLite</span>
+            <span class="fpill" data-filter="tool" data-value="mailchimp" onclick="toggleFilter(this)">Mailchimp</span>
+            <span class="fpill" data-filter="tool" data-value="hubspot" onclick="toggleFilter(this)">HubSpot</span>
+            <span class="fpill" data-filter="tool" data-value="getresponse" onclick="toggleFilter(this)">GetResponse</span>
+            <span class="fpill" data-filter="tool" data-value="brevo" onclick="toggleFilter(this)">Brevo</span>
+            <span class="fpill" data-filter="tool" data-value="omnisend" onclick="toggleFilter(this)">Omnisend</span>
+            <span class="fpill" data-filter="tool" data-value="kit" onclick="toggleFilter(this)">Kit</span>
+            <span class="fpill" data-filter="tool" data-value="klaviyo" onclick="toggleFilter(this)">Klaviyo</span>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-group-label">Business size</span>
+          <div class="filter-pills">
+            <span class="fpill" data-filter="size" data-value="smb" onclick="toggleFilter(this)">SMB</span>
+            <span class="fpill" data-filter="size" data-value="midmarket" onclick="toggleFilter(this)">Mid-market</span>
+            <span class="fpill" data-filter="size" data-value="enterprise" onclick="toggleFilter(this)">Enterprise</span>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-group-label">Topic</span>
+          <div class="filter-pills">
+            <span class="fpill" data-filter="topic" data-value="automation" onclick="toggleFilter(this)">Automation</span>
+            <span class="fpill" data-filter="topic" data-value="ecommerce" onclick="toggleFilter(this)">E-commerce</span>
+            <span class="fpill" data-filter="topic" data-value="crm" onclick="toggleFilter(this)">CRM</span>
+            <span class="fpill" data-filter="topic" data-value="ease" onclick="toggleFilter(this)">Ease of use</span>
+            <span class="fpill" data-filter="topic" data-value="migration" onclick="toggleFilter(this)">Migration</span>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-group-label">Pricing</span>
+          <div class="filter-pills">
+            <span class="fpill" data-filter="pricing" data-value="hasfree" onclick="toggleFilter(this)">Has free plan</span>
+            <span class="fpill" data-filter="pricing" data-value="under15" onclick="toggleFilter(this)">Under $15/mo</span>
+            <span class="fpill" data-filter="pricing" data-value="freetrial" onclick="toggleFilter(this)">Free trial</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="filters-footer">
+        <span class="results-count"><span id="article-count">0</span> articles shown</span>
+        <span class="clear-btn" onclick="clearFilters()">Clear all</span>
+      </div>
+    </div>
+
+    <!-- ARTICLE LIST -->
+    <div class="articles-grid" id="articles-grid"></div>
+    <div class="no-results" id="no-results">No articles match your filters. Try removing some filters or broadening your search.</div>
+
+  </div>
+
+
+
+      </form>
+    </div>
+  </div>
+</div>
+      </div>
+    
+
+  <div class="wrap-narrow" style="margin-top: 16px; padding-bottom: 0;">
+    <div class="useful-links">
+      <div class="useful-links-title">Useful next steps</div>
+      <div class="link-row"><span class="link-label">Compare two tools side by side</span><a class="link-url" href="/comparisons.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Get a personalized tool recommendation</span><a class="link-url" href="/quiz.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Browse all tool reviews</span><a class="link-url" href="/all-tools.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Pricing calculator</span><a class="link-url" href="/pricing.html">View →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
+    <div class="footer-links">
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── ARTICLE DATA ──────────────────────────────────────────────────────────────
+const ARTICLES = [ // type: comparison | review | migration
+  {
+    title: "Moosend vs MailerLite: Which is Actually Better Value?",
+    url: "/comparison-moosend-vs-mailerlite.html",
+    tools: ["moosend", "mailerlite"],
+    size: ["smb"],
+    topics: ["automation", "ease"],
+    pricing: ["under15", "hasfree"],
+    status: "live"
+  },
+  {
+    title: "ActiveCampaign vs HubSpot: CRM-Heavy Tools Compared",
+    url: "/comparison-activecampaign-vs-hubspot.html",
+    tools: ["activecampaign", "hubspot"],
+    size: ["smb", "midmarket"],
+    topics: ["crm", "automation"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "ActiveCampaign vs MailerLite: Power vs Simplicity",
+    url: "/comparison-activecampaign-vs-mailerlite.html",
+    tools: ["activecampaign", "mailerlite"],
+    size: ["smb"],
+    topics: ["automation", "ease"],
+    pricing: ["under15", "hasfree", "freetrial"],
+    status: "live"
+  },
+  {
+    title: "ActiveCampaign vs Moosend",
+    url: "/comparison-activecampaign-vs-moosend.html",
+    tools: ["activecampaign", "moosend"],
+    size: ["smb"],
+    topics: ["automation"],
+    pricing: ["under15", "freetrial"],
+    status: "live"
+  },
+  {
+    title: "MailerLite vs HubSpot: Free-Tier Showdown",
+    url: "/comparison-mailerlite-vs-hubspot.html",
+    tools: ["mailerlite", "hubspot"],
+    size: ["smb"],
+    topics: ["ease", "crm"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "Mailchimp vs MailerLite: Which Is Worth Paying For?",
+    url: "/comparison-mailchimp-vs-mailerlite.html",
+    tools: ["mailchimp", "mailerlite"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "Mailchimp vs Moosend: Legacy Platform vs Lean Challenger",
+    url: "/comparison-mailchimp-vs-moosend.html",
+    tools: ["mailchimp", "moosend"],
+    size: ["smb"],
+    topics: ["ease", "ecommerce"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "GetResponse vs ActiveCampaign",
+    url: "/comparison-getresponse-vs-activecampaign.html",
+    tools: ["getresponse", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["automation", "crm"],
+    pricing: ["hasfree", "freetrial"],
+    status: "live"
+  },
+  {
+    title: "GetResponse vs MailerLite",
+    url: "/comparison-getresponse-vs-mailerlite.html",
+    tools: ["getresponse", "mailerlite"],
+    size: ["smb"],
+    topics: ["ease", "automation"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "Brevo vs MailerLite: Two Affordable All-Rounders",
+    url: "/comparison-brevo-vs-mailerlite.html",
+    tools: ["brevo", "mailerlite"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "Brevo vs ActiveCampaign: Budget vs Full-Featured",
+    url: "/comparison-brevo-vs-activecampaign.html",
+    tools: ["brevo", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["automation", "crm"],
+    pricing: ["hasfree", "freetrial"],
+    status: "live"
+  },
+  {
+    title: "Omnisend vs Klaviyo: Two E-Commerce Platforms Compared",
+    url: "/comparison-omnisend-vs-klaviyo.html",
+    tools: ["omnisend", "klaviyo"],
+    size: ["smb", "midmarket"],
+    topics: ["ecommerce"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "Omnisend vs Moosend: E-Commerce Specialist vs General Automation",
+    url: "/comparison-omnisend-vs-moosend.html",
+    tools: ["omnisend", "moosend"],
+    size: ["smb"],
+    topics: ["ecommerce", "automation"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "Kit vs MailerLite: Two Creator-Friendly Tools",
+    url: "/comparison-kit-vs-mailerlite.html",
+    tools: ["kit", "mailerlite"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "Kit vs Moosend: Creator Tool vs Automation Platform",
+    url: "/comparison-kit-vs-moosend.html",
+    tools: ["kit", "moosend"],
+    size: ["smb"],
+    topics: ["automation", "ease"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+
+  // ── MIGRATION ARTICLES ──────────────────────────────────────────────────
+  {
+    title: "How to Migrate from Mailchimp to Moosend",
+    url: "/migration-mailchimp-to-moosend.html",
+    tools: ["mailchimp", "moosend"],
+    size: ["smb"],
+    topics: ["migration"],
+    pricing: ["under15"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Mailchimp to ActiveCampaign",
+    url: "/migration-mailchimp-to-activecampaign.html",
+    tools: ["mailchimp", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Mailchimp to MailerLite",
+    url: "/migration-mailchimp-to-mailerlite.html",
+    tools: ["mailchimp", "mailerlite"],
+    size: ["smb"],
+    topics: ["migration"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Mailchimp to HubSpot",
+    url: "/migration-mailchimp-to-hubspot.html",
+    tools: ["mailchimp", "hubspot"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Mailchimp to GetResponse",
+    url: "/migration-mailchimp-to-getresponse.html",
+    tools: ["mailchimp", "getresponse"],
+    size: ["smb"],
+    topics: ["migration"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Mailchimp to Brevo",
+    url: "/migration-mailchimp-to-brevo.html",
+    tools: ["mailchimp", "brevo"],
+    size: ["smb"],
+    topics: ["migration"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from ActiveCampaign to HubSpot",
+    url: "/comparison-kit-vs-mailerlite.html",
+    tools: ["activecampaign", "hubspot"],
+    size: ["midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from HubSpot to ActiveCampaign",
+    url: "/migration-hubspot-to-activecampaign.html",
+    tools: ["hubspot", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Klaviyo to Omnisend",
+    url: "/migration-klaviyo-to-omnisend.html",
+    tools: ["klaviyo", "omnisend"],
+    size: ["smb"],
+    topics: ["migration", "ecommerce"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Keap to ActiveCampaign",
+    url: "/migration-keap-to-activecampaign.html",
+    tools: ["keap", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+
+  // ── REVIEW ARTICLES ─────────────────────────────────────────────────────────
+  {
+    title: "ActiveCampaign Review 2026: Pricing, Features, and Automation Depth",
+    url: "/review-activecampaign.html",
+    tools: ["activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["automation", "crm"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "Moosend Review 2026: Is It Worth Switching?",
+    url: "/review-moosend.html",
+    tools: ["moosend"],
+    size: ["smb"],
+    topics: ["automation"],
+    pricing: ["under15", "freetrial"],
+    status: "live"
+  },
+  {
+    title: "MailerLite Review 2026: The Best Budget Tool?",
+    url: "/review-mailerlite.html",
+    tools: ["mailerlite"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["hasfree", "under15"],
+    status: "live"
+  },
+  {
+    title: "HubSpot Review 2026: Pricing, Free Plan, and CRM Features",
+    url: "/review-hubspot.html",
+    tools: ["hubspot"],
+    size: ["smb", "midmarket"],
+    topics: ["crm"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "GetResponse Review 2026: Pricing, Features, and Automation",
+    url: "/review-getresponse.html",
+    tools: ["getresponse"],
+    size: ["smb"],
+    topics: ["automation"],
+    pricing: ["hasfree", "freetrial"],
+    status: "live"
+  },
+  {
+    title: "Brevo Review 2026: The Smartest Pricing Model in Email Marketing",
+    url: "/review-brevo.html",
+    tools: ["brevo"],
+    size: ["smb", "midmarket"],
+    topics: ["automation"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "Kit Review 2026: Pricing, Features, and Free Plan",
+    url: "/review-kit.html",
+    tools: ["kit"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "Klaviyo Review 2026: Pricing, Features, and Automation Depth",
+    url: "/review-klaviyo.html",
+    tools: ["klaviyo"],
+    size: ["smb", "midmarket"],
+    topics: ["ecommerce"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "Omnisend Review 2026: Pricing, Features, and SMS Marketing",
+    url: "/review-omnisend.html",
+    tools: ["omnisend"],
+    size: ["smb"],
+    topics: ["ecommerce"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "Mailchimp Review 2026: Pricing, Features, and Honest Verdict",
+    url: "/review-mailchimp.html",
+    tools: ["mailchimp"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "Keap Review 2026: Pricing, Features, and CRM Capabilities",
+    url: "/review-keap.html",
+    tools: ["keap"],
+    size: ["smb", "midmarket"],
+    topics: ["crm", "automation"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "Campaign Monitor Review 2026: Beautiful Emails, Premium Price",
+    url: "/review-campaignmonitor.html",
+    tools: ["campaignmonitor"],
+    size: ["smb"],
+    topics: ["ease"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Mailchimp to Kit",
+    url: "/migration-mailchimp-to-kit.html",
+    tools: ["mailchimp", "kit"],
+    size: ["smb"],
+    topics: ["migration"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from ActiveCampaign to HubSpot",
+    url: "/migration-activecampaign-to-hubspot.html",
+    tools: ["activecampaign", "hubspot"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from HubSpot to ActiveCampaign",
+    url: "/migration-hubspot-to-activecampaign.html",
+    tools: ["hubspot", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Klaviyo to Omnisend",
+    url: "/migration-klaviyo-to-omnisend.html",
+    tools: ["klaviyo", "omnisend"],
+    size: ["smb"],
+    topics: ["migration", "ecommerce"],
+    pricing: ["hasfree"],
+    status: "live"
+  },
+  {
+    title: "How to Migrate from Keap to ActiveCampaign",
+    url: "/migration-keap-to-activecampaign.html",
+    tools: ["keap", "activecampaign"],
+    size: ["smb", "midmarket"],
+    topics: ["migration", "crm"],
+    pricing: ["freetrial"],
+    status: "live"
+  },
+  {title:"AWeber Review 2026: Pricing, Features, and Better Alternatives",url:"/review-aweber.html",tools:["aweber"],size:["smb"],topics:["ease"],pricing:["hasfree"],status:"live"},
+  {title:"Constant Contact Review 2026: Pricing, Features, and Honest Verdict",url:"/review-constantcontact.html",tools:["constantcontact"],size:["smb"],topics:["ease"],pricing:["freetrial"],status:"live"},
+  {title:"Flodesk Review 2026: Pricing, Features, and Honest Verdict",url:"/review-flodesk.html",tools:["flodesk"],size:["smb"],topics:["ease"],pricing:["freetrial"],status:"live"},
+  {title:"Iterable Review 2026: Pricing, Features, and Use Cases",url:"/review-iterable.html",tools:["iterable"],size:["enterprise"],topics:["automation"],pricing:["freetrial"],status:"live"},
+  {title:"Dotdigital Review 2026: Pricing, Features, and Use Cases",url:"/review-dotdigital.html",tools:["dotdigital"],size:["midmarket","enterprise"],topics:["automation","ecommerce"],pricing:["freetrial"],status:"live"},
+  {title:"Ortto Review 2026: Pricing, Features, and Built-In CDP",url:"/review-ortto.html",tools:["ortto"],size:["midmarket"],topics:["automation","crm"],pricing:["freetrial"],status:"live"},
+  {title:"Salesforce Marketing Cloud Review 2026: Pricing, Features, and Use Cases",url:"/review-salesforce.html",tools:["salesforce"],size:["enterprise"],topics:["automation"],pricing:["freetrial"],status:"live"},
+  {title:"Adobe Marketo Review 2026: Pricing, Features, and Use Cases",url:"/review-marketo.html",tools:["marketo"],size:["enterprise"],topics:["automation","crm"],pricing:["freetrial"],status:"live"},
+  {title:"Oracle Eloqua Review 2026: Pricing, Features, and Use Cases",url:"/review-eloqua.html",tools:["eloqua"],size:["enterprise"],topics:["automation","crm"],pricing:["freetrial"],status:"live"},
+  {title:"Pardot Review 2026: Pricing, Features, and Salesforce Integration",url:"/review-pardot.html",tools:["pardot"],size:["enterprise"],topics:["automation","crm"],pricing:["freetrial"],status:"live"},
+  {title:"Microsoft Dynamics 365 Review 2026: Pricing, Features, and Use Cases",url:"/review-dynamics365.html",tools:["dynamics"],size:["enterprise"],topics:["automation","crm"],pricing:["freetrial"],status:"live"},
+  {title:"HubSpot Enterprise Review 2026: Pricing, Features, and Who Needs It",url:"/review-hubspot-enterprise.html",tools:["hubspot"],size:["enterprise"],topics:["automation","crm"],pricing:["freetrial"],status:"live"},
+  {title:"Zoho Campaigns Review 2026",url:"/review-zoho.html",tools:["zoho"],size:["smb"],topics:["ease","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Moosend",url:"/setup-moosend.html",tools:["moosend"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up ActiveCampaign",url:"/setup-activecampaign.html",tools:["activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up MailerLite",url:"/setup-mailerlite.html",tools:["mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Mailchimp",url:"/setup-mailchimp.html",tools:["mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up HubSpot",url:"/setup-hubspot.html",tools:["hubspot"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up GetResponse",url:"/setup-getresponse.html",tools:["getresponse"],size:["smb"],topics:["migration"],pricing:["hasfree","freetrial"],status:"live"},
+  {title:"How to Set Up Kit",url:"/setup-kit.html",tools:["kit"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Brevo",url:"/setup-brevo.html",tools:["brevo"],size:["smb","midmarket"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Omnisend",url:"/setup-omnisend.html",tools:["omnisend"],size:["smb"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Klaviyo",url:"/setup-klaviyo.html",tools:["klaviyo"],size:["smb","midmarket"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  // ── NEW SETUP GUIDES ──────────────────────────────────────────────────────
+  {title:"How to Set Up AWeber",url:"/setup-aweber.html",tools:["aweber"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Campaign Monitor",url:"/setup-campaignmonitor.html",tools:["campaignmonitor"],size:["smb","midmarket"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Constant Contact",url:"/setup-constantcontact.html",tools:["constantcontact"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Flodesk",url:"/setup-flodesk.html",tools:["flodesk"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Keap",url:"/setup-keap.html",tools:["keap"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Zoho Campaigns",url:"/setup-zoho.html",tools:["zoho"],size:["smb"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Set Up Dotdigital",url:"/setup-dotdigital.html",tools:["dotdigital"],size:["midmarket"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Iterable",url:"/setup-iterable.html",tools:["iterable"],size:["midmarket","enterprise"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Ortto",url:"/setup-ortto.html",tools:["ortto"],size:["midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up HubSpot Enterprise",url:"/setup-hubspot-enterprise.html",tools:["hubspot"],size:["enterprise"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Salesforce Marketing Cloud",url:"/setup-salesforce.html",tools:["salesforce"],size:["enterprise"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Adobe Marketo",url:"/setup-marketo.html",tools:["marketo"],size:["enterprise"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Oracle Eloqua",url:"/setup-eloqua.html",tools:["eloqua"],size:["enterprise"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Pardot",url:"/setup-pardot.html",tools:["pardot"],size:["enterprise"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Set Up Microsoft Dynamics 365",url:"/setup-dynamics365.html",tools:["dynamics"],size:["enterprise"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  // ── NEW MIGRATION GUIDES ───────────────────────────────────────────────────
+  {title:"How to Migrate from Mailchimp to AWeber",url:"/migration-mailchimp-to-aweber.html",tools:["mailchimp","aweber"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Mailchimp to Constant Contact",url:"/migration-mailchimp-to-constantcontact.html",tools:["mailchimp","constantcontact"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Mailchimp to Flodesk",url:"/migration-mailchimp-to-flodesk.html",tools:["mailchimp","flodesk"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Mailchimp to Klaviyo",url:"/migration-mailchimp-to-klaviyo.html",tools:["mailchimp","klaviyo"],size:["smb","midmarket"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Mailchimp to Omnisend",url:"/migration-mailchimp-to-omnisend.html",tools:["mailchimp","omnisend"],size:["smb"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Mailchimp to Zoho Campaigns",url:"/migration-mailchimp-to-zoho.html",tools:["mailchimp","zoho"],size:["smb"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from ActiveCampaign to Brevo",url:"/migration-activecampaign-to-brevo.html",tools:["activecampaign","brevo"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from ActiveCampaign to MailerLite",url:"/migration-activecampaign-to-mailerlite.html",tools:["activecampaign","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from ActiveCampaign to Moosend",url:"/migration-activecampaign-to-moosend.html",tools:["activecampaign","moosend"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from ActiveCampaign to GetResponse",url:"/migration-activecampaign-to-getresponse.html",tools:["activecampaign","getresponse"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from HubSpot to Brevo",url:"/migration-hubspot-to-brevo.html",tools:["hubspot","brevo"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from HubSpot to MailerLite",url:"/migration-hubspot-to-mailerlite.html",tools:["hubspot","mailerlite"],size:["smb"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from HubSpot to Moosend",url:"/migration-hubspot-to-moosend.html",tools:["hubspot","moosend"],size:["smb"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Klaviyo to Mailchimp",url:"/migration-klaviyo-to-mailchimp.html",tools:["klaviyo","mailchimp"],size:["smb","midmarket"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Klaviyo to ActiveCampaign",url:"/migration-klaviyo-to-activecampaign.html",tools:["klaviyo","activecampaign"],size:["smb","midmarket"],topics:["migration","ecommerce","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Brevo to ActiveCampaign",url:"/migration-brevo-to-activecampaign.html",tools:["brevo","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Brevo to MailerLite",url:"/migration-brevo-to-mailerlite.html",tools:["brevo","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Brevo to Mailchimp",url:"/migration-brevo-to-mailchimp.html",tools:["brevo","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from MailerLite to ActiveCampaign",url:"/migration-mailerlite-to-activecampaign.html",tools:["mailerlite","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from MailerLite to Mailchimp",url:"/migration-mailerlite-to-mailchimp.html",tools:["mailerlite","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from MailerLite to Moosend",url:"/migration-mailerlite-to-moosend.html",tools:["mailerlite","moosend"],size:["smb"],topics:["migration"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from GetResponse to ActiveCampaign",url:"/migration-getresponse-to-activecampaign.html",tools:["getresponse","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from GetResponse to MailerLite",url:"/migration-getresponse-to-mailerlite.html",tools:["getresponse","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from GetResponse to Mailchimp",url:"/migration-getresponse-to-mailchimp.html",tools:["getresponse","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Constant Contact to MailerLite",url:"/migration-constantcontact-to-mailerlite.html",tools:["constantcontact","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Constant Contact to ActiveCampaign",url:"/migration-constantcontact-to-activecampaign.html",tools:["constantcontact","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Constant Contact to Mailchimp",url:"/migration-constantcontact-to-mailchimp.html",tools:["constantcontact","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Keap to HubSpot",url:"/migration-keap-to-hubspot.html",tools:["keap","hubspot"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Moosend to ActiveCampaign",url:"/migration-moosend-to-activecampaign.html",tools:["moosend","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Moosend to MailerLite",url:"/migration-moosend-to-mailerlite.html",tools:["moosend","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Moosend to HubSpot",url:"/migration-moosend-to-hubspot.html",tools:["moosend","hubspot"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Omnisend to Klaviyo",url:"/migration-omnisend-to-klaviyo.html",tools:["omnisend","klaviyo"],size:["smb","midmarket"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Omnisend to Mailchimp",url:"/migration-omnisend-to-mailchimp.html",tools:["omnisend","mailchimp"],size:["smb"],topics:["migration","ecommerce"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Omnisend to ActiveCampaign",url:"/migration-omnisend-to-activecampaign.html",tools:["omnisend","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Kit to MailerLite",url:"/migration-kit-to-mailerlite.html",tools:["kit","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from Kit to ActiveCampaign",url:"/migration-kit-to-activecampaign.html",tools:["kit","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from Kit to Mailchimp",url:"/migration-kit-to-mailchimp.html",tools:["kit","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from AWeber to MailerLite",url:"/migration-aweber-to-mailerlite.html",tools:["aweber","mailerlite"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+  {title:"How to Migrate from AWeber to ActiveCampaign",url:"/migration-aweber-to-activecampaign.html",tools:["aweber","activecampaign"],size:["smb","midmarket"],topics:["migration","crm"],pricing:["freetrial"],status:"live"},
+  {title:"How to Migrate from AWeber to Mailchimp",url:"/migration-aweber-to-mailchimp.html",tools:["aweber","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
+
+  { title: "Mailchimp vs ActiveCampaign 2026: The Most Popular vs The Most Powerful", url: "/comparison-mailchimp-vs-activecampaign.html", type: "comparison", tools: ["mailchimp", "activecampaign"], size: "SMB", topics: ["Automation"], pricing: "Mid", updated: "March 2026" },
+  { title: "Mailchimp vs Brevo 2026: Free Plan vs Free Plan — Which Is Actually Better?", url: "/comparison-mailchimp-vs-brevo.html", type: "comparison", tools: ["mailchimp", "brevo"], size: "SMB", topics: ["Free plan"], pricing: "Low", updated: "March 2026" },
+  { title: "Mailchimp vs Constant Contact 2026: Two Longtime Email Marketing Standards Compared", url: "/comparison-mailchimp-vs-constantcontact.html", type: "comparison", tools: ["mailchimp", "constantcontact"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Mailchimp vs GetResponse 2026: Email Marketing vs All-in-One Platform", url: "/comparison-mailchimp-vs-getresponse.html", type: "comparison", tools: ["mailchimp", "getresponse"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Mailchimp vs HubSpot 2026: Email Marketing Tool vs Full CRM Suite", url: "/comparison-mailchimp-vs-hubspot.html", type: "comparison", tools: ["mailchimp", "hubspot"], size: "SMB", topics: ["CRM"], pricing: "Mid", updated: "March 2026" },
+  { title: "Mailchimp vs Klaviyo 2026: General Email Tool vs Ecommerce Specialist", url: "/comparison-mailchimp-vs-klaviyo.html", type: "comparison", tools: ["mailchimp", "klaviyo"], size: "SMB", topics: ["Ecommerce"], pricing: "Mid", updated: "March 2026" },
+  { title: "Mailchimp vs Flodesk 2026: The Standard vs The Beautiful One", url: "/comparison-mailchimp-vs-flodesk.html", type: "comparison", tools: ["mailchimp", "flodesk"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Mailchimp vs AWeber 2026: The New Standard vs The Original", url: "/comparison-mailchimp-vs-aweber.html", type: "comparison", tools: ["mailchimp", "aweber"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "ActiveCampaign vs Klaviyo 2026: B2B Automation vs Ecommerce Automation", url: "/comparison-activecampaign-vs-klaviyo.html", type: "comparison", tools: ["activecampaign", "klaviyo"], size: "SMB", topics: ["Ecommerce"], pricing: "Mid", updated: "March 2026" },
+  { title: "ActiveCampaign vs Constant Contact 2026: Advanced Automation vs Beginner-Friendly Sending", url: "/comparison-activecampaign-vs-constantcontact.html", type: "comparison", tools: ["activecampaign", "constantcontact"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "ActiveCampaign vs AWeber 2026: Modern Automation vs Dependable Classic", url: "/comparison-activecampaign-vs-aweber.html", type: "comparison", tools: ["activecampaign", "aweber"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "Brevo vs GetResponse 2026: Send-Based Pricing vs All-in-One Platform", url: "/comparison-brevo-vs-getresponse.html", type: "comparison", tools: ["brevo", "getresponse"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Brevo vs Klaviyo 2026: Affordable Multi-Channel vs Ecommerce Powerhouse", url: "/comparison-brevo-vs-klaviyo.html", type: "comparison", tools: ["brevo", "klaviyo"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Brevo vs Constant Contact 2026: Modern Platform vs Long-Standing Classic", url: "/comparison-brevo-vs-constantcontact.html", type: "comparison", tools: ["brevo", "constantcontact"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Brevo vs Moosend 2026: Multi-Channel Platform vs Best-Value Automation", url: "/comparison-brevo-vs-moosend.html", type: "comparison", tools: ["brevo", "moosend"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "MailerLite vs Constant Contact 2026: Modern Simplicity vs Established Classic", url: "/comparison-mailerlite-vs-constantcontact.html", type: "comparison", tools: ["mailerlite", "constantcontact"], size: "SMB", topics: ["Free plan"], pricing: "Low", updated: "March 2026" },
+  { title: "MailerLite vs AWeber 2026: Modern Challenger vs Long-Standing Classic", url: "/comparison-mailerlite-vs-aweber.html", type: "comparison", tools: ["mailerlite", "aweber"], size: "SMB", topics: ["Free plan"], pricing: "Low", updated: "March 2026" },
+  { title: "MailerLite vs Flodesk 2026: Value and Features vs Beautiful Design", url: "/comparison-mailerlite-vs-flodesk.html", type: "comparison", tools: ["mailerlite", "flodesk"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Klaviyo vs Moosend 2026: Ecommerce Premium vs Automation Value", url: "/comparison-klaviyo-vs-moosend.html", type: "comparison", tools: ["klaviyo", "moosend"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "GetResponse vs Moosend 2026: All-in-One vs Focused Automation", url: "/comparison-getresponse-vs-moosend.html", type: "comparison", tools: ["getresponse", "moosend"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "GetResponse vs Constant Contact 2026: Feature-Rich Platform vs Simple and Supported", url: "/comparison-getresponse-vs-constantcontact.html", type: "comparison", tools: ["getresponse", "constantcontact"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Constant Contact vs AWeber 2026: Two Beginner-Friendly Classics Compared", url: "/comparison-constantcontact-vs-aweber.html", type: "comparison", tools: ["constantcontact", "aweber"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Flodesk vs MailerLite 2026: Beautiful Design vs Strong Value", url: "/comparison-flodesk-vs-mailerlite.html", type: "comparison", tools: ["flodesk", "mailerlite"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Flodesk vs Brevo 2026: Design-First vs Multi-Channel Value", url: "/comparison-flodesk-vs-brevo.html", type: "comparison", tools: ["flodesk", "brevo"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Kit vs Mailchimp 2026: Creator-Focused vs General Purpose", url: "/comparison-kit-vs-mailchimp.html", type: "comparison", tools: ["kit", "mailchimp"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Kit vs Brevo 2026: Creator Platform vs Multi-Channel Business Tool", url: "/comparison-kit-vs-brevo.html", type: "comparison", tools: ["kit", "brevo"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "AWeber vs GetResponse 2026: Dependable Classic vs Feature-Rich Platform", url: "/comparison-aweber-vs-getresponse.html", type: "comparison", tools: ["aweber", "getresponse"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "AWeber vs Brevo 2026: Reliable Classic vs Modern Multi-Channel", url: "/comparison-aweber-vs-brevo.html", type: "comparison", tools: ["aweber", "brevo"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "AWeber vs Moosend 2026: Reliable Classic vs Automation Value Leader", url: "/comparison-aweber-vs-moosend.html", type: "comparison", tools: ["aweber", "moosend"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "Omnisend vs Brevo 2026: Ecommerce Specialist vs Multi-Channel Generalist", url: "/comparison-omnisend-vs-brevo.html", type: "comparison", tools: ["omnisend", "brevo"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Omnisend vs MailerLite 2026: Ecommerce Specialist vs Creator-Friendly Value", url: "/comparison-omnisend-vs-mailerlite.html", type: "comparison", tools: ["omnisend", "mailerlite"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Brevo vs HubSpot 2026: Affordable Multi-Channel vs Full CRM Suite", url: "/comparison-brevo-vs-hubspot.html", type: "comparison", tools: ["brevo", "hubspot"], size: "SMB", topics: ["CRM"], pricing: "Low", updated: "March 2026" },
+  { title: "HubSpot vs GetResponse 2026: Full CRM Suite vs All-in-One Marketing Platform", url: "/comparison-hubspot-vs-getresponse.html", type: "comparison", tools: ["hubspot", "getresponse"], size: "SMB", topics: ["CRM"], pricing: "Low", updated: "March 2026" },
+  { title: "HubSpot vs Constant Contact 2026: Full Platform vs Simple and Supported", url: "/comparison-hubspot-vs-constantcontact.html", type: "comparison", tools: ["hubspot", "constantcontact"], size: "SMB", topics: ["CRM"], pricing: "Low", updated: "March 2026" },
+  { title: "HubSpot vs AWeber 2026: Full CRM Platform vs Focused Email Tool", url: "/comparison-hubspot-vs-aweber.html", type: "comparison", tools: ["hubspot", "aweber"], size: "SMB", topics: ["CRM"], pricing: "Low", updated: "March 2026" },
+  { title: "Klaviyo vs GetResponse 2026: Ecommerce Specialist vs All-in-One Platform", url: "/comparison-klaviyo-vs-getresponse.html", type: "comparison", tools: ["klaviyo", "getresponse"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Klaviyo vs MailerLite 2026: Ecommerce Premium vs Best-Value Email", url: "/comparison-klaviyo-vs-mailerlite.html", type: "comparison", tools: ["klaviyo", "mailerlite"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Klaviyo vs Constant Contact 2026: Ecommerce Powerhouse vs Simple Classic", url: "/comparison-klaviyo-vs-constantcontact.html", type: "comparison", tools: ["klaviyo", "constantcontact"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Klaviyo vs AWeber 2026: Ecommerce Specialist vs Reliable Email Classic", url: "/comparison-klaviyo-vs-aweber.html", type: "comparison", tools: ["klaviyo", "aweber"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Kit vs GetResponse 2026: Creator-First vs All-in-One Marketing", url: "/comparison-kit-vs-getresponse.html", type: "comparison", tools: ["kit", "getresponse"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Kit vs Flodesk 2026: Creator Platform vs Beautiful Email Tool", url: "/comparison-kit-vs-flodesk.html", type: "comparison", tools: ["kit", "flodesk"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
+  { title: "Moosend vs GetResponse 2026: Automation Value vs All-in-One Marketing", url: "/comparison-moosend-vs-getresponse.html", type: "comparison", tools: ["moosend", "getresponse"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "Moosend vs Constant Contact 2026: Automation Value vs Simple and Supported", url: "/comparison-moosend-vs-constantcontact.html", type: "comparison", tools: ["moosend", "constantcontact"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "Moosend vs AWeber 2026: Best-Value Automation vs Reliable Classic", url: "/comparison-moosend-vs-aweber.html", type: "comparison", tools: ["moosend", "aweber"], size: "SMB", topics: ["Automation"], pricing: "Low", updated: "March 2026" },
+  { title: "Moosend vs Klaviyo 2026: Automation Value vs Ecommerce Premium", url: "/comparison-moosend-vs-klaviyo.html", type: "comparison", tools: ["moosend", "klaviyo"], size: "SMB", topics: ["Ecommerce"], pricing: "Low", updated: "March 2026" },
+  { title: "Best Marketing Automation Tools for Small Business 2026", url: "/best-marketing-automation-small-business.html", type: "roundup", tools: ["activecampaign", "brevo", "moosend", "mailerlite", "mailchimp"], size: "SMB", topics: ["Roundup"], pricing: "Low", updated: "March 2026" },
+  { title: "Best Email Marketing Tools for Ecommerce 2026", url: "/best-email-marketing-ecommerce.html", type: "roundup", tools: ["klaviyo", "omnisend", "activecampaign", "brevo"], size: "SMB", topics: ["Ecommerce", "Roundup"], pricing: "Mid", updated: "March 2026" },
+  { title: "Best Mailchimp Alternatives 2026", url: "/best-mailchimp-alternatives.html", type: "roundup", tools: ["mailchimp", "mailerlite", "brevo", "activecampaign", "moosend"], size: "SMB", topics: ["Roundup"], pricing: "Low", updated: "March 2026" },
+  { title: "Best ActiveCampaign Alternatives 2026", url: "/best-activecampaign-alternatives.html", type: "roundup", tools: ["activecampaign", "brevo", "moosend", "mailerlite", "klaviyo"], size: "SMB", topics: ["Automation", "Roundup"], pricing: "Low", updated: "March 2026" },
+  { title: "Best Free Email Marketing Tools 2026", url: "/best-free-email-marketing-tools.html", type: "roundup", tools: ["mailerlite", "brevo", "mailchimp", "kit", "hubspot"], size: "SMB", topics: ["Free plan", "Roundup"], pricing: "Low", updated: "March 2026" },
+  { title: "Best Marketing Automation Tools for Creators 2026", url: "/best-marketing-automation-creators.html", type: "roundup", tools: ["kit", "mailerlite", "flodesk", "brevo"], size: "SMB", topics: ["Roundup"], pricing: "Low", updated: "March 2026" },
+  { title: "Best Marketing Automation Tools for B2B 2026", url: "/best-marketing-automation-b2b.html", type: "roundup", tools: ["activecampaign", "hubspot", "brevo"], size: "SMB", topics: ["CRM", "B2B", "Roundup"], pricing: "Mid", updated: "March 2026" },
+  { title: "Cheapest Marketing Automation Tools 2026", url: "/cheapest-marketing-automation-tools.html", type: "roundup", tools: ["mailerlite", "brevo", "moosend", "mailchimp"], size: "SMB", topics: ["Roundup"], pricing: "Low", updated: "March 2026" },
+];
+
+// ── FILTER STATE ──────────────────────────────────────────────────────────────
+const active = { type: [], tool: [], size: [], topic: [], pricing: [] };
+
+function toggleFilter(el) {
+  const type = el.dataset.filter;
+  const val = el.dataset.value;
+  const idx = active[type].indexOf(val);
+  if (idx > -1) { active[type].splice(idx, 1); el.classList.remove('active'); }
+  else { active[type].push(val); el.classList.add('active'); }
+  applyFilters();
+}
+
+function clearFilters() {
+  Object.keys(active).forEach(k => active[k] = []);
+  document.querySelectorAll('.fpill').forEach(p => p.classList.remove('active'));
+  document.getElementById('search-input').value = '';
+  applyFilters();
+}
+
+function getArticleType(article) {
+  if (!article.url) {
+    // Infer from title for coming-soon articles
+    const t = article.title.toLowerCase();
+    if (t.startsWith('how to migrate') || t.includes('migration')) return 'migration';
+    if (t.startsWith('how to set up')) return 'setup';
+    if (t.includes('review')) return 'review';
+    return 'comparison';
+  }
+  if (article.url.includes('/review-')) return 'review';
+  if (article.url.includes('/migration-')) return 'migration';
+  if (article.url.includes('/setup-')) return 'setup';
+  return 'comparison';
+}
+
+function applyFilters() {
+  const query = document.getElementById('search-input').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.article-card');
+  let visible = 0;
+
+  ARTICLES.forEach((article, i) => {
+    let show = true;
+    const articleType = getArticleType(article);
+
+    // Search
+    if (query && !article.title.toLowerCase().includes(query) && !article.tools.some(t => t.includes(query))) {
+      show = false;
+    }
+    // Type filter
+    if (active.type && active.type.length > 0 && !active.type.includes(articleType)) show = false;
+    // Tool filter
+    if (active.tool.length > 0 && !active.tool.some(t => article.tools.includes(t))) show = false;
+    // Size filter
+    if (active.size.length > 0 && !active.size.some(s => article.size.includes(s))) show = false;
+    // Topic filter
+    if (active.topic.length > 0 && !active.topic.some(t => article.topics.includes(t))) show = false;
+    // Pricing filter
+    if (active.pricing.length > 0 && !active.pricing.some(p => article.pricing.includes(p))) show = false;
+
+    cards[i].classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  document.getElementById('article-count').textContent = visible;
+  document.getElementById('no-results').classList.toggle('visible', visible === 0);
+}
+
+// ── RENDER ARTICLES ───────────────────────────────────────────────────────────
+const TOOL_LABELS = { moosend: 'Moosend', activecampaign: 'ActiveCampaign', mailerlite: 'MailerLite', mailchimp: 'Mailchimp', hubspot: 'HubSpot', getresponse: 'GetResponse', brevo: 'Brevo', omnisend: 'Omnisend', kit: 'Kit', klaviyo: 'Klaviyo' };
+const SIZE_LABELS = { smb: 'SMB', midmarket: 'Mid-market', enterprise: 'Enterprise' };
+const TOPIC_LABELS = { automation: 'Automation', ecommerce: 'E-commerce', crm: 'CRM', ease: 'Ease of use', migration: 'Migration' };
+const PRICING_LABELS = { hasfree: 'Free plan', under15: 'Under $15/mo', freetrial: 'Free trial' };
+
+const grid = document.getElementById('articles-grid');
+ARTICLES.forEach(article => {
+  const el = document.createElement(article.status === 'live' ? 'a' : 'div');
+  el.className = 'article-card ' + article.status;
+  if (article.url) el.href = article.url;
+
+  const toolTags = article.tools.map(t => `<span class="ac-tag tool">${TOOL_LABELS[t] || t}</span>`).join('');
+  const sizeTags = article.size.map(s => `<span class="ac-tag size">${SIZE_LABELS[s]}</span>`).join('');
+  const topicTags = article.topics.map(t => `<span class="ac-tag topic">${TOPIC_LABELS[t]}</span>`).join('');
+  const pricingTags = article.pricing.map(p => `<span class="ac-tag pricing">${PRICING_LABELS[p]}</span>`).join('');
+
+  el.innerHTML = `
+    <div class="ac-left">
+      <span class="ac-title">${article.title}</span>
+      <div class="ac-meta">${toolTags}${sizeTags}${topicTags}${pricingTags}</div>
+    </div>
+    <div class="ac-right">
+      ${article.status === 'live' ? '<span class="ac-arrow">→</span>' : '<span class="ac-coming-label">Coming soon</span>'}
+    </div>
+  `;
+  grid.appendChild(el);
+});
+
+applyFilters();
+
+// Deep-link support: ?type=migration, ?type=review, ?type=comparison
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const typeParam = params.get('type');
+  if (typeParam && ['comparison','review','migration'].includes(typeParam)) {
+    // Find and activate the matching pill
+    document.querySelectorAll('[data-filter="type"]').forEach(pill => {
+      if (pill.dataset.value === typeParam) {
+        pill.classList.add('active');
+        active.type = [typeParam];
+      }
+    });
+    applyFilters();
+  }
+})();
+
+</script>
+</body>
+</html>

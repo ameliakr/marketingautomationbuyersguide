@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Migrate from ActiveCampaign to HubSpot (2026 Guide)</title>
+<meta name="description" content="Step-by-step guide to migrating from ActiveCampaign to HubSpot. What transfers, what you rebuild, and how to switch without losing data.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+<meta property="og:title" content="How to Migrate from ActiveCampaign to HubSpot (2026 Guide)">
+<meta property="og:description" content="Step-by-step guide to migrating from ActiveCampaign to HubSpot. What transfers, what you rebuild, and how to switch without losing data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.article-wrap { max-width: 750px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; text-wrap: balance; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul, .article-body ol { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
+.quick-table th:first-child { color: var(--muted); font-size: 13px; font-weight: 600; }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; text-align: left; }
+.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.cell-partial { color: var(--partial); font-weight: 500; }
+.step-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 24px 0; background: #f8f8f6; }
+.step-block-num { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.step-block-title { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
+.step-block-time { font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 10px; }
+.step-block p { font-size: 14px; line-height: 1.7; margin-bottom: 0; color: var(--ink); }
+.warning-box { border: 1px solid #f5c6c6; background: #fce8e8; padding: 18px 20px; margin: 28px 0; }
+.warning-box-title { font-size: 12px; font-weight: 600; color: var(--no); letter-spacing: 0.04em; margin-bottom: 8px; }
+.warning-box p { font-size: 13px; color: #7a1a1a; line-height: 1.6; margin-bottom: 0; }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row.coming .related-row-title { color: var(--muted); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+.related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+</style>
+</head>
+<body>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/articles.html">Articles</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/articles.html">Articles</a>
+  </div>
+</header>
+<main class="page-body">
+  <div class="article-wrap">
+    <div class="article-hero">
+      <h1>How to Migrate from ActiveCampaign to HubSpot</h1>
+      <div class="article-meta">
+        <span class="article-tag tool">ActiveCampaign</span>
+        <span class="article-tag tool">HubSpot</span>
+        <span class="article-tag">Migration</span>
+        <span class="article-tag">Updated March 2026</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <p>Moving from ActiveCampaign to HubSpot usually means your business has grown to the point where CRM is as important as email automation. ActiveCampaign has a capable CRM, but HubSpot's is deeper - more structured deal pipelines, better sales reporting, and tighter integration between marketing and sales activities.</p><p>This is not a simple migration. Both platforms are powerful and both organize data differently. The contact migration is standard. The automation rebuild is where the complexity lies - ActiveCampaign's automation engine is different from HubSpot's workflow builder, and translating complex sequences requires careful planning.</p>
+      <h2>What transfers and what does not</h2>
+      <table class="quick-table">
+        <thead><tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
+          <tr><td>Custom fields</td><td class="cell-yes">Yes</td><td>Map carefully during import</td></tr>
+          <tr><td>Tags and segments</td><td class="cell-partial">Partial</td><td>Export as columns and remap manually</td></tr>
+          <tr><td>Unsubscribe history</td><td class="cell-yes">Yes</td><td>Import as suppressed contacts</td></tr>
+          <tr><td>Email templates</td><td class="cell-partial">Partial</td><td>Export HTML and rebuild in HubSpot</td></tr>
+          <tr><td>Automation workflows</td><td class="cell-no">No</td><td>Must be rebuilt from scratch</td></tr>
+          <tr><td>Campaign history and analytics</td><td class="cell-no">No</td><td>Download reports before cancelling</td></tr>
+          <tr><td>Forms and landing pages</td><td class="cell-no">No</td><td>Recreate in HubSpot or your existing tools</td></tr>
+        </tbody>
+      </table>
+      <h2>Before you start</h2>
+      <p>Start your HubSpot account before doing anything in your existing platform. Keep both accounts running in parallel until HubSpot is fully set up and tested.</p>
+      <div class="inline-cta"><span class="inline-cta-text">Start your free HubSpot trial before beginning the migration.</span><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a></div>
+      <h2>Step-by-step migration guide</h2>
+      <div class="step-block"><div class="step-block-num">Step 1</div><div class="step-block-title">Export your contacts from ActiveCampaign</div><div class="step-block-time">15-30 minutes</div><p>Export your full contact list as a CSV including all custom fields and tags. Export your unsubscribe and bounce lists separately.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 2</div><div class="step-block-title">Document your automations</div><div class="step-block-time">30-90 minutes</div><p>Screenshot or write down every active automation in ActiveCampaign - the trigger, conditions, email content, and timing between steps. Do this before you cancel your account.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 3</div><div class="step-block-title">Export your email templates</div><div class="step-block-time">30-60 minutes</div><p>Save the HTML of any email templates you want to reuse. You can import HTML into HubSpot or rebuild templates using their editor.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 4</div><div class="step-block-title">Download your campaign reports</div><div class="step-block-time">10-15 minutes</div><p>Export your historical performance data. Open rates, click rates, and engagement history will not carry over and you lose access once your account is closed.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 5</div><div class="step-block-title">Set up your HubSpot account</div><div class="step-block-time">30-60 minutes</div><p>Complete account setup including domain authentication. Add SPF and DKIM records to your DNS settings. This is essential for deliverability and HubSpot will guide you through it.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 6</div><div class="step-block-title">Import your contacts</div><div class="step-block-time">20-45 minutes</div><p>Import your CSV into HubSpot and map each column to the correct field. Import your suppression list separately to prevent emailing contacts who have opted out.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 7</div><div class="step-block-title">Rebuild your automations</div><div class="step-block-time">1-4 hours</div><p>Use HubSpot's automation builder to recreate your workflows. Start with the highest-priority sequences and test each one before activating.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 8</div><div class="step-block-title">Update your forms and integrations</div><div class="step-block-time">30-60 minutes</div><p>Replace your ActiveCampaign forms with HubSpot forms on your website. Update any integrations, popups, or third-party tools connected to ActiveCampaign.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 9</div><div class="step-block-title">Test everything before going live</div><div class="step-block-time">1-2 hours</div><p>Send test emails. Trigger each automation with a test contact. Confirm domain authentication is passing. Do not cancel ActiveCampaign until this is done.</p></div>
+      <div class="step-block"><div class="step-block-num">Step 10</div><div class="step-block-title">Cancel ActiveCampaign</div><div class="step-block-time">5 minutes</div><p>Once HubSpot is fully set up and tested, cancel your ActiveCampaign subscription. Check your billing date first to avoid being charged for another month.</p></div>
+      <div class="warning-box"><div class="warning-box-title">Before you cancel ActiveCampaign</div><p>Export your contact list, suppression list, campaign history, and templates. Update all connected integrations to point to HubSpot. Once your ActiveCampaign account is closed, this data is gone.</p></div>
+      <h2>Key differences to plan for</h2>
+      <p><strong>Automation logic works differently.</strong> ActiveCampaign's automation builder uses a canvas with multiple start triggers and complex branching. HubSpot's workflow builder is more linear and the trigger and action options differ. Do not expect a one-to-one translation - some ActiveCampaign automations will need to be rethought rather than simply rebuilt.</p>
+      <p><strong>CRM data needs careful mapping.</strong> If you have deal data in ActiveCampaign, plan how that maps to HubSpot deals, companies, and contacts before migrating. HubSpot's data model uses Companies as a separate object that associates with Contacts and Deals. ActiveCampaign's is simpler. Budget extra time for this if your CRM data is extensive.</p>
+      <p><strong>HubSpot Marketing Hub tiers matter.</strong> Basic automation is on Starter. Advanced workflows with branching are on Professional at $800/mo. If you are coming from ActiveCampaign's Plus plan, make sure you understand which HubSpot tier gives you equivalent functionality before committing.</p>
+      <h2>Why people switch from ActiveCampaign to HubSpot</h2>
+      <p>The most common driver is sales team growth. When a business adds salespeople who need pipeline visibility, reporting, and contact management at scale, HubSpot's CRM becomes more compelling than ActiveCampaign's. HubSpot was built CRM-first. ActiveCampaign was built automation-first. When CRM becomes the priority, HubSpot wins.</p>
+      <h2>The bottom line</h2>
+      <p>Migrating from ActiveCampaign to <a href="https://www.hubspot.com" target="_blank">HubSpot</a> is manageable for most businesses. Your contacts move over cleanly. The work is in rebuilding your automations and updating your forms. Keep both accounts running in parallel until everything is confirmed working, then cancel ActiveCampaign.</p>
+      <p>Not sure if HubSpot is the right destination? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+      <div class="useful-links-section">
+        <div class="useful-links-title">Useful next steps</div>
+        <div class="useful-links-sub">Everything you need to get started.</div>
+        <div class="useful-link-row"><span class="useful-link-label">Get started with HubSpot</span><a class="useful-link-url" href="https://www.hubspot.com" target="_blank">Try HubSpot free →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Compare ActiveCampaign vs HubSpot</span><a class="useful-link-url" href="/comparison-activecampaign-vs-hubspot.html">Read comparison →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Use the migration effort estimator</span><a class="useful-link-url" href="/guides.html">Open estimator →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Not sure HubSpot is right for you?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Step-by-step setup guide for destination tool</span><a class="useful-link-url" href="/setup-hubspot.html">Read guide →</a></div>
+      </div>
+    </div>
+    <div class="related-section" id="related-section"></div>
+  </div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
+    <div class="footer-links">
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+    </div>
+  </div>
+</footer>
+<script>
+const THIS_ARTICLE_TOOLS = ["activecampaign", "hubspot"];
+const THIS_ARTICLE_URL = window.location.pathname;
+const ALL_ARTICLES = [
+  { title: "ActiveCampaign vs HubSpot", url: "/comparison-activecampaign-vs-hubspot.html", tools: ["activecampaign","hubspot"], status: "live" },
+  { title: "ActiveCampaign Review 2026", url: "/review-activecampaign.html", tools: ["activecampaign"], status: "live" },
+  { title: "HubSpot Review 2026", url: "/review-hubspot.html", tools: ["hubspot"], status: "live" },
+];
+const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",keap:"Keap"};
+function renderRelated() {
+  const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
+  if (related.length===0) return;
+  const section = document.getElementById("related-section");
+  let html = '<div class="related-title">Related articles</div><div class="related-sub">More migration guides</div>';
+  related.forEach(a => {
+    const toolStr = a.tools.map(t => TOOL_LABELS[t]||t).join(" to ");
+    if (a.status==="live") html += '<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';
+    else html += '<div class="related-row coming"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-coming">Coming soon</span></div>';
+  });
+  section.innerHTML = html;
+}
+renderRelated();
+</script>
+</body>
+</html>

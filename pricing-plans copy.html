@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Automation Pricing Comparison 2026 - Every Tool, Every Plan</title>
+<meta name="description" content="The most complete marketing automation pricing comparison on the web. Filter by budget, free plan, features, and business size. Updated March 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+  <meta property="og:url" content="https://www.marketingautomationbuyersguide.com/pricing-plans.html">
+  <meta property="og:title" content="Marketing Automation Pricing Comparison 2026">
+  <meta property="og:description" content="Filter every major email marketing tool by budget, free plan, and features. Find the right plan instantly.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Marketing Automation Pricing Comparison 2026">
+  <meta name="twitter:description" content="Filter every major email marketing tool by budget, free plan, and features. Find the right plan instantly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+/* ── PAGE HERO ── */
+.pricing-hero { text-align: center; margin-bottom: 48px; }
+.pricing-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
+.pricing-hero h1 em { font-style: italic; color: var(--accent); }
+.pricing-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+.last-updated { display: inline-block; font-size: 11px; color: var(--muted); background: #f5f5f3; padding: 4px 10px; margin-top: 12px; letter-spacing: 0.04em; }
+
+/* ── FILTER BAR ── */
+.filter-bar { background: #f8f8f6; border: 1px solid var(--rule); padding: 20px 24px; margin-bottom: 32px; }
+.filter-bar-inner { max-width: 750px; margin: 0 auto; }
+.filter-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.filter-groups { display: flex; flex-wrap: wrap; gap: 24px; }
+.filter-group { display: flex; flex-direction: column; gap: 8px; }
+.filter-group-title { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+.filter-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { font-size: 12px; padding: 5px 12px; border: 1px solid var(--rule); background: white; color: var(--ink); cursor: pointer; transition: all 0.15s; user-select: none; }
+.pill:hover { border-color: var(--ink); }
+.pill.active { background: var(--ink); color: white; border-color: var(--ink); }
+.pill.active.green { background: var(--accent); border-color: var(--accent); }
+.filter-reset { font-size: 12px; color: var(--muted); cursor: pointer; text-decoration: underline; align-self: flex-end; margin-left: auto; }
+.filter-reset:hover { color: var(--ink); }
+.results-count { font-size: 12px; color: var(--muted); margin-top: 14px; }
+.results-count span { font-weight: 500; color: var(--ink); }
+
+/* ── TOOL CARDS GRID ── */
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: var(--rule); margin-bottom: 64px; }
+.tool-card { background: white; padding: 24px; display: flex; flex-direction: column; gap: 16px; transition: background 0.15s; height: 100%; }
+.tool-card:hover { background: #fafaf8; }
+.tool-card.hidden { display: none; }
+
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.card-name { font-size: 17px; font-weight: 500; }
+.card-tier { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 3px 7px; border: 1px solid var(--rule); white-space: nowrap; }
+.card-tier.smb { color: var(--accent); border-color: #c8e6c9; background: #f1f8f1; }
+.card-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
+.card-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
+
+.card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; min-height: 3em; }
+
+.card-pricing { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
+.price-label { color: var(--muted); }
+.price-value { font-weight: 500; }
+.free-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; }
+.free-badge.yes { background: var(--free-bg); color: var(--free-text); }
+.free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
+
+.card-features { display: flex; flex-wrap: wrap; gap: 5px; }
+.feature-tag { font-size: 11px; padding: 3px 8px; background: #f5f5f3; color: #bdbdbd; }
+.feature-tag::before { content: '✕ '; font-size: 9px; }
+.feature-tag.has { background: #f1f8f1; color: #2c5f2e; }
+.feature-tag.has::before { content: ''; }
+
+.card-cta { margin-top: auto; display: flex; flex-direction: column; gap: 7px; }
+.btn-primary { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; }
+.btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+.affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; }
+
+/* ── NO RESULTS ── */
+.no-results { display: none; text-align: center; padding: 80px 24px; }
+.no-results.visible { display: block; }
+.no-results p { font-size: 15px; color: var(--muted); }
+
+/* ── QUIZ CTA ── */
+.quiz-cta-section { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 40px 24px; text-align: center; margin-bottom: 64px; }
+.quiz-cta-section h2 { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin-bottom: 10px; }
+.quiz-cta-section p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.quiz-cta-btn { display: inline-block; padding: 12px 28px; background: var(--accent); color: white; font-size: 14px; font-weight: 500; transition: opacity 0.15s; }
+.quiz-cta-btn:hover { opacity: 0.85; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .filter-groups { flex-direction: column; }
+  .tools-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/articles.html">Articles</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/articles.html">Articles</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="wrap">
+
+    <div class="pricing-hero">
+      <h1>Pricing</h1>
+      <span class="last-updated">Updated March 2026</span>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="filter-bar-inner">
+        <div class="filter-label">Filter tools</div>
+        <div class="filter-groups">
+
+          <div class="filter-group">
+            <span class="filter-group-title">Free plan</span>
+            <div class="filter-pills">
+              <span class="pill" data-filter="free" data-value="yes" onclick="toggleFilter(this)">Free plan available</span>
+              <span class="pill" data-filter="free" data-value="no" onclick="toggleFilter(this)">Paid only</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-group-title">Starting price</span>
+            <div class="filter-pills">
+              <span class="pill" data-filter="price" data-value="under15" onclick="toggleFilter(this)">Under $15/mo</span>
+              <span class="pill" data-filter="price" data-value="under30" onclick="toggleFilter(this)">Under $30/mo</span>
+              <span class="pill" data-filter="price" data-value="under100" onclick="toggleFilter(this)">Under $100/mo</span>
+              <span class="pill" data-filter="price" data-value="enterprise" onclick="toggleFilter(this)">Enterprise</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-group-title">Must have</span>
+            <div class="filter-pills">
+              <span class="pill" data-filter="feature" data-value="crm" onclick="toggleFilter(this)">CRM</span>
+              <span class="pill" data-filter="feature" data-value="sms" onclick="toggleFilter(this)">SMS</span>
+              <span class="pill" data-filter="feature" data-value="ecommerce" onclick="toggleFilter(this)">E-commerce</span>
+              <span class="pill" data-filter="feature" data-value="landing" onclick="toggleFilter(this)">Landing pages</span>
+              <span class="pill" data-filter="feature" data-value="automation" onclick="toggleFilter(this)">Visual automation</span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <span class="filter-group-title">Business size</span>
+            <div class="filter-pills">
+              <span class="pill" data-filter="tier" data-value="smb" onclick="toggleFilter(this)">SMB</span>
+              <span class="pill" data-filter="tier" data-value="mid" onclick="toggleFilter(this)">Mid-market</span>
+              <span class="pill" data-filter="tier" data-value="enterprise" onclick="toggleFilter(this)">Enterprise</span>
+            </div>
+          </div>
+
+          <span class="filter-reset" onclick="resetFilters()">Clear all filters</span>
+        </div>
+        <div class="results-count"><span id="results-count">17</span> tools shown</div>
+      </div>
+    </div>
+
+    <!-- TOOL CARDS -->
+    <div class="tools-grid" id="tools-grid">
+
+      <!-- MOOSEND -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="9"
+        data-price-cat="under15"
+        data-tier="smb"
+        data-features="ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">Moosend</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Affordable automation with a clean interface, good for growing lists on a budget</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">30 days, no card</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$9/mo (500 subscribers)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Forms & popups</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">SMS</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Try Moosend free →</a>
+          <a class="btn-secondary" href="https://moosend.com/pricing" target="_blank">View all plans</a>
+          <span class="affiliate-tag">affiliate link</span>
+        </div>
+      </div>
+
+      <!-- ACTIVECAMPAIGN -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="15"
+        data-price-cat="under15 under30"
+        data-tier="smb"
+        data-features="crm sms ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">ActiveCampaign</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Powerful CRM and automation for businesses that need more than just email</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">14 days, no card</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$15/mo (1,000 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a>
+          <a class="btn-secondary" href="https://try.activecampaign.com/9lravfc5vzsu" target="_blank">View all plans</a>
+          <span class="affiliate-tag">affiliate link</span>
+        </div>
+      </div>
+
+      <!-- MAILERLITE -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="9"
+        data-price-cat="under15"
+        data-tier="smb"
+        data-features="ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">MailerLite</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Simple, affordable, and easy to learn. Good for small businesses and bloggers</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - 1,000 contacts</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">30 days, paid features</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$9/mo (unlimited emails)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">SMS</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.mailerlite.com" target="_blank">Try MailerLite free →</a>
+          <a class="btn-secondary" href="https://www.mailerlite.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- MAILCHIMP -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="13"
+        data-price-cat="under15"
+        data-tier="smb"
+        data-features="ecommerce landing">
+        <div class="card-header">
+          <span class="card-name">Mailchimp</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">The most recognizable name in email marketing, now better suited to small businesses than it used to be</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - up to 500 contacts</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$13/mo (500 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">SMS</span>
+          <span class="feature-tag">Visual automation</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.mailchimp.com" target="_blank">Try Mailchimp free →</a>
+          <a class="btn-secondary" href="https://www.mailchimp.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- GETRESPONSE -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="15"
+        data-price-cat="under15 under30"
+        data-tier="smb"
+        data-features="sms ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">GetResponse</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Email marketing plus landing pages and webinars in one platform</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - up to 500 contacts</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$15/mo (1,000 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">CRM</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://try.getresponsetoday.com/wbg0pd66ibns" target="_blank">Try GetResponse free →</a><div class="affiliate-tag">affiliate link</div>
+          <a class="btn-secondary" href="https://try.getresponsetoday.com/wbg0pd66ibns/pricing" target="_blank">View all plans</a><div class="affiliate-tag">affiliate link</div>
+        </div>
+      </div>
+
+      <!-- KIT -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="25"
+        data-price-cat="under30"
+        data-tier="smb"
+        data-features="landing automation">
+        <div class="card-header">
+          <span class="card-name">ConvertKit / Kit</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Built for creators, bloggers, and solopreneurs who sell digital products</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - up to 10,000 subscribers</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$25/mo (1,000 subscribers)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">SMS</span>
+          <span class="feature-tag">E-commerce</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://kit.com" target="_blank">Try Kit free →</a>
+          <a class="btn-secondary" href="https://kit.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- OMNISEND -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="16"
+        data-price-cat="under30"
+        data-tier="smb"
+        data-features="sms ecommerce automation">
+        <div class="card-header">
+          <span class="card-name">Omnisend</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Email and SMS marketing designed specifically for e-commerce stores</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - up to 250 contacts</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$16/mo (500 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">Landing pages</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.omnisend.com" target="_blank">Try Omnisend free →</a>
+          <a class="btn-secondary" href="https://www.omnisend.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- BREVO -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="9"
+        data-price-cat="under15"
+        data-tier="smb"
+        data-features="crm sms ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">Brevo</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">A flexible, affordable platform with email, SMS, and CRM in one place</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - unlimited contacts, 300 emails/day</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$9/mo (20,000 emails/mo)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+        </div>
+        <div class="card-cta">
+          <span class="affiliate-tag">affiliate link</span>
+          <a class="btn-primary" href="https://get.brevo.com/hjl3lwlukji3" target="_blank">Try Brevo free →</a><div class="affiliate-tag">affiliate link</div>
+          <a class="btn-secondary" href="https://get.brevo.com/hjl3lwlukji3" target="_blank">View all plans</a><div class="affiliate-tag">affiliate link</div>
+        </div>
+      </div>
+
+      <!-- HUBSPOT SMB -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="15"
+        data-price-cat="under15 under30"
+        data-tier="smb"
+        data-features="crm sms ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">HubSpot</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Free plan works well for small teams; paid tiers scale up to full enterprise</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - unlimited contacts, basic CRM</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$15/mo per seat (Starter)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.hubspot.com" target="_blank">Try HubSpot free →</a>
+          <a class="btn-secondary" href="https://www.hubspot.com/pricing/marketing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- KLAVIYO -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="20"
+        data-price-cat="under30"
+        data-tier="smb"
+        data-features="sms ecommerce automation">
+        <div class="card-header">
+          <span class="card-name">Klaviyo</span>
+          <span class="card-tier smb">SMB</span>
+        </div>
+        <p class="card-tagline">Data-driven email and SMS for e-commerce brands serious about revenue</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - up to 250 contacts</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">~$20/mo (500 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">Landing pages</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.klaviyo.com" target="_blank">Try Klaviyo free →</a>
+          <a class="btn-secondary" href="https://www.klaviyo.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- CAMPAIGN MONITOR -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="11"
+        data-price-cat="under15"
+        data-tier="mid"
+        data-features="ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">Campaign Monitor</span>
+          <span class="card-tier mid">Mid-market</span>
+        </div>
+        <p class="card-tagline">Clean, well-designed email marketing with strong segmentation</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">Free account (limited sends)</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$11/mo (500 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">CRM</span>
+          <span class="feature-tag">SMS</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.campaignmonitor.com" target="_blank">Try Campaign Monitor →</a>
+          <a class="btn-secondary" href="https://www.campaignmonitor.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- KEAP -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="249"
+        data-price-cat="under100 enterprise"
+        data-tier="mid"
+        data-features="crm sms landing automation">
+        <div class="card-header">
+          <span class="card-name">Keap</span>
+          <span class="card-tier mid">Mid-market</span>
+        </div>
+        <p class="card-tagline">CRM and automation built for small but growing service businesses</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">14 days</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$249/mo (1,500 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">E-commerce</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.keap.com" target="_blank">Try Keap free →</a>
+          <a class="btn-secondary" href="https://www.keap.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- ZOHO CAMPAIGNS -->
+      <div class="tool-card"
+        data-free="yes"
+        data-price-num="3"
+        data-price-cat="under15"
+        data-tier="mid"
+        data-features="crm ecommerce automation">
+        <div class="card-header">
+          <span class="card-name">Zoho Campaigns</span>
+          <span class="card-tier mid">Mid-market</span>
+        </div>
+        <p class="card-tagline">Email marketing that integrates tightly with the broader Zoho ecosystem</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes - up to 2,000 contacts</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$3/mo (500 contacts)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM (via Zoho)</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag">SMS</span>
+          <span class="feature-tag">Landing pages</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.zoho.com/campaigns" target="_blank">Try Zoho Campaigns free →</a>
+          <a class="btn-secondary" href="https://www.zoho.com/campaigns/pricing.html" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- HUBSPOT ENTERPRISE -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="3600"
+        data-price-cat="enterprise"
+        data-tier="enterprise"
+        data-features="crm sms ecommerce landing automation">
+        <div class="card-header">
+          <span class="card-name">HubSpot Enterprise</span>
+          <span class="card-tier ent">Enterprise</span>
+        </div>
+        <p class="card-tagline">Full marketing, sales, and CRM suite - powerful but expensive at scale</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No (free SMB tier available)</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">$3,600/mo (Marketing Hub Enterprise)</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag has">ABM</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.hubspot.com" target="_blank">Contact sales →</a>
+          <a class="btn-secondary" href="https://www.hubspot.com/pricing/marketing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- SALESFORCE MC -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="99999"
+        data-price-cat="enterprise"
+        data-tier="enterprise"
+        data-features="crm sms ecommerce automation">
+        <div class="card-header">
+          <span class="card-name">Salesforce Marketing Cloud</span>
+          <span class="card-tier ent">Enterprise</span>
+        </div>
+        <p class="card-tagline">Enterprise-grade omnichannel marketing for large teams with dedicated ops resources</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">Demo available</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">Custom pricing</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM (via Salesforce)</span>
+          <span class="feature-tag has">SMS</span>
+          <span class="feature-tag has">E-commerce</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag has">AI personalization</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.salesforce.com/products/marketing-cloud" target="_blank">Contact sales →</a>
+          <a class="btn-secondary" href="https://www.salesforce.com/products/marketing-cloud/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+      <!-- ADOBE MARKETO -->
+      <div class="tool-card"
+        data-free="no"
+        data-price-num="99999"
+        data-price-cat="enterprise"
+        data-tier="enterprise"
+        data-features="crm automation landing">
+        <div class="card-header">
+          <span class="card-name">Adobe Marketo</span>
+          <span class="card-tier ent">Enterprise</span>
+        </div>
+        <p class="card-tagline">Deep B2B marketing automation for complex, long sales cycles</p>
+        <div class="card-pricing">
+          <div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>
+          <div class="price-row"><span class="price-label">Free trial</span><span class="price-value">Demo available</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">Custom pricing</span></div>
+        </div>
+        <div class="card-features">
+          <span class="feature-tag has">Email automation</span>
+          <span class="feature-tag has">CRM (via Adobe)</span>
+          <span class="feature-tag has">Landing pages</span>
+          <span class="feature-tag has">Visual automation</span>
+          <span class="feature-tag has">Lead scoring</span>
+          <span class="feature-tag has">ABM</span>
+        </div>
+        <div class="card-cta">
+          <a class="btn-primary" href="https://www.marketo.com" target="_blank">Contact sales →</a>
+          <a class="btn-secondary" href="https://www.marketo.com/pricing" target="_blank">View all plans</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="no-results" id="no-results">
+      <p>No tools match your current filters. Try removing some filters to see more results.</p>
+    </div>
+
+  </div>
+</main>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+      </div>
+    
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
+    <div class="footer-links">
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const activeFilters = { free: null, price: null, feature: [], tier: null };
+
+function toggleFilter(el) {
+  const type = el.dataset.filter;
+  const value = el.dataset.value;
+
+  if (type === 'feature') {
+    const idx = activeFilters.feature.indexOf(value);
+    if (idx > -1) {
+      activeFilters.feature.splice(idx, 1);
+      el.classList.remove('active');
+    } else {
+      activeFilters.feature.push(value);
+      el.classList.add('active', 'green');
+    }
+  } else {
+    if (activeFilters[type] === value) {
+      activeFilters[type] = null;
+      el.classList.remove('active');
+    } else {
+      document.querySelectorAll(`[data-filter="${type}"]`).forEach(p => p.classList.remove('active', 'green'));
+      activeFilters[type] = value;
+      el.classList.add('active');
+      if (type === 'feature') el.classList.add('green');
+    }
+  }
+  applyFilters();
+}
+
+function resetFilters() {
+  activeFilters.free = null;
+  activeFilters.price = null;
+  activeFilters.feature = [];
+  activeFilters.tier = null;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active', 'green'));
+  applyFilters();
+}
+
+function applyFilters() {
+  const cards = document.querySelectorAll('.tool-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    let show = true;
+
+    if (activeFilters.free) {
+      if (card.dataset.free !== activeFilters.free) show = false;
+    }
+    if (activeFilters.price) {
+      const cats = card.dataset.priceCat || '';
+      if (!cats.includes(activeFilters.price)) show = false;
+    }
+    if (activeFilters.tier) {
+      if (card.dataset.tier !== activeFilters.tier) show = false;
+    }
+    if (activeFilters.feature.length > 0) {
+      const cardFeatures = card.dataset.features || '';
+      const hasAll = activeFilters.feature.every(f => cardFeatures.includes(f));
+      if (!hasAll) show = false;
+    }
+
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  document.getElementById('results-count').textContent = visible;
+  document.getElementById('no-results').classList.toggle('visible', visible === 0);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Marketing Automation Tools - Side-by-Side Builder</title>
+<meta name="description" content="Pick two or three marketing automation tools and get a full side-by-side comparison of features, pricing, and who each tool is right for. Updated 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+  <meta property="og:url" content="https://www.marketingautomationbuyersguide.com/comparisons.html">
+  <meta property="og:title" content="Marketing Automation Comparison Builder">
+  <meta property="og:description" content="Compare any two tools instantly. Features, pricing, and a clear verdict on who each tool is right for.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Marketing Automation Comparison Builder">
+  <meta name="twitter:description" content="Compare any two tools instantly. Features, pricing, and a clear verdict on who each tool is right for.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+/* ── HERO ── */
+.comp-hero { margin-bottom: 48px; }
+.comp-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
+.comp-hero h1 em { font-style: italic; color: var(--accent); }
+.comp-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 750px; margin: 0; }
+
+/* ── TOOL PICKER ── */
+.picker-section { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 40px; }
+.picker-inner { display: flex; gap: 12px; align-items: flex-end; max-width: 750px; margin: 0; flex-wrap: wrap; }
+.picker-slot { flex: 1; min-width: 160px; }
+.picker-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.tool-select { width: 100%; padding: 12px 14px; border: 1px solid var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; cursor: pointer; }
+.tool-select:focus { outline: none; border-color: var(--ink); }
+.vs-divider { text-align: center; font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--rule); padding-bottom: 12px; flex-shrink: 0; }
+.add-third-wrap { display: flex; align-items: flex-end; flex-shrink: 0; padding-bottom: 0; }
+.add-third-btn { padding: 12px 14px; border: 1px dashed var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--muted); cursor: pointer; white-space: nowrap; transition: all 0.15s; }
+.add-third-btn:hover { border-color: var(--ink); color: var(--ink); }
+.picker-actions { display: flex; align-items: center; justify-content: flex-start; gap: 20px; margin-top: 20px; }
+.compare-btn { padding: 12px 28px; background: var(--accent); color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: opacity 0.15s; }
+.compare-btn:hover { opacity: 0.85; }
+.remove-third-btn { font-size: 13px; color: var(--muted); background: none; border: none; cursor: pointer; text-decoration: underline; font-family: 'DM Sans', sans-serif; }
+.remove-third-btn:hover { color: var(--ink); }
+
+/* ── COMPARISON RESULT ── */
+.comparison-result { display: none; }
+.comparison-result.visible { display: block; }
+
+.comp-header { display: none; }  /* replaced by thead */
+.comp-header-cell { display: table-cell; padding: 20px 24px; vertical-align: top; }
+.comp-header-cell.label { width: 180px; background: #fafaf8; border-right: 1px solid var(--rule); }
+.comp-header-cell.tool { background: #f8f8f6; }
+.comp-tool-name { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; white-space: normal; }
+.comp-tool-tagline { font-size: 12px; color: var(--muted); line-height: 1.5; white-space: normal; }
+.comp-tool-cta { display: inline-block; margin-top: 12px; padding: 8px 16px; background: var(--accent); color: white; font-size: 12px; font-weight: 500; transition: opacity 0.15s; }
+.comp-tool-cta:hover { opacity: 0.85; }
+.comp-affiliate { font-size: 10px; color: var(--muted); font-style: italic; display: block; margin-top: 4px; }
+
+.comp-table { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); margin-bottom: 40px; table-layout: fixed; }
+.comp-table tr { border-bottom: 1px solid var(--rule); }
+.comp-table tr:last-child { border-bottom: none; }
+.comp-table tr.cat-row td { background: #efefec; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 8px 24px; }
+.comp-table thead th { padding: 20px 24px; vertical-align: top; background: #f8f8f6; border-bottom: 2px solid var(--ink); text-align: left; font-weight: 400; font-size: 14px; font-family: 'DM Sans', sans-serif; overflow: hidden; }
+.comp-table thead th:first-child { width: 180px; background: white; border-right: 1px solid var(--rule); }
+.comp-table td { padding: 14px 24px; vertical-align: top; }
+.comp-table td:first-child { width: 180px; font-size: 13px; color: var(--muted); background: #fafaf8; border-right: 1px solid var(--rule); }
+.comp-table td:not(:first-child) { font-size: 14px; }
+.comp-table tr:nth-child(even):not(.cat-row) td:not(:first-child) { background: #fafaf8; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.cell-partial { color: var(--partial); }
+.winner-badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; background: #f1f8f1; color: var(--accent); border: 1px solid #c8e6c9; margin-left: 6px; vertical-align: middle; }
+
+/* ── VERDICT ── */
+.verdict-section { display: flex; gap: 1px; background: var(--rule); margin-bottom: 20px; border: 1px solid var(--rule); }
+.verdict-card { background: white; padding: 28px; flex: 1; }
+.verdict-title { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 14px; }
+.verdict-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.verdict-list li { font-size: 13px; line-height: 1.5; padding-left: 16px; position: relative; }
+.verdict-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+
+/* ── ARTICLE LINKS ── */
+.articles-section { margin-bottom: 64px; }
+.article-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.article-link-row.live { cursor: pointer; text-decoration: none; }
+.article-link-row.live:hover .art-title { color: var(--accent); }
+.article-link-row.live:hover .art-arrow { transform: translateX(4px); color: var(--accent); }
+.article-link-row.coming .art-title { color: var(--muted); }
+
+/* ── FULL ARTICLES LIST ── */
+.all-articles { margin-bottom: 64px; }
+.tool-group { margin-bottom: 40px; }
+.group-header { display: flex; align-items: baseline; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--ink); margin-bottom: 4px; }
+.group-name { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; }
+.group-count { font-size: 12px; color: var(--muted); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .picker-inner { grid-template-columns: 1fr; }
+  .vs-divider { padding-top: 0; }
+  .comp-header { grid-template-columns: 1fr; }
+  .comp-header-cell.label { display: none; }
+  .comp-table td:first-child { width: 120px; }
+  .verdict-section { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/quiz.html">Recommendations</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/articles.html">Articles</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/quiz.html">Recommendations</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/articles.html">Articles</a>
+  </div>
+</header>
+
+<main class="page-body">
+  <div class="wrap">
+
+    <div class="comp-hero">
+      <h1>Compare marketing automation tools</h1>
+      <p class="hero-sub">Side-by-side comparisons of the most popular marketing automation platforms. Select any two tools to compare pricing, features, automation depth, and who each one is best for.</p>
+    </div>
+
+    <!-- TOOL PICKER -->
+    <div class="picker-section">
+      <div class="picker-inner" id="picker-inner">
+        <div class="picker-slot">
+          <div class="picker-label">First tool</div>
+          <select class="tool-select" id="tool-a">
+            <option value="">Select a tool...</option>
+            <option value="brevo">Brevo</option>
+            <option value="campaignmonitor">Campaign Monitor</option>
+            <option value="kit">ConvertKit / Kit</option>
+            <option value="getresponse">GetResponse</option>
+            <option value="hubspot">HubSpot</option>
+            <option value="keap">Keap</option>
+            <option value="klaviyo">Klaviyo</option>
+            <option value="mailchimp">Mailchimp</option>
+            <option value="mailerlite">MailerLite</option>
+            <option value="moosend">Moosend</option>
+            <option value="omnisend">Omnisend</option>
+            <option value="zoho">Zoho Campaigns</option>
+            <option value="activecampaign">ActiveCampaign</option>
+          </select>
+        </div>
+        <div class="vs-divider">vs</div>
+        <div class="picker-slot">
+          <div class="picker-label">Second tool</div>
+          <select class="tool-select" id="tool-b">
+            <option value="">Select a tool...</option>
+            <option value="brevo">Brevo</option>
+            <option value="campaignmonitor">Campaign Monitor</option>
+            <option value="kit">ConvertKit / Kit</option>
+            <option value="getresponse">GetResponse</option>
+            <option value="hubspot">HubSpot</option>
+            <option value="keap">Keap</option>
+            <option value="klaviyo">Klaviyo</option>
+            <option value="mailchimp">Mailchimp</option>
+            <option value="mailerlite">MailerLite</option>
+            <option value="moosend">Moosend</option>
+            <option value="omnisend">Omnisend</option>
+            <option value="zoho">Zoho Campaigns</option>
+            <option value="activecampaign">ActiveCampaign</option>
+          </select>
+        </div>
+        <div class="add-third-wrap" id="add-third-wrap">
+          <button class="add-third-btn" onclick="addThirdTool()">+ Add third tool</button>
+        </div>
+      </div>
+      <div class="picker-actions">
+        <button class="compare-btn" onclick="buildComparison()">Compare tools →</button>
+        <button class="remove-third-btn" id="remove-third-btn" onclick="removeThirdTool()" style="display:none;">Remove third tool</button>
+      </div>
+    </div>
+
+    <!-- COMPARISON RESULT -->
+    <div class="comparison-result" id="comparison-result">
+      <div class="comp-header" id="comp-header">
+        <div class="comp-header-cell label"></div>
+        <div class="comp-header-cell tool" id="header-a"></div>
+        <div class="comp-header-cell tool" id="header-b"></div>
+      </div>
+      <table class="comp-table" id="comp-table"></table>
+      <div class="verdict-section" id="verdict-section"></div>
+    </div>
+
+    
+    <div class="wrap-narrow" style="padding: 16px 0 8px;">
+      <p style="font-size:14px; color:var(--muted);"><a href="/articles.html?type=comparison" style="color:var(--accent);">Browse all comparison articles →</a></p>
+    </div>
+
+  
+
+
+      </form>
+    </div>
+  </div>
+</div>
+      </div>
+    
+
+  <div class="wrap-narrow" style="margin-top: 16px; padding-bottom: 0;">
+    <div class="useful-links">
+      <div class="useful-links-title">Useful next steps</div>
+      <div class="link-row"><span class="link-label">Get a personalized tool recommendation</span><a class="link-url" href="/quiz.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Browse all tool reviews</span><a class="link-url" href="/all-tools.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Pricing calculator</span><a class="link-url" href="/pricing.html">View →</a></div>
+      <div class="link-row"><span class="link-label">Browse migration guides</span><a class="link-url" href="/guides.html">View →</a></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
+    <div class="footer-links">
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const TOOLS = {
+  moosend: {
+    name: "Moosend",
+    tagline: "Affordable automation with a clean interface, good for growing lists on a budget",
+    trialUrl: "https://trymoo.moosend.com/4e0kl2a449hd",
+    trialLabel: "Try Moosend free",
+    pricingUrl: "https://moosend.com/pricing",
+    affiliate: true,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "30 days, no credit card",
+      startingPrice: "$9/mo",
+      pricingBasis: "Per subscriber",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "yes",
+      analytics: "Basic",
+      support: "Live chat + email",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You need affordable automation without paying for CRM features you won't use", "You run an e-commerce store on a budget and want more automation than Mailchimp offers", "You want a 30-day free trial with full feature access before committing", "You are switching from Mailchimp and want more automation for less money"],
+    notFor: ["You need SMS marketing - Moosend does not include it", "You need a built-in CRM for managing deals and pipelines", "You are an enterprise team with complex platform requirements"]
+  },
+  activecampaign: {
+    name: "ActiveCampaign",
+    tagline: "Powerful CRM and automation for businesses that need more than just email",
+    trialUrl: "https://try.activecampaign.com/d1eqanrpv66o-rvs4jt",
+    trialLabel: "Try ActiveCampaign free",
+    pricingUrl: "https://try.activecampaign.com/9lravfc5vzsu",
+    affiliate: true,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "14 days, no credit card",
+      startingPrice: "$15/mo",
+      pricingBasis: "Per contact",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced",
+      support: "Live chat + email + phone",
+      easeOfUse: "Moderate - steeper learning curve"
+    },
+    bestFor: ["You need CRM and email automation in the same platform", "You run complex multi-step automations with branching logic and multiple conditions", "You are a B2B company with a longer sales cycle that needs lead scoring", "You want SMS alongside email without a separate tool"],
+    notFor: ["You are a beginner who wants something simple to learn quickly", "You are on a very tight budget - Moosend or MailerLite offer more for less", "You run a pure e-commerce store without a sales team - Klaviyo fits better"]
+  },
+  mailerlite: {
+    name: "MailerLite",
+    tagline: "Simple, well-priced, and easy to learn - a solid choice for beginners and bloggers",
+    trialUrl: "https://www.mailerlite.com",
+    trialLabel: "Try MailerLite free",
+    pricingUrl: "https://www.mailerlite.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 1,000 subscribers",
+      freeTrial: "Free plan available",
+      startingPrice: "$9/mo",
+      pricingBasis: "Per subscriber",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Live chat (paid), email (free)",
+      easeOfUse: "Beginner-friendly"
+    },
+    bestFor: ["You are just starting out and want something easy to learn in an afternoon", "You are a blogger, creator, or solopreneur on a budget", "You want a free plan covering up to 1,000 subscribers with no time limit", "You want landing pages and email in the same tool without paying extra"],
+    notFor: ["You need a CRM built into your email platform", "You need SMS marketing alongside email", "You need complex multi-path automation with advanced branching logic"]
+  },
+  mailchimp: {
+    name: "Mailchimp",
+    tagline: "The most recognizable name in email marketing, now better suited to small businesses than it used to be",
+    trialUrl: "https://www.mailchimp.com",
+    trialLabel: "Try Mailchimp free",
+    pricingUrl: "https://www.mailchimp.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 500 contacts",
+      freeTrial: "Free plan available",
+      startingPrice: "$13/mo",
+      pricingBasis: "Per contact",
+      enterprise: "Yes (Premium)"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "Partial",
+      crm: "Basic",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Email (free), chat (paid)",
+      easeOfUse: "Beginner-friendly"
+    },
+    bestFor: ["You need a specific integration that only Mailchimp supports natively", "Your team already knows Mailchimp and switching costs outweigh the savings", "You have a small list under 500 and want to start for free", "You want the most extensive template library available"],
+    notFor: ["You are starting fresh and comparing options - competitors offer more for less money", "You need advanced automation depth - Moosend, ActiveCampaign, or GetResponse go further", "You need SMS alongside email - Mailchimp does not include it"]
+  },
+  getresponse: {
+    name: "GetResponse",
+    tagline: "Email marketing plus landing pages and webinars in one platform",
+    trialUrl: "https://try.getresponsetoday.com/wbg0pd66ibns",
+    trialLabel: "Try GetResponse free",
+    pricingUrl: "https://try.getresponsetoday.com/wbg0pd66ibns/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 500 contacts",
+      freeTrial: "Free plan available",
+      startingPrice: "$15/mo",
+      pricingBasis: "Per contact",
+      enterprise: "Yes (MAX)"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "Basic",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Live chat + email",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You run regular webinars and want registration and follow-up handled in one place", "You want email, SMS, and landing pages without managing separate subscriptions", "You need more automation capability than Mailchimp offers at a competitive price", "You are price-sensitive and the all-in-one value calculation works for your business"],
+    notFor: ["You need deep CRM functionality - HubSpot or ActiveCampaign go further", "You just need basic email campaigns - MailerLite or Moosend are simpler and cheaper"]
+  },
+  kit: {
+    name: "ConvertKit / Kit",
+    tagline: "Built for creators, bloggers, and solopreneurs who sell digital products",
+    trialUrl: "https://kit.com",
+    trialLabel: "Try Kit free",
+    pricingUrl: "https://kit.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 10,000 subscribers",
+      freeTrial: "Free plan available",
+      startingPrice: "$25/mo",
+      pricingBasis: "Per subscriber",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "no",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Email + live chat",
+      easeOfUse: "Beginner-friendly"
+    },
+    bestFor: ["You are a blogger, newsletter writer, podcaster, or course creator", "You want to grow a list for free up to 10,000 subscribers - the most generous free tier available", "You sell digital products and want email and commerce in one place", "You prefer personal, text-based emails over heavily designed templates"],
+    notFor: ["You run an e-commerce store - Klaviyo or Omnisend are built specifically for that", "You need CRM or SMS alongside your email marketing", "You need A/B testing - Kit does not support it"]
+  },
+  omnisend: {
+    name: "Omnisend",
+    tagline: "Email and SMS marketing designed specifically for e-commerce stores",
+    trialUrl: "https://www.omnisend.com",
+    trialLabel: "Try Omnisend free",
+    pricingUrl: "https://www.omnisend.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 250 contacts",
+      freeTrial: "Free plan available",
+      startingPrice: "$16/mo",
+      pricingBasis: "Per contact",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "no",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "E-commerce focused",
+      support: "Live chat + email",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You run a Shopify or WooCommerce store and want e-commerce-first automation", "You want email and SMS in one platform with shared automation workflows", "You want pre-built abandoned cart, post-purchase, and browse abandonment flows ready to activate", "You want push notifications alongside email and SMS at no extra cost"],
+    notFor: ["You are not in e-commerce - this tool is built specifically for online stores", "You need landing pages built into your email platform - Omnisend does not include them", "You run a B2B or service business - ActiveCampaign or HubSpot are better fits"]
+  },
+  brevo: {
+    name: "Brevo",
+    tagline: "A flexible, affordable platform with email, SMS, and CRM in one place",
+    trialUrl: "https://get.brevo.com/hjl3lwlukji3",
+    trialLabel: "Try Brevo free",
+    pricingUrl: "https://get.brevo.com/hjl3lwlukji3",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - unlimited contacts, 300 emails/day",
+      freeTrial: "Free plan available",
+      startingPrice: "$9/mo",
+      pricingBasis: "Per email sent (not per contact)",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "Basic",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Live chat + email",
+      easeOfUse: "Beginner-friendly"
+    },
+    bestFor: ["You have a large contact list but only email a portion of it regularly - the per-send pricing saves you money", "You want email, SMS, and a basic CRM without paying for three separate tools", "You need transactional email handled by the same tool as your marketing campaigns", "You want unlimited contacts on the free plan with no time limit"],
+    notFor: ["You email your full list every week - contact-count tools may end up equally priced", "You need deep CRM functionality - HubSpot or ActiveCampaign go significantly further"]
+  },
+  hubspot: {
+    name: "HubSpot",
+    tagline: "Free plan works well for small teams; paid tiers scale up to full enterprise",
+    trialUrl: "https://www.hubspot.com",
+    trialLabel: "Try HubSpot free",
+    pricingUrl: "https://www.hubspot.com/pricing/marketing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - unlimited contacts, basic CRM",
+      freeTrial: "Free plan available",
+      startingPrice: "$15/mo per seat",
+      pricingBasis: "Per seat + contact tier",
+      enterprise: "Yes (from $3,600/mo)"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced",
+      support: "Email (free), chat + phone (paid)",
+      easeOfUse: "Moderate - can get complex at scale"
+    },
+    bestFor: ["You need a CRM and want marketing tools built into the same platform", "You are in B2B with a sales team that needs pipeline visibility alongside email marketing", "You want to start with the free CRM and grow into paid features over time", "You have the budget for Professional and need the full marketing suite"],
+    notFor: ["You need serious marketing automation on a tight budget - competitors offer more for less", "You are in e-commerce - Klaviyo or Omnisend are better specialized fits", "You want automation depth without paying for Professional tier pricing"]
+  },
+  klaviyo: {
+    name: "Klaviyo",
+    tagline: "Data-driven email and SMS for e-commerce brands serious about revenue",
+    trialUrl: "https://www.klaviyo.com",
+    trialLabel: "Try Klaviyo free",
+    pricingUrl: "https://www.klaviyo.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 250 contacts",
+      freeTrial: "Free plan available",
+      startingPrice: "~$20/mo",
+      pricingBasis: "Per contact",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "no",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced - revenue attribution",
+      support: "Email + chat",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You run a Shopify or WooCommerce store and email is a significant revenue channel", "You want the deepest e-commerce segmentation and revenue attribution available", "You need email and SMS with shared data and automation in one platform", "You want predictive analytics including customer lifetime value and churn risk scores"],
+    notFor: ["You are not in e-commerce - this tool is built specifically for online stores", "You are just getting started and the pricing is out of reach for your stage", "You need a built-in CRM for B2B sales management"]
+  },
+  campaignmonitor: {
+    name: "Campaign Monitor",
+    tagline: "Clean, well-designed email marketing with strong segmentation",
+    trialUrl: "https://www.campaignmonitor.com",
+    trialLabel: "Try Campaign Monitor",
+    pricingUrl: "https://www.campaignmonitor.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No (free account with limited sends)",
+      freeTrial: "Free account available",
+      startingPrice: "$11/mo",
+      pricingBasis: "Per subscriber",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Standard",
+      support: "Email",
+      easeOfUse: "Beginner-friendly"
+    },
+    bestFor: ["You are a design-conscious brand where email aesthetics genuinely matter", "You are an agency managing email campaigns for multiple clients from one account", "Your automation needs are standard and you do not need complex branching logic", "You want a refined builder that consistently produces beautiful output"],
+    notFor: ["You need SMS or a built-in CRM - Campaign Monitor includes neither", "You are cost-sensitive - MailerLite and Moosend offer more features for less money", "You need advanced automation with complex conditional logic and multiple branches"]
+  },
+  keap: {
+    name: "Keap",
+    tagline: "CRM and automation built for small but growing service businesses",
+    trialUrl: "https://www.keap.com",
+    trialLabel: "Try Keap free",
+    pricingUrl: "https://www.keap.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "14 days",
+      startingPrice: "$249/mo",
+      pricingBasis: "Per contact tier",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "no",
+      ab: "no",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Phone + chat + email",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You run a coaching, consulting, or agency business with a complex client pipeline", "You want CRM, email automation, invoicing, and payments in a single platform", "You are currently paying for multiple separate tools that Keap would consolidate", "Budget is not the primary concern and you need a platform that covers your full operation"],
+    notFor: ["You primarily need email marketing - the price is not justified for email alone", "You are a small business just getting started - the cost and complexity are too high", "You run an e-commerce store - Klaviyo or Omnisend are built specifically for that"]
+  },
+  zoho: {
+    name: "Zoho Campaigns",
+    tagline: "Email marketing that integrates tightly with the broader Zoho ecosystem",
+    trialUrl: "https://www.zoho.com/campaigns",
+    trialLabel: "Try Zoho Campaigns free",
+    pricingUrl: "https://www.zoho.com/campaigns/pricing.html",
+    affiliate: false,
+    pricing: {
+      freePlan: "Yes - up to 2,000 contacts",
+      freeTrial: "Free plan available",
+      startingPrice: "$3/mo",
+      pricingBasis: "Per subscriber",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "Via Zoho CRM",
+      landingPages: "no",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "yes",
+      analytics: "Standard",
+      support: "Email + chat",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You already use Zoho CRM and want native bidirectional integration between your CRM and email", "You want the most generous free plan by contact count - 2,000 contacts free with no time limit", "You are very cost-sensitive and want the lowest paid pricing in the market at $3/mo", "You are building out the Zoho ecosystem and want consolidated billing and support"],
+    notFor: ["You are not using Zoho CRM - the primary differentiator disappears without it", "You want the most beginner-friendly interface - MailerLite is significantly cleaner", "You need advanced automation depth - Moosend or ActiveCampaign go further"]
+  }
+};
+
+
+// Map of tool pairs to existing articles
+const ARTICLES = {
+  "moosend|mailerlite": { title: "Moosend vs MailerLite", url: "/comparison-moosend-vs-mailerlite.html" },
+  "mailerlite|moosend": { title: "Moosend vs MailerLite", url: "/comparison-moosend-vs-mailerlite.html" },
+  "activecampaign|hubspot": { title: "ActiveCampaign vs HubSpot", url: "/comparison-activecampaign-vs-hubspot.html" },
+  "hubspot|activecampaign": { title: "ActiveCampaign vs HubSpot", url: "/comparison-activecampaign-vs-hubspot.html" },
+  "activecampaign|mailerlite": { title: "ActiveCampaign vs MailerLite", url: "/comparison-activecampaign-vs-mailerlite.html" },
+  "mailerlite|activecampaign": { title: "ActiveCampaign vs MailerLite", url: "/comparison-activecampaign-vs-mailerlite.html" },
+  "activecampaign|moosend": { title: "ActiveCampaign vs Moosend", url: "/comparison-activecampaign-vs-moosend.html" },
+  "moosend|activecampaign": { title: "ActiveCampaign vs Moosend", url: "/comparison-activecampaign-vs-moosend.html" },
+  "omnisend|klaviyo": { title: "Omnisend vs Klaviyo", url: "/comparison-omnisend-vs-klaviyo.html" },
+  "klaviyo|omnisend": { title: "Omnisend vs Klaviyo", url: "/comparison-omnisend-vs-klaviyo.html" },
+  "mailchimp|moosend": { title: "Mailchimp vs Moosend", url: "/comparison-mailchimp-vs-moosend.html" },
+  "moosend|mailchimp": { title: "Mailchimp vs Moosend", url: "/comparison-mailchimp-vs-moosend.html" },
+  "mailchimp|mailerlite": { title: "Mailchimp vs MailerLite", url: "/comparison-mailchimp-vs-mailerlite.html" },
+  "mailerlite|mailchimp": { title: "Mailchimp vs MailerLite", url: "/comparison-mailchimp-vs-mailerlite.html" },
+  "kit|mailerlite": { title: "Kit vs MailerLite", url: "/comparison-kit-vs-mailerlite.html" },
+  "mailerlite|kit": { title: "Kit vs MailerLite", url: "/comparison-kit-vs-mailerlite.html" },
+  "kit|moosend": { title: "Kit vs Moosend", url: "/comparison-kit-vs-moosend.html" },
+  "moosend|kit": { title: "Kit vs Moosend", url: "/comparison-kit-vs-moosend.html" },
+  "brevo|activecampaign": { title: "Brevo vs ActiveCampaign", url: "/comparison-brevo-vs-activecampaign.html" },
+  "activecampaign|brevo": { title: "Brevo vs ActiveCampaign", url: "/comparison-brevo-vs-activecampaign.html" },
+  "brevo|mailerlite": { title: "Brevo vs MailerLite", url: "/comparison-brevo-vs-mailerlite.html" },
+  "mailerlite|brevo": { title: "Brevo vs MailerLite", url: "/comparison-brevo-vs-mailerlite.html" },
+  "mailerlite|hubspot": { title: "MailerLite vs HubSpot", url: "/comparison-mailerlite-vs-hubspot.html" },
+  "hubspot|mailerlite": { title: "MailerLite vs HubSpot", url: "/comparison-mailerlite-vs-hubspot.html" },
+  "getresponse|activecampaign": { title: "GetResponse vs ActiveCampaign", url: "/comparison-getresponse-vs-activecampaign.html" },
+  "activecampaign|getresponse": { title: "GetResponse vs ActiveCampaign", url: "/comparison-getresponse-vs-activecampaign.html" },
+  "getresponse|mailerlite": { title: "GetResponse vs MailerLite", url: "/comparison-getresponse-vs-mailerlite.html" },
+  "mailerlite|getresponse": { title: "GetResponse vs MailerLite", url: "/comparison-getresponse-vs-mailerlite.html" },
+  "omnisend|moosend": { title: "Omnisend vs Moosend", url: "/comparison-omnisend-vs-moosend.html" },
+  "moosend|omnisend": { title: "Omnisend vs Moosend", url: "/comparison-omnisend-vs-moosend.html" },
+};
+
+const FEATURE_ROWS = [
+  { cat: "Pricing" },
+  { key: "pricing.freePlan", label: "Free plan" },
+  { key: "pricing.freeTrial", label: "Free trial" },
+  { key: "pricing.startingPrice", label: "Starting price" },
+  { key: "pricing.pricingBasis", label: "Pricing basis" },
+  { key: "pricing.enterprise", label: "Enterprise tier" },
+  { cat: "Core Features" },
+  { key: "features.emailAutomation", label: "Email automation", bool: true },
+  { key: "features.visualBuilder", label: "Visual automation builder", bool: true },
+  { key: "features.crm", label: "CRM built-in", bool: true },
+  { key: "features.landingPages", label: "Landing pages", bool: true },
+  { key: "features.sms", label: "SMS marketing", bool: true },
+  { key: "features.formsPopups", label: "Forms & popups", bool: true },
+  { cat: "E-commerce" },
+  { key: "features.shopify", label: "Shopify integration", bool: true },
+  { key: "features.woocommerce", label: "WooCommerce integration", bool: true },
+  { cat: "Capabilities" },
+  { key: "features.ab", label: "A/B testing", bool: true },
+  { key: "features.segmentation", label: "Segmentation" },
+  { key: "features.analytics", label: "Analytics" },
+  { cat: "Usability & Support" },
+  { key: "features.easeOfUse", label: "Ease of use" },
+  { key: "features.support", label: "Support channels" },
+];
+
+function getVal(tool, key) {
+  const parts = key.split('.');
+  let val = tool;
+  for (const p of parts) val = val[p];
+  return val;
+}
+
+function renderCell(val, bool) {
+  if (!bool) return `<td>${val}</td>`;
+  if (val === 'yes') return `<td class="cell-yes">✓ Yes</td>`;
+  if (val === 'no') return `<td class="cell-no">✗ No</td>`;
+  return `<td class="cell-partial">${val}</td>`;
+}
+
+const TOOL_OPTIONS = `<option value="">Select a tool...</option>
+            <option value="moosend">Moosend</option>
+            <option value="activecampaign">ActiveCampaign</option>
+            <option value="mailerlite">MailerLite</option>
+            <option value="mailchimp">Mailchimp</option>
+            <option value="getresponse">GetResponse</option>
+            <option value="kit">ConvertKit / Kit</option>
+            <option value="omnisend">Omnisend</option>
+            <option value="brevo">Brevo</option>
+            <option value="hubspot">HubSpot</option>
+            <option value="klaviyo">Klaviyo</option>
+            <option value="campaignmonitor">Campaign Monitor</option>
+            <option value="keap">Keap</option>
+            <option value="zoho">Zoho Campaigns</option>`;
+
+function addThirdTool() {
+  const wrap = document.getElementById('add-third-wrap');
+  wrap.outerHTML = `
+    <div class="vs-divider">vs</div>
+    <div class="picker-slot">
+      <div class="picker-label">Third tool (optional)</div>
+      <select class="tool-select" id="tool-c">${TOOL_OPTIONS}</select>
+    </div>
+    <div id="add-third-wrap" style="display:none;"></div>`;
+  document.getElementById('remove-third-btn').style.display = 'inline';
+}
+
+function removeThirdTool() {
+  const slot = document.getElementById('tool-c');
+  if (!slot) return;
+  // Remove the vs divider and slot before it
+  const picker = document.getElementById('picker-inner');
+  // Find and remove the last vs-divider and the slot
+  const dividers = picker.querySelectorAll('.vs-divider');
+  const lastDivider = dividers[dividers.length - 1];
+  const slot_wrap = slot.parentElement;
+  if (lastDivider) lastDivider.remove();
+  slot_wrap.remove();
+  // Restore add-third button
+  document.getElementById('add-third-wrap').style.display = 'flex';
+  document.getElementById('add-third-wrap').innerHTML = '<button class="add-third-btn" onclick="addThirdTool()">+ Add third tool</button>';
+  document.getElementById('remove-third-btn').style.display = 'none';
+}
+
+function toolHeader(t) {
+  return `<div class="comp-tool-name">${t.name}</div>
+    <div class="comp-tool-tagline">${t.tagline}</div>
+    <a class="comp-tool-cta" href="${t.trialUrl}" target="_blank">${t.trialLabel} →</a>
+    ${t.affiliate ? '<span class="comp-affiliate">affiliate link</span>' : ''}`;
+}
+
+function buildComparison() {
+  const keyA = document.getElementById('tool-a').value;
+  const keyB = document.getElementById('tool-b').value;
+  const selectC = document.getElementById('tool-c');
+  const keyC = selectC ? selectC.value : '';
+
+  if (!keyA || !keyB) { alert('Please select at least two tools to compare.'); return; }
+  const keys = [keyA, keyB];
+  if (keyC) keys.push(keyC);
+  const uniqueKeys = [...new Set(keys)];
+  if (uniqueKeys.length < keys.length) { alert('Please select different tools for each slot.'); return; }
+
+  const tools = keys.map(k => TOOLS[k]);
+  const n = tools.length;
+
+  // Build header as thead
+  const thead = '<thead><tr><th></th>' +
+    tools.map(t => `<th>${toolHeader(t)}</th>`).join('') +
+    '</tr></thead>';
+
+  // Build table — colspan for cat rows = n+1
+  let rows = '';
+  for (const row of FEATURE_ROWS) {
+    if (row.cat) {
+      rows += `<tr class="cat-row"><td colspan="${n + 1}">${row.cat}</td></tr>`;
+    } else {
+      const cells = tools.map(t => renderCell(getVal(t, row.key), row.bool)).join('');
+      rows += `<tr><td>${row.label}</td>${cells}</tr>`;
+    }
+  }
+  document.getElementById('comp-table').innerHTML = thead + '<tbody>' + rows + '</tbody>';
+
+  // Build verdict
+  document.getElementById('verdict-section').innerHTML = tools.map(t =>
+    `<div class="verdict-card">
+      <div class="verdict-title">Choose ${t.name} if...</div>
+      <ul class="verdict-list">${t.bestFor.map(item => `<li>${item}</li>`).join('')}</ul>
+      <a class="comp-tool-cta" href="${t.trialUrl}" target="_blank" style="margin-top:16px; display:inline-block;">${t.trialLabel} →</a>
+      ${t.affiliate ? '<span class="comp-affiliate">affiliate link</span>' : ''}
+    </div>`
+  ).join('');
+
+  // Article links - find all written comparisons for the selected tools
+  const existingArticleEl = document.getElementById('article-link-box');
+  if (existingArticleEl) existingArticleEl.remove();
+
+  // Collect all pairs from selected tools
+  const foundArticles = [];
+  for (let i = 0; i < keys.length; i++) {
+    for (let j = i + 1; j < keys.length; j++) {
+      const pairKey = keys[i] + '|' + keys[j];
+      const article = ARTICLES[pairKey];
+      if (article) foundArticles.push(article);
+    }
+  }
+
+  let articleHtml = '';
+  if (foundArticles.length > 0) {
+    const rows = foundArticles.map(a =>
+      `<div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding:12px 0; border-bottom:1px solid var(--rule);">
+        <div style="font-size:14px;">${a.title}</div>
+        <a href="${a.url}" style="font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;flex-shrink:0;">Read the full article →</a>
+      </div>`
+    ).join('');
+    articleHtml = `<div id="article-link-box" style="margin-top:24px; padding:20px 24px; background:#f8f8f6; border:1px solid var(--rule);">
+      <div style="font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;">Comparison articles</div>
+      ${rows}
+    </div>`;
+  }
+  document.getElementById('verdict-section').insertAdjacentHTML('afterend', articleHtml);
+
+  // Show result
+  const result = document.getElementById('comparison-result');
+  result.classList.add('visible');
+  result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+</body>
+</html>
