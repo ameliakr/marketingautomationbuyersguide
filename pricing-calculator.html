@@ -38,7 +38,7 @@
 .results-count span { font-weight: 500; color: var(--ink); }
 .results-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; font-style: italic; max-width: 900px; margin-left: auto; margin-right: auto; }
 .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); max-width: 900px; margin-left: auto; margin-right: auto; }
-.tool-card { background: white; padding: 0; display: grid; grid-template-rows: subgrid; grid-row: span 5; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
+.tool-card { background: white; padding: 0; display: grid; grid-template-rows: subgrid; grid-row: span 6; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
 .tool-card:hover { background: #fafaf8; }
 .tool-card.hidden { display: none; }
 .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 24px 24px 0; }
@@ -59,8 +59,8 @@
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 .price-row.estimated { display: none; }
 .price-row.estimated.visible { display: flex; }
-.estimate-box { display: none; padding: 8px 8px; background: #f1f8f1; border-top: 1px solid #c8e6c9; margin-top: 8px; }
-.estimate-box.visible { display: flex; justify-content: space-between; align-items: baseline; }
+.estimate-box { display: block; padding: 8px 24px; background: #f1f8f1; border-top: 1px solid #c8e6c9; border-bottom: 1px solid #c8e6c9; visibility: hidden; }
+.estimate-box.visible { visibility: visible; display: flex; justify-content: space-between; align-items: baseline; }
 .price-estimated-label { color: var(--accent); font-weight: 500; font-size: 12px; }
 .price-estimated-val { font-weight: 600; color: var(--accent); font-size: 15px; }
 .card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; padding: 14px 24px 0; }
@@ -325,8 +325,8 @@ function renderCards() {
           <div class="price-row"><span class="price-label">${trialLabel}</span><span class="price-value" style="font-size:12px">${trialText}</span></div>
           <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">${tool.startingPrice}</span></div>
         </div>
-        ${estimatedLine}
       </div>
+      ${estimatedLine}
       <div class="card-features">${featureTags}</div>
       <div class="card-cta">${affiliateTag}<a class="btn-primary" href="${tool.trialUrl}" target="_blank">${ctaLabel}</a><a class="btn-secondary" href="${tool.plansUrl}" target="_blank">View pricing →</a></div>`;
     grid.appendChild(card);
