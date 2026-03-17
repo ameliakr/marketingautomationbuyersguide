@@ -49,10 +49,10 @@
 .card-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
 .card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; min-height: 2.8em; }
 .card-pricing { display: flex; flex-direction: column; padding: 14px 0 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-.card-pricing-rows { display: flex; flex-direction: column; gap: 6px; min-height: 88px; padding-bottom: 8px; }
-.price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; gap: 8px; }
+.card-pricing-rows { display: flex; flex-direction: column; gap: 0; padding-bottom: 8px; }
+.price-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; gap: 8px; min-height: 28px; padding: 2px 0; }
 .price-label { color: var(--muted); }
-.price-value { font-weight: 500; }
+.price-value { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 160px; }
 .free-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; white-space: nowrap; }
 .free-badge.yes { background: var(--free-bg); color: var(--free-text); }
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
