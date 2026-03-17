@@ -147,8 +147,8 @@ tr.cat-row td { background: #efefec !important; font-size: 11px; letter-spacing:
 .guide-arrow { font-size: 16px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 
 /* ── PROSE PAGES ── */
-.prose h1 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 400; margin-bottom: 32px; }
-.prose h2 { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-top: 48px; margin-bottom: 16px; }
+.prose h1 { font-family: 'DM Serif Display', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 400; margin-bottom: 32px; text-wrap: balance; }
+.prose h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 22px); font-weight: 400; margin-top: 48px; margin-bottom: 16px; max-width: 560px; text-wrap: balance; }
 .prose p { font-size: 15px; line-height: 1.8; color: var(--ink); margin-bottom: 18px; }
 .prose p a { color: var(--accent); text-decoration: underline; }
 .prose ul { margin: 0 0 18px 24px; }
