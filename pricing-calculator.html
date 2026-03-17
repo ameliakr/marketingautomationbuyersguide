@@ -311,7 +311,7 @@ function renderCards() {
     const estimatedLine = `<div class="estimate-box" id="est-${tool.key}"><span class="price-estimated-label">Your estimate</span><span class="price-estimated-val" id="est-val-${tool.key}"></span></div>`;
     const allFeatures = [{label:'Email automation',key:'automation'},{label:'CRM',key:'crm'},{label:'SMS',key:'sms'},{label:'Landing pages',key:'landing'},{label:'E-commerce',key:'ecommerce'},{label:'Visual automation',key:'automation'}];
     const featureTags = allFeatures.map(f => `<span class="feature-tag ${tool.features.includes(f.key)?'has':''}">${f.label}</span>`).join('');
-    const affiliateTag = tool.affiliate ? `<div class="affiliate-tag">affiliate link</div>` : '';
+    const affiliateTag = tool.affiliate ? `<div class="affiliate-tag">affiliate link</div>` : `<div class="affiliate-tag" style="visibility:hidden">affiliate link</div>`;
     const ctaLabel = tool.tier === 'ent' ? `Contact ${tool.name} →` : `Try ${tool.name} free →`;
     const card = document.createElement('div');
     card.className = 'tool-card';
