@@ -181,3 +181,11 @@ hr.divider { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
 .link-label { color: var(--muted); flex-shrink: 1; }
 .link-url { color: var(--accent); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
 .link-url:hover { text-decoration: underline; }
+/* ── USEFUL LINKS SECTION ── */
+.useful-links-section { border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 48px; }
+.useful-links-section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
