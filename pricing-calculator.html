@@ -70,18 +70,18 @@
 .no-results.visible { display: block; }
 .no-results p { font-size: 15px; color: var(--muted); }
 .enterprise-notice { padding: 16px 20px; background: #f8f8f6; border-left: 3px solid var(--rule); font-size: 13px; color: var(--muted); margin-top: 24px; }
-.partner-section { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 32px; }
+.partner-section { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .partner-section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
 .partner-section-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
-.partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-.partner-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.partner-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; max-width: 900px; }
+.partner-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); min-width: 0; }
 .partner-card:first-child { border-left: 1px solid var(--rule); }
 .partner-card-name { font-size: 16px; font-weight: 500; }
 .partner-card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
 .partner-card-btn { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.15s; }
 .partner-card-btn:hover { opacity: 0.85; }
 .partner-affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; }
-.bottom-useful-links { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 32px; }
+.bottom-useful-links { margin-top: 48px; margin-bottom: 48px; border-top: 1px solid var(--rule); padding-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .bottom-useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
 .bottom-useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .bottom-useful-links .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
@@ -93,8 +93,8 @@
   .calc-inputs { grid-template-columns: 1fr; }
   .tools-grid { grid-template-columns: 1fr; }
   .partner-grid { grid-template-columns: 1fr; }
-  .partner-card:first-child { border-right: 1px solid var(--rule); border-bottom: none; }
-  .partner-card:last-child { border-left: 1px solid var(--rule); }
+  .partner-card { border-left: 1px solid var(--rule) !important; border-bottom: none; }
+  .partner-card:last-child { border-bottom: 1px solid var(--rule); }
 }
 </style>
 </head>
@@ -218,6 +218,12 @@
         <div class="partner-affiliate-tag">affiliate link</div>
       </div>
       <div class="partner-card">
+        <div class="partner-card-name">Brevo</div>
+        <p class="partner-card-desc">Email, SMS, and CRM in one platform at a price that makes sense. Priced by sends rather than contacts, which makes it unusually affordable for businesses with large lists. Generous free plan with unlimited contacts.</p>
+        <a class="partner-card-btn" href="https://get.brevo.com/hjl3lwlukji3" target="_blank">Try Brevo free →</a>
+        <div class="partner-affiliate-tag">affiliate link</div>
+      </div>
+      <div class="partner-card">
         <div class="partner-card-name">ActiveCampaign</div>
         <p class="partner-card-desc">When you need more than email. A proper CRM, sophisticated automation logic, lead scoring, and deep segmentation. More expensive than Moosend, but if you are going to use what it offers, it is worth it.</p>
         <a class="partner-card-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a>
@@ -256,7 +262,7 @@ const CONTACT_LABELS = ['250','500','1,000','2,500','5,000','10,000','25,000','5
 
 const TOOLS = [
   { key:'activecampaign', name:'ActiveCampaign', tier:'smb', tagline:'Powerful CRM and automation for businesses that need more than just email', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:false, freeTrial:'14-day free trial, no card required', startingPrice:'$15/mo (1,000 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt', plansUrl:'https://try.activecampaign.com/9lravfc5vzsu', affiliate:true, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2500)return 39; if(c<=5000)return 69; if(c<=10000)return 111; if(c<=25000)return 179; if(c<=50000)return 279; if(c<=100000)return 399; return null; } },
-  { key:'brevo', name:'Brevo', tier:'smb', tagline:'A flexible, affordable platform with email, SMS, and CRM in one place', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:true, freeNote:'Free plan: unlimited contacts, 300 emails/day', startingPrice:'$9/mo (20,000 emails/mo)', pricingModel:'sends', pricingNote:'Priced by monthly email sends, not contact count', trialUrl:'https://get.brevo.com/hjl3lwlukji3', plansUrl:'https://get.brevo.com/hjl3lwlukji3', affiliate:false, pricing:(c,s)=>{ const t=c*s; if(t<=20000)return 9; if(t<=60000)return 18; if(t<=120000)return 25; if(t<=350000)return 35; if(t<=600000)return 59; if(t<=1000000)return 95; return 95+Math.ceil((t-1000000)/500000)*40; } },
+  { key:'brevo', name:'Brevo', tier:'smb', tagline:'A flexible, affordable platform with email, SMS, and CRM in one place', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:true, freeNote:'Free plan: unlimited contacts, 300 emails/day', startingPrice:'$9/mo (20,000 emails/mo)', pricingModel:'sends', pricingNote:'Priced by monthly email sends, not contact count', trialUrl:'https://get.brevo.com/hjl3lwlukji3', plansUrl:'https://get.brevo.com/hjl3lwlukji3', affiliate:true, pricing:(c,s)=>{ const t=c*s; if(t<=20000)return 9; if(t<=60000)return 18; if(t<=120000)return 25; if(t<=350000)return 35; if(t<=600000)return 59; if(t<=1000000)return 95; return 95+Math.ceil((t-1000000)/500000)*40; } },
   { key:'kit', name:'ConvertKit / Kit', tier:'smb', tagline:'Built for creators, bloggers, and solopreneurs who sell digital products', features:['landing','automation'], bizTypes:['creator'], hasFree:true, freeNote:'Free plan: up to 10,000 subscribers', startingPrice:'$25/mo (1,000 subscribers)', pricingModel:'contacts', pricingNote:'Priced by subscriber count', trialUrl:'https://kit.com', plansUrl:'https://kit.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=10000)return 25; if(c<=25000)return 50; if(c<=50000)return 99; if(c<=100000)return 149; return null; } },
   { key:'getresponse', name:'GetResponse', tier:'smb', tagline:'Email marketing plus landing pages and webinars in one platform', features:['sms','ecommerce','landing','automation'], bizTypes:['b2b','service','creator'], hasFree:true, freeNote:'Free plan: up to 500 contacts', startingPrice:'$15/mo (1,000 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.getresponse.com', plansUrl:'https://www.getresponse.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2500)return 25; if(c<=5000)return 45; if(c<=10000)return 65; if(c<=25000)return 95; if(c<=50000)return 145; if(c<=100000)return 250; return null; } },
   { key:'hubspot', name:'HubSpot', tier:'smb', tagline:'Free plan works well for small teams; paid tiers scale up to full enterprise', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service'], hasFree:true, freeNote:'Free plan: unlimited contacts', startingPrice:'$15/mo per seat (Starter)', pricingModel:'hybrid', pricingNote:'Starter priced per seat; higher tiers by contacts', trialUrl:'https://www.hubspot.com', plansUrl:'https://www.hubspot.com/pricing/marketing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2000)return 45; if(c<=5000)return 800; if(c<=10000)return 890; if(c<=25000)return 1180; if(c<=50000)return 1780; return null; } },
