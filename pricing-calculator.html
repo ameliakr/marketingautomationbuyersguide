@@ -51,7 +51,6 @@
 .card-pricing { display: flex; flex-direction: column; padding: 14px 24px 0; margin: 12px 16px 0; border-top: 1px solid var(--rule); }
 .card-pricing-rows { display: flex; flex-direction: column; padding-bottom: 8px; }
 .price-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; gap: 8px; padding-bottom: 6px; overflow: hidden; }
-.card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; padding: 14px 8px 0; margin: 0 16px; border-top: 1px solid var(--rule); }
 .price-label { color: var(--muted); }
 .price-value { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .free-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; white-space: nowrap; }
@@ -59,11 +58,11 @@
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 .price-row.estimated { display: none; }
 .price-row.estimated.visible { display: flex; }
-.estimate-box { display: block; padding: 8px 24px; background: #f1f8f1; border-top: 1px solid #c8e6c9; border-bottom: 1px solid #c8e6c9; visibility: hidden; }
+.estimate-box { display: block; padding: 8px 24px; background: #f1f8f1; border-top: 1px solid #c8e6c9; visibility: hidden; }
 .estimate-box.visible { visibility: visible; display: flex; justify-content: space-between; align-items: baseline; }
 .price-estimated-label { color: var(--accent); font-weight: 500; font-size: 12px; }
 .price-estimated-val { font-weight: 600; color: var(--accent); font-size: 15px; }
-.card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; padding: 14px 24px 0; }
+.card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; padding: 14px 16px 0; margin: 0 8px; border-top: 1px solid var(--rule); }
 .feature-tag { font-size: 11px; padding: 3px 8px; background: #f5f5f3; color: #bdbdbd; }
 .feature-tag.has { background: #f1f8f1; color: #2c5f2e; }
 .card-cta { display: flex; flex-direction: column; gap: 7px; padding: 14px 24px 24px; }.btn-primary { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
