@@ -20,18 +20,18 @@
 <style>
 
 .articles-hero { margin-bottom: 48px; }
-.articles-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 400; margin-bottom: 14px; }
+.articles-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; font-weight: 400; margin-bottom: 14px; }
 .articles-hero h1 em { font-style: italic; color: var(--accent); }
 .articles-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 720px; margin: 0; }
 
 /* ── SEARCH ── */
 .search-wrap { margin-bottom: 20px; position: relative; }
-.search-input { width: 100%; padding: 13px 16px 13px 40px; border: 1px solid var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); transition: border-color 0.15s; }
+.search-input { width: 100%; padding: 13px 16px 13px 40px; border: 1px solid var(--rule); background: white; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); transition: border-color 0.15s; box-sizing: border-box; }
 .search-input:focus { outline: none; border-color: var(--ink); }
 .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 14px; pointer-events: none; }
 
 /* ── FILTERS ── */
-.filters-bar { background: #f8f8f6; border: 1px solid var(--rule); padding: 18px 20px; margin-bottom: 24px; }
+.filters-bar { background: #f8f8f6; border: 1px solid var(--rule); padding: 18px 16px; margin-bottom: 24px; box-sizing: border-box; }
 .filters-row { display: flex; flex-wrap: wrap; gap: 20px; }
 .filter-group { display: flex; flex-direction: column; gap: 7px; }
 .filter-group-label { font-size: 11px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); }

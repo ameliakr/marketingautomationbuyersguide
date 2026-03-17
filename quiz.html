@@ -20,7 +20,7 @@
 <style>
 
 /* ── QUIZ SHELL ── */
-.quiz-shell { max-width: 720px; margin: 0 auto; }
+.quiz-shell { max-width: 720px; margin: 0; }
 
 /* ── PROGRESS ── */
 .progress-wrap { margin-bottom: 40px; }
@@ -113,6 +113,8 @@
 .link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .link-row:last-child { border-bottom: none; }
 .link-label { color: var(--muted); }
+.link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+.link-url:hover { text-decoration: underline; }
 .link-url { color: var(--accent); font-weight: 500; }
 .link-url:hover { text-decoration: underline; }
 
@@ -369,7 +371,7 @@
       </div>
     
 
-  <div class="useful-links-section" style="max-width: 720px; margin: 48px auto 0;"><div class="useful-links-section-title">Useful next steps</div>
+  <div class="useful-links-section" style="max-width: 720px; margin-top: 48px;"><div class="useful-links-section-title">Useful next steps</div>
     <div class="useful-link-row"><span class="useful-link-label">Compare two tools side by side</span><a class="useful-link-url" href="/comparisons.html">Go to comparisons →</a></div>
     <div class="useful-link-row"><span class="useful-link-label">Compare pricing across all platforms</span><a class="useful-link-url" href="/pricing.html">Pricing calculator →</a></div>
     <div class="useful-link-row"><span class="useful-link-label">Browse all tool reviews</span><a class="useful-link-url" href="/articles.html">View articles →</a></div>
