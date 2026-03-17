@@ -48,10 +48,10 @@ a { text-decoration: none; color: inherit; }
 .wrap-narrow { max-width: 620px; margin: 0 auto; }
 
 /* ── HERO ── */
-.hero { text-align: center; margin-bottom: 64px; }
-.hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 18px; }
-.hero p { font-size: 15px; line-height: 1.7; color: var(--muted); max-width: 420px; margin: 0 auto; }
-.hero-sub { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 480px; margin: 0 auto; }
+.hero { text-align: left; margin-bottom: 64px; }
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 18px; text-wrap: balance; }
+.hero p { font-size: 15px; line-height: 1.7; color: var(--muted); max-width: 680px; }
+.hero-sub { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 680px; }
 
 /* ── TIER HEADERS ── */
 .tier { margin-bottom: 56px; }
