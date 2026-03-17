@@ -72,8 +72,8 @@ a { text-decoration: none; color: inherit; }
 .badge.coming { font-style: italic; }
 
 /* ── CTA ROWS (homepage) ── */
-.cta-list { max-width: 520px; margin: 0 auto; }
-.home-hero { max-width: 520px; margin: 0 auto 32px; text-align: left; }
+.cta-list { max-width: 720px; margin: 0 auto; }
+.home-hero { max-width: 720px; margin: 0 auto 32px; text-align: left; }
 .cta-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: color 0.15s; font-weight: 400; }
 .cta-item:first-child { border-top: 1px solid var(--rule); }
 .cta-item:hover { color: var(--accent); }
