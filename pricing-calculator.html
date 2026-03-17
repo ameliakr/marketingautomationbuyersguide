@@ -10,17 +10,13 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-
-/* ── HERO ── */
-.calc-hero { text-align: center; margin-bottom: 48px; }
-.calc-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 14px; }
-.calc-hero p { font-size: 15px; color: var(--muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+.pricing-hero { text-align: center; margin-bottom: 40px; }
+.pricing-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(30px, 5vw, 48px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
+.pricing-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto; }
 .last-updated { display: inline-block; font-size: 11px; color: var(--muted); background: #f5f5f3; padding: 4px 10px; margin-top: 12px; letter-spacing: 0.04em; }
-
-/* ── CALCULATOR PANEL ── */
-.calc-panel { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto; }
-.calc-panel-title { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
-.calc-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 720px; margin: 0 auto; }
+.calc-panel { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 32px; }
+.calc-panel-title { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.calc-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
 .calc-field { display: flex; flex-direction: column; gap: 8px; }
 .calc-label { font-size: 13px; font-weight: 500; color: var(--ink); }
 .calc-sublabel { font-size: 11px; color: var(--muted); margin-top: -4px; }
@@ -30,90 +26,72 @@
 .calc-checkboxes { display: flex; flex-direction: column; gap: 8px; }
 .calc-checkbox { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
 .calc-checkbox input { accent-color: var(--accent); width: 14px; height: 14px; cursor: pointer; }
-.calc-actions { margin-top: 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.calc-select { font-size: 13px; padding: 6px 10px; border: 1px solid var(--rule); background: white; color: var(--ink); font-family: 'DM Sans', sans-serif; cursor: pointer; width: 100%; }
+.calc-actions { margin-top: 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .calc-btn { padding: 10px 24px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; transition: opacity 0.15s; }
 .calc-btn:hover { opacity: 0.85; }
 .calc-reset { font-size: 12px; color: var(--muted); cursor: pointer; text-decoration: underline; }
 .calc-reset:hover { color: var(--ink); }
-
-/* ── RESULTS ── */
-.results-header { max-width: 900px; margin: 0 auto 20px; display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-.results-title { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; }
+.results-bar { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 .results-count { font-size: 12px; color: var(--muted); }
 .results-count span { font-weight: 500; color: var(--ink); }
-.results-note { font-size: 12px; color: var(--muted); max-width: 900px; margin: -12px auto 20px; font-style: italic; }
-
-/* ── RESULT CARDS ── */
-.results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0; background: white; max-width: 900px; margin: 0 auto; }
-.result-card { background: white; padding: 24px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
-.result-card:hover { background: #fafaf8; }
-.result-card.hidden { display: none; }
-.result-card.not-recommended { opacity: 0.5; }
-
-.rc-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-.rc-name { font-size: 16px; font-weight: 500; }
-.rc-tier { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 3px 7px; border: 1px solid var(--rule); white-space: nowrap; }
-.rc-tier.smb { color: var(--accent); border-color: #c8e6c9; background: #f1f8f1; }
-.rc-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
-.rc-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
-
-.rc-estimate { padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 6px; min-height: 90px; }
-.rc-price-main { display: flex; align-items: baseline; gap: 6px; }
-.rc-price-value { font-size: 22px; font-weight: 500; color: var(--ink); }
-.rc-price-period { font-size: 12px; color: var(--muted); }
-.rc-price-note { font-size: 11px; color: var(--muted); font-style: italic; }
-.rc-free-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; background: var(--free-bg); color: var(--free-text); }
-
-.rc-fit { display: flex; flex-direction: column; gap: 5px; }
-.rc-fit-row { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); }
-.rc-fit-row.good { color: #2c5f2e; }
-.rc-fit-row.bad { color: var(--no); }
-.rc-fit-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
-
-.rc-cta { display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
-.rc-btn-primary { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
-.rc-btn-primary:hover { opacity: 0.85; }
-.rc-btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; text-decoration: none; }
-.rc-btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
-.rc-affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; line-height: 1; margin-bottom: -4px; }
-
-/* ── ENTERPRISE NOTICE ── */
-.enterprise-notice { max-width: 900px; margin: 24px auto 0; padding: 16px 20px; background: #f8f8f6; border-left: 3px solid var(--rule); font-size: 13px; color: var(--muted); }
-.enterprise-notice a { color: var(--accent); text-decoration: underline; }
-
-/* ── NO RESULTS ── */
-.no-results { display: none; text-align: center; padding: 80px 24px; max-width: 900px; margin: 0 auto; }
+.results-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; font-style: italic; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.tool-card { background: white; padding: 24px; display: flex; flex-direction: column; gap: 14px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
+.tool-card:hover { background: #fafaf8; }
+.tool-card.hidden { display: none; }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.card-name { font-size: 17px; font-weight: 500; }
+.card-tier { font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 3px 7px; border: 1px solid var(--rule); white-space: nowrap; }
+.card-tier.smb { color: var(--accent); border-color: #c8e6c9; background: #f1f8f1; }
+.card-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
+.card-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
+.card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; min-height: 2.8em; }
+.card-pricing { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; gap: 8px; }
+.price-label { color: var(--muted); }
+.price-value { font-weight: 500; }
+.free-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.05em; padding: 2px 7px; white-space: nowrap; }
+.free-badge.yes { background: var(--free-bg); color: var(--free-text); }
+.free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
+.price-row.estimated { display: none; }
+.price-row.estimated.visible { display: flex; }
+.price-estimated-val { font-weight: 500; color: var(--accent); }
+.card-features { display: flex; flex-wrap: wrap; gap: 5px; flex: 1; align-content: flex-start; }
+.feature-tag { font-size: 11px; padding: 3px 8px; background: #f5f5f3; color: #bdbdbd; }
+.feature-tag.has { background: #f1f8f1; color: #2c5f2e; }
+.card-cta { display: flex; flex-direction: column; gap: 7px; margin-top: auto; }
+.btn-primary { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; text-decoration: none; }
+.btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
+.affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; line-height: 1; margin-bottom: -4px; }
+.no-results { display: none; text-align: center; padding: 80px 24px; }
 .no-results.visible { display: block; }
 .no-results p { font-size: 15px; color: var(--muted); }
-
-/* ── PARTNER SECTION ── */
-.partner-section { max-width: 900px; margin: 56px auto 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+.enterprise-notice { padding: 16px 20px; background: #f8f8f6; border-left: 3px solid var(--rule); font-size: 13px; color: var(--muted); margin-top: 24px; }
+.partner-section { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 32px; }
 .partner-section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
 .partner-section-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
 .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-.partner-card { padding: 24px; border: 1px solid var(--rule); border-right: none; border-top: none; display: flex; flex-direction: column; gap: 12px; }
-.partner-card:first-child { border-left: 1px solid var(--rule); border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); }
-.partner-card:last-child { border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.partner-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.partner-card:first-child { border-left: 1px solid var(--rule); }
 .partner-card-name { font-size: 16px; font-weight: 500; }
 .partner-card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
 .partner-card-btn { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.15s; }
 .partner-card-btn:hover { opacity: 0.85; }
 .partner-affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; }
-
-/* ── BOTTOM USEFUL LINKS ── */
-.bottom-useful-links { max-width: 900px; margin: 48px auto 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+.bottom-useful-links { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 32px; }
 .bottom-useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
 .bottom-useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .bottom-useful-links .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .bottom-useful-links .useful-link-label { color: var(--muted); }
 .bottom-useful-links .useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
 .bottom-useful-links .useful-link-url:hover { text-decoration: underline; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .calc-panel { padding: 20px; }
-  .calc-inputs { grid-template-columns: 1fr; max-width: 100%; }
-  .results-grid { grid-template-columns: 1fr; }
+  .calc-inputs { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
   .partner-grid { grid-template-columns: 1fr; }
   .partner-card:first-child { border-right: 1px solid var(--rule); border-bottom: none; }
   .partner-card:last-child { border-left: 1px solid var(--rule); }
@@ -149,42 +127,62 @@
 
 <main class="page-body">
 
-  <div class="calc-hero">
+  <div class="pricing-hero">
     <h1>Pricing calculator</h1>
-    <p>Enter your list size and sending frequency to see estimated monthly costs across all major platforms.</p>
+    <p>Browse all major marketing automation platforms below. Use the calculator to filter by your needs and see your estimated monthly cost.</p>
     <span class="last-updated">Pricing updated March 2026</span>
   </div>
 
-  <!-- CALCULATOR INPUTS -->
   <div class="calc-panel">
-    <div class="calc-panel-title">Your situation</div>
+    <div class="calc-panel-title">Calculate your estimated cost</div>
     <div class="calc-inputs">
 
       <div class="calc-field">
         <span class="calc-label">Contact list size</span>
         <span class="calc-sublabel">Total subscribers or contacts</span>
         <div class="calc-slider-wrap">
-          <input type="range" class="calc-slider" id="slider-contacts"
-            min="0" max="11" step="1" value="2">
+          <input type="range" class="calc-slider" id="slider-contacts" min="0" max="11" step="1" value="2">
           <span class="calc-slider-val" id="val-contacts">1,000</span>
         </div>
       </div>
 
       <div class="calc-field">
-        <span class="calc-label">Emails sent per month</span>
+        <span class="calc-label">Emails per month</span>
         <span class="calc-sublabel">Per contact, on average</span>
         <div class="calc-slider-wrap">
-          <input type="range" class="calc-slider" id="slider-sends"
-            min="1" max="8" step="1" value="4">
+          <input type="range" class="calc-slider" id="slider-sends" min="1" max="8" step="1" value="4">
           <span class="calc-slider-val" id="val-sends">4 per contact</span>
         </div>
       </div>
 
       <div class="calc-field">
+        <span class="calc-label">Business type</span>
+        <span class="calc-sublabel">Show tools suited to your use case</span>
+        <select class="calc-select" id="select-biztype">
+          <option value="">All business types</option>
+          <option value="ecommerce">E-commerce</option>
+          <option value="b2b">B2B / SaaS</option>
+          <option value="creator">Creator / blogger</option>
+          <option value="service">Service business</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
+        <span class="calc-label">Company size</span>
+        <span class="calc-sublabel">Filter by platform tier</span>
+        <select class="calc-select" id="select-tier">
+          <option value="">All tiers</option>
+          <option value="smb">SMB</option>
+          <option value="mid">Mid-market</option>
+          <option value="ent">Enterprise</option>
+        </select>
+      </div>
+
+      <div class="calc-field">
         <span class="calc-label">Must-have features</span>
-        <span class="calc-sublabel">Only show tools that have these</span>
+        <span class="calc-sublabel">Only show tools that include these</span>
         <div class="calc-checkboxes">
-          <label class="calc-checkbox"><input type="checkbox" id="need-free"> Free plan required</label>
+          <label class="calc-checkbox"><input type="checkbox" id="need-free"> Free plan</label>
           <label class="calc-checkbox"><input type="checkbox" id="need-crm"> Built-in CRM</label>
           <label class="calc-checkbox"><input type="checkbox" id="need-sms"> SMS marketing</label>
           <label class="calc-checkbox"><input type="checkbox" id="need-ecommerce"> E-commerce features</label>
@@ -193,31 +191,25 @@
 
     </div>
     <div class="calc-actions">
-      <button class="calc-btn" onclick="calculate()">Calculate →</button>
-      <span class="calc-reset" onclick="resetCalc()">Reset</span>
+      <button class="calc-btn" onclick="applyFilters()">Calculate →</button>
+      <span class="calc-reset" onclick="resetFilters()">Reset</span>
     </div>
   </div>
 
-  <!-- RESULTS -->
-  <div id="results-section" style="display:none">
-    <div class="results-header">
-      <span class="results-title">Estimated monthly cost</span>
-      <span class="results-count" id="results-count"></span>
-    </div>
-    <p class="results-note" id="results-note"></p>
-    <div class="results-grid" id="results-grid"></div>
-    <div class="no-results" id="no-results">
-      <p>No tools match all your requirements. Try removing a filter.</p>
-    </div>
-    <div class="enterprise-notice" id="enterprise-notice" style="display:none">
-      Enterprise tools (Marketo, Salesforce, Eloqua, Pardot, Dynamics 365) use custom pricing and are not included in this calculator. <a href="/pricing.html">View the full pricing page</a> for an overview.
-    </div>
+  <div class="results-bar">
+    <span class="results-count"><span id="visible-count">18</span> tools</span>
+  </div>
+  <p class="results-note" id="results-note" style="display:none"></p>
+
+  <div class="tools-grid" id="tools-grid"></div>
+  <div class="no-results" id="no-results"><p>No tools match all your requirements. Try removing a filter.</p></div>
+  <div class="enterprise-notice" id="enterprise-notice" style="display:none">
+    Enterprise tools use custom pricing and are not included in cost estimates. Contact each vendor directly for a quote.
   </div>
 
-  <!-- OUR FAVORITE TOOLS -->
   <div class="partner-section">
     <div class="partner-section-title">Our favorite tools</div>
-    <p class="partner-section-sub">These are the tools we recommend most. We know them well, we think they are the best options at their price points, and we are proud to be affiliate partners for both.</p>
+    <p class="partner-section-sub">We have used a lot of marketing automation platforms. These are the tools we recommend most. We know them well, we think they are the best options at their price points, and we are proud to be their affiliate partners.</p>
     <div class="partner-grid">
       <div class="partner-card">
         <div class="partner-card-name">Moosend</div>
@@ -234,14 +226,13 @@
     </div>
   </div>
 
-  <!-- USEFUL NEXT STEPS -->
   <div class="bottom-useful-links">
     <div class="bottom-useful-links-title">Useful next steps</div>
     <div class="bottom-useful-links-sub">More tools to help you decide.</div>
     <div class="useful-link-row"><span class="useful-link-label">Not sure which tool fits your needs?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
     <div class="useful-link-row"><span class="useful-link-label">Compare two tools side by side</span><a class="useful-link-url" href="/comparisons.html">Go to comparisons →</a></div>
     <div class="useful-link-row"><span class="useful-link-label">Setting up a new tool or switching platforms?</span><a class="useful-link-url" href="/guides.html">Go to guides →</a></div>
-    <div class="useful-link-row"><span class="useful-link-label">Browse all tools and pricing tiers</span><a class="useful-link-url" href="/pricing.html">View full pricing page →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Browse all tools</span><a class="useful-link-url" href="/all-tools.html">View all tools →</a></div>
   </div>
 
 </main>
@@ -260,526 +251,138 @@
 </footer>
 
 <script>
-// ── CONTACT COUNT STEPS ──────────────────────────────────────────────────────
-const CONTACT_STEPS = [250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 250000, 500000, 1000000];
-const CONTACT_LABELS = ['250', '500', '1,000', '2,500', '5,000', '10,000', '25,000', '50,000', '100,000', '250,000', '500,000', '1,000,000+'];
+const CONTACT_STEPS  = [250,500,1000,2500,5000,10000,25000,50000,100000,250000,500000,1000000];
+const CONTACT_LABELS = ['250','500','1,000','2,500','5,000','10,000','25,000','50,000','100,000','250,000','500,000','1,000,000+'];
+
+const TOOLS = [
+  { key:'activecampaign', name:'ActiveCampaign', tier:'smb', tagline:'Powerful CRM and automation for businesses that need more than just email', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:false, freeTrial:'14-day free trial, no card required', startingPrice:'$15/mo (1,000 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt', plansUrl:'https://try.activecampaign.com/9lravfc5vzsu', affiliate:true, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2500)return 39; if(c<=5000)return 69; if(c<=10000)return 111; if(c<=25000)return 179; if(c<=50000)return 279; if(c<=100000)return 399; return null; } },
+  { key:'brevo', name:'Brevo', tier:'smb', tagline:'A flexible, affordable platform with email, SMS, and CRM in one place', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:true, freeNote:'Free plan: unlimited contacts, 300 emails/day', startingPrice:'$9/mo (20,000 emails/mo)', pricingModel:'sends', pricingNote:'Priced by monthly email sends, not contact count', trialUrl:'https://get.brevo.com/hjl3lwlukji3', plansUrl:'https://get.brevo.com/hjl3lwlukji3', affiliate:false, pricing:(c,s)=>{ const t=c*s; if(t<=20000)return 9; if(t<=60000)return 18; if(t<=120000)return 25; if(t<=350000)return 35; if(t<=600000)return 59; if(t<=1000000)return 95; return 95+Math.ceil((t-1000000)/500000)*40; } },
+  { key:'kit', name:'ConvertKit / Kit', tier:'smb', tagline:'Built for creators, bloggers, and solopreneurs who sell digital products', features:['landing','automation'], bizTypes:['creator'], hasFree:true, freeNote:'Free plan: up to 10,000 subscribers', startingPrice:'$25/mo (1,000 subscribers)', pricingModel:'contacts', pricingNote:'Priced by subscriber count', trialUrl:'https://kit.com', plansUrl:'https://kit.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=10000)return 25; if(c<=25000)return 50; if(c<=50000)return 99; if(c<=100000)return 149; return null; } },
+  { key:'getresponse', name:'GetResponse', tier:'smb', tagline:'Email marketing plus landing pages and webinars in one platform', features:['sms','ecommerce','landing','automation'], bizTypes:['b2b','service','creator'], hasFree:true, freeNote:'Free plan: up to 500 contacts', startingPrice:'$15/mo (1,000 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.getresponse.com', plansUrl:'https://www.getresponse.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2500)return 25; if(c<=5000)return 45; if(c<=10000)return 65; if(c<=25000)return 95; if(c<=50000)return 145; if(c<=100000)return 250; return null; } },
+  { key:'hubspot', name:'HubSpot', tier:'smb', tagline:'Free plan works well for small teams; paid tiers scale up to full enterprise', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service'], hasFree:true, freeNote:'Free plan: unlimited contacts', startingPrice:'$15/mo per seat (Starter)', pricingModel:'hybrid', pricingNote:'Starter priced per seat; higher tiers by contacts', trialUrl:'https://www.hubspot.com', plansUrl:'https://www.hubspot.com/pricing/marketing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2000)return 45; if(c<=5000)return 800; if(c<=10000)return 890; if(c<=25000)return 1180; if(c<=50000)return 1780; return null; } },
+  { key:'klaviyo', name:'Klaviyo', tier:'smb', tagline:'Data-driven email and SMS for e-commerce brands serious about revenue', features:['sms','ecommerce','automation'], bizTypes:['ecommerce'], hasFree:true, freeNote:'Free plan: up to 250 contacts', startingPrice:'~$20/mo (500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.klaviyo.com', plansUrl:'https://www.klaviyo.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=500)return 20; if(c<=1000)return 30; if(c<=1500)return 45; if(c<=2500)return 60; if(c<=5000)return 100; if(c<=10000)return 150; if(c<=25000)return 270; if(c<=50000)return 400; if(c<=100000)return 700; return null; } },
+  { key:'mailchimp', name:'Mailchimp', tier:'smb', tagline:'The most recognizable name in email marketing, now better suited to small businesses', features:['ecommerce','landing'], bizTypes:['b2b','service','creator','ecommerce'], hasFree:true, freeNote:'Free plan: up to 500 contacts', startingPrice:'$13/mo (500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.mailchimp.com', plansUrl:'https://www.mailchimp.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=500)return 13; if(c<=1500)return 20; if(c<=2500)return 30; if(c<=5000)return 50; if(c<=10000)return 75; if(c<=25000)return 189; if(c<=50000)return 350; if(c<=100000)return 600; return null; } },
+  { key:'mailerlite', name:'MailerLite', tier:'smb', tagline:'Simple, affordable, and easy to learn. Good for small businesses and bloggers', features:['ecommerce','landing','automation'], bizTypes:['creator','service','b2b'], hasFree:true, freeNote:'Free plan: up to 1,000 contacts', startingPrice:'$9/mo (unlimited emails)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.mailerlite.com', plansUrl:'https://www.mailerlite.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 9; if(c<=2500)return 15; if(c<=5000)return 29; if(c<=10000)return 49; if(c<=25000)return 109; if(c<=50000)return 179; if(c<=100000)return 289; return null; } },
+  { key:'moosend', name:'Moosend', tier:'smb', tagline:'Affordable automation with a clean interface, good for growing lists on a budget', features:['ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce','creator'], hasFree:false, freeTrial:'30-day free trial, no card required', startingPrice:'$9/mo (500 subscribers)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://trymoo.moosend.com/4e0kl2a449hd', plansUrl:'https://moosend.com/pricing', affiliate:true, pricing:(c)=>{ if(c<=500)return 9; if(c<=1000)return 16; if(c<=2500)return 24; if(c<=5000)return 32; if(c<=8000)return 48; if(c<=10000)return 64; if(c<=25000)return 88; if(c<=50000)return 160; if(c<=100000)return 208; return null; } },
+  { key:'omnisend', name:'Omnisend', tier:'smb', tagline:'Email and SMS marketing designed specifically for e-commerce stores', features:['sms','ecommerce','automation'], bizTypes:['ecommerce'], hasFree:true, freeNote:'Free plan: up to 250 contacts', startingPrice:'$16/mo (500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.omnisend.com', plansUrl:'https://www.omnisend.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=500)return 16; if(c<=1000)return 20; if(c<=2000)return 35; if(c<=3000)return 45; if(c<=5000)return 65; if(c<=10000)return 115; if(c<=25000)return 230; if(c<=50000)return 400; if(c<=100000)return 720; return null; } },
+  { key:'aweber', name:'AWeber', tier:'smb', tagline:'One of the most established email platforms. Simple, reliable, and well-supported', features:['landing','automation'], bizTypes:['creator','service'], hasFree:true, freeNote:'Free plan: up to 500 subscribers', startingPrice:'$15/mo (500 subscribers)', pricingModel:'contacts', pricingNote:'Priced by subscriber count', trialUrl:'https://www.aweber.com', plansUrl:'https://www.aweber.com/pricing.htm', affiliate:false, pricing:(c)=>{ if(c<=500)return 15; if(c<=2500)return 29; if(c<=5000)return 49; if(c<=10000)return 69; if(c<=25000)return 149; if(c<=50000)return 249; return null; } },
+  { key:'constantcontact', name:'Constant Contact', tier:'smb', tagline:'Simple email marketing with strong customer support and a long track record', features:['ecommerce','landing','automation'], bizTypes:['service','b2b'], hasFree:false, freeTrial:'60-day free trial', startingPrice:'$12/mo (500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.constantcontact.com', plansUrl:'https://www.constantcontact.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=500)return 12; if(c<=1000)return 30; if(c<=2500)return 50; if(c<=5000)return 80; if(c<=10000)return 120; if(c<=25000)return 195; if(c<=50000)return 295; return null; } },
+  { key:'flodesk', name:'Flodesk', tier:'smb', tagline:'Flat-rate pricing, no surprises as your list grows. Known for beautiful templates', features:['landing','automation'], bizTypes:['creator','service'], hasFree:false, freeTrial:'30-day free trial', startingPrice:'$38/mo flat rate', pricingModel:'flat', pricingNote:'Flat rate: price does not change with list size', trialUrl:'https://www.flodesk.com', plansUrl:'https://www.flodesk.com/pricing', affiliate:false, pricing:()=>38 },
+  { key:'zoho', name:'Zoho Campaigns', tier:'mid', tagline:'Email marketing that integrates tightly with the broader Zoho ecosystem', features:['crm','ecommerce','automation'], bizTypes:['b2b','service'], hasFree:true, freeNote:'Free plan: up to 2,000 contacts', startingPrice:'$3/mo (500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.zoho.com/campaigns', plansUrl:'https://www.zoho.com/campaigns/pricing.html', affiliate:false, pricing:(c)=>{ if(c<=500)return 3; if(c<=1000)return 4; if(c<=2500)return 6; if(c<=5000)return 9; if(c<=10000)return 14; if(c<=25000)return 24; if(c<=50000)return 39; if(c<=100000)return 59; return null; } },
+  { key:'campaignmonitor', name:'Campaign Monitor', tier:'mid', tagline:'Clean, well-designed email marketing with strong segmentation capabilities', features:['ecommerce','landing','automation'], bizTypes:['b2b','service'], hasFree:false, freeTrial:'Free account with limited sends', startingPrice:'$11/mo (500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.campaignmonitor.com', plansUrl:'https://www.campaignmonitor.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=500)return 11; if(c<=2500)return 29; if(c<=5000)return 49; if(c<=10000)return 79; if(c<=25000)return 149; if(c<=50000)return 249; return null; } },
+  { key:'keap', name:'Keap', tier:'mid', tagline:'CRM and automation built for small but growing service businesses', features:['crm','sms','landing','automation'], bizTypes:['service'], hasFree:false, freeTrial:'14-day free trial', startingPrice:'$249/mo (1,500 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count. Starts high', trialUrl:'https://www.keap.com', plansUrl:'https://www.keap.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=1500)return 249; if(c<=5000)return 279; if(c<=10000)return 329; if(c<=25000)return 399; return null; } },
+  { key:'marketo', name:'Adobe Marketo', tier:'ent', tagline:'Deep B2B marketing automation for complex, long sales cycles', features:['crm','landing','automation'], bizTypes:['b2b'], hasFree:false, freeTrial:'Demo available', startingPrice:'Custom pricing', pricingModel:'enterprise', pricingNote:'Contact Adobe for pricing', trialUrl:'https://business.adobe.com/products/marketo', plansUrl:'https://business.adobe.com/products/marketo', affiliate:false, pricing:()=>null },
+  { key:'hubspot-enterprise', name:'HubSpot Enterprise', tier:'ent', tagline:'Full marketing, sales, and CRM suite. Powerful but expensive at scale', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service'], hasFree:false, freeTrial:'Free SMB tier available', startingPrice:'$3,600/mo (Marketing Hub Enterprise)', pricingModel:'enterprise', pricingNote:'Contact HubSpot for full enterprise pricing', trialUrl:'https://www.hubspot.com', plansUrl:'https://www.hubspot.com/pricing/marketing', affiliate:false, pricing:()=>null },
+  { key:'salesforce', name:'Salesforce Marketing Cloud', tier:'ent', tagline:'Enterprise-grade omnichannel marketing for large teams with dedicated ops resources', features:['crm','sms','ecommerce','automation'], bizTypes:['b2b'], hasFree:false, freeTrial:'Demo available', startingPrice:'Custom pricing', pricingModel:'enterprise', pricingNote:'Contact Salesforce for pricing', trialUrl:'https://www.salesforce.com/products/marketing-cloud', plansUrl:'https://www.salesforce.com/products/marketing-cloud/pricing', affiliate:false, pricing:()=>null },
+];
 
 const sliderContacts = document.getElementById('slider-contacts');
 const sliderSends    = document.getElementById('slider-sends');
 const valContacts    = document.getElementById('val-contacts');
 const valSends       = document.getElementById('val-sends');
 
-sliderContacts.addEventListener('input', () => {
-  valContacts.textContent = CONTACT_LABELS[+sliderContacts.value];
-});
-sliderSends.addEventListener('input', () => {
-  valSends.textContent = +sliderSends.value + ' per contact';
-});
+sliderContacts.addEventListener('input', () => valContacts.textContent = CONTACT_LABELS[+sliderContacts.value]);
+sliderSends.addEventListener('input',    () => valSends.textContent    = +sliderSends.value + ' per contact');
 
-// ── TOOL DATA ────────────────────────────────────────────────────────────────
-// pricing: function(contacts, totalSends) => estimated $/mo, or null if enterprise
-// tiers: smb | mid | ent
-// features: array of feature keys
-// pricingModel: 'contacts' | 'sends' | 'hybrid'
-// pricingNote: short explanation of how pricing works
-
-const TOOLS = [
-  {
-    key: 'activecampaign',
-    name: 'ActiveCampaign',
-    tier: 'smb',
-    tagline: 'Powerful CRM and automation',
-    features: ['crm', 'sms', 'ecommerce', 'landing', 'automation'],
-    hasFree: false,
-    freeTrial: '14-day free trial',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt',
-    plansUrl: 'https://try.activecampaign.com/9lravfc5vzsu',
-    affiliate: true,
-    pricing: (c) => {
-      if (c <= 1000)   return 15;
-      if (c <= 2500)   return 39;
-      if (c <= 5000)   return 69;
-      if (c <= 10000)  return 111;
-      if (c <= 25000)  return 179;
-      if (c <= 50000)  return 279;
-      if (c <= 100000) return 399;
-      return null; // enterprise above 100k
-    }
-  },
-  {
-    key: 'brevo',
-    name: 'Brevo',
-    tier: 'smb',
-    tagline: 'Email, SMS, and CRM. Priced by sends, not contacts',
-    features: ['crm', 'sms', 'ecommerce', 'landing', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: unlimited contacts, 300 emails/day',
-    pricingModel: 'sends',
-    pricingNote: 'Priced by monthly email sends, not contact count',
-    trialUrl: 'https://www.brevo.com',
-    plansUrl: 'https://www.brevo.com/pricing',
-    affiliate: false,
-    pricing: (c, sends) => {
-      const totalSends = c * sends;
-      if (totalSends <= 20000)  return 9;
-      if (totalSends <= 60000)  return 18;
-      if (totalSends <= 120000) return 25;
-      if (totalSends <= 350000) return 35;
-      if (totalSends <= 600000) return 59;
-      if (totalSends <= 1000000) return 95;
-      return 95 + Math.ceil((totalSends - 1000000) / 500000) * 40;
-    }
-  },
-  {
-    key: 'kit',
-    name: 'ConvertKit / Kit',
-    tier: 'smb',
-    tagline: 'Built for creators and solopreneurs',
-    features: ['landing', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 10,000 subscribers',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by subscriber count',
-    trialUrl: 'https://kit.com',
-    plansUrl: 'https://kit.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 10000)  return 25;
-      if (c <= 25000)  return 50;
-      if (c <= 50000)  return 99;
-      if (c <= 100000) return 149;
-      return null;
-    }
-  },
-  {
-    key: 'getresponse',
-    name: 'GetResponse',
-    tier: 'smb',
-    tagline: 'Email, landing pages, and webinars',
-    features: ['sms', 'ecommerce', 'landing', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 500 contacts',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.getresponse.com',
-    plansUrl: 'https://www.getresponse.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 1000)   return 15;
-      if (c <= 2500)   return 25;
-      if (c <= 5000)   return 45;
-      if (c <= 10000)  return 65;
-      if (c <= 25000)  return 95;
-      if (c <= 50000)  return 145;
-      if (c <= 100000) return 250;
-      return null;
-    }
-  },
-  {
-    key: 'hubspot',
-    name: 'HubSpot',
-    tier: 'smb',
-    tagline: 'Free CRM with a strong free plan',
-    features: ['crm', 'sms', 'ecommerce', 'landing', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: unlimited contacts',
-    pricingModel: 'hybrid',
-    pricingNote: 'Starter priced per seat; higher tiers priced by contacts',
-    trialUrl: 'https://www.hubspot.com',
-    plansUrl: 'https://www.hubspot.com/pricing/marketing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 1000)   return 15;
-      if (c <= 2000)   return 45;
-      if (c <= 5000)   return 800;
-      if (c <= 10000)  return 890;
-      if (c <= 25000)  return 1180;
-      if (c <= 50000)  return 1780;
-      return null;
-    }
-  },
-  {
-    key: 'klaviyo',
-    name: 'Klaviyo',
-    tier: 'smb',
-    tagline: 'Best-in-class e-commerce email and SMS',
-    features: ['sms', 'ecommerce', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 250 contacts',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.klaviyo.com',
-    plansUrl: 'https://www.klaviyo.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 20;
-      if (c <= 1000)   return 30;
-      if (c <= 1500)   return 45;
-      if (c <= 2500)   return 60;
-      if (c <= 5000)   return 100;
-      if (c <= 10000)  return 150;
-      if (c <= 25000)  return 270;
-      if (c <= 50000)  return 400;
-      if (c <= 100000) return 700;
-      return null;
-    }
-  },
-  {
-    key: 'mailchimp',
-    name: 'Mailchimp',
-    tier: 'smb',
-    tagline: 'The most recognizable name in email marketing',
-    features: ['ecommerce', 'landing'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 500 contacts',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count. Gets expensive at larger lists',
-    trialUrl: 'https://www.mailchimp.com',
-    plansUrl: 'https://www.mailchimp.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 13;
-      if (c <= 1500)   return 20;
-      if (c <= 2500)   return 30;
-      if (c <= 5000)   return 50;
-      if (c <= 10000)  return 75;
-      if (c <= 25000)  return 189;
-      if (c <= 50000)  return 350;
-      if (c <= 100000) return 600;
-      return null;
-    }
-  },
-  {
-    key: 'mailerlite',
-    name: 'MailerLite',
-    tier: 'smb',
-    tagline: 'Simple, affordable, and easy to learn',
-    features: ['ecommerce', 'landing', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 1,000 contacts',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.mailerlite.com',
-    plansUrl: 'https://www.mailerlite.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 1000)   return 9;
-      if (c <= 2500)   return 15;
-      if (c <= 5000)   return 29;
-      if (c <= 10000)  return 49;
-      if (c <= 25000)  return 109;
-      if (c <= 50000)  return 179;
-      if (c <= 100000) return 289;
-      return null;
-    }
-  },
-  {
-    key: 'moosend',
-    name: 'Moosend',
-    tier: 'smb',
-    tagline: 'Affordable automation for growing lists',
-    features: ['ecommerce', 'landing', 'automation'],
-    hasFree: false,
-    freeTrial: '30-day free trial, no card required',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://trymoo.moosend.com/4e0kl2a449hd',
-    plansUrl: 'https://moosend.com/pricing',
-    affiliate: true,
-    pricing: (c) => {
-      if (c <= 500)    return 9;
-      if (c <= 1000)   return 16;
-      if (c <= 2500)   return 24;
-      if (c <= 5000)   return 32;
-      if (c <= 8000)   return 48;
-      if (c <= 10000)  return 64;
-      if (c <= 25000)  return 88;
-      if (c <= 50000)  return 160;
-      if (c <= 100000) return 208;
-      return null;
-    }
-  },
-  {
-    key: 'omnisend',
-    name: 'Omnisend',
-    tier: 'smb',
-    tagline: 'Email and SMS for e-commerce stores',
-    features: ['sms', 'ecommerce', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 250 contacts',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.omnisend.com',
-    plansUrl: 'https://www.omnisend.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 16;
-      if (c <= 1000)   return 20;
-      if (c <= 2000)   return 35;
-      if (c <= 3000)   return 45;
-      if (c <= 5000)   return 65;
-      if (c <= 10000)  return 115;
-      if (c <= 25000)  return 230;
-      if (c <= 50000)  return 400;
-      if (c <= 100000) return 720;
-      return null;
-    }
-  },
-  {
-    key: 'aweber',
-    name: 'AWeber',
-    tier: 'smb',
-    tagline: 'Simple, reliable email marketing',
-    features: ['landing', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 500 subscribers',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by subscriber count',
-    trialUrl: 'https://www.aweber.com',
-    plansUrl: 'https://www.aweber.com/pricing.htm',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 15;
-      if (c <= 2500)   return 29;
-      if (c <= 5000)   return 49;
-      if (c <= 10000)  return 69;
-      if (c <= 25000)  return 149;
-      if (c <= 50000)  return 249;
-      return null;
-    }
-  },
-  {
-    key: 'constantcontact',
-    name: 'Constant Contact',
-    tier: 'smb',
-    tagline: 'Simple email marketing with strong support',
-    features: ['ecommerce', 'landing', 'automation'],
-    hasFree: false,
-    freeTrial: '60-day free trial',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.constantcontact.com',
-    plansUrl: 'https://www.constantcontact.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 12;
-      if (c <= 1000)   return 30;
-      if (c <= 2500)   return 50;
-      if (c <= 5000)   return 80;
-      if (c <= 10000)  return 120;
-      if (c <= 25000)  return 195;
-      if (c <= 50000)  return 295;
-      return null;
-    }
-  },
-  {
-    key: 'flodesk',
-    name: 'Flodesk',
-    tier: 'smb',
-    tagline: 'Flat-rate pricing, no surprises as your list grows',
-    features: ['landing', 'automation'],
-    hasFree: false,
-    freeTrial: '30-day free trial',
-    pricingModel: 'flat',
-    pricingNote: 'Flat rate: price does not change with list size',
-    trialUrl: 'https://www.flodesk.com',
-    plansUrl: 'https://www.flodesk.com/pricing',
-    affiliate: false,
-    pricing: () => 38
-  },
-  {
-    key: 'zoho',
-    name: 'Zoho Campaigns',
-    tier: 'mid',
-    tagline: 'Best if you are already in the Zoho ecosystem',
-    features: ['crm', 'ecommerce', 'automation'],
-    hasFree: true,
-    freeNote: 'Free plan: up to 2,000 contacts',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.zoho.com/campaigns',
-    plansUrl: 'https://www.zoho.com/campaigns/pricing.html',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 3;
-      if (c <= 1000)   return 4;
-      if (c <= 2500)   return 6;
-      if (c <= 5000)   return 9;
-      if (c <= 10000)  return 14;
-      if (c <= 25000)  return 24;
-      if (c <= 50000)  return 39;
-      if (c <= 100000) return 59;
-      return null;
-    }
-  },
-  {
-    key: 'campaignmonitor',
-    name: 'Campaign Monitor',
-    tier: 'mid',
-    tagline: 'Clean email marketing with strong segmentation',
-    features: ['ecommerce', 'landing', 'automation'],
-    hasFree: false,
-    freeTrial: 'Free account with limited sends',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count',
-    trialUrl: 'https://www.campaignmonitor.com',
-    plansUrl: 'https://www.campaignmonitor.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 500)    return 11;
-      if (c <= 2500)   return 29;
-      if (c <= 5000)   return 49;
-      if (c <= 10000)  return 79;
-      if (c <= 25000)  return 149;
-      if (c <= 50000)  return 249;
-      return null;
-    }
-  },
-  {
-    key: 'keap',
-    name: 'Keap',
-    tier: 'mid',
-    tagline: 'CRM and automation for service businesses',
-    features: ['crm', 'sms', 'landing', 'automation'],
-    hasFree: false,
-    freeTrial: '14-day free trial',
-    pricingModel: 'contacts',
-    pricingNote: 'Priced by contact count. Starts high',
-    trialUrl: 'https://www.keap.com',
-    plansUrl: 'https://www.keap.com/pricing',
-    affiliate: false,
-    pricing: (c) => {
-      if (c <= 1500)   return 249;
-      if (c <= 5000)   return 279;
-      if (c <= 10000)  return 329;
-      if (c <= 25000)  return 399;
-      return null;
-    }
-  },
-];
-
-// ── SLIDER FORMATTING ────────────────────────────────────────────────────────
-function getContacts() { return CONTACT_STEPS[+sliderContacts.value]; }
-function getSends()    { return +sliderSends.value; }
-
-// ── CALCULATE ────────────────────────────────────────────────────────────────
-function calculate() {
-  const contacts  = getContacts();
-  const sends     = getSends();
-  const totalSends = contacts * sends;
-  const needFree  = document.getElementById('need-free').checked;
-  const needCRM   = document.getElementById('need-crm').checked;
-  const needSMS   = document.getElementById('need-sms').checked;
-  const needEcom  = document.getElementById('need-ecommerce').checked;
-
-  let results = [];
-
-  TOOLS.forEach(tool => {
-    // Feature filters
-    if (needFree && !tool.hasFree) return;
-    if (needCRM  && !tool.features.includes('crm')) return;
-    if (needSMS  && !tool.features.includes('sms')) return;
-    if (needEcom && !tool.features.includes('ecommerce')) return;
-
-    const price = tool.pricing(contacts, totalSends);
-    results.push({ tool, price });
-  });
-
-  // Sort by price (nulls / enterprise at end)
-  results.sort((a, b) => {
-    if (a.price === null && b.price === null) return 0;
-    if (a.price === null) return 1;
-    if (b.price === null) return -1;
-    return a.price - b.price;
-  });
-
-  renderResults(results, contacts, sends, totalSends);
-}
-
-function renderResults(results, contacts, sends, totalSends) {
-  const section  = document.getElementById('results-section');
-  const grid     = document.getElementById('results-grid');
-  const noRes    = document.getElementById('no-results');
-  const entNote  = document.getElementById('enterprise-notice');
-  const countEl  = document.getElementById('results-count');
-  const noteEl   = document.getElementById('results-note');
-
-  section.style.display = 'block';
+function renderCards() {
+  const grid = document.getElementById('tools-grid');
   grid.innerHTML = '';
-  noRes.classList.remove('visible');
-
-  const visible = results.filter(r => r.price !== null);
-  const enterprise = results.filter(r => r.price === null);
-
-  countEl.innerHTML = `<span>${visible.length}</span> tools shown`;
-  noteEl.textContent = `Estimates based on ${contacts.toLocaleString()} contacts, ${sends} emails/contact/month (${totalSends.toLocaleString()} total sends). Actual pricing may vary. Always verify on the tool's website.`;
-  entNote.style.display = enterprise.length > 0 ? 'block' : 'none';
-
-  if (visible.length === 0) {
-    noRes.classList.add('visible');
-    return;
-  }
-
-  visible.forEach(({ tool, price }) => {
+  TOOLS.forEach(tool => {
+    const tierLabel = { smb:'SMB', mid:'Mid-market', ent:'Enterprise' }[tool.tier];
+    const freeLine = tool.hasFree
+      ? `<div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes</span></div>`
+      : `<div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>`;
+    const trialLine = tool.freeTrial
+      ? `<div class="price-row"><span class="price-label">Free trial</span><span class="price-value">${tool.freeTrial}</span></div>`
+      : (tool.freeNote ? `<div class="price-row"><span class="price-label">Free plan</span><span class="price-value">${tool.freeNote}</span></div>` : '');
+    const startLine = `<div class="price-row"><span class="price-label">Starting price</span><span class="price-value">${tool.startingPrice}</span></div>`;
+    const estimatedLine = `<div class="price-row estimated" id="est-${tool.key}"><span class="price-label">Your estimate</span><span class="price-estimated-val" id="est-val-${tool.key}"></span></div>`;
+    const allFeatures = [{label:'Email automation',key:'automation'},{label:'CRM',key:'crm'},{label:'SMS',key:'sms'},{label:'Landing pages',key:'landing'},{label:'E-commerce',key:'ecommerce'},{label:'Visual automation',key:'automation'}];
+    const featureTags = allFeatures.map(f => `<span class="feature-tag ${tool.features.includes(f.key)?'has':''}">${f.label}</span>`).join('');
+    const affiliateTag = tool.affiliate ? `<div class="affiliate-tag">affiliate link</div>` : '';
+    const ctaLabel = tool.tier === 'ent' ? `Contact ${tool.name} →` : `Try ${tool.name} free →`;
     const card = document.createElement('div');
-    card.className = 'result-card';
-
-    const tierLabel = { smb: 'SMB', mid: 'Mid-market', ent: 'Enterprise' }[tool.tier];
-    const tierClass = { smb: 'smb', mid: 'mid', ent: 'ent' }[tool.tier];
-
-    const freeBadge = tool.hasFree
-      ? `<span class="rc-free-badge">Free plan available</span>`
-      : `<span style="font-size:11px;color:var(--muted);font-style:italic;">${tool.freeTrial || ''}</span>`;
-
-    const affiliateTag = tool.affiliate
-      ? `<span class="rc-affiliate-tag">affiliate link</span>`
-      : '';
-
+    card.className = 'tool-card';
+    card.id = `card-${tool.key}`;
     card.innerHTML = `
-      <div class="rc-header">
-        <span class="rc-name">${tool.name}</span>
-        <span class="rc-tier ${tierClass}">${tierLabel}</span>
-      </div>
-      <p style="font-size:13px;color:var(--muted);line-height:1.5;margin:0;min-height:2.8em">${tool.tagline}</p>
-      <div class="rc-estimate">
-        <div class="rc-price-main">
-          <span class="rc-price-value">~$${price}/mo</span>
-          <span class="rc-price-period">estimated</span>
-        </div>
-        <span class="rc-price-note">${tool.pricingNote}</span>
-        ${freeBadge}
-      </div>
-      <div class="rc-cta">
-        ${affiliateTag}
-        <a class="rc-btn-primary" href="${tool.trialUrl}" target="_blank">Try ${tool.name} free →</a>
-        <a class="rc-btn-secondary" href="${tool.plansUrl}" target="_blank">View pricing →</a>
-      </div>
-    `;
-
+      <div class="card-header"><span class="card-name">${tool.name}</span><span class="card-tier ${tool.tier}">${tierLabel}</span></div>
+      <p class="card-tagline">${tool.tagline}</p>
+      <div class="card-pricing">${freeLine}${trialLine}${startLine}${estimatedLine}</div>
+      <div class="card-features">${featureTags}</div>
+      <div class="card-cta">${affiliateTag}<a class="btn-primary" href="${tool.trialUrl}" target="_blank">${ctaLabel}</a><a class="btn-secondary" href="${tool.plansUrl}" target="_blank">View pricing →</a></div>`;
     grid.appendChild(card);
   });
-
-  section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('visible-count').textContent = TOOLS.length;
 }
 
-// ── RESET ────────────────────────────────────────────────────────────────────
-function resetCalc() {
-  sliderContacts.value = 2;
-  sliderSends.value = 4;
-  valContacts.textContent = '1,000';
-  valSends.textContent = '4 per contact';
-  document.getElementById('need-free').checked = false;
-  document.getElementById('need-crm').checked = false;
-  document.getElementById('need-sms').checked = false;
-  document.getElementById('need-ecommerce').checked = false;
-  document.getElementById('results-section').style.display = 'none';
+function applyFilters() {
+  const contacts   = CONTACT_STEPS[+sliderContacts.value];
+  const sends      = +sliderSends.value;
+  const totalSends = contacts * sends;
+  const bizType    = document.getElementById('select-biztype').value;
+  const tier       = document.getElementById('select-tier').value;
+  const needFree   = document.getElementById('need-free').checked;
+  const needCRM    = document.getElementById('need-crm').checked;
+  const needSMS    = document.getElementById('need-sms').checked;
+  const needEcom   = document.getElementById('need-ecommerce').checked;
+  let visibleCount = 0;
+  let hasEnterprise = false;
+  TOOLS.forEach(tool => {
+    const card = document.getElementById(`card-${tool.key}`);
+    let show = true;
+    if (tier    && tool.tier !== tier) show = false;
+    if (bizType && !tool.bizTypes.includes(bizType)) show = false;
+    if (needFree && !tool.hasFree) show = false;
+    if (needCRM  && !tool.features.includes('crm')) show = false;
+    if (needSMS  && !tool.features.includes('sms')) show = false;
+    if (needEcom && !tool.features.includes('ecommerce')) show = false;
+    if (show) {
+      card.classList.remove('hidden');
+      visibleCount++;
+      const estRow = document.getElementById(`est-${tool.key}`);
+      const estVal = document.getElementById(`est-val-${tool.key}`);
+      if (tool.tier === 'ent') {
+        hasEnterprise = true;
+        estRow.classList.remove('visible');
+      } else {
+        const price = tool.pricing(contacts, totalSends);
+        estVal.textContent = price !== null ? `~$${price}/mo` : 'Contact for pricing';
+        estRow.classList.add('visible');
+      }
+    } else {
+      card.classList.add('hidden');
+      document.getElementById(`est-${tool.key}`).classList.remove('visible');
+    }
+  });
+  document.getElementById('visible-count').textContent = visibleCount;
+  document.getElementById('no-results').classList.toggle('visible', visibleCount === 0);
+  document.getElementById('enterprise-notice').style.display = hasEnterprise ? 'block' : 'none';
+  const noteEl = document.getElementById('results-note');
+  noteEl.textContent = `Estimates based on ${contacts.toLocaleString()} contacts, ${sends} email${sends>1?'s':''}/contact/month (${totalSends.toLocaleString()} total sends). Always verify pricing on the tool's website.`;
+  noteEl.style.display = 'block';
+  document.getElementById('tools-grid').scrollIntoView({ behavior:'smooth', block:'start' });
 }
 
-// ── INIT ─────────────────────────────────────────────────────────────────────
-calculate();
+function resetFilters() {
+  sliderContacts.value=2; valContacts.textContent='1,000';
+  sliderSends.value=4;    valSends.textContent='4 per contact';
+  document.getElementById('select-biztype').value='';
+  document.getElementById('select-tier').value='';
+  document.getElementById('need-free').checked=false;
+  document.getElementById('need-crm').checked=false;
+  document.getElementById('need-sms').checked=false;
+  document.getElementById('need-ecommerce').checked=false;
+  TOOLS.forEach(tool => {
+    document.getElementById(`card-${tool.key}`).classList.remove('hidden');
+    document.getElementById(`est-${tool.key}`).classList.remove('visible');
+  });
+  document.getElementById('results-note').style.display='none';
+  document.getElementById('no-results').classList.remove('visible');
+  document.getElementById('enterprise-notice').style.display='none';
+  document.getElementById('visible-count').textContent=TOOLS.length;
+}
+
+renderCards();
 </script>
-
 </body>
 </html>
