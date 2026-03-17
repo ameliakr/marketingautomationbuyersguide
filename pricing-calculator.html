@@ -21,7 +21,7 @@
 /* ── CALCULATOR PANEL ── */
 .calc-panel { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .calc-panel-title { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
-.calc-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+.calc-inputs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 720px; margin: 0 auto; }
 .calc-field { display: flex; flex-direction: column; gap: 8px; }
 .calc-label { font-size: 13px; font-weight: 500; color: var(--ink); }
 .calc-sublabel { font-size: 11px; color: var(--muted); margin-top: -4px; }
@@ -97,7 +97,7 @@
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
   .calc-panel { padding: 20px; }
-  .calc-inputs { grid-template-columns: 1fr; }
+  .calc-inputs { grid-template-columns: 1fr; max-width: 100%; }
   .results-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -132,7 +132,7 @@
 <main class="page-body">
 
   <div class="calc-hero">
-    <h1>What will marketing automation <em>actually</em> cost you?</h1>
+    <h1>Pricing <em>calculator</em></h1>
     <p>Enter your list size and sending frequency to see estimated monthly costs across all major platforms.</p>
     <span class="last-updated">Pricing updated March 2026</span>
   </div>
@@ -700,7 +700,7 @@ function renderResults(results, contacts, sends, totalSends) {
         <span class="rc-name">${tool.name}</span>
         <span class="rc-tier ${tierClass}">${tierLabel}</span>
       </div>
-      <p style="font-size:13px;color:var(--muted);line-height:1.5;margin:0">${tool.tagline}</p>
+      <p style="font-size:13px;color:var(--muted);line-height:1.5;margin:0;min-height:2.8em">${tool.tagline}</p>
       <div class="rc-estimate">
         <div class="rc-price-main">
           <span class="rc-price-value">~$${price}/mo</span>
@@ -711,7 +711,7 @@ function renderResults(results, contacts, sends, totalSends) {
       </div>
       <div class="rc-cta">
         ${affiliateTag}
-        <a class="rc-btn-primary" href="${tool.trialUrl}" target="_blank">→ Try ${tool.name} free</a>
+        <a class="rc-btn-primary" href="${tool.trialUrl}" target="_blank">Try ${tool.name} free →</a>
         <a class="rc-btn-secondary" href="${tool.plansUrl}" target="_blank">View pricing →</a>
       </div>
     `;
