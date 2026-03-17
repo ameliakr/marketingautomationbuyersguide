@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -112,12 +118,12 @@
       <table class="quick-table">
         <thead><tr><th>Feature</th><th>MailerLite</th><th>HubSpot</th></tr></thead>
         <tbody>
-        <tr><td>Free plan</td><td>Yes - up to 1,000 subscribers</td><td>Yes - unlimited contacts</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 1,000 subscribers</td><td class="cell-yes">✓ Yes - unlimited contacts</td></tr>
         <tr><td>Starting paid price</td><td>$9/mo</td><td>$15/mo per seat</td></tr>
-        <tr><td>CRM built-in</td><td class="cell-no">No</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Email automation</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-no">No</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Landing pages</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>CRM built-in</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Email automation</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Landing pages</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Ease of use</td><td>Beginner-friendly</td><td>Moderate</td></tr>
         <tr><td>Best for</td><td>Email-focused small businesses</td><td>Businesses wanting CRM + marketing free</td></tr>
         </tbody>
@@ -130,7 +136,9 @@
       <p>MailerLite scales affordably from $9/mo. HubSpot's paid plans jump significantly - the Starter tier is $15/mo per seat, and as you add team members and features, costs rise quickly. HubSpot becomes expensive at scale in a way MailerLite does not.</p>
       <h2>Ease of use</h2>
       <p>MailerLite is one of the most beginner-friendly tools on the market. HubSpot has a polished interface but is more complex due to the breadth of features. If you want to get started in an afternoon, MailerLite is easier.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose MailerLite if...</h3>
         <ul class="verdict-list">
           <li>You want a simple, focused email marketing tool</li>
@@ -139,10 +147,11 @@
           <li>You do not need a CRM or sales pipeline</li>
           <li>You want affordable paid plans as you grow</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Free plan available for up to 1,000 subscribers, no time limit.</span>
-        <div><a class="inline-cta-btn" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose HubSpot if...</h3>
         <ul class="verdict-list">
           <li>You want a free CRM alongside your email marketing</li>
@@ -150,9 +159,10 @@
           <li>You plan to expand into sales and service tools over time</li>
           <li>You want a platform that grows into an enterprise system</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">HubSpot's free plan includes unlimited contacts and a full CRM.</span>
-        <div><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>Both <a href="https://www.mailerlite.com" target="_blank">MailerLite</a> and <a href="https://www.hubspot.com" target="_blank">HubSpot</a> offer strong free plans. MailerLite is the better pure email tool. HubSpot is the better all-in-one platform. Your choice depends on whether you need a CRM.</p>

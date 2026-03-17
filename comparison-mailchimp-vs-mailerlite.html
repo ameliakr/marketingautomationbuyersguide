@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -112,12 +118,12 @@
       <table class="quick-table">
         <thead><tr><th>Feature</th><th>Mailchimp</th><th>MailerLite</th></tr></thead>
         <tbody>
-        <tr><td>Free plan</td><td>Yes - up to 500 contacts</td><td>Yes - up to 1,000 subscribers</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 500 contacts</td><td class="cell-yes">✓ Yes - up to 1,000 subscribers</td></tr>
         <tr><td>Starting paid price</td><td>$13/mo</td><td>$9/mo</td></tr>
-        <tr><td>Email automation</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Landing pages</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>CRM built-in</td><td>Basic</td><td class="cell-no">No</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-no">No</td><td class="cell-no">No</td></tr>
+        <tr><td>Email automation</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Landing pages</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>CRM built-in</td><td>Basic</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-no">✗ No</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Ease of use</td><td>Beginner-friendly</td><td>Beginner-friendly</td></tr>
         <tr><td>Best for</td><td>Businesses that want brand familiarity</td><td>Businesses that want more for less</td></tr>
         </tbody>
@@ -130,7 +136,9 @@
       <p>Both tools cover the essentials well: email campaigns, automation sequences, landing pages, forms, and e-commerce integrations. Mailchimp has a broader app ecosystem and a slightly more polished template library. MailerLite has better automation on lower-tier plans.</p>
       <h2>Deliverability</h2>
       <p>Both have strong deliverability. Mailchimp's large sending volume and established reputation mean it is rarely flagged. MailerLite has competitive deliverability and has improved significantly in recent years.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Mailchimp if...</h3>
         <ul class="verdict-list">
           <li>Brand recognition matters to you or your clients</li>
@@ -138,10 +146,11 @@
           <li>You want a slightly more polished template library</li>
           <li>Your team already knows Mailchimp and switching cost is a concern</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Mailchimp's free plan covers up to 500 contacts.</span>
-        <div><a class="inline-cta-btn" href="https://www.mailchimp.com" target="_blank">→ Try Mailchimp free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://www.mailchimp.com" target="_blank">→ Try Mailchimp free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose MailerLite if...</h3>
         <ul class="verdict-list">
           <li>You want more subscribers on the free plan</li>
@@ -149,9 +158,10 @@
           <li>Price matters and you want the most affordable tool in this category</li>
           <li>You are starting fresh with no existing tool preference</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">MailerLite's free plan covers up to 1,000 subscribers.</span>
-        <div><a class="inline-cta-btn" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>For most businesses choosing between these two, <a href="https://www.mailerlite.com" target="_blank">MailerLite</a> is the better value. <a href="https://www.mailchimp.com" target="_blank">Mailchimp</a> makes sense if you have a specific reason to stick with it, but if you are starting fresh, MailerLite does more for less.</p>

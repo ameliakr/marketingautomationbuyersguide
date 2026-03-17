@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -112,12 +118,12 @@
         <thead><tr><th>Feature</th><th>Brevo</th><th>ActiveCampaign</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$9/mo</td><td>$15/mo</td></tr>
-        <tr><td>Free plan</td><td>Yes - unlimited contacts</td><td class="cell-no">No</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - unlimited contacts</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Free trial</td><td>Free plan available</td><td>14 days</td></tr>
         <tr><td>CRM built-in</td><td>Basic</td><td>Full CRM</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Automation depth</td><td>Good</td><td>Advanced</td></tr>
-        <tr><td>Transactional email</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
+        <tr><td>Transactional email</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Ease of use</td><td>Beginner-friendly</td><td>Moderate</td></tr>
         </tbody>
       </table>      <div class="inline-cta">
@@ -132,7 +138,9 @@
       <p>Both have CRM functionality. ActiveCampaign's is more developed with better deal pipeline management, contact scoring, and sales automation. Brevo's CRM is useful for basic contact and deal tracking but is not built for complex sales operations.</p>
       <h2>Transactional email</h2>
       <p>Brevo includes transactional email capabilities - sending order confirmations, password resets, and system emails through the same platform. ActiveCampaign does not offer this. If you need both marketing and transactional email in one tool, Brevo is the only choice here.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Brevo if...</h3>
         <ul class="verdict-list">
           <li>You want email, SMS, CRM, and transactional email in one affordable tool</li>
@@ -140,10 +148,11 @@
           <li>You want a free plan with unlimited contacts</li>
           <li>Your automation needs are solid but not extremely complex</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Brevo's free plan includes unlimited contacts and 300 emails per day.</span>
-        <div><a class="inline-cta-btn" href="https://get.brevo.com/hjl3lwlukji3" target="_blank">→ Try Brevo free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://get.brevo.com/hjl3lwlukji3" target="_blank">→ Try Brevo free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose ActiveCampaign if...</h3>
         <ul class="verdict-list">
           <li>You need advanced automation with complex branching and lead scoring</li>
@@ -151,9 +160,10 @@
           <li>You are a B2B or service business managing a proper sales pipeline</li>
           <li>You want the most powerful automation at the SMB price point</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">14-day free trial, no credit card required.</span>
-        <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
+      </div>
+        <a class="verdict-cta" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a>
+      </div>
+    </div></div>
       </div>
       <h2>The bottom line</h2>
       <p><a href="https://get.brevo.com/hjl3lwlukji3" target="_blank">Brevo</a> punches above its weight on value. <a href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">ActiveCampaign</a> is for businesses that need more from their automation. If Brevo covers your needs, it will cost less. If your needs exceed what Brevo can do, ActiveCampaign is worth the upgrade.</p>

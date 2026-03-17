@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -113,12 +119,12 @@
         <thead><tr><th>Feature</th><th>ActiveCampaign</th><th>MailerLite</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$9/mo</td></tr>
-        <tr><td>Free plan</td><td class="cell-no">No</td><td>Yes - up to 1,000 subscribers</td></tr>
+        <tr><td>Free plan</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes - up to 1,000 subscribers</td></tr>
         <tr><td>Free trial</td><td>14 days</td><td>Free plan available</td></tr>
-        <tr><td>CRM built-in</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>Visual automation builder</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Landing pages</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>CRM built-in</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>Visual automation builder</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Landing pages</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Ease of use</td><td>Moderate</td><td>Beginner-friendly</td></tr>
         <tr><td>Best for</td><td>Growing businesses needing CRM + automation</td><td>Beginners, bloggers, small budgets</td></tr>
         </tbody>
@@ -136,7 +142,9 @@
       <p>ActiveCampaign has a built-in CRM with deal pipelines, contact scoring, and task management. MailerLite has none of this. If your business needs to track leads, manage a sales pipeline, or connect marketing activity to revenue, ActiveCampaign is the only option between these two.</p>
       <h2>Ease of use</h2>
       <p>MailerLite is one of the easiest email tools to learn. The interface is clean and well-organized, and most users can set up their first campaign within an hour. ActiveCampaign has a steeper learning curve, especially the automation builder, but rewards the investment with significantly more capability.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose ActiveCampaign if...</h3>
         <ul class="verdict-list">
           <li>You need a CRM alongside your email marketing</li>
@@ -145,10 +153,11 @@
           <li>You need SMS marketing included in your plan</li>
           <li>You are a service business or B2B company managing leads</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Full access for 14 days, no credit card required.</span>
-        <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose MailerLite if...</h3>
         <ul class="verdict-list">
           <li>You are just getting started and want a free plan with real features</li>
@@ -157,9 +166,10 @@
           <li>Budget is tight and you want to keep costs low while you grow</li>
           <li>You do not need a CRM or SMS</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Free plan available for up to 1,000 subscribers.</span>
-        <div><a class="inline-cta-btn" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>If you are starting out or on a tight budget, start with <a href="https://www.mailerlite.com" target="_blank">MailerLite</a>. If you are ready to invest in a more powerful tool that will grow with you, <a href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">ActiveCampaign</a> is worth the step up.</p>

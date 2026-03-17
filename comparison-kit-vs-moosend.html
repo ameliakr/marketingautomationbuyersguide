@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -111,12 +117,12 @@
       <table class="quick-table">
         <thead><tr><th>Feature</th><th>Kit</th><th>Moosend</th></tr></thead>
         <tbody>
-        <tr><td>Free plan</td><td>Yes - up to 10,000 subscribers</td><td class="cell-no">No</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 10,000 subscribers</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Free trial</td><td>Free plan available</td><td>30 days</td></tr>
         <tr><td>Starting paid price</td><td>$25/mo</td><td>$9/mo</td></tr>
-        <tr><td>Paid newsletters</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>Commerce/product sales</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>E-commerce integrations</td><td class="cell-yes">Yes</td><td>Yes - stronger</td></tr>
+        <tr><td>Paid newsletters</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>Commerce/product sales</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>E-commerce integrations</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes - stronger</td></tr>
         <tr><td>Automation builder</td><td>Good</td><td>More advanced</td></tr>
         <tr><td>Best for</td><td>Creators monetizing an audience</td><td>E-commerce and automation-focused businesses</td></tr>
         </tbody>
@@ -131,7 +137,9 @@
       <p>Kit's free plan for up to 10,000 subscribers is one of the most generous in the market. Moosend has no free plan but offers a 30-day trial with full access. If you need to operate free for a long time, Kit wins. If you want to evaluate a tool fully before deciding, Moosend's 30-day trial is actually more useful.</p>
       <h2>Automation</h2>
       <p>Moosend's automation builder is more capable for complex workflows. Kit's sequences and automations are well-designed for creator use cases but less flexible for advanced multi-branch logic.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Kit if...</h3>
         <ul class="verdict-list">
           <li>You are a creator, blogger, or newsletter publisher</li>
@@ -139,10 +147,11 @@
           <li>You have a large free audience and want to stay on a free plan</li>
           <li>Growing and monetizing your audience is the primary goal</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Kit's free plan covers up to 10,000 subscribers.</span>
-        <div><a class="inline-cta-btn" href="https://kit.com" target="_blank">→ Try Kit free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://kit.com" target="_blank">→ Try Kit free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Moosend if...</h3>
         <ul class="verdict-list">
           <li>You run an e-commerce store and need strong product automations</li>
@@ -150,9 +159,10 @@
           <li>You want a 30-day trial to evaluate everything before committing</li>
           <li>You are not a creator - you are a business that needs marketing automation</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">30-day free trial, full access, no credit card required.</span>
-        <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>
+      </div>
+        <a class="verdict-cta" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a>
+      </div>
+    </div></div>
       </div>
       <h2>The bottom line</h2>
       <p>These tools are not really competing for the same users. If you are a creator, <a href="https://kit.com" target="_blank">Kit</a> is built for you. If you are a business that needs automation and e-commerce, <a href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Moosend</a> is the stronger tool.</p>

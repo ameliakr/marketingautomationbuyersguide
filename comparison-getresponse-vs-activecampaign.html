@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -112,13 +118,13 @@
         <thead><tr><th>Feature</th><th>GetResponse</th><th>ActiveCampaign</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$15/mo</td></tr>
-        <tr><td>Free plan</td><td>Yes - up to 500 contacts</td><td class="cell-no">No</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 500 contacts</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Free trial</td><td>Free plan available</td><td>14 days</td></tr>
-        <tr><td>Webinars</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>CRM built-in</td><td>Basic</td><td>Yes - full CRM</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Webinars</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>CRM built-in</td><td>Basic</td><td class="cell-yes">✓ Yes - full CRM</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Automation builder</td><td>Strong</td><td>More advanced</td></tr>
-        <tr><td>E-commerce</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>E-commerce</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         </tbody>
       </table>      <div class="inline-cta">
         <span class="inline-cta-text">ActiveCampaign offers a 14-day free trial with full access.</span>
@@ -130,7 +136,9 @@
       <p>ActiveCampaign has the deeper CRM and more advanced automation builder. Deal pipelines, contact scoring, and complex branching workflows are more developed in ActiveCampaign. If your business runs on a sales pipeline and needs email marketing connected to it, ActiveCampaign is the stronger choice.</p>
       <h2>Pricing</h2>
       <p>Both start at $15/mo. GetResponse has a free plan; ActiveCampaign does not. GetResponse's paid plans tend to be slightly cheaper at comparable feature levels. ActiveCampaign justifies the premium with more automation depth and a stronger CRM.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose GetResponse if...</h3>
         <ul class="verdict-list">
           <li>You run webinars or online events and want them integrated with your email marketing</li>
@@ -138,10 +146,11 @@
           <li>You need landing pages, SMS, and automation in one tool at a competitive price</li>
           <li>Your automation needs are solid but not extremely complex</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">GetResponse's free plan covers up to 500 contacts.</span>
-        <div><a class="inline-cta-btn" href="https://www.getresponse.com" target="_blank">→ Try GetResponse free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://www.getresponse.com" target="_blank">→ Try GetResponse free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose ActiveCampaign if...</h3>
         <ul class="verdict-list">
           <li>You need a full CRM with deal pipelines connected to your email marketing</li>
@@ -149,9 +158,10 @@
           <li>You are a B2B or service business managing leads over a longer sales cycle</li>
           <li>You need deeper contact scoring and predictive features</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">14-day free trial, full access, no credit card required.</span>
-        <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
+      </div>
+        <a class="verdict-cta" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a>
+      </div>
+    </div></div>
       </div>
       <h2>The bottom line</h2>
       <p>If webinars are part of your marketing, <a href="https://www.getresponse.com" target="_blank">GetResponse</a> is hard to beat at this price. If CRM and automation depth are the priority, <a href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">ActiveCampaign</a> wins.</p>

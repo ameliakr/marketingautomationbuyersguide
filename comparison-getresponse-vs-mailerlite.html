@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -111,12 +117,12 @@
       <table class="quick-table">
         <thead><tr><th>Feature</th><th>GetResponse</th><th>MailerLite</th></tr></thead>
         <tbody>
-        <tr><td>Free plan</td><td>Yes - up to 500 contacts</td><td>Yes - up to 1,000 subscribers</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 500 contacts</td><td class="cell-yes">✓ Yes - up to 1,000 subscribers</td></tr>
         <tr><td>Starting paid price</td><td>$15/mo</td><td>$9/mo</td></tr>
-        <tr><td>Webinars</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-yes">Yes</td><td class="cell-no">No</td></tr>
-        <tr><td>Landing pages</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Automation builder</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Webinars</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>Landing pages</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Automation builder</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Ease of use</td><td>Moderate</td><td>Beginner-friendly</td></tr>
         </tbody>
       </table>
@@ -126,7 +132,9 @@
       <p>MailerLite is cheaper. Its plans start at $9/mo vs GetResponse's $15/mo. If budget is a primary concern, MailerLite is the better value at every tier.</p>
       <h2>Features</h2>
       <p>GetResponse does more. Webinars, SMS, a website builder, and paid ads integration are included on paid plans. If you want an all-in-one tool and plan to use those extra features, GetResponse justifies the higher price. If you just need solid email marketing and automation, MailerLite is cleaner and cheaper.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose GetResponse if...</h3>
         <ul class="verdict-list">
           <li>You run webinars and want them integrated with your email list</li>
@@ -134,10 +142,11 @@
           <li>You want a website builder included without a separate tool</li>
           <li>You are growing fast and want more features available as you scale</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">GetResponse offers a free plan for up to 500 contacts.</span>
-        <div><a class="inline-cta-btn" href="https://www.getresponse.com" target="_blank">→ Try GetResponse free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://www.getresponse.com" target="_blank">→ Try GetResponse free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose MailerLite if...</h3>
         <ul class="verdict-list">
           <li>You want the most generous free plan in this comparison</li>
@@ -145,9 +154,10 @@
           <li>You do not need webinars, SMS, or a website builder</li>
           <li>You want lower paid plan pricing as you grow</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">MailerLite's free plan covers up to 1,000 subscribers.</span>
-        <div><a class="inline-cta-btn" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.mailerlite.com" target="_blank">→ Try MailerLite free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>For most small businesses doing email marketing without heavy extras, <a href="https://www.mailerlite.com" target="_blank">MailerLite</a> is the better value. <a href="https://www.getresponse.com" target="_blank">GetResponse</a> makes sense if you actively use webinars or SMS as part of your marketing.</p>

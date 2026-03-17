@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -113,12 +119,12 @@
         <thead><tr><th>Feature</th><th>Mailchimp</th><th>Moosend</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$13/mo</td><td>$9/mo</td></tr>
-        <tr><td>Free plan</td><td>Yes - up to 500 contacts</td><td class="cell-no">No</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 500 contacts</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Free trial</td><td>Free plan available</td><td>30 days</td></tr>
         <tr><td>Automation builder</td><td>Basic on lower tiers</td><td>Full visual builder</td></tr>
-        <tr><td>E-commerce</td><td class="cell-yes">Yes</td><td>Yes - stronger at entry level</td></tr>
-        <tr><td>CRM built-in</td><td>Basic</td><td class="cell-no">No</td></tr>
-        <tr><td>SMS</td><td class="cell-no">No</td><td class="cell-no">No</td></tr>
+        <tr><td>E-commerce</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes - stronger at entry level</td></tr>
+        <tr><td>CRM built-in</td><td>Basic</td><td class="cell-no">✗ No</td></tr>
+        <tr><td>SMS</td><td class="cell-no">✗ No</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Ease of use</td><td>Beginner-friendly</td><td>Moderate</td></tr>
         </tbody>
       </table>      <div class="inline-cta">
@@ -133,7 +139,9 @@
       <p>Both integrate with Shopify and WooCommerce. Moosend's product recommendation engine and purchase-based segmentation are more developed at the entry price point. For a store that wants serious e-commerce automation without paying premium prices, Moosend has an edge.</p>
       <h2>When to stick with Mailchimp</h2>
       <p>If you are already on Mailchimp, have a large template library, and rely on specific integrations, migration has a cost. That cost may not be worth it unless you are hitting real limitations. The Mailchimp ecosystem is deep.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Moosend if...</h3>
         <ul class="verdict-list">
           <li>You want a better automation builder at a lower price</li>
@@ -141,10 +149,11 @@
           <li>You are not yet on Mailchimp and want to start with the better value tool</li>
           <li>You want a 30-day trial to evaluate properly before paying</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">30-day free trial, no credit card required.</span>
-        <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Mailchimp if...</h3>
         <ul class="verdict-list">
           <li>You are already on Mailchimp and migration cost outweighs the savings</li>
@@ -152,9 +161,10 @@
           <li>You want a free plan to start before committing to any paid tool</li>
           <li>Brand familiarity matters for client work or team adoption</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Mailchimp's free plan covers up to 500 contacts.</span>
-        <div><a class="inline-cta-btn" href="https://www.mailchimp.com" target="_blank">→ Try Mailchimp free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.mailchimp.com" target="_blank">→ Try Mailchimp free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>If you are starting fresh, <a href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Moosend</a> is the better choice for most businesses. If you are already on <a href="https://www.mailchimp.com" target="_blank">Mailchimp</a>, only switch if you have a concrete reason - better automation, lower costs, or features you are missing.</p>

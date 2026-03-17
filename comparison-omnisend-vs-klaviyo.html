@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -112,13 +118,13 @@
       <table class="quick-table">
         <thead><tr><th>Feature</th><th>Omnisend</th><th>Klaviyo</th></tr></thead>
         <tbody>
-        <tr><td>Free plan</td><td>Yes - up to 250 contacts</td><td>Yes - up to 250 contacts</td></tr>
+        <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 250 contacts</td><td class="cell-yes">✓ Yes - up to 250 contacts</td></tr>
         <tr><td>Starting paid price</td><td>$16/mo</td><td>~$20/mo</td></tr>
-        <tr><td>SMS built-in</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Shopify integration</td><td class="cell-yes">Yes</td><td>Yes - best in class</td></tr>
-        <tr><td>Revenue attribution</td><td class="cell-yes">Yes</td><td>Advanced</td></tr>
+        <tr><td>SMS built-in</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Shopify integration</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes - best in class</td></tr>
+        <tr><td>Revenue attribution</td><td class="cell-yes">✓ Yes</td><td>Advanced</td></tr>
         <tr><td>Segmentation</td><td>Advanced</td><td>Best in class</td></tr>
-        <tr><td>Automation</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>Automation</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Best for</td><td>Growing stores wanting value</td><td>Data-driven stores serious about revenue</td></tr>
         </tbody>
       </table>
@@ -131,7 +137,9 @@
       <p>Omnisend's analytics are solid and covers what most stores need. But if you want the deepest data, Klaviyo wins.</p>
       <h2>Ease of use</h2>
       <p>Both have a moderate learning curve. Omnisend is generally considered slightly easier to set up and configure. Klaviyo's depth means there is more to learn before you can use it fully.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Omnisend if...</h3>
         <ul class="verdict-list">
           <li>You want strong e-commerce automation at a lower price point</li>
@@ -140,10 +148,11 @@
           <li>You do not need the deepest analytics and attribution in the market</li>
           <li>You run a Shopify or WooCommerce store and want a solid all-rounder</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Omnisend's free plan covers up to 250 contacts.</span>
-        <div><a class="inline-cta-btn" href="https://www.omnisend.com" target="_blank">→ Try Omnisend free</a></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://www.omnisend.com" target="_blank">→ Try Omnisend free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose Klaviyo if...</h3>
         <ul class="verdict-list">
           <li>Data and revenue attribution are central to how you run your marketing</li>
@@ -152,9 +161,10 @@
           <li>You are serious about understanding the revenue impact of your email program</li>
           <li>You want predictive analytics and customer lifetime value built in</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">Klaviyo's free plan covers up to 250 contacts.</span>
-        <div><a class="inline-cta-btn" href="https://www.klaviyo.com" target="_blank">→ Try Klaviyo free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.klaviyo.com" target="_blank">→ Try Klaviyo free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>Both are excellent e-commerce tools. <a href="https://www.klaviyo.com" target="_blank">Klaviyo</a> is for stores serious about data and willing to pay for the best analytics. <a href="https://www.omnisend.com" target="_blank">Omnisend</a> is for stores that want strong e-commerce automation at a more accessible price.</p>

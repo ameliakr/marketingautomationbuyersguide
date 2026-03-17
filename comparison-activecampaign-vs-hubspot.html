@@ -73,6 +73,12 @@
 .score-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
+.verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
+.verdict-col { display: flex; flex-direction: column; }
+.verdict-col .verdict-box { flex: 1; margin: 0; }
+.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta:hover { text-decoration: underline; }
+@media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -114,13 +120,13 @@
         <thead><tr><th>Feature</th><th>ActiveCampaign</th><th>HubSpot</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$15/mo per seat</td></tr>
-        <tr><td>Free plan</td><td class="cell-no">No</td><td>Yes - basic CRM + email</td></tr>
+        <tr><td>Free plan</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes - basic CRM + email</td></tr>
         <tr><td>Free trial</td><td>14 days</td><td>Free plan available</td></tr>
-        <tr><td>CRM built-in</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Visual automation builder</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>SMS marketing</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Landing pages</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
-        <tr><td>Sales pipeline</td><td class="cell-yes">Yes</td><td class="cell-yes">Yes</td></tr>
+        <tr><td>CRM built-in</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Visual automation builder</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>SMS marketing</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Landing pages</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
+        <tr><td>Sales pipeline</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Ease of use</td><td>Moderate</td><td>Moderate</td></tr>
         <tr><td>Best for</td><td>Automation-first businesses</td><td>Teams wanting a full business suite</td></tr>
         </tbody>
@@ -142,7 +148,9 @@
       <p>Neither is a beginner tool. If you want something you can set up in an afternoon, look at <a href="/comparison-moosend-vs-mailerlite.html">Moosend or MailerLite</a> instead.</p>
       <h2>Reporting</h2>
       <p>HubSpot's reporting is more comprehensive, especially on higher tiers where you get multi-touch attribution, custom dashboards, and revenue reporting across marketing, sales, and service. ActiveCampaign's reporting covers email performance, automation results, and deal tracking well, but doesn't match HubSpot's breadth at enterprise scale.</p>
-      <div class="verdict-box">
+      <div class="verdict-grid">
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose ActiveCampaign if...</h3>
         <ul class="verdict-list">
           <li>Automation is the core of your marketing strategy</li>
@@ -151,10 +159,11 @@
           <li>You're a service business or B2B company with a longer sales cycle</li>
           <li>You want SMS marketing included without moving to an enterprise plan</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">14-day free trial, no credit card required.</span>
-        <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
-      </div>      <div class="verdict-box">
+      </div>
+        <a class="verdict-cta" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a>
+      </div>
+      <div class="verdict-col">
+        <div class="verdict-box">
         <h3>Choose HubSpot if...</h3>
         <ul class="verdict-list">
           <li>You want a free CRM with real functionality to get started</li>
@@ -163,9 +172,10 @@
           <li>You want everything in one place and are prepared to pay for it</li>
           <li>You need enterprise-grade reporting and attribution</li>
         </ul>
-      </div>      <div class="inline-cta">
-        <span class="inline-cta-text">HubSpot's free plan includes unlimited contacts and a full CRM.</span>
-        <div><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a></div>
+      </div>
+        <a class="verdict-cta" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a>
+      </div>
+    </div>
       </div>
       <h2>The bottom line</h2>
       <p>Both <a href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">ActiveCampaign</a> and <a href="https://www.hubspot.com" target="_blank">HubSpot</a> are excellent tools for businesses that need more than basic email marketing. ActiveCampaign wins on automation depth and value for money. HubSpot wins on CRM depth, free plan generosity, and long-term scalability.</p>
