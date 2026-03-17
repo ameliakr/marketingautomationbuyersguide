@@ -10,11 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-.pricing-hero { margin-bottom: 40px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.pricing-hero { margin-bottom: 40px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .pricing-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.1; font-weight: 400; margin-bottom: 16px; }
-.pricing-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 900px; margin: 0; }
+.pricing-hero p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 840px; margin: 0; }
 .last-updated { display: inline-block; font-size: 11px; color: var(--muted); background: #f5f5f3; padding: 4px 10px; margin-top: 12px; letter-spacing: 0.04em; }
-.calc-panel { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.calc-panel { background: #f8f8f6; border: 1px solid var(--rule); padding: 28px 32px; margin-bottom: 32px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .calc-panel-title { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
 .calc-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; }
 .calc-inputs-row2 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px 32px; margin-top: 24px; }
@@ -33,11 +33,11 @@
 .calc-btn:hover { opacity: 0.85; }
 .calc-reset { font-size: 12px; color: var(--muted); cursor: pointer; text-decoration: underline; }
 .calc-reset:hover { color: var(--ink); }
-.results-bar { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.results-bar { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .results-count { font-size: 12px; color: var(--muted); }
 .results-count span { font-weight: 500; color: var(--ink); }
-.results-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; font-style: italic; max-width: 900px; margin-left: auto; margin-right: auto; }
-.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); max-width: 900px; margin-left: auto; margin-right: auto; }
+.results-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; font-style: italic; max-width: 840px; margin-left: auto; margin-right: auto; }
+.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); max-width: 840px; margin-left: auto; margin-right: auto; }
 .tool-card { background: white; padding: 0; display: grid; grid-template-rows: subgrid; grid-row: span 6; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
 .tool-card:hover { background: #fafaf8; }
 .tool-card.hidden { display: none; }
@@ -70,14 +70,14 @@
 .btn-secondary { display: block; text-align: center; padding: 8px 16px; border: 1px solid var(--rule); color: var(--muted); font-size: 12px; transition: all 0.15s; text-decoration: none; }
 .btn-secondary:hover { border-color: var(--ink); color: var(--ink); }
 .affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; line-height: 1; margin-bottom: -4px; }
-.no-results { display: none; text-align: center; padding: 80px 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.no-results { display: none; text-align: center; padding: 80px 24px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .no-results.visible { display: block; }
 .no-results p { font-size: 15px; color: var(--muted); }
-.enterprise-notice { padding: 16px 20px; background: #f8f8f6; border-left: 3px solid var(--rule); font-size: 13px; color: var(--muted); margin-top: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
-.partner-section { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.enterprise-notice { padding: 16px 20px; background: #f8f8f6; border-left: 3px solid var(--rule); font-size: 13px; color: var(--muted); margin-top: 24px; max-width: 840px; margin-left: auto; margin-right: auto; }
+.partner-section { margin-top: 56px; border-top: 1px solid var(--rule); padding-top: 32px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .partner-section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
 .partner-section-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
-.partner-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; max-width: 900px; margin-left: auto; margin-right: auto; }
+.partner-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; max-width: 840px; margin-left: auto; margin-right: auto; }
 .partner-card { padding: 24px; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); min-width: 0; }
 .partner-card:first-child { border-left: 1px solid var(--rule); }
 .partner-card-name { font-size: 16px; font-weight: 500; }
@@ -85,7 +85,7 @@
 .partner-card-btn { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.15s; }
 .partner-card-btn:hover { opacity: 0.85; }
 .partner-affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; }
-.bottom-useful-links { margin-top: 48px; margin-bottom: 48px; border-top: 1px solid var(--rule); padding-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; }
+.bottom-useful-links { margin-top: 48px; margin-bottom: 48px; border-top: 1px solid var(--rule); padding-top: 32px; max-width: 840px; margin-left: auto; margin-right: auto; }
 .bottom-useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
 .bottom-useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .bottom-useful-links .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
@@ -112,7 +112,7 @@
     <nav class="nav-links">
       <a href="/all-tools.html">Tools</a>
       <a href="/comparisons.html">Comparisons</a>
-      <a href="/quiz.html">Recommendations</a>
+      <a href="/quiz.html">Quiz</a>
       <a href="/guides.html">Guides</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/articles.html">Articles</a>
@@ -124,7 +124,7 @@
   <div class="mobile-menu" id="mobile-nav">
     <a href="/all-tools.html">Tools</a>
     <a href="/comparisons.html">Comparisons</a>
-    <a href="/quiz.html">Recommendations</a>
+    <a href="/quiz.html">Quiz</a>
     <a href="/guides.html">Guides</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/articles.html">Articles</a>
