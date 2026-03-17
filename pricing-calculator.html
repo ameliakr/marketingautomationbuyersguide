@@ -86,12 +86,22 @@
 .no-results.visible { display: block; }
 .no-results p { font-size: 15px; color: var(--muted); }
 
-/* ── QUIZ CTA ── */
-.quiz-cta-section { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 40px 24px; text-align: center; margin: 56px auto; max-width: 900px; }
-.quiz-cta-section h2 { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; margin-bottom: 10px; }
-.quiz-cta-section p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
-.quiz-cta-btn { display: inline-block; padding: 12px 28px; background: var(--accent); color: white; font-size: 14px; font-weight: 500; transition: opacity 0.15s; text-decoration: none; }
-.quiz-cta-btn:hover { opacity: 0.85; }
+/* ── PARTNER SECTION ── */
+.partner-section { max-width: 900px; margin: 56px auto 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+.partner-section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.partner-section-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; max-width: 600px; }
+.partner-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.partner-card { padding: 24px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 12px; }
+.partner-card-name { font-size: 16px; font-weight: 500; }
+.partner-card-desc { font-size: 13px; color: var(--muted); line-height: 1.6; flex: 1; }
+.partner-card-btn { display: block; text-align: center; padding: 10px 16px; background: var(--accent); color: white; font-size: 13px; font-weight: 500; text-decoration: none; transition: opacity 0.15s; }
+.partner-card-btn:hover { opacity: 0.85; }
+.partner-affiliate-tag { text-align: center; font-size: 10px; color: var(--muted); font-style: italic; }
+
+/* ── BOTTOM USEFUL LINKS ── */
+.bottom-useful-links { max-width: 900px; margin: 48px auto 0; border-top: 1px solid var(--rule); padding-top: 32px; }
+.bottom-useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.bottom-useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 600px) {
@@ -195,46 +205,34 @@
     </div>
   </div>
 
-  <!-- PARTNER CALLOUT -->
-  <div style="max-width:900px;margin:56px auto 0;border-top:2px solid var(--ink);padding-top:32px;">
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;margin-bottom:6px;">Tools we recommend</div>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6;">This calculator is free because some of the tools we cover pay us a commission when you sign up through our links. That said, we only feature tools we have actually used and would recommend on their merits. The two below are the platforms we know best and feel most confident recommending. If you are still deciding, they are a good place to start.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;background:white;border:1px solid var(--rule);">
-      <div style="padding:24px;border-right:1px solid var(--rule);">
-        <div style="font-size:16px;font-weight:500;margin-bottom:6px;">Moosend</div>
-        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">The best value option for small and growing lists. Strong automation, clean interface, and straightforward pricing. No free plan, but a 30-day trial with no card required.</p>
-        <a style="display:block;text-align:center;padding:10px 16px;background:var(--accent);color:white;font-size:13px;font-weight:500;text-decoration:none;margin-bottom:6px;" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Try Moosend free →</a>
-        <div style="text-align:center;font-size:10px;color:var(--muted);font-style:italic;">affiliate link</div>
+  <!-- OUR FAVORITE TOOLS -->
+  <div class="partner-section">
+    <div class="partner-section-title">Our favorite tools</div>
+    <p class="partner-section-sub">We have used a lot of marketing automation platforms over the years. These are the two we keep coming back to. We earn a commission if you sign up through our links, but that is not why they are here. They are here because they are genuinely good.</p>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="partner-card-name">Moosend</div>
+        <p class="partner-card-desc">The best value at almost any list size. The automation builder punches above its price point, the interface is clean, and there are no nasty surprises as your list grows. Start with the 30-day trial, no card required.</p>
+        <a class="partner-card-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">Try Moosend free →</a>
+        <div class="partner-affiliate-tag">affiliate link</div>
       </div>
-      <div style="padding:24px;">
-        <div style="font-size:16px;font-weight:500;margin-bottom:6px;">ActiveCampaign</div>
-        <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">The step up when you need more. Best-in-class automation depth, a built-in CRM, and strong segmentation. Worth the higher price if you are going to use what it offers.</p>
-        <a style="display:block;text-align:center;padding:10px 16px;background:var(--accent);color:white;font-size:13px;font-weight:500;text-decoration:none;margin-bottom:6px;" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a>
-        <div style="text-align:center;font-size:10px;color:var(--muted);font-style:italic;">affiliate link</div>
+      <div class="partner-card">
+        <div class="partner-card-name">ActiveCampaign</div>
+        <p class="partner-card-desc">When you need more than email. A proper CRM, sophisticated automation logic, lead scoring, and deep segmentation. More expensive than the tools above, but if you are going to use what it offers, it is worth it.</p>
+        <a class="partner-card-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">Try ActiveCampaign free →</a>
+        <div class="partner-affiliate-tag">affiliate link</div>
       </div>
     </div>
   </div>
 
   <!-- USEFUL NEXT STEPS -->
-  <div style="max-width:900px;margin:56px auto 0;border-top:1px solid var(--rule);padding-top:32px;">
-    <div style="font-family:'DM Serif Display',serif;font-size:22px;font-weight:400;margin-bottom:4px;">Useful next steps</div>
-    <div style="font-size:13px;color:var(--muted);margin-bottom:24px;">More tools to help you decide.</div>
-    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
-      <span style="color:var(--muted);">Not sure which tool fits your needs?</span>
-      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/quiz.html">Take the quiz →</a>
-    </div>
-    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
-      <span style="color:var(--muted);">Compare two tools side by side</span>
-      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/comparisons.html">Go to comparisons →</a>
-    </div>
-    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
-      <span style="color:var(--muted);">Setting up a new tool or switching platforms?</span>
-      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/guides.html">Go to guides →</a>
-    </div>
-    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px;">
-      <span style="color:var(--muted);">Browse all tools and pricing tiers</span>
-      <a style="color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px;" href="/pricing.html">View full pricing page →</a>
-    </div>
+  <div class="bottom-useful-links">
+    <div class="bottom-useful-links-title">Useful next steps</div>
+    <div class="bottom-useful-links-sub">More tools to help you decide.</div>
+    <div class="useful-link-row"><span class="useful-link-label">Not sure which tool fits your needs?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Compare two tools side by side</span><a class="useful-link-url" href="/comparisons.html">Go to comparisons →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Setting up a new tool or switching platforms?</span><a class="useful-link-url" href="/guides.html">Go to guides →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Browse all tools and pricing tiers</span><a class="useful-link-url" href="/pricing.html">View full pricing page →</a></div>
   </div>
 
 </main>
