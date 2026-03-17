@@ -48,7 +48,8 @@
 .card-tier.mid { color: #1565c0; border-color: #bbdefb; background: #f0f7ff; }
 .card-tier.ent { color: #6a1b9a; border-color: #e1bee7; background: #faf0ff; }
 .card-tagline { font-size: 13px; color: var(--muted); line-height: 1.5; min-height: 2.8em; }
-.card-pricing { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); min-height: 110px; }
+.card-pricing { display: flex; flex-direction: column; padding: 14px 0 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.card-pricing-rows { display: flex; flex-direction: column; gap: 6px; min-height: 88px; padding-bottom: 8px; }
 .price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; gap: 8px; }
 .price-label { color: var(--muted); }
 .price-value { font-weight: 500; }
@@ -56,7 +57,9 @@
 .free-badge.yes { background: var(--free-bg); color: var(--free-text); }
 .free-badge.no { background: var(--nofree-bg); color: var(--nofree-text); }
 .price-row.estimated { display: none; }
-.price-row.estimated.visible { display: flex; background: #f1f8f1; margin: 4px -14px -14px; padding: 8px 14px; border-top: 1px solid #c8e6c9; }
+.price-row.estimated.visible { display: flex; }
+.estimate-box { display: none; padding: 8px 14px; background: #f1f8f1; border-top: 1px solid #c8e6c9; margin-top: 8px; }
+.estimate-box.visible { display: flex; justify-content: space-between; align-items: baseline; }
 .price-estimated-label { color: var(--accent); font-weight: 500; font-size: 12px; }
 .price-estimated-val { font-weight: 600; color: var(--accent); font-size: 15px; }
 .card-features { display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start; min-height: 72px; }
@@ -197,6 +200,11 @@
 
   <div class="results-bar">
     <span class="results-count"><span id="visible-count">18</span> tools</span>
+    <select class="calc-select" id="sort-select" onchange="sortCards()" style="width:auto;font-size:12px;padding:4px 8px;">
+      <option value="default">Default order</option>
+      <option value="price-asc">Price: low to high</option>
+      <option value="price-desc">Price: high to low</option>
+    </select>
   </div>
   <p class="results-note" id="results-note" style="display:none"></p>
 
@@ -261,7 +269,7 @@ const CONTACT_LABELS = ['250','500','1,000','2,500','5,000','10,000','25,000','5
 
 const TOOLS = [
   { key:'activecampaign', name:'ActiveCampaign', tier:'smb', tagline:'Powerful CRM and automation for businesses that need more than just email', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:false, freeTrial:'14-day free trial, no card required', startingPrice:'$15/mo (1,000 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt', plansUrl:'https://try.activecampaign.com/9lravfc5vzsu', affiliate:true, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2500)return 39; if(c<=5000)return 69; if(c<=10000)return 111; if(c<=25000)return 179; if(c<=50000)return 279; if(c<=100000)return 399; return null; } },
-  { key:'brevo', name:'Brevo', tier:'smb', tagline:'A flexible, affordable platform with email, SMS, and CRM in one place', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:true, freeNote:'Free plan: unlimited contacts, 300 emails/day', startingPrice:'$9/mo (20,000 emails/mo)', pricingModel:'sends', pricingNote:'Priced by monthly email sends, not contact count', trialUrl:'https://get.brevo.com/hjl3lwlukji3', plansUrl:'https://get.brevo.com/hjl3lwlukji3', affiliate:true, pricing:(c,s)=>{ const t=c*s; if(t<=20000)return 9; if(t<=60000)return 18; if(t<=120000)return 25; if(t<=350000)return 35; if(t<=600000)return 59; if(t<=1000000)return 95; return 95+Math.ceil((t-1000000)/500000)*40; } },
+  { key:'brevo', name:'Brevo', tier:'smb', tagline:'A flexible, affordable platform with email, SMS, and CRM in one place', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service','ecommerce'], hasFree:true, freeNote:'Free plan: unlimited contacts, 300 emails/day', startingPrice:'$9/mo (20,000 emails/mo)', pricingModel:'sends', pricingNote:'Priced by monthly email sends, not contact count', trialUrl:'https://get.brevo.com/hjl3lwlukji3', plansUrl:'https://get.brevo.com/hjl3lwlukji3', affiliate:true, pricing:(c,s)=>{ const t=c*s; if(t<=20000)return 9; if(t<=60000)return 18; if(t<=120000)return 25; if(t<=350000)return 35; if(t<=600000)return 59; if(t<=1000000)return 95; if(t<=2000000)return 179; if(t<=5000000)return 349; return null; } },
   { key:'kit', name:'ConvertKit / Kit', tier:'smb', tagline:'Built for creators, bloggers, and solopreneurs who sell digital products', features:['landing','automation'], bizTypes:['creator'], hasFree:true, freeNote:'Free plan: up to 10,000 subscribers', startingPrice:'$25/mo (1,000 subscribers)', pricingModel:'contacts', pricingNote:'Priced by subscriber count', trialUrl:'https://kit.com', plansUrl:'https://kit.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=10000)return 25; if(c<=25000)return 50; if(c<=50000)return 99; if(c<=100000)return 149; return null; } },
   { key:'getresponse', name:'GetResponse', tier:'smb', tagline:'Email marketing plus landing pages and webinars in one platform', features:['sms','ecommerce','landing','automation'], bizTypes:['b2b','service','creator'], hasFree:true, freeNote:'Free plan: up to 500 contacts', startingPrice:'$15/mo (1,000 contacts)', pricingModel:'contacts', pricingNote:'Priced by contact count', trialUrl:'https://www.getresponse.com', plansUrl:'https://www.getresponse.com/pricing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2500)return 25; if(c<=5000)return 45; if(c<=10000)return 65; if(c<=25000)return 95; if(c<=50000)return 145; if(c<=100000)return 250; return null; } },
   { key:'hubspot', name:'HubSpot', tier:'smb', tagline:'Free plan works well for small teams; paid tiers scale up to full enterprise', features:['crm','sms','ecommerce','landing','automation'], bizTypes:['b2b','service'], hasFree:true, freeNote:'Free plan: unlimited contacts', startingPrice:'$15/mo per seat (Starter)', pricingModel:'hybrid', pricingNote:'Starter priced per seat; higher tiers by contacts', trialUrl:'https://www.hubspot.com', plansUrl:'https://www.hubspot.com/pricing/marketing', affiliate:false, pricing:(c)=>{ if(c<=1000)return 15; if(c<=2000)return 45; if(c<=5000)return 800; if(c<=10000)return 890; if(c<=25000)return 1180; if(c<=50000)return 1780; return null; } },
@@ -294,14 +302,12 @@ function renderCards() {
   grid.innerHTML = '';
   TOOLS.forEach(tool => {
     const tierLabel = { smb:'SMB', mid:'Mid-market', ent:'Enterprise' }[tool.tier];
-    const freeLine = tool.hasFree
-      ? `<div class="price-row"><span class="price-label">Free plan</span><span class="free-badge yes">Yes</span></div>`
-      : `<div class="price-row"><span class="price-label">Free plan</span><span class="free-badge no">No</span></div>`;
-    const trialLine = tool.freeTrial
-      ? `<div class="price-row"><span class="price-label">Free trial</span><span class="price-value">${tool.freeTrial}</span></div>`
-      : (tool.freeNote ? `<div class="price-row"><span class="price-label">Free plan</span><span class="price-value">${tool.freeNote}</span></div>` : '');
-    const startLine = `<div class="price-row"><span class="price-label">Starting price</span><span class="price-value">${tool.startingPrice}</span></div>`;
-    const estimatedLine = `<div class="price-row estimated" id="est-${tool.key}"><span class="price-estimated-label">Your estimate</span><span class="price-estimated-val" id="est-val-${tool.key}"></span></div>`;
+    const freeBadge = tool.hasFree
+      ? `<span class="free-badge yes">Yes</span>`
+      : `<span class="free-badge no">No</span>`;
+    const trialText = tool.freeTrial ? tool.freeTrial : (tool.freeNote ? tool.freeNote : 'None');
+    const trialLabel = tool.freeTrial ? 'Free trial' : 'Free plan detail';
+    const estimatedLine = `<div class="estimate-box" id="est-${tool.key}"><span class="price-estimated-label">Your estimate</span><span class="price-estimated-val" id="est-val-${tool.key}"></span></div>`;
     const allFeatures = [{label:'Email automation',key:'automation'},{label:'CRM',key:'crm'},{label:'SMS',key:'sms'},{label:'Landing pages',key:'landing'},{label:'E-commerce',key:'ecommerce'},{label:'Visual automation',key:'automation'}];
     const featureTags = allFeatures.map(f => `<span class="feature-tag ${tool.features.includes(f.key)?'has':''}">${f.label}</span>`).join('');
     const affiliateTag = tool.affiliate ? `<div class="affiliate-tag">affiliate link</div>` : '';
@@ -312,7 +318,14 @@ function renderCards() {
     card.innerHTML = `
       <div class="card-header"><span class="card-name">${tool.name}</span><span class="card-tier ${tool.tier}">${tierLabel}</span></div>
       <p class="card-tagline">${tool.tagline}</p>
-      <div class="card-pricing">${freeLine}${trialLine}${startLine}${estimatedLine}</div>
+      <div class="card-pricing">
+        <div class="card-pricing-rows">
+          <div class="price-row"><span class="price-label">Free plan</span>${freeBadge}</div>
+          <div class="price-row"><span class="price-label">${trialLabel}</span><span class="price-value" style="font-size:12px">${trialText}</span></div>
+          <div class="price-row"><span class="price-label">Starting price</span><span class="price-value">${tool.startingPrice}</span></div>
+        </div>
+        ${estimatedLine}
+      </div>
       <div class="card-features">${featureTags}</div>
       <div class="card-cta">${affiliateTag}<a class="btn-primary" href="${tool.trialUrl}" target="_blank">${ctaLabel}</a><a class="btn-secondary" href="${tool.plansUrl}" target="_blank">View pricing →</a></div>`;
     grid.appendChild(card);
@@ -344,19 +357,22 @@ function applyFilters() {
     if (show) {
       card.classList.remove('hidden');
       visibleCount++;
-      const estRow = document.getElementById(`est-${tool.key}`);
+      const estBox = document.getElementById(`est-${tool.key}`);
       const estVal = document.getElementById(`est-val-${tool.key}`);
+      tool._estimatedPrice = null;
       if (tool.tier === 'ent') {
         hasEnterprise = true;
-        estRow.classList.remove('visible');
+        estBox.classList.remove('visible');
       } else {
         const price = tool.pricing(contacts, totalSends);
+        tool._estimatedPrice = price;
         estVal.textContent = price !== null ? `~$${price}/mo` : 'Contact for pricing';
-        estRow.classList.add('visible');
+        estBox.classList.add('visible');
       }
     } else {
       card.classList.add('hidden');
       document.getElementById(`est-${tool.key}`).classList.remove('visible');
+    tool._estimatedPrice = null;
     }
   });
   document.getElementById('visible-count').textContent = visibleCount;
@@ -380,11 +396,29 @@ function resetFilters() {
   TOOLS.forEach(tool => {
     document.getElementById(`card-${tool.key}`).classList.remove('hidden');
     document.getElementById(`est-${tool.key}`).classList.remove('visible');
+    tool._estimatedPrice = null;
   });
   document.getElementById('results-note').style.display='none';
   document.getElementById('no-results').classList.remove('visible');
   document.getElementById('enterprise-notice').style.display='none';
   document.getElementById('visible-count').textContent=TOOLS.length;
+}
+
+function sortCards() {
+  const sortVal = document.getElementById('sort-select').value;
+  const grid = document.getElementById('tools-grid');
+  const cards = Array.from(grid.querySelectorAll('.tool-card:not(.hidden)'));
+  if (sortVal === 'default') { renderCards(); applyFilters(); return; }
+  cards.sort((a, b) => {
+    const keyA = a.id.replace('card-', '');
+    const keyB = b.id.replace('card-', '');
+    const toolA = TOOLS.find(t => t.key === keyA);
+    const toolB = TOOLS.find(t => t.key === keyB);
+    const priceA = toolA?._estimatedPrice ?? 99999;
+    const priceB = toolB?._estimatedPrice ?? 99999;
+    return sortVal === 'price-asc' ? priceA - priceB : priceB - priceA;
+  });
+  cards.forEach(card => grid.appendChild(card));
 }
 
 renderCards();
