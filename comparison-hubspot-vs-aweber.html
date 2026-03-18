@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>HubSpot and AWeber are rarely compared directly because they occupy such different positions in the market. AWeber is a focused email marketing tool with a long track record. HubSpot is a full CRM platform. The comparison is useful mainly for businesses that are deciding whether they need just email or a complete go-to-market stack.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>HubSpot</th><th>AWeber</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>Free CRM / $20/mo marketing</td><td>Free / $15/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Email focus</td><td>One feature of many</td><td>Primary focus</td></tr>
         <tr><td>Best for</td><td>CRM + email integration</td><td>Email-only, support priority</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Try HubSpot free today.</span>
         <div><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a></div>

@@ -79,6 +79,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -115,7 +118,7 @@
     <div class="article-body">
       <p>Omnisend and Klaviyo are both built specifically for e-commerce and both are excellent. They are not general email marketing tools that happen to support Shopify - they are platforms designed from the ground up around the e-commerce use case.</p>
       <p>Klaviyo is considered the gold standard for data-driven e-commerce email and SMS. Omnisend is the more affordable alternative that covers most of the same ground for stores that do not need Klaviyo's analytical depth.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Omnisend</th><th>Klaviyo</th></tr></thead>
         <tbody>
         <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 250 contacts</td><td class="cell-yes">✓ Yes - up to 250 contacts</td></tr>
@@ -127,7 +130,7 @@
         <tr><td>Automation</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Best for</td><td>Growing stores wanting value</td><td>Data-driven stores serious about revenue</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <h2>Pricing</h2>
       <p>Both have free plans capped at 250 contacts. Omnisend's paid plans start slightly lower and tend to be cheaper at comparable tiers. Klaviyo gets expensive quickly as your list grows, which is one of the most common reasons stores consider switching to Omnisend.</p>
       <h2>Shopify integration</h2>

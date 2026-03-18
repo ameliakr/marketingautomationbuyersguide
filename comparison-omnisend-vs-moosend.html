@@ -21,6 +21,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -67,7 +70,7 @@
       <p>This comparison covers pricing, e-commerce features, automation, ease of use, and SMS to help you make the call quickly.</p>
 
       <h2>Quick comparison</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Omnisend</th><th>Moosend</th></tr></thead>
         <tbody>
           <tr><td>Free plan</td><td class="cell-yes">✓ Yes - 500 emails/mo</td><td class="cell-no">✗ No - 30-day trial</td></tr>
@@ -80,8 +83,7 @@
           <tr><td>Landing pages</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes</td></tr>
           <tr><td>Best for</td><td>E-commerce stores</td><td>SMBs, e-commerce, creators</td></tr>
         </tbody>
-      </table>
-
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Moosend offers a 30-day free trial with full access to all features.</span>
         <div>

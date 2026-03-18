@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>Klaviyo and GetResponse serve genuinely different audiences. Klaviyo is built for ecommerce stores that want to drive revenue from email and SMS. GetResponse is a broad marketing platform suited to businesses of all types that want email, webinars, landing pages, and automation in one place.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Klaviyo</th><th>GetResponse</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>Free / $20/mo</td><td>Free / $15/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Conversion funnels</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Best for</td><td>Online stores</td><td>All-in-one marketing for SMBs</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Try Klaviyo free today.</span>
         <div><a class="inline-cta-btn" href="https://www.klaviyo.com" target="_blank">→ Try Klaviyo free</a></div>

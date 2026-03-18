@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>Both Mailchimp and Brevo offer free plans, but they work very differently. Mailchimp caps you by contacts. Brevo caps you by daily sends but lets you store unlimited contacts. Which model works better depends entirely on the size and nature of your list.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Mailchimp</th><th>Brevo</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$13/mo</td><td>$9/mo</td></tr>
@@ -116,7 +119,7 @@
         <tr><td>Transactional email</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Best for</td><td>Small lists, simple sends</td><td>Large lists, multi-channel</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Brevo's free plan includes unlimited contacts and 300 emails per day.</span>
         <div><a class="inline-cta-btn" href="https://get.brevo.com/hjl3lwlukji3" target="_blank">→ Try Brevo free</a><div class="inline-cta-note">affiliate link</div></div>

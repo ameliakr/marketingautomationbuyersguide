@@ -79,6 +79,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -114,7 +117,7 @@
     </div>
     <div class="article-body">
       <p>Brevo and ActiveCampaign are both capable automation tools but they target different needs. Brevo is a strong all-rounder at a low price, with email, SMS, and a basic CRM available even on free and entry-level plans. ActiveCampaign is for businesses that need serious automation depth and a more developed CRM.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Brevo</th><th>ActiveCampaign</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$9/mo</td><td>$15/mo</td></tr>
@@ -126,7 +129,7 @@
         <tr><td>Transactional email</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Ease of use</td><td>Beginner-friendly</td><td>Moderate</td></tr>
         </tbody>
-      </table>      <div class="inline-cta">
+      </table></div>      <div class="inline-cta">
         <span class="inline-cta-text">ActiveCampaign offers a 14-day free trial with full access.</span>
         <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
       </div>

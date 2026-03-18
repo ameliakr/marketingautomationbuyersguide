@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>AWeber is a long-established email platform known for reliability and support. Moosend is a newer tool that has built a reputation as the best-value automation platform in its price range. For businesses that have outgrown basic email, this comparison is worth taking seriously.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>AWeber</th><th>Moosend</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>Free / $15/mo</td><td>$9/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Modern interface</td><td>Moderate</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Best for</td><td>Support-first users</td><td>Automation value seekers</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Moosend offers a 30-day free trial with no credit card required.</span>
         <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>

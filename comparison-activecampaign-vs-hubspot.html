@@ -79,6 +79,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -116,7 +119,7 @@
       <p>ActiveCampaign and HubSpot are the two most popular options for businesses that need both email marketing and a CRM in one place. Both are powerful. Both are well-supported. And both have pricing that scales significantly as you grow.</p>
       <p>The difference comes down to focus. ActiveCampaign is built around marketing automation first, with a CRM that supports that workflow. HubSpot is a full business platform with marketing, sales, and service hubs, where email automation is one piece of a larger system.</p>
       <p>If you need deep, flexible automation with solid CRM integration, ActiveCampaign is hard to beat at the SMB price point. If you want everything in one platform and are willing to pay for it, HubSpot scales further.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>ActiveCampaign</th><th>HubSpot</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$15/mo per seat</td></tr>
@@ -130,7 +133,7 @@
         <tr><td>Ease of use</td><td>Moderate</td><td>Moderate</td></tr>
         <tr><td>Best for</td><td>Automation-first businesses</td><td>Teams wanting a full business suite</td></tr>
         </tbody>
-      </table>      <div class="inline-cta">
+      </table></div>      <div class="inline-cta">
         <span class="inline-cta-text">ActiveCampaign offers a 14-day free trial with full feature access.</span>
         <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
       </div>

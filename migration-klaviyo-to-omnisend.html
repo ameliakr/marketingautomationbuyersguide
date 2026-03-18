@@ -69,6 +69,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -110,7 +113,7 @@
     <div class="article-body">
       <p>The move from Klaviyo to Omnisend is almost always driven by price. Klaviyo is the most capable e-commerce email platform available, but it is also the most expensive. Omnisend covers most of the same territory - email, SMS, abandoned cart automation, Shopify integration, segmentation based on purchase history - at a meaningfully lower price.</p><p>If you are paying Klaviyo prices but not using its more advanced features like predictive analytics, AI-powered product recommendations, or deep custom reporting, Omnisend is worth evaluating seriously. This guide walks you through the migration.</p>
       <h2>What transfers and what does not</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr></thead>
         <tbody>
           <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
@@ -122,7 +125,7 @@
           <tr><td>Campaign history and analytics</td><td class="cell-no">No</td><td>Download reports before cancelling</td></tr>
           <tr><td>Forms and landing pages</td><td class="cell-no">No</td><td>Recreate in Omnisend or your existing tools</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <h2>Before you start</h2>
       <p>Start your Omnisend account before doing anything in your existing platform. Keep both accounts running in parallel until Omnisend is fully set up and tested.</p>
       <div class="inline-cta"><span class="inline-cta-text">Start your free Omnisend trial before beginning the migration.</span><a class="inline-cta-btn" href="https://www.omnisend.com" target="_blank">→ Try Omnisend free</a></div>

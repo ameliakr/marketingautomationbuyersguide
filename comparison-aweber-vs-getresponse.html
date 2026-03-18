@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>AWeber and GetResponse are both long-established tools that have evolved considerably over the years. AWeber has stayed focused on email with improvements to its core product. GetResponse has expanded aggressively into an all-in-one marketing platform with webinars, landing pages, and conversion funnels. They overlap but serve different needs.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>AWeber</th><th>GetResponse</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>Free / $15/mo</td><td>Free / $15/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Conversion funnels</td><td class="cell-no">✗ No</td><td class="cell-yes">✓ Yes</td></tr>
         <tr><td>Best for</td><td>Support, reliable email</td><td>All-in-one platform</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Try AWeber free today.</span>
         <div><a class="inline-cta-btn" href="https://www.aweber.com/easy-email.htm?id=560468" target="_blank">→ Try AWeber free</a><div class="inline-cta-note">affiliate link</div></div>

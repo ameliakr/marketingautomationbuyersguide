@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>Mailchimp is a focused email marketing tool that does a few things very well. GetResponse has evolved into a broader platform that includes email, webinars, landing pages, paid ads integration, and ecommerce tools. The right choice depends on whether you want a focused tool or a Swiss Army knife.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Mailchimp</th><th>GetResponse</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$13/mo</td><td>$15/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Ecommerce tools</td><td>Basic</td><td>Moderate</td></tr>
         <tr><td>Best for</td><td>Simple email marketing</td><td>All-in-one marketing</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Try Mailchimp free today.</span>
         <div><a class="inline-cta-btn" href="https://mailchimp.com" target="_blank">→ Try Mailchimp free</a></div>

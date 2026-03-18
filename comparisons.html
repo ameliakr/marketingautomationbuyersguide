@@ -56,15 +56,16 @@
 .comp-tool-cta:hover { opacity: 0.85; }
 .comp-affiliate { font-size: 10px; color: var(--muted); font-style: italic; display: block; margin-top: 4px; }
 
-.comp-table { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); margin-bottom: 40px; table-layout: fixed; }
+.comp-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 40px; }
+.comp-table { width: 100%; border-collapse: collapse; border: 1px solid var(--rule); table-layout: auto; min-width: 480px; }
 .comp-table tr { border-bottom: 1px solid var(--rule); }
 .comp-table tr:last-child { border-bottom: none; }
 .comp-table tr.cat-row td { background: #efefec; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 8px 24px; }
-.comp-table thead th { padding: 20px 24px; vertical-align: top; background: #f8f8f6; border-bottom: 2px solid var(--ink); text-align: left; font-weight: 400; font-size: 14px; font-family: 'DM Sans', sans-serif; overflow: hidden; }
-.comp-table thead th:first-child { width: 180px; background: white; border-right: 1px solid var(--rule); }
-.comp-table td { padding: 14px 24px; vertical-align: top; }
-.comp-table td:first-child { width: 180px; font-size: 13px; color: var(--muted); background: #fafaf8; border-right: 1px solid var(--rule); }
-.comp-table td:not(:first-child) { font-size: 14px; }
+.comp-table thead th { padding: 20px 16px; vertical-align: top; background: #f8f8f6; border-bottom: 2px solid var(--ink); text-align: left; font-weight: 400; font-size: 14px; font-family: 'DM Sans', sans-serif; overflow: hidden; }
+.comp-table thead th:first-child { width: 140px; background: white; border-right: 1px solid var(--rule); }
+.comp-table td { padding: 14px 16px; vertical-align: top; }
+.comp-table td:first-child { width: 140px; font-size: 12px; color: var(--muted); background: #fafaf8; border-right: 1px solid var(--rule); }
+.comp-table td:not(:first-child) { font-size: 13px; }
 .comp-table tr:nth-child(even):not(.cat-row) td:not(:first-child) { background: #fafaf8; }
 .cell-yes { color: var(--yes); font-weight: 500; }
 .cell-no { color: var(--no); }
@@ -96,12 +97,15 @@
 
 /* ── RESPONSIVE ── */
 @media (max-width: 680px) {
-  .picker-inner { grid-template-columns: 1fr; }
-  .vs-divider { padding-top: 0; }
-  .comp-header { grid-template-columns: 1fr; }
-  .comp-header-cell.label { display: none; }
-  .comp-table td:first-child { width: 120px; }
-  .verdict-section { grid-template-columns: 1fr; }
+  .picker-inner { flex-direction: column; gap: 8px; }
+  .picker-slot { flex: none; width: 100%; min-width: unset; }
+  .vs-divider { padding: 0; text-align: left; }
+  .add-third-wrap { width: 100%; }
+  .add-third-btn { width: 100%; text-align: center; }
+  .picker-actions { flex-direction: column; align-items: stretch; gap: 10px; }
+  .picker-actions button { width: 100%; }
+  .verdict-section { flex-direction: column; gap: 1px; }
+  .comp-tool-name { font-size: 16px; }
 }
 </style>
 </head>
@@ -223,7 +227,7 @@
         <div class="comp-header-cell tool" id="header-a"></div>
         <div class="comp-header-cell tool" id="header-b"></div>
       </div>
-      <table class="comp-table" id="comp-table"></table>
+      <div class="comp-table-wrap" id="comp-table-wrap"></div>
       <div class="verdict-section" id="verdict-section"></div>
     </div>
 
@@ -339,10 +343,10 @@ const TOOLS = {
   mailerlite: {
     name: "MailerLite",
     tagline: "Simple, well-priced, and easy to learn - a solid choice for beginners and bloggers",
-    trialUrl: "https://www.mailerlite.com",
+    trialUrl: "https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite",
     trialLabel: "Try MailerLite free",
     pricingUrl: "https://www.mailerlite.com/pricing",
-    affiliate: false,
+    affiliate: true,
     pricing: {
       freePlan: "Yes - up to 1,000 subscribers",
       freeTrial: "Free plan available",
@@ -1242,7 +1246,7 @@ function buildComparison() {
       rows += `<tr><td>${row.label}</td>${cells}</tr>`;
     }
   }
-  document.getElementById('comp-table').innerHTML = thead + '<tbody>' + rows + '</tbody>';
+  document.getElementById('comp-table-wrap').innerHTML = '<table class="comp-table" id="comp-table-inner">' + thead + '<tbody>' + rows + '</tbody></table>';
 
   // Build verdict
   document.getElementById('verdict-section').innerHTML = tools.map(t =>

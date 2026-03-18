@@ -70,6 +70,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -115,7 +118,7 @@
       <p>This review helps you decide which side of that line you are on.</p>
 
       <h2>Omnisend at a glance</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Detail</th></tr></thead>
         <tbody><tr><td>Starting price</td><td class="cell-yes">Free up to 250 contacts, then $16/mo</td></tr>
 <tr><td>Free plan</td><td class="cell-yes">Yes - 500 emails/mo, 60 SMS/mo</td></tr>
@@ -126,7 +129,7 @@
 <tr><td>Push notifications</td><td class="cell-yes">Yes - web push included</td></tr>
 <tr><td>Best for</td><td class="">E-commerce stores wanting Klaviyo-style features at lower cost</td></tr>
 </tbody>
-      </table>
+      </table></div>
 
       <h2>Scores</h2>
       <div class="score-row"><span class="score-label">E-commerce depth</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:84%"></div></div><span class="score-val">8.4</span></div>

@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>Moosend and Klaviyo both offer automation above their price class, but for different audiences. Moosend is the best-value automation tool for businesses that want power without a premium price. Klaviyo is the premium ecommerce platform that justifies its higher cost through ecommerce-specific revenue generation.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Moosend</th><th>Klaviyo</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$9/mo</td><td>Free / $20/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Price at 5k contacts</td><td>~$32/mo</td><td>~$100/mo</td></tr>
         <tr><td>Best for</td><td>Non-ecommerce automation</td><td>Online stores</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Moosend offers a 30-day free trial with no credit card required.</span>
         <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>

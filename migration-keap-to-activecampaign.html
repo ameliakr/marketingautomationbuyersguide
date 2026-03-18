@@ -69,6 +69,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -110,7 +113,7 @@
     <div class="article-body">
       <p>Keap is a powerful platform but an expensive one. At $249/mo and up, it is among the most expensive tools on the market. ActiveCampaign's Plus plan at $49/mo covers the core use cases that most Keap users actually rely on: CRM with deal pipelines, advanced email automation, SMS, and lead scoring.</p><p>If you signed up for Keap for its automation and CRM capabilities and are not heavily using its invoicing, payments, or appointment booking features, you are likely paying for significant functionality you do not use. This guide helps you make the transition.</p>
       <h2>What transfers and what does not</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr></thead>
         <tbody>
           <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
@@ -122,7 +125,7 @@
           <tr><td>Campaign history and analytics</td><td class="cell-no">No</td><td>Download reports before cancelling</td></tr>
           <tr><td>Forms and landing pages</td><td class="cell-no">No</td><td>Recreate in ActiveCampaign or your existing tools</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <h2>Before you start</h2>
       <p>Start your ActiveCampaign account before doing anything in your existing platform. Keep both accounts running in parallel until ActiveCampaign is fully set up and tested.</p>
       <div class="inline-cta"><span class="inline-cta-text">Start your free ActiveCampaign trial before beginning the migration.</span><div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div></div>

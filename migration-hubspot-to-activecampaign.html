@@ -69,6 +69,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -110,7 +113,7 @@
     <div class="article-body">
       <p>The most common reason to move from HubSpot to ActiveCampaign is pricing. HubSpot's free plan is generous, but the jump to Marketing Hub Professional at $800/mo is steep. ActiveCampaign's Plus plan at $49/mo gives you a strong automation builder and capable CRM at a fraction of the cost.</p><p>If your team has grown past HubSpot's free plan and you are not ready to commit to Professional, ActiveCampaign offers most of what you need at a significantly lower price point. This guide walks you through the full migration.</p>
       <h2>What transfers and what does not</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr></thead>
         <tbody>
           <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
@@ -122,7 +125,7 @@
           <tr><td>Campaign history and analytics</td><td class="cell-no">No</td><td>Download reports before cancelling</td></tr>
           <tr><td>Forms and landing pages</td><td class="cell-no">No</td><td>Recreate in ActiveCampaign or your existing tools</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <h2>Before you start</h2>
       <p>Start your ActiveCampaign account before doing anything in your existing platform. Keep both accounts running in parallel until ActiveCampaign is fully set up and tested.</p>
       <div class="inline-cta"><span class="inline-cta-text">Start your free ActiveCampaign trial before beginning the migration.</span><div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div></div>

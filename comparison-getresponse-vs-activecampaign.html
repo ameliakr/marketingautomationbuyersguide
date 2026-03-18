@@ -79,6 +79,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -114,7 +117,7 @@
     </div>
     <div class="article-body">
       <p>GetResponse and ActiveCampaign are both capable platforms that go well beyond basic email marketing. Both include automation builders, landing pages, SMS, and e-commerce integrations. The key difference is GetResponse's webinar feature and its all-in-one positioning, versus ActiveCampaign's deeper CRM and more advanced automation logic.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>GetResponse</th><th>ActiveCampaign</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$15/mo</td></tr>
@@ -126,7 +129,7 @@
         <tr><td>Automation builder</td><td>Strong</td><td>More advanced</td></tr>
         <tr><td>E-commerce</td><td class="cell-yes">✓ Yes</td><td class="cell-yes">✓ Yes</td></tr>
         </tbody>
-      </table>      <div class="inline-cta">
+      </table></div>      <div class="inline-cta">
         <span class="inline-cta-text">ActiveCampaign offers a 14-day free trial with full access.</span>
         <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>
       </div>

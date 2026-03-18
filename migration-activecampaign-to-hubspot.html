@@ -69,6 +69,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -110,7 +113,7 @@
     <div class="article-body">
       <p>Moving from ActiveCampaign to HubSpot usually means your business has grown to the point where CRM is as important as email automation. ActiveCampaign has a capable CRM, but HubSpot's is deeper - more structured deal pipelines, better sales reporting, and tighter integration between marketing and sales activities.</p><p>This is not a simple migration. Both platforms are powerful and both organize data differently. The contact migration is standard. The automation rebuild is where the complexity lies - ActiveCampaign's automation engine is different from HubSpot's workflow builder, and translating complex sequences requires careful planning.</p>
       <h2>What transfers and what does not</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr></thead>
         <tbody>
           <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export and import</td></tr>
@@ -122,7 +125,7 @@
           <tr><td>Campaign history and analytics</td><td class="cell-no">No</td><td>Download reports before cancelling</td></tr>
           <tr><td>Forms and landing pages</td><td class="cell-no">No</td><td>Recreate in HubSpot or your existing tools</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <h2>Before you start</h2>
       <p>Start your HubSpot account before doing anything in your existing platform. Keep both accounts running in parallel until HubSpot is fully set up and tested.</p>
       <div class="inline-cta"><span class="inline-cta-text">Start your free HubSpot trial before beginning the migration.</span><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a></div>

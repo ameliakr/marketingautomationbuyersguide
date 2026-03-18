@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>HubSpot and GetResponse both position themselves as all-in-one platforms, but they have different strengths. HubSpot is built around CRM and is most powerful when sales and marketing work together in one system. GetResponse is built around marketing features — email, webinars, landing pages, and funnels.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>HubSpot</th><th>GetResponse</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>Free CRM / $20/mo marketing</td><td>Free / $15/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Enterprise options</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Best for</td><td>CRM-first, scaling businesses</td><td>Marketing-focused SMBs</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Try HubSpot free today.</span>
         <div><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Try HubSpot free</a></div>

@@ -70,6 +70,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -114,7 +117,7 @@
       <p>If you run an e-commerce store and email marketing is a significant revenue driver for you, Klaviyo is the platform most likely to get you the best results. If you are not in e-commerce, it is not the right tool.</p>
 
       <h2>Klaviyo at a glance</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Detail</th></tr></thead>
         <tbody><tr><td>Starting price</td><td class="cell-yes">Free up to 250 contacts, then ~$20/mo</td></tr>
 <tr><td>Free plan</td><td class="cell-yes">Yes - up to 250 contacts, 500 emails/mo</td></tr>
@@ -125,7 +128,7 @@
 <tr><td>Predictive analytics</td><td class="cell-yes">Yes - CLV, churn risk, next order date</td></tr>
 <tr><td>Best for</td><td class="">E-commerce brands serious about email and SMS revenue</td></tr>
 </tbody>
-      </table>
+      </table></div>
 
       <h2>Scores</h2>
       <div class="score-row"><span class="score-label">E-commerce depth</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:98%"></div></div><span class="score-val">9.8</span></div>

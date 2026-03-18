@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>ActiveCampaign and Klaviyo are both sophisticated marketing automation platforms, but they are optimized for different types of businesses. ActiveCampaign is built for B2B and service businesses that need CRM, sales automation, and complex lead nurturing. Klaviyo is built for ecommerce stores that want to drive revenue from their contact list.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>ActiveCampaign</th><th>Klaviyo</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$20/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Lead scoring</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Best for</td><td>B2B, service businesses</td><td>Ecommerce stores</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">ActiveCampaign offers a 14-day free trial with full access.</span>
         <div><a class="inline-cta-btn" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">→ Try ActiveCampaign free</a><div class="inline-cta-note">affiliate link</div></div>

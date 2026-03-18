@@ -79,6 +79,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -115,7 +118,7 @@
     <div class="article-body">
       <p>Mailchimp is the incumbent. Moosend is the challenger that has been quietly winning on features per dollar for several years. If you are considering both, you are probably either migrating away from Mailchimp or comparing the two before committing to one.</p>
       <p>The short version: Moosend has a stronger automation builder, better e-commerce features, and lower pricing at comparable tiers. Mailchimp has broader brand recognition and a larger integration ecosystem.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Mailchimp</th><th>Moosend</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$13/mo</td><td>$9/mo</td></tr>
@@ -127,7 +130,7 @@
         <tr><td>SMS</td><td class="cell-no">✗ No</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Ease of use</td><td>Beginner-friendly</td><td>Moderate</td></tr>
         </tbody>
-      </table>      <div class="inline-cta">
+      </table></div>      <div class="inline-cta">
         <span class="inline-cta-text">Moosend includes a 30-day free trial with full feature access.</span>
         <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>
       </div>

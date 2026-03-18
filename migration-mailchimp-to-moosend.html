@@ -70,6 +70,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -122,7 +125,7 @@
 
       <h2>What transfers and what does not</h2>
 
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead>
           <tr><th>Data</th><th>Transfers?</th><th>Notes</th></tr>
         </thead>
@@ -137,7 +140,7 @@
           <tr><td>Campaign history</td><td class="cell-no">No</td><td>Download reports from Mailchimp before cancelling</td></tr>
           <tr><td>Forms</td><td class="cell-no">No</td><td>Recreate in Moosend or your existing form tool</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <h2>Before you start</h2>
 

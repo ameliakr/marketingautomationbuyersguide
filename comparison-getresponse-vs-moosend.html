@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>GetResponse and Moosend are both mid-range tools that offer more than basic email marketing, but they have different strategies. GetResponse is an all-in-one platform that keeps expanding into webinars, landing pages, and paid ads. Moosend is focused on email automation and does it very well at a competitive price.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>GetResponse</th><th>Moosend</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$15/mo</td><td>$9/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Conversion funnels</td><td class="cell-yes">✓ Yes</td><td class="cell-no">✗ No</td></tr>
         <tr><td>Best for</td><td>All-in-one marketing</td><td>Email automation value</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Moosend offers a 30-day free trial with no credit card required.</span>
         <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>

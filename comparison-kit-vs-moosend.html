@@ -79,6 +79,9 @@
 .verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -114,7 +117,7 @@
     </div>
     <div class="article-body">
       <p>Kit and Moosend serve different audiences. Kit is purpose-built for creators, bloggers, and newsletter publishers who want to monetize their audience. Moosend is a general marketing automation platform with a strong automation builder and good e-commerce support. They overlap on the basics but diverge significantly on their core strengths.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Kit</th><th>Moosend</th></tr></thead>
         <tbody>
         <tr><td>Free plan</td><td class="cell-yes">✓ Yes - up to 10,000 subscribers</td><td class="cell-no">✗ No</td></tr>
@@ -126,7 +129,7 @@
         <tr><td>Automation builder</td><td>Good</td><td>More advanced</td></tr>
         <tr><td>Best for</td><td>Creators monetizing an audience</td><td>E-commerce and automation-focused businesses</td></tr>
         </tbody>
-      </table>      <div class="inline-cta">
+      </table></div>      <div class="inline-cta">
         <span class="inline-cta-text">Moosend offers a 30-day free trial with full feature access.</span>
         <div><a class="inline-cta-btn" href="https://trymoo.moosend.com/4e0kl2a449hd" target="_blank">→ Try Moosend free</a><div class="inline-cta-note">affiliate link</div></div>
       </div>

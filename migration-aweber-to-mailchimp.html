@@ -68,6 +68,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -109,7 +112,7 @@
       <p>This guide covers everything you need to migrate from AWeber to Mailchimp without losing subscribers or breaking your automations. Estimated time: <strong>2-4 hours</strong>.</p>
       <div class="inline-cta"><span class="inline-cta-text">Start your free Mailchimp trial before beginning the migration.</span><div><a class="inline-cta-btn" href="https://www.mailchimp.com" target="_blank">→ Try Mailchimp free</a></div></div>
       <h2>What transfers and what does not</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead>
           <tr>
             <th>Item</th>
@@ -127,7 +130,7 @@
           <tr><td>Campaign history</td><td class="cell-no">No</td><td>Historical stats stay in AWeber</td></tr>
           
         </tbody>
-      </table>
+      </table></div>
       
       <h2>Step-by-step migration guide</h2>
       <div class="step-block">

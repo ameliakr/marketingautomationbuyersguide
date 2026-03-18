@@ -69,6 +69,9 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -104,7 +107,7 @@
     </div>
     <div class="article-body">
       <p>AWeber was one of the first email marketing tools. Mailchimp came along and gradually became the default choice for small businesses. Both are solid, beginner-friendly tools, but Mailchimp has clearly won more market share. The question is whether AWeber still has advantages worth considering.</p>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Mailchimp</th><th>AWeber</th></tr></thead>
         <tbody>
         <tr><td>Starting price</td><td>$13/mo</td><td>$15/mo</td></tr>
@@ -115,7 +118,7 @@
         <tr><td>Template library</td><td>Extensive</td><td>Good</td></tr>
         <tr><td>Best for</td><td>Modern interface, integrations</td><td>Support, simplicity</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="inline-cta">
         <span class="inline-cta-text">Try Mailchimp free today.</span>
         <div><a class="inline-cta-btn" href="https://mailchimp.com" target="_blank">→ Try Mailchimp free</a></div>

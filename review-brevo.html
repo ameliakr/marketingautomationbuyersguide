@@ -70,6 +70,9 @@
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 .related-coming { font-size: 11px; color: var(--muted); font-style: italic; flex-shrink: 0; margin-left: 16px; }
+
+.quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
+.quick-table-wrap .quick-table { margin: 0; }
 </style>
 </head>
 <body>
@@ -115,7 +118,7 @@
       <p>This review covers what Brevo does well, where its limits are, and who it makes the most sense for.</p>
 
       <h2>Brevo at a glance</h2>
-      <table class="quick-table">
+      <div class="quick-table-wrap"><table class="quick-table">
         <thead><tr><th>Feature</th><th>Detail</th></tr></thead>
         <tbody><tr><td>Starting price</td><td class="cell-yes">Free (unlimited contacts, 300 emails/day), then $9/mo</td></tr>
 <tr><td>Free plan</td><td class="cell-yes">Yes - unlimited contacts, 300 emails/day</td></tr>
@@ -127,7 +130,7 @@
 <tr><td>Transactional email</td><td class="cell-yes">Yes - included</td></tr>
 <tr><td>Best for</td><td class="">Businesses with large lists that send to segments, not full list</td></tr>
 </tbody>
-      </table>
+      </table></div>
 
       <h2>Scores</h2>
       <div class="score-row"><span class="score-label">Value for money</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-val">9.0</span></div>
