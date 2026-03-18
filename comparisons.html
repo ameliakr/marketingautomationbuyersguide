@@ -151,17 +151,26 @@
             <option value="aweber">AWeber</option>
             <option value="brevo">Brevo</option>
             <option value="campaignmonitor">Campaign Monitor</option>
-            <option value="kit">Kit</option>
             <option value="constantcontact">Constant Contact</option>
+            <option value="dotdigital">Dotdigital</option>
+            <option value="eloqua">Eloqua</option>
             <option value="flodesk">Flodesk</option>
             <option value="getresponse">GetResponse</option>
             <option value="hubspot">HubSpot</option>
+            <option value="hubspot-enterprise">HubSpot Enterprise</option>
+            <option value="iterable">Iterable</option>
             <option value="keap">Keap</option>
+            <option value="kit">Kit</option>
             <option value="klaviyo">Klaviyo</option>
             <option value="mailchimp">Mailchimp</option>
             <option value="mailerlite">MailerLite</option>
+            <option value="marketo">Marketo</option>
+            <option value="dynamics365">Microsoft Dynamics 365</option>
             <option value="moosend">Moosend</option>
             <option value="omnisend">Omnisend</option>
+            <option value="ortto">Ortto</option>
+            <option value="pardot">Pardot</option>
+            <option value="salesforce">Salesforce Marketing Cloud</option>
             <option value="zoho">Zoho Campaigns</option>
           </select>
         </div>
@@ -174,17 +183,26 @@
             <option value="aweber">AWeber</option>
             <option value="brevo">Brevo</option>
             <option value="campaignmonitor">Campaign Monitor</option>
-            <option value="kit">Kit</option>
             <option value="constantcontact">Constant Contact</option>
+            <option value="dotdigital">Dotdigital</option>
+            <option value="eloqua">Eloqua</option>
             <option value="flodesk">Flodesk</option>
             <option value="getresponse">GetResponse</option>
             <option value="hubspot">HubSpot</option>
+            <option value="hubspot-enterprise">HubSpot Enterprise</option>
+            <option value="iterable">Iterable</option>
             <option value="keap">Keap</option>
+            <option value="kit">Kit</option>
             <option value="klaviyo">Klaviyo</option>
             <option value="mailchimp">Mailchimp</option>
             <option value="mailerlite">MailerLite</option>
+            <option value="marketo">Marketo</option>
+            <option value="dynamics365">Microsoft Dynamics 365</option>
             <option value="moosend">Moosend</option>
             <option value="omnisend">Omnisend</option>
+            <option value="ortto">Ortto</option>
+            <option value="pardot">Pardot</option>
+            <option value="salesforce">Salesforce Marketing Cloud</option>
             <option value="zoho">Zoho Campaigns</option>
           </select>
         </div>
@@ -670,6 +688,358 @@ const TOOLS = {
     bestFor: ["You run a coaching, consulting, or agency business with a complex client pipeline", "You want CRM, email automation, invoicing, and payments in a single platform", "You are currently paying for multiple separate tools that Keap would consolidate", "Budget is not the primary concern and you need a platform that covers your full operation"],
     notFor: ["You primarily need email marketing - the price is not justified for email alone", "You are a small business just getting started - the cost and complexity are too high", "You run an e-commerce store - Klaviyo or Omnisend are built specifically for that"]
   },
+  constantcontact: {
+    name: "Constant Contact",
+    tagline: "Simple email marketing with strong customer support and a long track record",
+    trialUrl: "https://www.constantcontact.com",
+    trialLabel: "Try Constant Contact",
+    pricingUrl: "https://www.constantcontact.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "60-day trial",
+      startingPrice: "$12/mo",
+      pricingBasis: "Per contact",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "no",
+      crm: "no",
+      landingPages: "no",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Basic",
+      analytics: "Standard",
+      support: "Phone + chat",
+      easeOfUse: "Very easy"
+    },
+    bestFor: ["You want phone support available on all plans", "You are new to email marketing and want the simplest interface", "You run events and want built-in event marketing tools", "You are a nonprofit with access to nonprofit pricing"],
+    notFor: ["You need advanced automation with complex branching logic", "You want a built-in CRM for sales pipeline management", "You are cost-sensitive — MailerLite and Brevo offer more for less"]
+  },
+  flodesk: {
+    name: "Flodesk",
+    tagline: "Flat-rate pricing and beautiful templates, popular with creators and personal brands",
+    trialUrl: "https://flodesk.com",
+    trialLabel: "Try Flodesk",
+    pricingUrl: "https://flodesk.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "30-day trial",
+      startingPrice: "$38/mo flat",
+      pricingBasis: "Flat rate — unlimited subscribers",
+      enterprise: "No"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "no",
+      crm: "no",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "no",
+      segmentation: "Basic",
+      analytics: "Limited",
+      support: "Email",
+      easeOfUse: "Very easy"
+    },
+    bestFor: ["Email aesthetics are central to your brand and you want beautiful emails by default", "You have a large list and want flat-rate pricing with no surprises", "You are a creative professional — photographer, designer, coach, or personal brand", "Simplicity and visual quality matter more than analytics or advanced automation"],
+    notFor: ["You need more than basic automation sequences", "You want A/B testing or detailed analytics", "You are price-sensitive at small list sizes — MailerLite is free up to 1,000 subscribers"]
+  },
+  dotdigital: {
+    name: "Dotdigital",
+    tagline: "Mid-market email and marketing automation with strong ecommerce integrations",
+    trialUrl: "https://www.dotdigital.com",
+    trialLabel: "Try Dotdigital",
+    pricingUrl: "https://www.dotdigital.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "Demo available",
+      startingPrice: "Custom pricing",
+      pricingBasis: "Per contact (custom quote)",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced",
+      support: "Dedicated account manager",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You are a mid-market ecommerce brand wanting deep platform integrations", "You need SMS and email under one platform with strong automation", "You want a dedicated account manager and enterprise-level support"],
+    notFor: ["You are a small business — pricing and complexity are aimed at larger teams", "You need transparent self-serve pricing", "You want to get started quickly without a sales process"]
+  },
+  ortto: {
+    name: "Ortto",
+    tagline: "Marketing automation and analytics combined, focused on customer journey data",
+    trialUrl: "https://ortto.com",
+    trialLabel: "Try Ortto",
+    pricingUrl: "https://ortto.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "14-day trial",
+      startingPrice: "$99/mo",
+      pricingBasis: "Per contact",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced — built-in CDP",
+      support: "Email + chat",
+      easeOfUse: "Moderate"
+    },
+    bestFor: ["You want built-in customer data analytics alongside automation", "You need a visual journey builder with deep behavioral triggers", "You want email, SMS, and in-app messaging from one platform"],
+    notFor: ["You are a small business — pricing starts high", "You just need basic email marketing without analytics complexity", "You need a CRM built in alongside your marketing tools"]
+  },
+  iterable: {
+    name: "Iterable",
+    tagline: "Cross-channel marketing automation for growth and lifecycle marketing teams",
+    trialUrl: "https://iterable.com",
+    trialLabel: "Request Iterable demo",
+    pricingUrl: "https://iterable.com/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "Demo available",
+      startingPrice: "Custom pricing",
+      pricingBasis: "Custom (enterprise)",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "no",
+      sms: "yes",
+      formsPopups: "no",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced",
+      support: "Dedicated CSM",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You are a growth or lifecycle marketing team at a scaling company", "You need cross-channel automation across email, SMS, push, and in-app", "You want advanced segmentation driven by real-time behavioral data"],
+    notFor: ["You are a small business — this is an enterprise product", "You need transparent pricing without a sales call", "You want a simple tool to get campaigns out quickly"]
+  },
+  "hubspot-enterprise": {
+    name: "HubSpot Enterprise",
+    tagline: "Full marketing, sales, and CRM suite for large teams with complex needs",
+    trialUrl: "https://www.hubspot.com",
+    trialLabel: "Try HubSpot",
+    pricingUrl: "https://www.hubspot.com/pricing/marketing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "No",
+      startingPrice: "$3,600/mo",
+      pricingBasis: "Per contact + per seat",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced — full attribution",
+      support: "Dedicated CSM",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You need a complete marketing, sales, and service platform from one vendor", "Your team needs enterprise-grade automation, attribution, and reporting", "You are willing to invest significantly for deep cross-team integration"],
+    notFor: ["You are a small or mid-size business — cost is prohibitive", "You just need email marketing — far more than you need", "You want quick setup without extensive onboarding"]
+  },
+  marketo: {
+    name: "Marketo",
+    tagline: "Deep B2B marketing automation for complex, long enterprise sales cycles",
+    trialUrl: "https://business.adobe.com/products/marketo",
+    trialLabel: "Request Marketo demo",
+    pricingUrl: "https://business.adobe.com/products/marketo",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "Demo available",
+      startingPrice: "Custom pricing",
+      pricingBasis: "Custom (enterprise)",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "no",
+      woocommerce: "no",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced — revenue attribution",
+      support: "Dedicated CSM",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You are a B2B enterprise with complex, multi-touch sales cycles", "You need deep Salesforce CRM integration for sales and marketing alignment", "You want advanced lead scoring, nurturing, and revenue attribution"],
+    notFor: ["You are not enterprise — pricing and complexity are not justified", "You run an ecommerce store — Marketo is built for B2B not B2C", "You want quick setup without a lengthy implementation process"]
+  },
+  eloqua: {
+    name: "Eloqua",
+    tagline: "Enterprise-grade B2B marketing automation for complex sales cycles",
+    trialUrl: "https://www.oracle.com/cx/marketing/automation",
+    trialLabel: "Request Eloqua demo",
+    pricingUrl: "https://www.oracle.com/cx/marketing/automation",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "Demo available",
+      startingPrice: "Custom pricing",
+      pricingBasis: "Custom (enterprise)",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "no",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "no",
+      woocommerce: "no",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced",
+      support: "Dedicated CSM",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You are a large B2B enterprise with complex lead management needs", "You are already in the Oracle ecosystem and want deep integration", "You need sophisticated campaign orchestration across multiple channels"],
+    notFor: ["You are not enterprise — cost and complexity are significant barriers", "You need ecommerce or B2C marketing automation", "You want a modern, intuitive interface — Eloqua is powerful but dated"]
+  },
+  pardot: {
+    name: "Pardot",
+    tagline: "B2B marketing automation from Salesforce, built for enterprise sales alignment",
+    trialUrl: "https://www.salesforce.com/products/marketing/b2b-marketing-automation",
+    trialLabel: "Request Pardot demo",
+    pricingUrl: "https://www.salesforce.com/products/marketing/b2b-marketing-automation",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "Demo available",
+      startingPrice: "$1,250/mo",
+      pricingBasis: "Per user + per contact",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "no",
+      formsPopups: "yes",
+      shopify: "no",
+      woocommerce: "no",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced — Salesforce native",
+      support: "Dedicated CSM",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You are already on Salesforce CRM and want native marketing automation", "You need deep sales and marketing alignment with shared contact data", "You run complex B2B campaigns with long nurture cycles"],
+    notFor: ["You are not on Salesforce — the main value is the native integration", "You are not enterprise — starting price is $1,250/mo", "You want quick setup without a long implementation"]
+  },
+  salesforce: {
+    name: "Salesforce Marketing Cloud",
+    tagline: "Enterprise omnichannel marketing for large teams with dedicated ops resources",
+    trialUrl: "https://www.salesforce.com/products/marketing-cloud",
+    trialLabel: "Request SFMC demo",
+    pricingUrl: "https://www.salesforce.com/products/marketing-cloud/pricing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "Demo available",
+      startingPrice: "Custom pricing",
+      pricingBasis: "Custom (enterprise)",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "yes",
+      woocommerce: "yes",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced — full attribution",
+      support: "Dedicated CSM",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You are a large enterprise needing omnichannel marketing across email, SMS, ads, and more", "You are already deep in the Salesforce ecosystem", "You have a dedicated marketing operations team to manage the platform"],
+    notFor: ["You are not enterprise — cost and complexity are extreme", "You want to get started quickly without a major implementation", "You are a small or mid-size business of any kind"]
+  },
+  dynamics365: {
+    name: "Microsoft Dynamics 365",
+    tagline: "Enterprise CRM and marketing automation tightly integrated with Microsoft 365",
+    trialUrl: "https://www.microsoft.com/en-us/dynamics-365/products/marketing",
+    trialLabel: "Try Dynamics 365",
+    pricingUrl: "https://www.microsoft.com/en-us/dynamics-365/products/marketing",
+    affiliate: false,
+    pricing: {
+      freePlan: "No",
+      freeTrial: "30-day trial",
+      startingPrice: "$1,500/mo",
+      pricingBasis: "Per tenant + per user",
+      enterprise: "Yes"
+    },
+    features: {
+      emailAutomation: "yes",
+      visualBuilder: "yes",
+      crm: "yes",
+      landingPages: "yes",
+      sms: "yes",
+      formsPopups: "yes",
+      shopify: "no",
+      woocommerce: "no",
+      ab: "yes",
+      segmentation: "Advanced",
+      analytics: "Advanced — Power BI integration",
+      support: "Microsoft support tiers",
+      easeOfUse: "Complex"
+    },
+    bestFor: ["You are already using Microsoft 365, Teams, and Azure infrastructure", "You need CRM and marketing automation tightly integrated in one Microsoft platform", "You are a large B2B enterprise with complex customer journey needs"],
+    notFor: ["You are not already in the Microsoft ecosystem", "You are not enterprise — pricing starts at $1,500/mo", "You want a modern marketing-first tool rather than an enterprise suite"]
+  },
   zoho: {
     name: "Zoho Campaigns",
     tagline: "Email marketing that integrates tightly with the broader Zoho ecosystem",
@@ -779,22 +1149,31 @@ function renderCell(val, bool) {
   return `<td class="cell-partial">${val}</td>`;
 }
 
-const TOOL_OPTIONS = `<option value="">Select a tool...</option>
+const TOOL_OPTIONS = `            <option value="">Select a tool...</option>
             <option value="activecampaign">ActiveCampaign</option>
             <option value="aweber">AWeber</option>
             <option value="brevo">Brevo</option>
             <option value="campaignmonitor">Campaign Monitor</option>
-            <option value="kit">Kit</option>
             <option value="constantcontact">Constant Contact</option>
+            <option value="dotdigital">Dotdigital</option>
+            <option value="eloqua">Eloqua</option>
             <option value="flodesk">Flodesk</option>
             <option value="getresponse">GetResponse</option>
             <option value="hubspot">HubSpot</option>
+            <option value="hubspot-enterprise">HubSpot Enterprise</option>
+            <option value="iterable">Iterable</option>
             <option value="keap">Keap</option>
+            <option value="kit">Kit</option>
             <option value="klaviyo">Klaviyo</option>
             <option value="mailchimp">Mailchimp</option>
             <option value="mailerlite">MailerLite</option>
+            <option value="marketo">Marketo</option>
+            <option value="dynamics365">Microsoft Dynamics 365</option>
             <option value="moosend">Moosend</option>
             <option value="omnisend">Omnisend</option>
+            <option value="ortto">Ortto</option>
+            <option value="pardot">Pardot</option>
+            <option value="salesforce">Salesforce Marketing Cloud</option>
             <option value="zoho">Zoho Campaigns</option>`;
 
 function addThirdTool() {
