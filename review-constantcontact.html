@@ -124,7 +124,7 @@ const ALL_ARTICLES = [
   { title: "Moosend vs MailerLite", url: "/comparison-moosend-vs-mailerlite.html", tools: ["moosend","mailerlite"], status: "live" },
   { title: "ActiveCampaign vs MailerLite", url: "/comparison-activecampaign-vs-mailerlite.html", tools: ["activecampaign","mailerlite"], status: "live" },
 ];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",keap:"Keap",campaignmonitor:"Campaign Monitor",aweber:"AWeber",constantcontact:"Constant Contact",flodesk:"Flodesk",iterable:"Iterable",dotdigital:"Dotdigital",ortto:"Ortto",salesforce:"Salesforce Marketing Cloud",marketo:"Adobe Marketo",eloqua:"Oracle Eloqua",pardot:"Pardot",dynamics:"Microsoft Dynamics 365",hubspotenterprise:"HubSpot Enterprise"};
+const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",keap:"Keap",campaignmonitor:"Campaign Monitor",aweber:"AWeber",constantcontact:"Constant Contact",flodesk:"Flodesk",iterable:"Iterable",dotdigital:"Dotdigital",ortto:"Ortto",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics:"Microsoft Dynamics 365",hubspotenterprise:"HubSpot Enterprise"};
 function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;

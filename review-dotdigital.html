@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="article-body">
-      <p>Dotdigital is a UK-based omnichannel marketing platform that has built a strong presence in the mid-market and enterprise space, particularly in retail, e-commerce, and B2B. It offers email, SMS, push notifications, landing pages, and a customer data platform in a single solution, with particularly strong e-commerce integrations including Magento, Shopify, and Salesforce Commerce Cloud.</p><p>Dotdigital sits above SMB tools in pricing and complexity but below the full enterprise complexity of Salesforce Marketing Cloud or Oracle Eloqua. It is a practical choice for established businesses that have outgrown tools like Klaviyo but do not need the full overhead of an enterprise platform.</p>
+      <p>Dotdigital is a UK-based omnichannel marketing platform that has built a strong presence in the mid-market and enterprise space, particularly in retail, e-commerce, and B2B. It offers email, SMS, push notifications, landing pages, and a customer data platform in a single solution, with particularly strong e-commerce integrations including Magento, Shopify, and Salesforce Commerce Cloud.</p><p>Dotdigital sits above SMB tools in pricing and complexity but below the full enterprise complexity of Salesforce Marketing Cloud or Eloqua. It is a practical choice for established businesses that have outgrown tools like Klaviyo but do not need the full overhead of an enterprise platform.</p>
       <h2>Dotdigital at a glance</h2>
       <table class="quick-table"><thead><tr><th>Feature</th><th>Detail</th></tr></thead><tbody><tr><td>Pricing</td><td class="">Custom - typically mid-market range</td></tr>
 <tr><td>Free plan</td><td class="cell-no">No</td></tr>
@@ -112,7 +112,7 @@ const THIS_ARTICLE_URL = window.location.pathname;
 const ALL_ARTICLES = [
   { title: "ActiveCampaign vs HubSpot", url: "/comparison-activecampaign-vs-hubspot.html", tools: ["activecampaign","hubspot"], status: "live" },
 ];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",keap:"Keap",campaignmonitor:"Campaign Monitor",aweber:"AWeber",constantcontact:"Constant Contact",flodesk:"Flodesk",iterable:"Iterable",dotdigital:"Dotdigital",ortto:"Ortto",salesforce:"Salesforce Marketing Cloud",marketo:"Adobe Marketo",eloqua:"Oracle Eloqua",pardot:"Pardot",dynamics:"Microsoft Dynamics 365",hubspotenterprise:"HubSpot Enterprise"};
+const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",keap:"Keap",campaignmonitor:"Campaign Monitor",aweber:"AWeber",constantcontact:"Constant Contact",flodesk:"Flodesk",iterable:"Iterable",dotdigital:"Dotdigital",ortto:"Ortto",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics:"Microsoft Dynamics 365",hubspotenterprise:"HubSpot Enterprise"};
 function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;

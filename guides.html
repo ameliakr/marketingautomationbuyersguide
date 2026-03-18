@@ -139,14 +139,13 @@
               <select class="tool-select" id="setup-tool">
                 <option value="">Select a tool...</option>
                 <option value="activecampaign">ActiveCampaign</option>
-                <option value="marketo">Adobe Marketo</option>
+                <option value="marketo">Marketo</option>
                 <option value="aweber">AWeber</option>
                 <option value="brevo">Brevo</option>
                 <option value="campaignmonitor">Campaign Monitor</option>
-                <option value="kit">ConvertKit / Kit</option>
+                <option value="kit">Kit</option>
                 <option value="constantcontact">Constant Contact</option>
                 <option value="dotdigital">Dotdigital</option>
-                <option value="dynamics365">Microsoft Dynamics 365</option>
                 <option value="flodesk">Flodesk</option>
                 <option value="getresponse">GetResponse</option>
                 <option value="hubspot">HubSpot</option>
@@ -156,11 +155,12 @@
                 <option value="klaviyo">Klaviyo</option>
                 <option value="mailchimp">Mailchimp</option>
                 <option value="mailerlite">MailerLite</option>
+                <option value="dynamics365">Microsoft Dynamics 365</option>
                 <option value="moosend">Moosend</option>
-                <option value="eloqua">Oracle Eloqua</option>
+                <option value="eloqua">Eloqua</option>
                 <option value="omnisend">Omnisend</option>
                 <option value="ortto">Ortto</option>
-                <option value="pardot">Pardot (Salesforce)</option>
+                <option value="pardot">Pardot</option>
                 <option value="salesforce">Salesforce Marketing Cloud</option>
                 <option value="zoho">Zoho Campaigns</option>
               </select>
@@ -182,7 +182,7 @@
                 <option value="brevo">Brevo</option>
                 <option value="campaignmonitor">Campaign Monitor</option>
                 <option value="constantcontact">Constant Contact</option>
-                <option value="kit">ConvertKit / Kit</option>
+                <option value="kit">Kit</option>
                 <option value="flodesk">Flodesk</option>
                 <option value="getresponse">GetResponse</option>
                 <option value="hubspot">HubSpot</option>
@@ -205,7 +205,7 @@
                 <option value="brevo">Brevo</option>
                 <option value="campaignmonitor">Campaign Monitor</option>
                 <option value="constantcontact">Constant Contact</option>
-                <option value="kit">ConvertKit / Kit</option>
+                <option value="kit">Kit</option>
                 <option value="flodesk">Flodesk</option>
                 <option value="getresponse">GetResponse</option>
                 <option value="hubspot">HubSpot</option>
@@ -342,7 +342,7 @@ const SETUP_DATA = {
     ]
   },
   kit: {
-    name: 'ConvertKit / Kit',
+    name: 'Kit',
     time: '1-2 hours',
     difficulty: 'easy',
     trialUrl: 'https://kit.com',
@@ -583,7 +583,7 @@ const SETUP_DATA = {
     ]
   },
   marketo: {
-    name: 'Adobe Marketo', time: 'Weeks to months', difficulty: 'hard',
+    name: 'Marketo', time: 'Weeks to months', difficulty: 'hard',
     trialUrl: 'https://business.adobe.com/products/marketo', trialLabel: 'Contact Marketo sales', affiliate: false,
     staticPage: '/setup-marketo.html',
     steps: [
@@ -597,7 +597,7 @@ const SETUP_DATA = {
     ]
   },
   eloqua: {
-    name: 'Oracle Eloqua', time: 'Weeks to months', difficulty: 'hard',
+    name: 'Eloqua', time: 'Weeks to months', difficulty: 'hard',
     trialUrl: 'https://www.oracle.com/cx/marketing/automation', trialLabel: 'Contact Oracle sales', affiliate: false,
     staticPage: '/setup-eloqua.html',
     steps: [
@@ -611,7 +611,7 @@ const SETUP_DATA = {
     ]
   },
   pardot: {
-    name: 'Pardot (Salesforce)', time: '2-5 days', difficulty: 'hard',
+    name: 'Pardot', time: '2-5 days', difficulty: 'hard',
     trialUrl: 'https://www.salesforce.com/products/marketing-cloud/marketing-automation', trialLabel: 'Contact Salesforce sales', affiliate: false,
     staticPage: '/setup-pardot.html',
     steps: [
@@ -664,7 +664,7 @@ const TOOL_DATA = {
   mailerlite:     { name: 'MailerLite',        exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: true },
   moosend:        { name: 'Moosend',           exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },
   getresponse:    { name: 'GetResponse',       exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },
-  kit:            { name: 'ConvertKit / Kit',  exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: false },
+  kit:            { name: 'Kit',  exportEasy: true,  automationComplex: 'low',    hasCRM: false, hasCustomFields: false },
   hubspot:        { name: 'HubSpot',           exportEasy: true,  automationComplex: 'high',   hasCRM: true,  hasCustomFields: true },
   brevo:          { name: 'Brevo',             exportEasy: true,  automationComplex: 'medium', hasCRM: true,  hasCustomFields: true },
   omnisend:       { name: 'Omnisend',          exportEasy: true,  automationComplex: 'medium', hasCRM: false, hasCustomFields: true },

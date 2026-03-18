@@ -133,7 +133,7 @@ const THIS_ARTICLE_URL = window.location.pathname;
 const ALL_ARTICLES = [
   { title: "Iterable Review 2026", url: "/review-iterable.html", tools: ["iterable"], status: "live" },
 ];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",aweber:"AWeber",campaignmonitor:"Campaign Monitor",constantcontact:"Constant Contact",flodesk:"Flodesk",keap:"Keap",zoho:"Zoho Campaigns",dotdigital:"Dotdigital",iterable:"Iterable",ortto:"Ortto",hubspotenterprise:"HubSpot Enterprise",salesforce:"Salesforce Marketing Cloud",marketo:"Adobe Marketo",eloqua:"Oracle Eloqua",pardot:"Pardot",dynamics365:"Microsoft Dynamics 365"};
+const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",aweber:"AWeber",campaignmonitor:"Campaign Monitor",constantcontact:"Constant Contact",flodesk:"Flodesk",keap:"Keap",zoho:"Zoho Campaigns",dotdigital:"Dotdigital",iterable:"Iterable",ortto:"Ortto",hubspotenterprise:"HubSpot Enterprise",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics365:"Microsoft Dynamics 365"};
 function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;

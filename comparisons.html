@@ -147,9 +147,13 @@
           <div class="picker-label">First tool</div>
           <select class="tool-select" id="tool-a">
             <option value="">Select a tool...</option>
+            <option value="activecampaign">ActiveCampaign</option>
+            <option value="aweber">AWeber</option>
             <option value="brevo">Brevo</option>
             <option value="campaignmonitor">Campaign Monitor</option>
-            <option value="kit">ConvertKit / Kit</option>
+            <option value="kit">Kit</option>
+            <option value="constantcontact">Constant Contact</option>
+            <option value="flodesk">Flodesk</option>
             <option value="getresponse">GetResponse</option>
             <option value="hubspot">HubSpot</option>
             <option value="keap">Keap</option>
@@ -159,7 +163,6 @@
             <option value="moosend">Moosend</option>
             <option value="omnisend">Omnisend</option>
             <option value="zoho">Zoho Campaigns</option>
-            <option value="activecampaign">ActiveCampaign</option>
           </select>
         </div>
         <div class="vs-divider">vs</div>
@@ -167,9 +170,13 @@
           <div class="picker-label">Second tool</div>
           <select class="tool-select" id="tool-b">
             <option value="">Select a tool...</option>
+            <option value="activecampaign">ActiveCampaign</option>
+            <option value="aweber">AWeber</option>
             <option value="brevo">Brevo</option>
             <option value="campaignmonitor">Campaign Monitor</option>
-            <option value="kit">ConvertKit / Kit</option>
+            <option value="kit">Kit</option>
+            <option value="constantcontact">Constant Contact</option>
+            <option value="flodesk">Flodesk</option>
             <option value="getresponse">GetResponse</option>
             <option value="hubspot">HubSpot</option>
             <option value="keap">Keap</option>
@@ -179,7 +186,6 @@
             <option value="moosend">Moosend</option>
             <option value="omnisend">Omnisend</option>
             <option value="zoho">Zoho Campaigns</option>
-            <option value="activecampaign">ActiveCampaign</option>
           </select>
         </div>
         <div class="add-third-wrap" id="add-third-wrap">
@@ -409,7 +415,7 @@ const TOOLS = {
     notFor: ["You need deep CRM functionality - HubSpot or ActiveCampaign go further", "You just need basic email campaigns - MailerLite or Moosend are simpler and cheaper"]
   },
   kit: {
-    name: "ConvertKit / Kit",
+    name: "Kit",
     tagline: "Built for creators, bloggers, and solopreneurs who sell digital products",
     trialUrl: "https://kit.com",
     trialLabel: "Try Kit free",
@@ -774,18 +780,21 @@ function renderCell(val, bool) {
 }
 
 const TOOL_OPTIONS = `<option value="">Select a tool...</option>
-            <option value="moosend">Moosend</option>
             <option value="activecampaign">ActiveCampaign</option>
-            <option value="mailerlite">MailerLite</option>
-            <option value="mailchimp">Mailchimp</option>
-            <option value="getresponse">GetResponse</option>
-            <option value="kit">ConvertKit / Kit</option>
-            <option value="omnisend">Omnisend</option>
+            <option value="aweber">AWeber</option>
             <option value="brevo">Brevo</option>
-            <option value="hubspot">HubSpot</option>
-            <option value="klaviyo">Klaviyo</option>
             <option value="campaignmonitor">Campaign Monitor</option>
+            <option value="kit">Kit</option>
+            <option value="constantcontact">Constant Contact</option>
+            <option value="flodesk">Flodesk</option>
+            <option value="getresponse">GetResponse</option>
+            <option value="hubspot">HubSpot</option>
             <option value="keap">Keap</option>
+            <option value="klaviyo">Klaviyo</option>
+            <option value="mailchimp">Mailchimp</option>
+            <option value="mailerlite">MailerLite</option>
+            <option value="moosend">Moosend</option>
+            <option value="omnisend">Omnisend</option>
             <option value="zoho">Zoho Campaigns</option>`;
 
 function addThirdTool() {
