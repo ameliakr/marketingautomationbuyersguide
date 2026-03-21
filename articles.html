@@ -131,16 +131,21 @@
         <div class="filter-group">
           <span class="filter-group-label">Tool</span>
           <div class="filter-pills">
-            <span class="fpill" data-filter="tool" data-value="moosend" onclick="toggleFilter(this)">Moosend</span>
             <span class="fpill" data-filter="tool" data-value="activecampaign" onclick="toggleFilter(this)">ActiveCampaign</span>
-            <span class="fpill" data-filter="tool" data-value="mailerlite" onclick="toggleFilter(this)">MailerLite</span>
-            <span class="fpill" data-filter="tool" data-value="mailchimp" onclick="toggleFilter(this)">Mailchimp</span>
-            <span class="fpill" data-filter="tool" data-value="hubspot" onclick="toggleFilter(this)">HubSpot</span>
-            <span class="fpill" data-filter="tool" data-value="getresponse" onclick="toggleFilter(this)">GetResponse</span>
+            <span class="fpill" data-filter="tool" data-value="aweber" onclick="toggleFilter(this)">AWeber</span>
             <span class="fpill" data-filter="tool" data-value="brevo" onclick="toggleFilter(this)">Brevo</span>
-            <span class="fpill" data-filter="tool" data-value="omnisend" onclick="toggleFilter(this)">Omnisend</span>
+            <span class="fpill" data-filter="tool" data-value="campaignmonitor" onclick="toggleFilter(this)">Campaign Monitor</span>
+            <span class="fpill" data-filter="tool" data-value="constantcontact" onclick="toggleFilter(this)">Constant Contact</span>
+            <span class="fpill" data-filter="tool" data-value="flodesk" onclick="toggleFilter(this)">Flodesk</span>
+            <span class="fpill" data-filter="tool" data-value="getresponse" onclick="toggleFilter(this)">GetResponse</span>
+            <span class="fpill" data-filter="tool" data-value="hubspot" onclick="toggleFilter(this)">HubSpot</span>
+            <span class="fpill" data-filter="tool" data-value="keap" onclick="toggleFilter(this)">Keap</span>
             <span class="fpill" data-filter="tool" data-value="kit" onclick="toggleFilter(this)">Kit</span>
             <span class="fpill" data-filter="tool" data-value="klaviyo" onclick="toggleFilter(this)">Klaviyo</span>
+            <span class="fpill" data-filter="tool" data-value="mailchimp" onclick="toggleFilter(this)">Mailchimp</span>
+            <span class="fpill" data-filter="tool" data-value="mailerlite" onclick="toggleFilter(this)">MailerLite</span>
+            <span class="fpill" data-filter="tool" data-value="moosend" onclick="toggleFilter(this)">Moosend</span>
+            <span class="fpill" data-filter="tool" data-value="omnisend" onclick="toggleFilter(this)">Omnisend</span>
           </div>
         </div>
 
@@ -690,7 +695,7 @@ const ARTICLES = [ // type: comparison | review | migration
   {title:"How to Migrate from AWeber to Mailchimp",url:"/migration-aweber-to-mailchimp.html",tools:["aweber","mailchimp"],size:["smb"],topics:["migration"],pricing:["hasfree"],status:"live"},
 
   { title: "Mailchimp vs ActiveCampaign 2026: The Most Popular vs The Most Powerful", url: "/comparison-mailchimp-vs-activecampaign.html", type: "comparison", tools: ["mailchimp", "activecampaign"], size: "SMB", topics: ["Automation"], pricing: "Mid", updated: "March 2026" },
-  { title: "Mailchimp vs Brevo 2026: Free Plan vs Free Plan — Which Is Actually Better?", url: "/comparison-mailchimp-vs-brevo.html", type: "comparison", tools: ["mailchimp", "brevo"], size: "SMB", topics: ["Free plan"], pricing: "Low", updated: "March 2026" },
+  { title: "Mailchimp vs Brevo 2026: Free Plan vs Free Plan: Which Is Actually Better?", url: "/comparison-mailchimp-vs-brevo.html", type: "comparison", tools: ["mailchimp", "brevo"], size: "SMB", topics: ["Free plan"], pricing: "Low", updated: "March 2026" },
   { title: "Mailchimp vs Constant Contact 2026: Two Longtime Email Marketing Standards Compared", url: "/comparison-mailchimp-vs-constantcontact.html", type: "comparison", tools: ["mailchimp", "constantcontact"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
   { title: "Mailchimp vs GetResponse 2026: Email Marketing vs All-in-One Platform", url: "/comparison-mailchimp-vs-getresponse.html", type: "comparison", tools: ["mailchimp", "getresponse"], size: "SMB", topics: ["Comparison"], pricing: "Low", updated: "March 2026" },
   { title: "Mailchimp vs HubSpot 2026: Email Marketing Tool vs Full CRM Suite", url: "/comparison-mailchimp-vs-hubspot.html", type: "comparison", tools: ["mailchimp", "hubspot"], size: "SMB", topics: ["CRM"], pricing: "Mid", updated: "March 2026" },
@@ -788,8 +793,13 @@ function applyFilters() {
     const articleType = getArticleType(article);
 
     // Search
-    if (query && !article.title.toLowerCase().includes(query) && !article.tools.some(t => t.includes(query))) {
-      show = false;
+    if (query) {
+      const titleMatch = article.title.toLowerCase().includes(query);
+      const toolKeyMatch = article.tools.some(t => t.includes(query));
+      const toolLabelMatch = article.tools.some(t => (TOOL_LABELS[t] || t).toLowerCase().includes(query));
+      const urlMatch = article.url.toLowerCase().includes(query);
+      const typeMatch = articleType.toLowerCase().includes(query);
+      if (!titleMatch && !toolKeyMatch && !toolLabelMatch && !urlMatch && !typeMatch) show = false;
     }
     // Type filter
     if (active.type && active.type.length > 0 && !active.type.includes(articleType)) show = false;
@@ -811,7 +821,7 @@ function applyFilters() {
 }
 
 // ── RENDER ARTICLES ───────────────────────────────────────────────────────────
-const TOOL_LABELS = { moosend: 'Moosend', activecampaign: 'ActiveCampaign', mailerlite: 'MailerLite', mailchimp: 'Mailchimp', hubspot: 'HubSpot', getresponse: 'GetResponse', brevo: 'Brevo', omnisend: 'Omnisend', kit: 'Kit', klaviyo: 'Klaviyo' };
+const TOOL_LABELS = { activecampaign: 'ActiveCampaign', aweber: 'AWeber', brevo: 'Brevo', campaignmonitor: 'Campaign Monitor', constantcontact: 'Constant Contact', flodesk: 'Flodesk', getresponse: 'GetResponse', hubspot: 'HubSpot', keap: 'Keap', kit: 'Kit', klaviyo: 'Klaviyo', mailchimp: 'Mailchimp', mailerlite: 'MailerLite', moosend: 'Moosend', omnisend: 'Omnisend' };
 const SIZE_LABELS = { smb: 'SMB', midmarket: 'Mid-market', enterprise: 'Enterprise' };
 const TOPIC_LABELS = { automation: 'Automation', ecommerce: 'E-commerce', crm: 'CRM', ease: 'Ease of use', migration: 'Migration' };
 const PRICING_LABELS = { hasfree: 'Free plan', under15: 'Under $15/mo', freetrial: 'Free trial' };

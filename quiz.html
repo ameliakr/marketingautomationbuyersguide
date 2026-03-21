@@ -100,9 +100,9 @@
 .runner-up-cta:hover { text-decoration: underline; }
 
 /* Avoid -->
-.avoid-section { border-top: 1px solid var(--rule); padding-top: 24px; margin-bottom: 28px; }
+.avoid-section { border: 1px solid var(--rule); padding: 22px; margin-bottom: 28px; }
 .avoid-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-.avoid-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; }
+.avoid-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; font-family: 'DM Sans', sans-serif; }
 .avoid-item:last-child { margin-bottom: 0; }
 .avoid-name { font-weight: 500; flex-shrink: 0; }
 .avoid-reason { color: var(--muted); }
@@ -120,7 +120,7 @@
 
 /* Retake -->
 .retake-wrap { text-align: center; padding-top: 16px; padding-bottom: 8px; }
-.retake-btn { font-size: 13px; color: var(--muted); cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0; }
+.retake-btn { font-size: 13px; color: var(--accent); cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0; }
 .retake-btn:hover { color: var(--ink); }
 .useful-links-section { border-top: 1px solid var(--rule); padding-top: 32px; }
 .useful-links-section .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
@@ -804,7 +804,7 @@ function showResults() {
     ${avoidList.length > 0 ? `
     <div class="avoid-section">
       <div class="avoid-title">Tools to skip for your situation</div>
-      ${avoidList.map(a => `<div class="avoid-item"><span class="avoid-name">${TOOLS[a.key] ? TOOLS[a.key].name : a.key}</span><span style="color:var(--rule);flex-shrink:0;">—</span><span class="avoid-reason">${a.reason}</span></div>`).join('')}
+      ${avoidList.map(a => `<div class="avoid-item"><span class="avoid-name">${TOOLS[a.key] ? TOOLS[a.key].name : a.key}</span><span style="color:var(--rule);flex-shrink:0;">|</span><span class="avoid-reason">${a.reason}</span></div>`).join('')}
     </div>` : ''}
 
     <div class="useful-links">

@@ -85,6 +85,7 @@
   .estimator-pickers { grid-template-columns: 1fr; }
   .arrow-divider { display: none; }
   .estimate-grid { grid-template-columns: 1fr; }
+  .guide-toggle { flex-direction: column; max-width: 100%; }
 }
 </style>
 </head>
@@ -350,7 +351,7 @@ const SETUP_DATA = {
     affiliate: false,
     staticPage: '/setup-kit.html',
     steps: [
-      { num: 1, title: 'Create your account', desc: 'Sign up at kit.com — free plan available.', time: '5-10 min' },
+      { num: 1, title: 'Create your account', desc: 'Sign up at kit.com: free plan available.', time: '5-10 min' },
       { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to verify your domain.', time: '15-20 min' },
       { num: 3, title: 'Import your subscribers', desc: 'Upload your list and apply tags.', time: '10-20 min' },
       { num: 4, title: 'Create a form or landing page', desc: 'Build a signup form or landing page to grow your list.', time: '15-30 min' },
@@ -367,7 +368,7 @@ const SETUP_DATA = {
     affiliate: false,
     staticPage: '/setup-klaviyo.html',
     steps: [
-      { num: 1, title: 'Create your account', desc: 'Sign up at klaviyo.com — free up to 250 contacts.', time: '5-10 min' },
+      { num: 1, title: 'Create your account', desc: 'Sign up at klaviyo.com: free up to 250 contacts.', time: '5-10 min' },
       { num: 2, title: 'Connect your store', desc: 'Integrate Shopify, WooCommerce, or your e-commerce platform.', time: '15-30 min' },
       { num: 3, title: 'Authenticate your sending domain', desc: 'Set up DKIM and configure your sending domain.', time: '15-20 min' },
       { num: 4, title: 'Import your contacts', desc: 'Upload your list or sync from your connected store.', time: '10-20 min' },
@@ -385,7 +386,7 @@ const SETUP_DATA = {
     affiliate: false,
     staticPage: '/setup-mailchimp.html',
     steps: [
-      { num: 1, title: 'Create your account', desc: 'Sign up at mailchimp.com — free plan available.', time: '5-10 min' },
+      { num: 1, title: 'Create your account', desc: 'Sign up at mailchimp.com: free plan available.', time: '5-10 min' },
       { num: 2, title: 'Authenticate your sending domain', desc: 'Verify your domain by adding DNS records.', time: '15-20 min' },
       { num: 3, title: 'Create an audience', desc: 'Set up your main contact list (called an Audience in Mailchimp).', time: '5-10 min' },
       { num: 4, title: 'Import your contacts', desc: 'Upload your CSV to your Audience.', time: '10-20 min' },
