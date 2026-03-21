@@ -37,9 +37,9 @@
 .results-count { font-size: 12px; color: var(--muted); }
 .results-count span { font-weight: 500; color: var(--ink); }
 .results-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; font-style: italic; max-width: 750px; margin-left: auto; margin-right: auto; }
-.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: white; border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); max-width: 750px; margin-left: auto; margin-right: auto; }
-.tools-grid .tool-card:nth-child(3n) { border-right: none; }
-.tool-card { background: white; padding: 0; display: grid; grid-template-rows: subgrid; grid-row: span 6; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
+.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: white; max-width: 750px; margin-left: auto; margin-right: auto; }
+.tool-card { background: white; padding: 0; display: grid; grid-template-rows: subgrid; grid-row: span 6; border-top: 1px solid var(--rule); border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); box-sizing: border-box; transition: background 0.15s; }
+.tool-card:nth-child(3n+1) { border-left: 1px solid var(--rule); }
 .tool-card:hover { background: #fafaf8; }
 .tool-card.hidden { display: none; }
 .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 24px 24px 0; }
