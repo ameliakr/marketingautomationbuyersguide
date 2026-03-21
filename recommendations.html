@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Marketing Automation Tool: 6-Question Recommendation Quiz</title>
+<meta name="description" content="Answer 6 questions and get a personalized marketing automation tool recommendation, with a full explanation of why it's right for your business.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
+  <meta property="og:url" content="https://www.marketingautomationbuyersguide.com/recommendations.html">
+  <meta property="og:title" content="Which Marketing Automation Tool Is Right for You?">
+  <meta property="og:description" content="Answer 6 questions. Get a personalized recommendation for your business type, budget, and needs.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Which Marketing Automation Tool Is Right for You?">
+  <meta name="twitter:description" content="Answer 6 questions. Get a personalized recommendation for your business type, budget, and needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+/* ── QUIZ SHELL ── */
+.quiz-shell { max-width: 750px; margin: 0 auto; }
+
+/* ── PROGRESS ── */
+.progress-wrap { margin-bottom: 40px; }
+.progress-bar-bg { height: 3px; background: var(--rule); }
+.progress-bar-fill { height: 3px; background: var(--accent); transition: width 0.4s ease; }
+.progress-label { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+/* ── QUESTION ── */
+.question-block { display: none; }
+.question-block.active { display: block; animation: fadeUp 0.3s ease; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+.q-number { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.q-title { font-family: 'DM Serif Display', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 400; line-height: 1.2; margin-bottom: 8px; }
+.q-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+
+/* ── ANSWER OPTIONS ── */
+.options-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.option { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; border: 1px solid var(--rule); cursor: pointer; transition: all 0.15s; user-select: none; }
+.option:hover { border-color: var(--ink); background: #fafaf8; }
+.option.selected { border-color: var(--accent); background: #f1f8f1; }
+.option.selected .option-check { background: var(--accent); border-color: var(--accent); color: white; }
+.option-check { width: 20px; height: 20px; border: 1px solid var(--rule); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; margin-top: 1px; transition: all 0.15s; }
+.option-text { flex: 1; }
+.option-label { font-size: 15px; font-weight: 400; display: block; margin-bottom: 2px; }
+.option-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* Multi-select note */
+.multi-note { font-size: 12px; color: var(--muted); margin-bottom: 16px; font-style: italic; }
+
+/* ── NAV BUTTONS ── */
+.q-nav { display: flex; justify-content: space-between; align-items: center; }
+.btn-back { font-size: 13px; color: var(--muted); cursor: pointer; background: none; border: none; font-family: 'DM Sans', sans-serif; padding: 0; transition: color 0.15s; }
+.btn-back:hover { color: var(--ink); }
+.btn-next { padding: 12px 28px; background: var(--ink); color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border: none; cursor: pointer; transition: opacity 0.15s; }
+.btn-next:hover { opacity: 0.8; }
+.btn-next:disabled { opacity: 0.3; cursor: not-allowed; }
+.btn-next.green { background: var(--accent); }
+
+/* ── RESULTS ── */
+.results-block { display: none; }
+.results-block.active { display: block; animation: fadeUp 0.4s ease; }
+
+.results-header { margin-bottom: 40px; }
+.results-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.results-title { font-family: 'DM Serif Display', serif; font-size: clamp(24px, 4vw, 36px); font-weight: 400; line-height: 1.2; margin-bottom: 14px; }
+.results-title em { font-style: italic; color: var(--accent); }
+.results-summary { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* Primary recommendation */
+.primary-rec { border: 2px solid var(--ink); padding: 28px; margin-bottom: 20px; }
+.rec-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.rec-name { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 400; margin-bottom: 8px; }
+.rec-tagline { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.6; }
+.rec-why { margin-bottom: 20px; }
+.rec-why-title { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.rec-why-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.rec-why-list li { font-size: 14px; line-height: 1.5; padding-left: 18px; position: relative; }
+.rec-why-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 1px; }
+.rec-pricing { font-size: 13px; color: var(--muted); margin-bottom: 20px; display: flex; gap: 16px; flex-wrap: wrap; }
+.rec-pricing span { display: flex; align-items: center; gap: 5px; }
+.rec-cta-wrap { display: flex; flex-direction: column; gap: 6px; }
+.rec-cta-primary { display: inline-block; padding: 12px 24px; background: var(--accent); color: white; font-size: 14px; font-weight: 500; transition: opacity 0.15s; align-self: flex-start; }
+.rec-cta-primary:hover { opacity: 0.85; }
+.rec-cta-secondary { font-size: 12px; color: var(--muted); }
+.rec-cta-secondary a { color: var(--accent); text-decoration: underline; }
+.rec-affiliate { font-size: 10px; color: var(--muted); font-style: italic; }
+
+/* Runner-up */
+.runner-up { border: 1px solid var(--rule); padding: 22px; margin-bottom: 20px; }
+.runner-up-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.runner-up-name { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+.runner-up-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+.runner-up-diff { font-size: 13px; margin-bottom: 16px; line-height: 1.6; }
+.runner-up-diff strong { font-weight: 500; }
+.runner-up-cta { font-size: 13px; font-weight: 500; color: var(--accent); }
+.runner-up-cta:hover { text-decoration: underline; }
+
+/* Avoid -->
+.avoid-section { border: 1px solid var(--rule); padding: 22px; margin-bottom: 28px; }
+.avoid-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.avoid-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; font-family: 'DM Sans', sans-serif; }
+.avoid-item:last-child { margin-bottom: 0; }
+.avoid-name { font-weight: 500; flex-shrink: 0; }
+.avoid-reason { color: var(--muted); }
+
+/* Useful links */
+.useful-links { border-top: 1px solid var(--rule); padding-top: 24px; margin-bottom: 16px; }
+.useful-links-title { font-size: 13px; font-weight: 500; margin-bottom: 14px; }
+.link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.link-row:last-child { border-bottom: none; }
+.link-label { color: var(--muted); }
+.link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+.link-url:hover { text-decoration: underline; }
+.link-url { color: var(--accent); font-weight: 500; }
+.link-url:hover { text-decoration: underline; }
+
+/* Retake -->
+.retake-wrap { text-align: center; padding-top: 16px; padding-bottom: 8px; }
+.retake-btn { font-size: 13px; color: var(--accent); cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0; }
+.retake-btn:hover { color: var(--ink); }
+.useful-links-section { border-top: 1px solid var(--rule); padding-top: 32px; }
+.useful-links-section .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-links-section .useful-link-label { color: var(--muted); }
+.useful-links-section .useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-links-section .useful-link-url:hover { text-decoration: underline; }
+.useful-links-section-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 24px; }
+
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="/">Marketing Automation Buyer's Guide</a>
+    <nav class="nav-links">
+      <a href="/all-tools.html">Tools</a>
+      <a href="/comparisons.html">Comparisons</a>
+      <a href="/recommendations.html">Recommendations</a>
+      <a href="/guides.html">Guides</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/articles.html">Articles</a>
+    </nav>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-nav">
+    <a href="/all-tools.html">Tools</a>
+    <a href="/comparisons.html">Comparisons</a>
+    <a href="/recommendations.html">Recommendations</a>
+    <a href="/guides.html">Guides</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/articles.html">Articles</a>
+  </div>
+</header>
+
+<main class="page-body">
+<div class="quiz-shell">
+
+  <div class="hero" style="margin-bottom: 40px;">
+    <h1>Find the right marketing automation tool</h1>
+    <p class="hero-sub">Not sure which marketing automation platform is right for you? Answer six questions and get a free personalized recommendation. No email required.</p>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap" id="progress-wrap">
+    <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="progress-label" id="progress-label">Question 1 of 6</div>
+  </div>
+
+  <!-- Q1: Business type -->
+  <div class="question-block active" id="q1">
+    <div class="q-title">What kind of business are you?</div>
+    <div class="q-sub">This is the most important question. The right tool depends heavily on your business model.</div>
+    <div class="options-list">
+      <div class="option" data-q="1" data-v="creator" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Blogger, creator, or newsletter</span><span class="option-desc">You publish content, grow an audience, and may sell courses, digital products, or memberships.</span></div>
+      </div>
+      <div class="option" data-q="1" data-v="ecommerce" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">E-commerce store</span><span class="option-desc">You sell physical or digital products online, likely through Shopify, WooCommerce, or similar.</span></div>
+      </div>
+      <div class="option" data-q="1" data-v="service" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Service business or agency</span><span class="option-desc">You sell services, manage client relationships, and follow up with leads or prospects.</span></div>
+      </div>
+      <div class="option" data-q="1" data-v="b2b" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">B2B company or SaaS product</span><span class="option-desc">You have a longer sales cycle, multiple stakeholders, and need to nurture leads over time.</span></div>
+      </div>
+      <div class="option" data-q="1" data-v="unsure" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Not sure yet, just getting started</span><span class="option-desc">You're exploring your options and want a clear overview before committing.</span></div>
+      </div>
+    </div>
+    <div class="q-nav">
+      <span></span>
+      <button class="btn-next" id="q1-next" disabled onclick="nextQ(1)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q2: List size -->
+  <div class="question-block" id="q2">
+    <div class="q-title">How big is your contact list right now?</div>
+    <div class="q-sub">This determines whether free plans are an option and which pricing tier makes sense for you.</div>
+    <div class="options-list">
+      <div class="option" data-q="2" data-v="none" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">I don't have one yet</span><span class="option-desc">You're starting from zero.</span></div>
+      </div>
+      <div class="option" data-q="2" data-v="tiny" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Under 1,000 contacts</span><span class="option-desc">A small but growing list.</span></div>
+      </div>
+      <div class="option" data-q="2" data-v="small" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">1,000 to 10,000 contacts</span><span class="option-desc">A meaningful list that's starting to require real management.</span></div>
+      </div>
+      <div class="option" data-q="2" data-v="medium" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">10,000 to 50,000 contacts</span><span class="option-desc">A mature list that needs solid segmentation and automation.</span></div>
+      </div>
+      <div class="option" data-q="2" data-v="large" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Over 50,000 contacts</span><span class="option-desc">A large list where pricing and deliverability become critical factors.</span></div>
+      </div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="backQ(2)">← Back</button>
+      <button class="btn-next" id="q2-next" disabled onclick="nextQ(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q3: Automation needs -->
+  <div class="question-block" id="q3">
+    <div class="q-title">What do you need to do with your list?</div>
+    <div class="q-sub">Be honest here. Choosing a tool that's more powerful than you need means paying for features you'll never use.</div>
+    <div class="options-list">
+      <div class="option" data-q="3" data-v="basic" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Send newsletters and basic campaigns</span><span class="option-desc">Broadcast emails to your list. Maybe a simple welcome sequence. That's it.</span></div>
+      </div>
+      <div class="option" data-q="3" data-v="sequences" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Set up automated sequences</span><span class="option-desc">Welcome series, onboarding flows, follow-ups triggered by sign-up or purchase.</span></div>
+      </div>
+      <div class="option" data-q="3" data-v="complex" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Run complex, behavior-based automations</span><span class="option-desc">Multi-step flows that branch based on what contacts do, don't do, buy, or click.</span></div>
+      </div>
+      <div class="option" data-q="3" data-v="crm" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Full CRM with email built in</span><span class="option-desc">You need deal pipelines, contact records, sales tracking, and marketing automation all in one place.</span></div>
+      </div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="backQ(3)">← Back</button>
+      <button class="btn-next" id="q3-next" disabled onclick="nextQ(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q4: Budget -->
+  <div class="question-block" id="q4">
+    <div class="q-title">What's your monthly budget for this tool?</div>
+    <div class="q-sub">Be realistic. The best tool for you is the one you'll actually use, not the most expensive one.</div>
+    <div class="options-list">
+      <div class="option" data-q="4" data-v="free" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Free only, for now</span><span class="option-desc">I need something that works before I commit to paying.</span></div>
+      </div>
+      <div class="option" data-q="4" data-v="low" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Under $20/mo</span><span class="option-desc">I'm happy to pay but need to keep costs tight.</span></div>
+      </div>
+      <div class="option" data-q="4" data-v="mid" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">$20 to $100/mo</span><span class="option-desc">I'll pay for the right tool if it saves me time and drives results.</span></div>
+      </div>
+      <div class="option" data-q="4" data-v="high" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">$100 to $500/mo</span><span class="option-desc">This is a real investment and I need a platform that scales with me.</span></div>
+      </div>
+      <div class="option" data-q="4" data-v="enterprise" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Over $500/mo</span><span class="option-desc">Budget is not the primary concern. I need the right tool for a complex operation.</span></div>
+      </div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="backQ(4)">← Back</button>
+      <button class="btn-next" id="q4-next" disabled onclick="nextQ(4)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q5: Must-haves (multi-select) -->
+  <div class="question-block" id="q5">
+    <div class="q-title">Do you need any of these?</div>
+    <div class="q-sub">Select everything that applies. Leave blank if none of these are important to you.</div>
+    <div class="multi-note">Select all that apply, or skip if none apply.</div>
+    <div class="options-list" id="q5-options">
+      <div class="option multi" data-q="5" data-v="sms" onclick="toggleMulti(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">SMS marketing</span><span class="option-desc">Sending text messages to subscribers in addition to email.</span></div>
+      </div>
+      <div class="option multi" data-q="5" data-v="landing" onclick="toggleMulti(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Landing pages</span><span class="option-desc">Building standalone pages to capture leads or promote offers.</span></div>
+      </div>
+      <div class="option multi" data-q="5" data-v="ecommerce" onclick="toggleMulti(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">E-commerce integrations</span><span class="option-desc">Connecting to Shopify or WooCommerce for abandoned cart, purchase triggers, etc.</span></div>
+      </div>
+      <div class="option multi" data-q="5" data-v="webinars" onclick="toggleMulti(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Webinars</span><span class="option-desc">Running online events directly through the platform.</span></div>
+      </div>
+      <div class="option multi" data-q="5" data-v="crm" onclick="toggleMulti(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">CRM / deal pipeline</span><span class="option-desc">Tracking deals, contacts, and sales stages inside the tool.</span></div>
+      </div>
+      <div class="option multi" data-q="5" data-v="abm" onclick="toggleMulti(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">Account-based marketing</span><span class="option-desc">Targeting and managing campaigns at the company level, not just individual contacts.</span></div>
+      </div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="backQ(5)">← Back</button>
+      <button class="btn-next green" id="q5-next" onclick="nextQ(5)">Next →</button>
+    </div>
+  </div>
+
+  <!-- Q6: Technical comfort -->
+  <div class="question-block" id="q6">
+    <div class="q-title">How technical are you?</div>
+    <div class="q-sub">There's no wrong answer. Some tools are worth the learning curve; others aren't.</div>
+    <div class="options-list">
+      <div class="option" data-q="6" data-v="easy" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">I want something I can set up in an afternoon</span><span class="option-desc">Simplicity matters more to me than advanced features.</span></div>
+      </div>
+      <div class="option" data-q="6" data-v="medium" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">I'm comfortable with some complexity</span><span class="option-desc">I can handle a learning curve if the features justify it.</span></div>
+      </div>
+      <div class="option" data-q="6" data-v="technical" onclick="selectOption(this)">
+        <div class="option-check"></div>
+        <div class="option-text"><span class="option-label">I have a developer or ops person who can help</span><span class="option-desc">Technical setup is not a concern. I care more about power and flexibility.</span></div>
+      </div>
+    </div>
+    <div class="q-nav">
+      <button class="btn-back" onclick="backQ(6)">← Back</button>
+      <button class="btn-next green" id="q6-next" disabled onclick="showResults()">See my recommendation →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-block" id="results"></div>
+
+</div>
+
+
+
+      </form>
+    </div>
+  </div>
+</div>
+      </div>
+    
+
+  <div class="useful-links-section" style="max-width: 750px; margin: 48px auto 0;"><div class="useful-links-section-title">Useful next steps</div>
+    <div class="useful-link-row"><span class="useful-link-label">Compare two tools side by side</span><a class="useful-link-url" href="/comparisons.html">Go to comparisons →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Compare pricing across all platforms</span><a class="useful-link-url" href="/pricing.html">Pricing calculator →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Browse all tool reviews</span><a class="useful-link-url" href="/articles.html">View articles →</a></div>
+    <div class="useful-link-row"><span class="useful-link-label">Setting up or switching platforms?</span><a class="useful-link-url" href="/guides.html">Go to guides →</a></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
+    <div class="footer-links">
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
+      <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── ANSWERS STATE ─────────────────────────────────────────────────────────────
+const answers = { 1: null, 2: null, 3: null, 4: null, 5: [], 6: null };
+let currentQ = 1;
+const TOTAL_Q = 6;
+
+// ── TOOL DATABASE ─────────────────────────────────────────────────────────────
+const TOOLS = {
+  moosend: {
+    name: "Moosend",
+    tagline: "Affordable automation with a clean interface, good for growing lists on a budget",
+    why: [],
+    pricing: { free: false, trial: "30-day free trial", starting: "$9/mo" },
+    trialUrl: "https://trymoo.moosend.com/4e0kl2a449hd",
+    trialLabel: "Try Moosend free",
+    pricingUrl: "https://moosend.com/pricing",
+    reviewUrl: "/reviews/moosend.html",
+    affiliate: true,
+    features: { sms: false, landing: true, ecommerce: true, webinars: false, crm: false, abm: false, complex: true, basic: true },
+    budgets: ["low","mid"],
+    sizes: ["creator","ecommerce","service","unsure"],
+    listSizes: ["none","tiny","small","medium"],
+    techLevels: ["easy","medium"]
+  },
+  activecampaign: {
+    name: "ActiveCampaign",
+    tagline: "Powerful CRM and automation for businesses that need more than just email",
+    why: [],
+    pricing: { free: false, trial: "14-day free trial", starting: "$15/mo" },
+    trialUrl: "https://try.activecampaign.com/d1eqanrpv66o-rvs4jt",
+    trialLabel: "Try ActiveCampaign free",
+    pricingUrl: "https://try.activecampaign.com/9lravfc5vzsu",
+    reviewUrl: "/reviews/activecampaign.html",
+    affiliate: true,
+    features: { sms: true, landing: true, ecommerce: true, webinars: false, crm: true, abm: false, complex: true, basic: true },
+    budgets: ["low","mid","high"],
+    sizes: ["service","b2b","ecommerce","unsure"],
+    listSizes: ["tiny","small","medium","large"],
+    techLevels: ["medium","technical"]
+  },
+  mailerlite: {
+    name: "MailerLite",
+    tagline: "Simple, well-priced, and easy to learn, a solid choice for beginners and bloggers",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 1,000 subscribers", trial: "Free plan available", starting: "$9/mo" },
+    trialUrl: "https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite",
+    trialLabel: "Try MailerLite free",
+    pricingUrl: "https://www.mailerlite.com/pricing",
+    affiliate: true,
+    features: { sms: false, landing: true, ecommerce: true, webinars: false, crm: false, abm: false, complex: false, basic: true },
+    budgets: ["free","low","mid"],
+    sizes: ["creator","service","unsure"],
+    listSizes: ["none","tiny","small"],
+    techLevels: ["easy","medium"]
+  },
+  mailchimp: {
+    name: "Mailchimp",
+    tagline: "The most recognized name in email marketing, good starting point for small businesses",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 500 contacts", trial: "Free plan available", starting: "$13/mo" },
+    trialUrl: "https://www.mailchimp.com",
+    trialLabel: "Try Mailchimp free",
+    pricingUrl: "https://www.mailchimp.com/pricing",
+    affiliate: false,
+    features: { sms: false, landing: true, ecommerce: true, webinars: false, crm: false, abm: false, complex: false, basic: true },
+    budgets: ["free","low"],
+    sizes: ["creator","service","ecommerce","unsure"],
+    listSizes: ["none","tiny"],
+    techLevels: ["easy"]
+  },
+  getresponse: {
+    name: "GetResponse",
+    tagline: "Email marketing plus landing pages and webinars in one platform",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 500 contacts", trial: "Free plan available", starting: "$15/mo" },
+    trialUrl: "https://try.getresponsetoday.com/wbg0pd66ibns",
+    trialLabel: "Try GetResponse free",
+    pricingUrl: "https://try.getresponsetoday.com/wbg0pd66ibns/pricing",
+    affiliate: false,
+    features: { sms: true, landing: true, ecommerce: true, webinars: true, crm: false, abm: false, complex: true, basic: true },
+    budgets: ["free","low","mid"],
+    sizes: ["creator","service","ecommerce"],
+    listSizes: ["none","tiny","small","medium"],
+    techLevels: ["easy","medium"]
+  },
+  kit: {
+    name: "Kit",
+    tagline: "Built for creators and bloggers who sell digital products",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 10,000 subscribers", trial: "Free plan available", starting: "$25/mo" },
+    trialUrl: "https://kit.com",
+    trialLabel: "Try Kit free",
+    pricingUrl: "https://kit.com/pricing",
+    affiliate: false,
+    features: { sms: false, landing: true, ecommerce: false, webinars: false, crm: false, abm: false, complex: false, basic: true },
+    budgets: ["free","low","mid"],
+    sizes: ["creator"],
+    listSizes: ["none","tiny","small","medium"],
+    techLevels: ["easy","medium"]
+  },
+  omnisend: {
+    name: "Omnisend",
+    tagline: "Email and SMS marketing designed specifically for e-commerce stores",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 250 contacts", trial: "Free plan available", starting: "$16/mo" },
+    trialUrl: "https://www.omnisend.com",
+    trialLabel: "Try Omnisend free",
+    pricingUrl: "https://www.omnisend.com/pricing",
+    affiliate: false,
+    features: { sms: true, landing: false, ecommerce: true, webinars: false, crm: false, abm: false, complex: true, basic: true },
+    budgets: ["free","low","mid"],
+    sizes: ["ecommerce"],
+    listSizes: ["none","tiny","small","medium"],
+    techLevels: ["easy","medium"]
+  },
+  brevo: {
+    name: "Brevo",
+    tagline: "Affordable all-in-one platform with email, SMS, and CRM, priced by sends, not contacts",
+    why: [],
+    pricing: { free: true, freeLimit: "unlimited contacts, 300 emails/day", trial: "Free plan available", starting: "$9/mo" },
+    trialUrl: "https://get.brevo.com/hjl3lwlukji3",
+    trialLabel: "Try Brevo free",
+    pricingUrl: "https://get.brevo.com/hjl3lwlukji3",
+    affiliate: false,
+    features: { sms: true, landing: true, ecommerce: true, webinars: false, crm: true, abm: false, complex: true, basic: true },
+    budgets: ["free","low","mid"],
+    sizes: ["service","b2b","ecommerce","creator","unsure"],
+    listSizes: ["none","tiny","small","medium","large"],
+    techLevels: ["easy","medium"]
+  },
+  hubspot: {
+    name: "HubSpot",
+    tagline: "The most complete platform on the market, free CRM that scales to enterprise",
+    why: [],
+    pricing: { free: true, freeLimit: "unlimited contacts, basic CRM", trial: "Free plan available", starting: "$15/mo per seat" },
+    trialUrl: "https://www.hubspot.com",
+    trialLabel: "Try HubSpot free",
+    pricingUrl: "https://www.hubspot.com/pricing/marketing",
+    affiliate: false,
+    features: { sms: true, landing: true, ecommerce: true, webinars: false, crm: true, abm: true, complex: true, basic: true },
+    budgets: ["free","low","mid","high","enterprise"],
+    sizes: ["service","b2b","ecommerce","unsure"],
+    listSizes: ["none","tiny","small","medium","large"],
+    techLevels: ["medium","technical"]
+  },
+  aweber: {
+    name: "AWeber",
+    tagline: "One of the oldest email platforms around. Reliable, well-supported, with 24/7 phone and chat support",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 500 subscribers", trial: "Free plan available", starting: "$15/mo" },
+    trialUrl: "https://www.aweber.com/easy-email.htm?id=560468",
+    trialLabel: "Try AWeber free",
+    pricingUrl: "https://www.aweber.com/pricing.htm?id=560468",
+    affiliate: true,
+    features: { sms: false, landing: true, ecommerce: false, webinars: false, crm: false, abm: false, complex: false, basic: true },
+    budgets: ["free","low"],
+    sizes: ["creator","service","unsure"],
+    listSizes: ["none","tiny","small","medium"],
+    techLevels: ["easy","medium"]
+  },
+  klaviyo: {
+    name: "Klaviyo",
+    tagline: "Best-in-class email and SMS for e-commerce brands serious about revenue",
+    why: [],
+    pricing: { free: true, freeLimit: "up to 250 contacts", trial: "Free plan available", starting: "~$20/mo" },
+    trialUrl: "https://www.klaviyo.com",
+    trialLabel: "Try Klaviyo free",
+    pricingUrl: "https://www.klaviyo.com/pricing",
+    affiliate: false,
+    features: { sms: true, landing: false, ecommerce: true, webinars: false, crm: false, abm: false, complex: true, basic: true },
+    budgets: ["low","mid","high"],
+    sizes: ["ecommerce"],
+    listSizes: ["tiny","small","medium","large"],
+    techLevels: ["medium","technical"]
+  },
+  keap: {
+    name: "Keap",
+    tagline: "CRM and automation built for service businesses with complex follow-up needs",
+    why: [],
+    pricing: { free: false, trial: "14-day free trial", starting: "$249/mo" },
+    trialUrl: "https://get.keap.com/dmnoq8ig61m7",
+    trialLabel: "Try Keap free",
+    pricingUrl: "https://get.keap.com/dmnoq8ig61m7/pricing",
+    affiliate: false,
+    features: { sms: true, landing: true, ecommerce: false, webinars: false, crm: true, abm: false, complex: true, basic: true },
+    budgets: ["high","enterprise"],
+    sizes: ["service"],
+    listSizes: ["tiny","small","medium"],
+    techLevels: ["medium","technical"]
+  },
+  campaignmonitor: {
+    name: "Campaign Monitor",
+    tagline: "Clean, design-focused email marketing with strong segmentation",
+    why: [],
+    pricing: { free: false, trial: "Free account (limited sends)", starting: "$11/mo" },
+    trialUrl: "https://www.campaignmonitor.com",
+    trialLabel: "Try Campaign Monitor",
+    pricingUrl: "https://www.campaignmonitor.com/pricing",
+    affiliate: false,
+    features: { sms: false, landing: true, ecommerce: true, webinars: false, crm: false, abm: false, complex: true, basic: true },
+    budgets: ["low","mid"],
+    sizes: ["service","creator"],
+    listSizes: ["tiny","small","medium"],
+    techLevels: ["easy","medium"]
+  },
+  salesforce: {
+    name: "Salesforce Marketing Cloud",
+    tagline: "Enterprise-grade omnichannel marketing for large teams with dedicated ops resources",
+    why: [],
+    pricing: { free: false, trial: "Demo available", starting: "Custom pricing" },
+    trialUrl: "https://www.salesforce.com/products/marketing-cloud",
+    trialLabel: "Request a demo",
+    pricingUrl: "https://www.salesforce.com/products/marketing-cloud/pricing",
+    affiliate: false,
+    features: { sms: true, landing: true, ecommerce: true, webinars: false, crm: true, abm: true, complex: true, basic: true },
+    budgets: ["enterprise"],
+    sizes: ["b2b","ecommerce"],
+    listSizes: ["large"],
+    techLevels: ["technical"]
+  },
+  marketo: {
+    name: "Marketo",
+    tagline: "The leading B2B marketing automation platform for complex, long sales cycles",
+    why: [],
+    pricing: { free: false, trial: "Demo available", starting: "Custom pricing" },
+    trialUrl: "https://www.marketo.com",
+    trialLabel: "Request a demo",
+    pricingUrl: "https://www.marketo.com/pricing",
+    affiliate: false,
+    features: { sms: false, landing: true, ecommerce: false, webinars: false, crm: true, abm: true, complex: true, basic: true },
+    budgets: ["enterprise"],
+    sizes: ["b2b"],
+    listSizes: ["medium","large"],
+    techLevels: ["technical"]
+  }
+};
+
+// ── SCORING LOGIC ─────────────────────────────────────────────────────────────
+function scoreTools() {
+  const a = answers;
+  const mustHaves = a[5];
+  const scores = {};
+
+  Object.entries(TOOLS).forEach(([key, tool]) => {
+    let score = 0;
+    const reasons = [];
+
+    // Business type match
+    if (tool.sizes.includes(a[1])) { score += 10; reasons.push(`Built for ${a[1] === 'creator' ? 'creators and bloggers' : a[1] === 'ecommerce' ? 'e-commerce businesses' : a[1] === 'service' ? 'service businesses' : a[1] === 'b2b' ? 'B2B companies' : 'businesses getting started'}`); }
+
+    // Budget match
+    if (tool.budgets.includes(a[4])) { score += 8; }
+    else if (a[4] === 'free' && !tool.pricing.free) { score -= 20; }
+
+    // List size match
+    if (tool.listSizes.includes(a[2])) { score += 6; }
+
+    // Automation needs
+    if (a[3] === 'basic' && tool.features.basic) { score += 5; }
+    if (a[3] === 'sequences' && tool.features.basic) { score += 5; }
+    if (a[3] === 'complex' && tool.features.complex) { score += 8; reasons.push('Supports complex, behavior-based automations'); }
+    if (a[3] === 'crm' && tool.features.crm) { score += 10; reasons.push('Has a built-in CRM'); }
+    if (a[3] === 'crm' && !tool.features.crm) { score -= 15; }
+
+    // Must-haves
+    mustHaves.forEach(f => {
+      if (tool.features[f]) { score += 7; reasons.push(`Includes ${f === 'sms' ? 'SMS marketing' : f === 'landing' ? 'landing pages' : f === 'ecommerce' ? 'e-commerce integrations' : f === 'webinars' ? 'webinars' : f === 'crm' ? 'CRM' : 'account-based marketing'}`); }
+      else { score -= 12; }
+    });
+
+    // Tech level
+    if (tool.techLevels.includes(a[6])) { score += 4; }
+    if (a[6] === 'easy' && !tool.techLevels.includes('easy')) { score -= 6; }
+
+    // Free plan bonus if budget is free/low
+    if ((a[4] === 'free' || a[4] === 'low') && tool.pricing.free) { score += 5; reasons.push('Has a free plan to get started'); }
+
+    scores[key] = { score, reasons: [...new Set(reasons)] };
+  });
+
+  return Object.entries(scores)
+    .sort((a, b) => b[1].score, a[1].score)
+    .map(([key, data]) => ({ key, tool: TOOLS[key], ...data }));
+}
+
+function getAvoidList(ranked) {
+  const avoidCandidates = [];
+
+  // If budget is free/low, flag expensive tools
+  if (answers[4] === 'free' || answers[4] === 'low') {
+    if (answers[1] !== 'b2b') avoidCandidates.push({ key: 'keap', reason: 'Starts at $249/mo, far more than most small businesses need.' });
+    avoidCandidates.push({ key: 'salesforce', reason: 'Enterprise pricing, not relevant unless you\'re managing a large team.' });
+  }
+
+  // If just basic email, flag overkill tools
+  if (answers[3] === 'basic') {
+    avoidCandidates.push({ key: 'activecampaign', reason: 'More automation power than you need right now, you\'d pay for features you won\'t use.' });
+    avoidCandidates.push({ key: 'hubspot', reason: 'The free plan works, but the full platform is overkill for simple email campaigns.' });
+  }
+
+  // If ecommerce, flag non-ecommerce tools
+  if (answers[1] === 'ecommerce' && answers[5].includes('ecommerce')) {
+    avoidCandidates.push({ key: 'kit', reason: 'Built for creators, not stores, lacks the e-commerce automation features you need.' });
+  }
+
+  // If creator, flag enterprise tools
+  if (answers[1] === 'creator') {
+    avoidCandidates.push({ key: 'marketo', reason: 'B2B enterprise platform, completely wrong fit for a creator business.' });
+    avoidCandidates.push({ key: 'keap', reason: 'Built for service businesses with complex CRM needs, not creator-focused.' });
+  }
+
+  // Return top 2 avoid candidates that aren't in top 3 recommendations
+  const top3keys = ranked.slice(0,3).map(r => r.key);
+  return avoidCandidates
+    .filter(a => !top3keys.includes(a.key))
+    .slice(0, 2);
+}
+
+function getUsefulLinks(primary, runnerup) {
+  const links = [];
+
+  // Pricing comparison link
+  links.push({ label: 'Compare all tools and pricing', url: '/pricing-plans.html' });
+
+  // Comparison article if exists
+  const articleMap = {
+    'moosend|mailerlite': '/comparisons/moosend-vs-mailerlite.html',
+    'mailerlite|moosend': '/comparisons/moosend-vs-mailerlite.html',
+    'activecampaign|hubspot': '/comparisons/activecampaign-vs-hubspot.html',
+    'hubspot|activecampaign': '/comparisons/activecampaign-vs-hubspot.html',
+    'activecampaign|mailerlite': '/comparisons/activecampaign-vs-mailerlite.html',
+    'mailerlite|activecampaign': '/comparisons/activecampaign-vs-mailerlite.html',
+  };
+  const pairKey = primary.key + '|' + runnerup.key;
+  if (articleMap[pairKey]) {
+    links.push({ label: `Read: ${primary.tool.name} vs ${runnerup.tool.name}, full comparison`, url: articleMap[pairKey] });
+  }
+
+  // Migration guide
+  links.push({ label: `Migration guides for ${primary.tool.name}`, url: '/migration-guides.html' });
+
+  // Compare builder
+  links.push({ label: `Use the comparison builder`, url: '/comparisons.html' });
+
+  return links;
+}
+
+// ── RENDER RESULTS ────────────────────────────────────────────────────────────
+function showResults() {
+  // Validate Q6
+  if (!answers[6]) return;
+
+  const ranked = scoreTools();
+  const primary = ranked[0];
+  const runnerup = ranked[1];
+  const avoidList = getAvoidList(ranked);
+  const links = getUsefulLinks(primary, runnerup);
+
+  const bizLabels = { creator: 'a blogger or creator', ecommerce: 'an e-commerce store', service: 'a service business', b2b: 'a B2B company', unsure: 'someone just getting started' };
+  const automationLabels = { basic: 'basic newsletters and campaigns', sequences: 'automated sequences', complex: 'complex behavior-based automation', crm: 'a full CRM with email' };
+
+  const primaryReasons = primary.reasons.length > 0 ? primary.reasons : [
+    `Strong match for your business type and budget`,
+    `Good fit for your list size and automation needs`,
+    `Right level of complexity for your technical comfort`
+  ];
+
+  let html = `
+    <div class="results-header">
+      <div class="results-label">Your recommendation</div>
+      <div class="results-title">Based on your answers,<br>we recommend <em>${primary.tool.name}.</em></div>
+      <div class="results-summary">You're ${bizLabels[answers[1]] || 'getting started'}, with a ${answers[2] === 'none' ? 'list to build' : answers[2] + ' contact list'}, looking for ${automationLabels[answers[3]] || 'email automation'}. Here's why ${primary.tool.name} fits best.</div>
+    </div>
+
+    <div class="primary-rec">
+      <div class="rec-badge">Best match</div>
+      <div class="rec-name">${primary.tool.name}</div>
+      <div class="rec-tagline">${primary.tool.tagline}</div>
+      <div class="rec-why">
+        <div class="rec-why-title">Why it's right for you</div>
+        <ul class="rec-why-list">
+          ${primaryReasons.slice(0,4).map(r => `<li>${r}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="rec-pricing">
+        <span>${primary.tool.pricing.free ? '✓ Free plan: ' + primary.tool.pricing.freeLimit : '✗ No free plan'}</span>
+        <span>· ${primary.tool.pricing.trial}</span>
+        <span>· From ${primary.tool.pricing.starting}</span>
+      </div>
+      <div class="rec-cta-wrap">
+        <a class="rec-cta-primary" href="${primary.tool.trialUrl}" target="_blank">${primary.tool.trialLabel} →</a>
+        ${primary.tool.affiliate ? '<div class="rec-affiliate">affiliate link</div>' : ''}
+        <div class="rec-cta-secondary"><a href="${primary.tool.pricingUrl}" target="_blank">View full pricing</a></div>
+      </div>
+    </div>
+
+    <div class="runner-up">
+      <div class="runner-up-badge">Strong alternative</div>
+      <div class="runner-up-name">${runnerup.tool.name}</div>
+      <div class="runner-up-desc">${runnerup.tool.tagline}</div>
+      <div class="runner-up-diff"><strong>Key difference:</strong> ${getRunnerupDiff(primary.key, runnerup.key)}</div>
+      <a class="runner-up-cta" href="${runnerup.tool.trialUrl}" target="_blank">Try ${runnerup.tool.name} free →</a>
+      ${runnerup.tool.affiliate ? '<div class="rec-affiliate" style="margin-top:4px;">affiliate link</div>' : ''}
+    </div>
+
+    ${avoidList.length > 0 ? `
+    <div class="avoid-section">
+      <div class="avoid-title">Tools to skip for your situation</div>
+      ${avoidList.map(a => `<div class="avoid-item"><span class="avoid-name">${TOOLS[a.key] ? TOOLS[a.key].name : a.key}</span><span style="color:var(--rule);flex-shrink:0;">|</span><span class="avoid-reason">${a.reason}</span></div>`).join('')}
+    </div>` : ''}
+
+    <div class="useful-links">
+      <div class="useful-links-title">Useful next steps</div>
+      ${links.map(l => `<div class="link-row"><span class="link-label">${l.label}</span><a class="link-url" href="${l.url}">View →</a></div>`).join('')}
+    </div>
+
+    <div class="retake-wrap">
+      <button class="retake-btn" onclick="retake()">Retake the quiz</button>
+    </div>
+  `;
+
+  const resultsEl = document.getElementById('results');
+  resultsEl.innerHTML = html;
+  resultsEl.classList.add('active');
+
+  // Hide questions and progress
+  document.getElementById('progress-wrap').style.display = 'none';
+  document.querySelectorAll('.question-block').forEach(q => q.classList.remove('active'));
+
+  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function getRunnerupDiff(primaryKey, runnerupKey) {
+  const diffs = {
+    'moosend|activecampaign': 'ActiveCampaign costs more but adds a built-in CRM and SMS, worth it if you need those.',
+    'activecampaign|moosend': 'Moosend is cheaper and simpler, a better fit if you don\'t need CRM functionality.',
+    'mailerlite|moosend': 'Moosend has a stronger automation builder; MailerLite is slightly easier to learn.',
+    'moosend|mailerlite': 'MailerLite has a more generous free plan and is slightly more beginner-friendly.',
+    'hubspot|activecampaign': 'ActiveCampaign is stronger for pure email automation; HubSpot wins if CRM is central.',
+    'activecampaign|hubspot': 'HubSpot has a better free CRM tier; ActiveCampaign has more powerful automation logic.',
+    'kit|mailerlite': 'MailerLite is more affordable; Kit is better if you sell digital products.',
+    'mailerlite|kit': 'Kit\'s free plan covers up to 10,000 subscribers, very generous for creators.',
+    'omnisend|klaviyo': 'Klaviyo has deeper analytics and better Shopify integration; Omnisend is more affordable.',
+    'klaviyo|omnisend': 'Omnisend is cheaper and includes more features at lower tiers.',
+  };
+  const key = primaryKey + '|' + runnerupKey;
+  return diffs[key] || `${TOOLS[runnerupKey].name} is a close second, compare both before deciding.`;
+}
+
+// ── QUIZ NAVIGATION ───────────────────────────────────────────────────────────
+function selectOption(el) {
+  const q = el.dataset.q;
+  document.querySelectorAll(`[data-q="${q}"]`).forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  el.querySelector('.option-check').textContent = '✓';
+  document.querySelectorAll(`[data-q="${q}"]:not(.selected)`).forEach(o => o.querySelector('.option-check').textContent = '');
+  answers[parseInt(q)] = el.dataset.v;
+  const nextBtn = document.getElementById(`q${q}-next`);
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+function toggleMulti(el) {
+  el.classList.toggle('selected');
+  const check = el.querySelector('.option-check');
+  check.textContent = el.classList.contains('selected') ? '✓' : '';
+  const val = el.dataset.v;
+  const idx = answers[5].indexOf(val);
+  if (el.classList.contains('selected')) { if (idx === -1) answers[5].push(val); }
+  else { if (idx > -1) answers[5].splice(idx, 1); }
+}
+
+function nextQ(current) {
+  if (!answers[current] && current !== 5) return;
+  const currentEl = document.getElementById(`q${current}`);
+  const nextEl = document.getElementById(`q${current + 1}`);
+  currentEl.classList.remove('active');
+  nextEl.classList.add('active');
+  currentQ = current + 1;
+  updateProgress();
+}
+
+function backQ(current) {
+  document.getElementById(`q${current}`).classList.remove('active');
+  document.getElementById(`q${current, 1}`).classList.add('active');
+  currentQ = current, 1;
+  updateProgress();
+}
+
+function updateProgress() {
+  const pct = ((currentQ, 1) / TOTAL_Q) * 100;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = `Question ${currentQ} of ${TOTAL_Q}`;
+}
+
+function retake() {
+  Object.keys(answers).forEach(k => { answers[k] = k === '5' ? [] : null; });
+  currentQ = 1;
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('progress-wrap').style.display = 'block';
+  document.querySelectorAll('.question-block').forEach(q => q.classList.remove('active'));
+  document.querySelectorAll('.option').forEach(o => { o.classList.remove('selected'); o.querySelector('.option-check').textContent = ''; });
+  document.querySelectorAll('.btn-next').forEach(b => { if (b.id !== 'q5-next') b.disabled = true; });
+  document.getElementById('q1').classList.add('active');
+  updateProgress();
+}
+</script>
+</body>
+</html>

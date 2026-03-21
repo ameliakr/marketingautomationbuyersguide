@@ -168,7 +168,8 @@ hr.divider { border: none; border-top: 1px solid var(--rule); margin: 64px 0; }
   .pricing-cta { align-items: flex-start; }
   .mig-header { flex-direction: column; align-items: flex-start; gap: 8px; }
   .detail-label { min-width: unset; }
-  .footer-links { flex-wrap: wrap; }
+  .footer-links { flex-wrap: wrap; gap: 6px; }
+  .footer-links a, .footer-links span { white-space: nowrap; }
   .footer-inner { max-width: 100%; }
   .wrap, .wrap-mid, .wrap-narrow { max-width: 100%; }
   .home-hero, .cta-list { max-width: 100%; }
