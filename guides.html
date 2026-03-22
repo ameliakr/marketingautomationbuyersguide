@@ -85,9 +85,10 @@
   .estimator-pickers { grid-template-columns: 1fr; }
   .arrow-divider { display: none; }
   .estimate-grid { grid-template-columns: 1fr; }
+  .estimator { padding: 20px 16px; }
   .guide-toggle { flex-direction: column; max-width: 100%; margin-bottom: 20px; }
-  .toggle-btn { text-align: left; padding: 14px 16px; position: relative; z-index: 1; }
-  .estimator { position: relative; z-index: 0; }
+  .toggle-btn { text-align: left; padding: 14px 16px; min-height: 48px; touch-action: manipulation; }
+  .estimate-btn { max-width: 100%; }
 }
 </style>
 </head>
@@ -130,8 +131,8 @@
       <div class="estimator-inner">
 
         <div class="guide-toggle">
-      <button class="toggle-btn active" id="btn-setup" onclick="switchMode('setup')">Setting up a new tool</button>
-      <button class="toggle-btn" id="btn-migration" onclick="switchMode('migration')">Migrating from another tool</button>
+      <button class="toggle-btn active" id="btn-setup" onclick="switchMode('setup')" style="cursor:pointer;">Setting up a new tool</button>
+      <button class="toggle-btn" id="btn-migration" onclick="switchMode('migration')" style="cursor:pointer;">Migrating from another tool</button>
     </div>
 
 
@@ -170,7 +171,7 @@
               </select>
             </div>
           </div>
-          <button class="estimate-btn" onclick="buildSetup()">Go →</button>
+          <button class="estimate-btn" onclick="buildSetup()" style="cursor:pointer;">Go →</button>
           <div class="estimate-result" id="setup-result"></div>
         </div>
 
@@ -223,7 +224,7 @@
               </select>
             </div>
           </div>
-          <button class="estimate-btn" onclick="buildEstimate()">Go →</button>
+          <button class="estimate-btn" onclick="buildEstimate()" style="cursor:pointer;">Go →</button>
           <div class="estimate-result" id="estimate-result"></div>
         </div>
 
