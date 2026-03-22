@@ -22,9 +22,9 @@
 .article-tag.tool { background: #f1f8f1; color: var(--accent); }
 .article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
 .article-body h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; }
-.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body p { font-size: 14px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
 .article-body ul { margin: 0 0 18px 20px; }
-.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body li { font-size: 14px; line-height: 1.8; margin-bottom: 6px; }
 .article-body a { color: var(--accent); text-decoration: underline; }
 .article-body strong { font-weight: 500; }
 .phase-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 0 0 24px; background: #fafaf9; }
@@ -38,8 +38,8 @@
 .quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
 .quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
 .quick-table th:first-child { color: var(--muted); }
-.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; }
-.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; text-align: left; }
+.quick-table td:first-child { color: var(--muted); font-size: 13px; letter-spacing: 0.04em; text-align: left; }
 .quick-table tr:nth-child(even) td { background: #f8f8f7; }
 .cell-yes { color: var(--yes); font-weight: 500; }
 .cell-no { color: var(--no); }
@@ -116,7 +116,7 @@
       <h2>Salesforce Marketing Cloud implementation at a glance</h2>
 
       <table class="quick-table">
-        <thead><tr><th>Detail</th><th></th></tr></thead>
+        <thead><tr><th>Detail</th><th>Value</th></tr></thead>
         <tbody>
           <tr><td>Typical timeline</td><td>4-9 months</td></tr>
           <tr><td>Team required</td><td>Marketing Cloud Administrator + Salesforce implementation partner</td></tr>
