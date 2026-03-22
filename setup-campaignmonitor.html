@@ -3,18 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Set Up Campaign Monitor: A Step-by-Step Getting Started Guide</title>
-<meta name="description" content="How to set up Campaign Monitor from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<title>How to Set Up Campaign Monitor: Step-by-Step Guide (2026)</title>
+<meta name="description" content="Step-by-step guide to setting up Campaign Monitor from scratch. Covers account creation, domain authentication, contact import, automation, and your first cam">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="How to Set Up Campaign Monitor: A Step-by-Step Getting Started Guide">
-<meta property="og:description" content="How to set up Campaign Monitor from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<meta property="og:title" content="How to Set Up Campaign Monitor: Step-by-Step Guide (2026)">
+<meta property="og:description" content="Step-by-step guide to setting up Campaign Monitor from scratch. Covers account creation, domain authentication, contact import, automation, and your first cam">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-.article-wrap{max-width:680px;margin:0 auto}.article-hero{margin-bottom:40px}.article-hero h1{font-family:"DM Serif Display",serif;font-size:clamp(28px, 5vw, 44px);line-height:1.15;font-weight:400;margin-bottom:16px}.article-meta{display:flex;gap:12px;flex-wrap:wrap}.article-tag{font-size:11px;padding:3px 9px;background:#f5f5f3;color:var(--muted)}.article-tag.tool{background:#f1f8f1;color:var(--accent)}.article-body h2 { font-family: "DM Serif Display", serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }.article-body p{font-size:15px;line-height:1.8;margin-bottom:18px;color:var(--ink)}.article-body ul{margin:0 0 18px 20px}.article-body li{font-size:15px;line-height:1.8;margin-bottom:6px}.article-body a{color:var(--accent);text-decoration:underline}.article-body strong{font-weight:500}.step-block{border-left:3px solid var(--accent);padding:20px 24px;margin:24px 0;background:#f8f8f6}.step-block-num{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.step-block-title{font-size:16px;font-weight:500;margin-bottom:8px}.step-block-time{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:10px}.step-block p{font-size:14px;line-height:1.7;margin-bottom:0;color:var(--ink)}.tip-box{border:1px solid var(--rule);background:#f8f8f6;padding:20px 24px;margin:32px 0}.tip-box-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.tip-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}.tip-list li{font-size:14px;line-height:1.5;padding-left:18px;position:relative}.tip-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}.inline-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:#f8f8f6;border-left:3px solid var(--accent);margin:32px 0;flex-wrap:wrap}.inline-cta-text{font-size:14px}.inline-cta-btn{font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;flex-shrink:0;text-decoration:none}.inline-cta-btn:hover{text-decoration:underline}.inline-cta-note{font-size:10px;color:var(--muted);font-style:italic}.useful-links-section{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px}.useful-links-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.useful-links-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.useful-link-row{display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px}.useful-link-label{color:var(--muted)}.useful-link-url{color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px}.useful-link-url:hover{text-decoration:underline}.useful-link-note{font-size:10px;color:var(--muted);font-style:italic;margin-left:4px}.related-section{border-top:2px solid var(--ink);padding-top:32px;margin-top:48px}.related-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.related-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.related-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink);transition:all .2s}.related-row.live{text-decoration:none}.related-row.live:hover .related-row-title{color:var(--accent)}.related-row.live:hover .related-row-arrow{transform:translateX(4px);color:var(--accent)}.related-row-left{display:flex;flex-direction:column;gap:4px}.related-row-title{font-size:14px;transition:color .2s}.related-row-tools{font-size:11px;color:var(--muted)}.related-row-arrow{font-size:15px;color:var(--rule);transition:all .2s;flex-shrink:0;margin-left:16px}
+.article-wrap { max-width: 750px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; text-wrap: balance; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
+.step-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 0 0 24px; background: #fafaf9; }
+.step-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.step-num { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0; }
+.step-title { font-size: 16px; font-weight: 500; color: var(--ink); }
+.step-time { font-size: 11px; color: var(--muted); margin-left: auto; flex-shrink: 0; }
+.step-body { font-size: 14px; line-height: 1.75; color: var(--ink); margin: 0; }
+.step-body a { color: var(--accent); }
+.tips-box { border: 1px solid var(--rule); padding: 24px 28px; margin: 40px 0; }
+.tips-box h3 { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 14px; }
+.tips-box ul { margin: 0 0 0 18px; }
+.tips-box li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
+.quick-table th:first-child { color: var(--muted); }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 </style>
 </head>
 <body>
@@ -24,126 +79,166 @@
     <nav class="nav-links">
       <a href="/all-tools.html">Tools</a>
       <a href="/comparisons.html">Comparisons</a>
-      <a href="/quiz.html">Recommendations</a>
+      <a href="/recommendations.html">Recommendations</a>
       <a href="/guides.html">Guides</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/articles.html">Articles</a>
     </nav>
-    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <div class="mobile-menu" id="mobile-nav">
     <a href="/all-tools.html">Tools</a>
     <a href="/comparisons.html">Comparisons</a>
-    <a href="/quiz.html">Recommendations</a>
+    <a href="/recommendations.html">Recommendations</a>
     <a href="/guides.html">Guides</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/articles.html">Articles</a>
   </div>
 </header>
+
 <main class="page-body">
   <div class="article-wrap">
     <div class="article-hero">
-      <h1>How to Set Up Campaign Monitor: A Step-by-Step Getting Started Guide</h1>
+      <h1>How to set up Campaign Monitor: a step-by-step guide</h1>
       <div class="article-meta">
         <span class="article-tag tool">Campaign Monitor</span>
-        <span class="article-tag">Setup Guide</span>
+        <span class="article-tag">Setup guide</span>
+        <span class="article-tag">Agency</span><span class="article-tag">Small business</span>
         <span class="article-tag">Updated March 2026</span>
       </div>
     </div>
+
     <div class="article-body">
-      <p>Campaign Monitor is known for its email design quality. The template library is best-in-class and the email builder is precise and polished. Setup is straightforward, though it is more expensive than most alternatives at equivalent tiers.</p>
-      <div class="inline-cta"><span class="inline-cta-text">Start your Campaign Monitor trial before following this guide.</span><div><a class="inline-cta-btn" href="https://www.campaignmonitor.com" target="_blank">→ Try Campaign Monitor</a></div></div>
-      <h2>Step-by-step setup guide</h2>
+
+      <p>Campaign Monitor is built for teams and agencies that care a lot about email design. It has one of the better template editors in the industry and a clean interface that makes it easy to manage multiple sender profiles. This guide walks you through the full setup.</p>
+
+      <p>Total setup time: <strong>1-2 hours</strong>. Difficulty: <strong>Easy</strong>. You do not need any technical background to follow this guide.</p>
+
+      <h2>Campaign Monitor at a glance</h2>
+
+      <table class="quick-table">
+        <thead><tr><th>Detail</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Starting price</td><td>$11/mo (Basic, 500 contacts)</td></tr>
+          <tr><td>Free plan</td><td><span class="cell-no">No</span></td></tr>
+          <tr><td>Free trial</td><td>Free trial (send to 5 contacts)</td></tr>
+          <tr><td>Setup time</td><td>1-2 hours</td></tr>
+          <tr><td>Difficulty</td><td>Easy</td></tr>
+          <tr><td>Best for</td><td>Agencies and teams that prioritize beautiful email design</td></tr>
+        </tbody>
+      </table>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Start your Free trial (send to 5 contacts) and follow along as you set up.</span>
+        <a class="inline-cta-btn" href="https://www.campaignmonitor.com" target="_blank">→ Try Campaign Monitor</a>
+      </div>
+
+      <h2>How to set up Campaign Monitor in 6 steps</h2>
+
       <div class="step-block">
-        <div class="step-block-num">Step 1</div>
-        <div class="step-block-title">Create your account</div>
-        <div class="step-block-time">5-10 minutes</div>
-        <p>Go to campaignmonitor.com and sign up. You can trial the platform before purchasing a plan. Enter your company details and confirm your account.</p>
+        <div class="step-header">
+          <span class="step-num">STEP 1</span>
+          <span class="step-title">Create your account</span>
+          <span class="step-time">5-10 min</span>
+        </div>
+        <p class="step-body">Go to campaignmonitor.com and sign up. The free trial lets you test the platform, but you can only send to five contacts until you upgrade. Enter your company details and complete the account setup wizard. If you are setting up Campaign Monitor for a client as an agency, you will create a client account within your main agency account.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 2</div>
-        <div class="step-block-title">Authenticate your sending domain</div>
-        <div class="step-block-time">15-30 minutes</div>
-        <p>Go to Account Settings, then Verified Sending Domains. Add your domain and follow the instructions to add DKIM records to your DNS. Verify once the records have propagated.</p>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 2</span>
+          <span class="step-title">Authenticate your sending domain</span>
+          <span class="step-time">15-20 min</span>
+        </div>
+        <p class="step-body">Go to Account Settings > Verified Sending Domains and add your domain. Campaign Monitor will give you DKIM records to add to your DNS. Add these as TXT records at your domain registrar. Once verified, any from address at that domain will be cleared for sending.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 3</div>
-        <div class="step-block-title">Create a list</div>
-        <div class="step-block-time">5-10 minutes</div>
-        <p>Go to Lists and Subscribers and create your first list. Give it a name and configure your unsubscribe settings and confirmation email.</p>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 3</span>
+          <span class="step-title">Create a list and import contacts</span>
+          <span class="step-time">15-30 min</span>
+        </div>
+        <p class="step-body">Go to Lists & Subscribers > Create a new list. Name it and choose your unsubscribe settings. Then import your contacts: go to the list, click Import, and upload your CSV. Map the columns to Campaign Monitor fields. You can create custom fields during this step if your data has extra columns.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 4</div>
-        <div class="step-block-title">Import your subscribers</div>
-        <div class="step-block-time">10-20 minutes</div>
-        <p>Upload your CSV file to your list. Map columns to Campaign Monitor fields. Choose whether to send a confirmation email to imported subscribers.</p>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 4</span>
+          <span class="step-title">Set up a signup form</span>
+          <span class="step-time">15-20 min</span>
+        </div>
+        <p class="step-body">Go to Lists & Subscribers, select your list, and click Signup Forms. Campaign Monitor will generate a hosted form URL and embed code. Customize the form fields and design, then add the embed code to your website or link to the hosted URL.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 5</div>
-        <div class="step-block-title">Build your first template</div>
-        <div class="step-block-time">30-60 minutes</div>
-        <p>Go to Email Templates and either choose from the library or build a custom template. Campaign Monitor's drag-and-drop builder is precise - spend time getting your template right as you will reuse it.</p>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 5</span>
+          <span class="step-title">Build a welcome automation</span>
+          <span class="step-time">20-40 min</span>
+        </div>
+        <p class="step-body">Go to Journeys > Create a Journey. Select 'When someone subscribes to a list' as the entry trigger. Add an email action, then a delay, then another email. Campaign Monitor's Journey builder is visual and clean. You can add conditions to create different paths based on subscriber behavior.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 6</div>
-        <div class="step-block-title">Set up a welcome automation</div>
-        <div class="step-block-time">20-30 minutes</div>
-        <p>Go to Automation and create a new journey. Set the entry trigger to list subscription. Add an email action and use or customize your template for the welcome message. Activate the journey.</p>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 6</span>
+          <span class="step-title">Send your first campaign</span>
+          <span class="step-time">20-30 min</span>
+        </div>
+        <p class="step-body">Go to Campaigns > Create a campaign. Pick a template from the library -- Campaign Monitor's templates are well-designed and a good starting point. Customize it with the drag-and-drop editor, write your subject line and preview text, select your list, and send a test. When ready, schedule or send immediately.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 7</div>
-        <div class="step-block-title">Send your first campaign</div>
-        <div class="step-block-time">20-30 minutes</div>
-        <p>Go to Campaigns and create a new campaign. Select your list, choose your template, write your content, preview and test, then send or schedule.</p>
+
+      <div class="tips-box">
+        <h3>Tips before you start</h3>
+        <ul>
+          <li>Campaign Monitor's template library is one of the best in the industry -- worth browsing before building your own.</li>
+          <li>Use custom fields to store extra data about subscribers and segment your list more precisely.</li>
+          <li>If you are an agency, the client management features let you set separate billing and permissions per client.</li>
+        </ul>
       </div>
-      <h2>Tips for getting the most out of Campaign Monitor</h2>
-      <div class="tip-box">
-        <div class="tip-box-title">Things worth knowing before you start</div>
-        <ul class="tip-list"><li>Campaign Monitor's template builder is its strongest feature - invest time in building a polished reusable template</li><li>Use the Inbox Preview tool to check how your emails render across different email clients before sending</li><li>Campaign Monitor's segmentation is powerful - use custom fields to enable precise targeting</li><li>The Transactional Email add-on (Mailgun) is available if you need to send triggered transactional emails alongside marketing campaigns</li></ul>
-      </div>
-      <h2>The bottom line</h2>
-      <p>Campaign Monitor is the right tool when email design quality matters. Set up your domain authentication first, then focus on building templates that reflect your brand well. The platform rewards the time you put into design.</p>
-      <p>Not sure Campaign Monitor is right for you? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+
+      <h2>Next steps</h2>
+
+      <p>Once your account is set up, focus on building your first automation before sending any broadcast campaigns. A working welcome sequence ensures every new subscriber gets a consistent first experience. After that, review your <a href="/guides.html">migration guide</a> if you are moving contacts from another platform, and use the <a href="/recommendations.html">recommendations quiz</a> to confirm Campaign Monitor is the right long-term fit.</p>
+
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
         <div class="useful-links-sub">Everything you need to get started with Campaign Monitor.</div>
-        <div class="useful-link-row"><span class="useful-link-label">Get started with Campaign Monitor</span><a class="useful-link-url" href="https://www.campaignmonitor.com" target="_blank">Try Campaign Monitor →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full Campaign Monitor review</span><a class="useful-link-url" href="/review-campaignmonitor.html">Read review →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Not sure Campaign Monitor is right for you?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Try Campaign Monitor</span><a class="useful-link-url" href="https://www.campaignmonitor.com" target="_blank">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Compare Campaign Monitor with other tools</span><a class="useful-link-url" href="/comparisons.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz &#8594;</a></div>
       </div>
+
+      <div class="related-section" id="related-section"></div>
     </div>
-    <div class="related-section" id="related-section"></div>
   </div>
-<footer class="site-footer">
+</main>
+  <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
-      <span class="footer-copy">© 2026 MABG</span><span class="dot">|</span>
-      <a href="/about.html">About</a><span class="dot">|</span>
-      <a href="/affiliate-disclosure.html">Disclosure</a><span class="dot">|</span>
-      <a href="/privacy-policy.html">Privacy</a><span class="dot">|</span>
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
       <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
     </div>
   </div>
 </footer>
+
 <script>
 const THIS_ARTICLE_TOOLS = ["campaignmonitor"];
 const THIS_ARTICLE_URL = window.location.pathname;
-const ALL_ARTICLES = [
-  { title: "Campaign Monitor Review 2026", url: "/review-campaignmonitor.html", tools: ["campaignmonitor"], status: "live" },
-];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",aweber:"AWeber",campaignmonitor:"Campaign Monitor",constantcontact:"Constant Contact",flodesk:"Flodesk",keap:"Keap",zoho:"Zoho Campaigns",dotdigital:"Dotdigital",iterable:"Iterable",ortto:"Ortto",hubspotenterprise:"HubSpot Enterprise",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics365:"Microsoft Dynamics 365"};
-function renderRelated(){
-  const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
-  if(related.length===0)return;
-  const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on Campaign Monitor</div>';
-  related.forEach(a=>{
-    const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
-    html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';
-  });
-  section.innerHTML=html;
+const ALL_ARTICLES = [];
+const TOOL_LABELS = { campaignmonitor: "Campaign Monitor" };
+function renderRelated() {
+  const section = document.getElementById('related-section');
+  if (!section) return;
+  section.innerHTML = '';
 }
 renderRelated();
 </script>

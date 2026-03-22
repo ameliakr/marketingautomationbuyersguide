@@ -509,6 +509,144 @@ const SETUP_DATA = {
       { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '15-30 min' },
     ]
   },
+  aweber: {
+    name: 'AWeber',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.aweber.com/easy-email.htm?id=560468',
+    trialLabel: 'Try AWeber free',
+    affiliate: true,
+    staticPage: '/setup-aweber.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at aweber.com: free plan up to 500 subscribers.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM and SPF records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Create a list', desc: 'Set up your main contact list and configure sender details.', time: '5-10 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your CSV and map fields to your list.', time: '10-20 min' },
+      { num: 5, title: 'Set up your signup form', desc: 'Create and embed a form on your website.', time: '15-20 min' },
+      { num: 6, title: 'Create a welcome automation', desc: 'Build a welcome campaign triggered when subscribers join.', time: '20-40 min' },
+      { num: 7, title: 'Send your first broadcast', desc: 'Design and send your first email to your list.', time: '15-30 min' },
+    ]
+  },
+  campaignmonitor: {
+    name: 'Campaign Monitor',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.campaignmonitor.com',
+    trialLabel: 'Try Campaign Monitor',
+    affiliate: false,
+    staticPage: '/setup-campaignmonitor.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at campaignmonitor.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Create a list and import contacts', desc: 'Set up your list and upload your CSV.', time: '15-30 min' },
+      { num: 4, title: 'Set up a signup form', desc: 'Create and embed a form or share the hosted URL.', time: '15-20 min' },
+      { num: 5, title: 'Build a welcome journey', desc: 'Create a welcome automation in Journey builder.', time: '20-40 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '20-30 min' },
+    ]
+  },
+  constantcontact: {
+    name: 'Constant Contact',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.constantcontact.com',
+    trialLabel: 'Try Constant Contact free',
+    affiliate: false,
+    staticPage: '/setup-constantcontact.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at constantcontact.com: 60-day free trial.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Import your contacts', desc: 'Upload your CSV or import from Gmail or Outlook.', time: '10-20 min' },
+      { num: 4, title: 'Set up a signup form', desc: 'Create and embed a form or landing page.', time: '10-20 min' },
+      { num: 5, title: 'Set up a welcome automation', desc: 'Create an automated welcome email sequence.', time: '20-40 min' },
+      { num: 6, title: 'Send your first email', desc: 'Design and send your first campaign.', time: '15-30 min' },
+    ]
+  },
+  flodesk: {
+    name: 'Flodesk',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.flodesk.com',
+    trialLabel: 'Try Flodesk free',
+    affiliate: false,
+    staticPage: '/setup-flodesk.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at flodesk.com: 30-day free trial.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Import your subscribers', desc: 'Upload your CSV and assign to a segment.', time: '10-20 min' },
+      { num: 4, title: 'Create a signup form', desc: 'Build a form or landing page to grow your list.', time: '15-30 min' },
+      { num: 5, title: 'Set up a welcome workflow', desc: 'Create an automated welcome sequence.', time: '20-40 min' },
+      { num: 6, title: 'Send your first email', desc: 'Design and send your first email.', time: '15-30 min' },
+    ]
+  },
+  keap: {
+    name: 'Keap',
+    time: '3-4 hours',
+    difficulty: 'moderate',
+    trialUrl: 'https://get.keap.com/dmnoq8ig61m7',
+    trialLabel: 'Try Keap free',
+    affiliate: true,
+    staticPage: '/setup-keap.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Start your 14-day free trial at keap.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-30 min' },
+      { num: 3, title: 'Set up your CRM and pipeline', desc: 'Configure contact fields, custom fields, and deal stages.', time: '30-60 min' },
+      { num: 4, title: 'Import your contacts', desc: 'Upload your CSV and apply tags during import.', time: '15-30 min' },
+      { num: 5, title: 'Set up a signup form', desc: 'Create and embed a web form on your site.', time: '15-30 min' },
+      { num: 6, title: 'Build your first automation', desc: 'Use Easy Automations or Campaign Builder for a welcome sequence.', time: '45-90 min' },
+      { num: 7, title: 'Send your first broadcast', desc: 'Design and send your first email broadcast.', time: '20-30 min' },
+    ]
+  },
+  moosend: {
+    name: 'Moosend',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://trymoo.moosend.com/4e0kl2a449hd',
+    trialLabel: 'Try Moosend free',
+    affiliate: true,
+    staticPage: '/setup-moosend.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Start your 30-day free trial at moosend.com.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Import your subscribers', desc: 'Create a mailing list and upload your CSV.', time: '10-20 min' },
+      { num: 4, title: 'Create a signup form', desc: 'Build and embed a subscription form on your site.', time: '15-20 min' },
+      { num: 5, title: 'Build a welcome automation', desc: 'Create a welcome sequence in the automation builder.', time: '20-40 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '15-30 min' },
+    ]
+  },
+  omnisend: {
+    name: 'Omnisend',
+    time: '2-3 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.omnisend.com',
+    trialLabel: 'Try Omnisend free',
+    affiliate: false,
+    staticPage: '/setup-omnisend.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at omnisend.com: free plan up to 250 contacts.', time: '5-10 min' },
+      { num: 2, title: 'Connect your store', desc: 'Install the Omnisend app for Shopify or WooCommerce.', time: '15-30 min' },
+      { num: 3, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 4, title: 'Set up your signup form', desc: 'Create a popup or embedded form with a discount incentive.', time: '15-20 min' },
+      { num: 5, title: 'Set up core automation workflows', desc: 'Launch welcome, abandoned cart, and post-purchase flows.', time: '45-60 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '20-30 min' },
+    ]
+  },
+  zoho: {
+    name: 'Zoho Campaigns',
+    time: '1-2 hours',
+    difficulty: 'easy',
+    trialUrl: 'https://www.zoho.com/campaigns',
+    trialLabel: 'Try Zoho Campaigns free',
+    affiliate: false,
+    staticPage: '/setup-zoho.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at zoho.com/campaigns: free plan up to 2,000 contacts.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Sync or import contacts', desc: 'Sync from Zoho CRM or upload your CSV.', time: '15-30 min' },
+      { num: 4, title: 'Set up a signup form', desc: 'Build and embed a subscription form on your site.', time: '15-20 min' },
+      { num: 5, title: 'Build a welcome workflow', desc: 'Create a welcome automation sequence.', time: '20-40 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '15-30 min' },
+    ]
+  },
 };
 
 function buildSetup() {

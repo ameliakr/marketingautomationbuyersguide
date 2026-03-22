@@ -3,18 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Set Up MailerLite: A Step-by-Step Getting Started Guide</title>
-<meta name="description" content="How to set up MailerLite from scratch. Account creation, domain authentication, list setup, first automation, and first campaign - step by step.">
+<title>How to Set Up MailerLite: Step-by-Step Guide (2026)</title>
+<meta name="description" content="Step-by-step guide to setting up MailerLite from scratch. Covers account creation, domain authentication, contact import, automation, and your first campaign.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="How to Set Up MailerLite: A Step-by-Step Getting Started Guide">
-<meta property="og:description" content="How to set up MailerLite from scratch. Account creation, domain authentication, list setup, first automation, and first campaign - step by step.">
+<meta property="og:title" content="How to Set Up MailerLite: Step-by-Step Guide (2026)">
+<meta property="og:description" content="Step-by-step guide to setting up MailerLite from scratch. Covers account creation, domain authentication, contact import, automation, and your first campaign.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-.article-wrap{max-width:680px;margin:0 auto}.article-hero{margin-bottom:40px}.article-hero h1{font-family:"DM Serif Display",serif;font-size:clamp(28px, 5vw, 44px);line-height:1.15;font-weight:400;margin-bottom:16px}.article-meta{display:flex;gap:12px;flex-wrap:wrap}.article-tag{font-size:11px;padding:3px 9px;background:#f5f5f3;color:var(--muted)}.article-tag.tool{background:#f1f8f1;color:var(--accent)}.article-body h2 { font-family: "DM Serif Display", serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }.article-body p{font-size:15px;line-height:1.8;margin-bottom:18px;color:var(--ink)}.article-body ul{margin:0 0 18px 20px}.article-body li{font-size:15px;line-height:1.8;margin-bottom:6px}.article-body a{color:var(--accent);text-decoration:underline}.article-body strong{font-weight:500}.step-block{border-left:3px solid var(--accent);padding:20px 24px;margin:24px 0;background:#f8f8f6}.step-block-num{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.step-block-title{font-size:16px;font-weight:500;margin-bottom:8px}.step-block-time{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:10px}.step-block p{font-size:14px;line-height:1.7;margin-bottom:0;color:var(--ink)}.tip-box{border:1px solid var(--rule);background:#f8f8f6;padding:20px 24px;margin:32px 0}.tip-box-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.tip-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}.tip-list li{font-size:14px;line-height:1.5;padding-left:18px;position:relative}.tip-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}.inline-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:#f8f8f6;border-left:3px solid var(--accent);margin:32px 0;flex-wrap:wrap}.inline-cta-text{font-size:14px}.inline-cta-btn{font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;flex-shrink:0;text-decoration:none}.inline-cta-btn:hover{text-decoration:underline}.inline-cta-note{font-size:10px;color:var(--muted);font-style:italic}.useful-links-section{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px}.useful-links-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.useful-links-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.useful-link-row{display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px}.useful-link-label{color:var(--muted)}.useful-link-url{color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px}.useful-link-url:hover{text-decoration:underline}.useful-link-note{font-size:10px;color:var(--muted);font-style:italic;margin-left:4px}.related-section{border-top:2px solid var(--ink);padding-top:32px;margin-top:48px}.related-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.related-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.related-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink);transition:all .2s}.related-row.live{text-decoration:none}.related-row.live:hover .related-row-title{color:var(--accent)}.related-row.live:hover .related-row-arrow{transform:translateX(4px);color:var(--accent)}.related-row-left{display:flex;flex-direction:column;gap:4px}.related-row-title{font-size:14px;transition:color .2s}.related-row-tools{font-size:11px;color:var(--muted)}.related-row-arrow{font-size:15px;color:var(--rule);transition:all .2s;flex-shrink:0;margin-left:16px}
+.article-wrap { max-width: 750px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; text-wrap: balance; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
+.step-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 0 0 24px; background: #fafaf9; }
+.step-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.step-num { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0; }
+.step-title { font-size: 16px; font-weight: 500; color: var(--ink); }
+.step-time { font-size: 11px; color: var(--muted); margin-left: auto; flex-shrink: 0; }
+.step-body { font-size: 14px; line-height: 1.75; color: var(--ink); margin: 0; }
+.step-body a { color: var(--accent); }
+.tips-box { border: 1px solid var(--rule); padding: 24px 28px; margin: 40px 0; }
+.tips-box h3 { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 14px; }
+.tips-box ul { margin: 0 0 0 18px; }
+.tips-box li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
+.quick-table th:first-child { color: var(--muted); }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 </style>
 </head>
 <body>
@@ -24,128 +79,169 @@
     <nav class="nav-links">
       <a href="/all-tools.html">Tools</a>
       <a href="/comparisons.html">Comparisons</a>
-      <a href="/quiz.html">Recommendations</a>
+      <a href="/recommendations.html">Recommendations</a>
       <a href="/guides.html">Guides</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/articles.html">Articles</a>
     </nav>
-    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <div class="mobile-menu" id="mobile-nav">
     <a href="/all-tools.html">Tools</a>
     <a href="/comparisons.html">Comparisons</a>
-    <a href="/quiz.html">Recommendations</a>
+    <a href="/recommendations.html">Recommendations</a>
     <a href="/guides.html">Guides</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/articles.html">Articles</a>
   </div>
 </header>
+
 <main class="page-body">
   <div class="article-wrap">
     <div class="article-hero">
-      <h1>How to Set Up MailerLite: A Step-by-Step Getting Started Guide</h1>
+      <h1>How to set up MailerLite: a step-by-step guide</h1>
       <div class="article-meta">
         <span class="article-tag tool">MailerLite</span>
-        <span class="article-tag">Setup Guide</span>
+        <span class="article-tag">Setup guide</span>
+        <span class="article-tag">Small business</span><span class="article-tag">Creator</span>
         <span class="article-tag">Updated March 2026</span>
       </div>
     </div>
+
     <div class="article-body">
-      <p>MailerLite is one of the easiest email marketing tools to set up. The interface is clean, onboarding is guided, and most users can have their first campaign live within an hour of signing up. This guide walks you through the full process so you do not miss anything important.</p>
-      <div class="inline-cta"><span class="inline-cta-text">Start your free MailerLite trial before following this guide.</span><a class="inline-cta-btn" href="https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite" target="_blank">→ Try MailerLite free</a><div class="inline-cta-note">affiliate link</div></div>
-      <h2>Step-by-step setup guide</h2>
-      <div class="step-block">
-        <div class="step-block-num">Step 1</div>
-        <div class="step-block-title">Create your MailerLite account</div>
-        <div class="step-block-time">5 minutes</div>
-        <p>Go to mailerlite.com and sign up. The free plan covers up to 1,000 subscribers with no time limit - no credit card required. Enter your name, company name, and website URL. MailerLite will ask a few questions about your business to tailor your onboarding.</p>
-      </div>
-<div class="step-block">
-        <div class="step-block-num">Step 2</div>
-        <div class="step-block-title">Complete account approval</div>
-        <div class="step-block-time">1-24 hours</div>
-        <p>MailerLite manually reviews new accounts before allowing you to send campaigns. This usually takes a few hours during business hours. You will receive an email when your account is approved. While you wait, complete the remaining setup steps.</p>
-      </div>
-<div class="step-block">
-        <div class="step-block-num">Step 3</div>
-        <div class="step-block-title">Authenticate your sending domain</div>
-        <div class="step-block-time">15-30 minutes</div>
-        <p>Go to Domains under your account settings and add your sending domain. MailerLite will show you DKIM and SPF records to add to your DNS. Add these in your domain registrar and return to verify. Authenticated senders get better deliverability and remove MailerLite branding from your emails on paid plans.</p>
-      </div>
-<div class="step-block">
-        <div class="step-block-num">Step 4</div>
-        <div class="step-block-title">Create your subscriber group</div>
-        <div class="step-block-time">5 minutes</div>
-        <p>MailerLite uses groups rather than lists. Go to Subscribers, then Groups, and create your first group. Give it a descriptive name. If you have existing contacts to import, do that here as a CSV.</p>
-      </div>
-<div class="step-block">
-        <div class="step-block-num">Step 5</div>
-        <div class="step-block-title">Set up your signup form</div>
-        <div class="step-block-time">15-20 minutes</div>
-        <p>Go to Forms and create a new embedded form or popup. Choose your fields, connect it to a group, and customize the confirmation message. MailerLite gives you an embed code for your website. There are also direct integrations with WordPress, Shopify, and Squarespace.</p>
-      </div>
-<div class="step-block">
-        <div class="step-block-num">Step 6</div>
-        <div class="step-block-title">Build your welcome automation</div>
-        <div class="step-block-time">20-30 minutes</div>
-        <p>Go to Automations and create a new workflow. Set the trigger to "When a subscriber joins a group." Add an email step for your welcome email. Write the email - keep it short, personal, and tell subscribers what to expect. Activate the automation. From now on every new subscriber will receive your welcome email automatically.</p>
-      </div>
-<div class="step-block">
-        <div class="step-block-num">Step 7</div>
-        <div class="step-block-title">Send your first campaign</div>
-        <div class="step-block-time">20-30 minutes</div>
-        <p>Go to Campaigns and create a Regular campaign. Select your group, write your subject line and preview text, and build your email using the drag-and-drop editor. Use the preview and test send features before going live. Schedule or send when ready.</p>
+
+      <p>MailerLite is one of the best-value email platforms available. The free plan is generous, the interface is clean, and the feature set covers everything a small business or creator needs. Setup is fast. This guide walks you through it from start to finish.</p>
+
+      <p>Total setup time: <strong>1-2 hours</strong>. Difficulty: <strong>Easy</strong>. You do not need any technical background to follow this guide.</p>
+
+      <h2>MailerLite at a glance</h2>
+
+      <table class="quick-table">
+        <thead><tr><th>Detail</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Starting price</td><td>$9/mo (Growing Business, 500 subscribers)</td></tr>
+          <tr><td>Free plan</td><td><span class="cell-yes">Yes</span></td></tr>
+          <tr><td>Free trial</td><td>Free plan up to 1,000 subscribers</td></tr>
+          <tr><td>Setup time</td><td>1-2 hours</td></tr>
+          <tr><td>Difficulty</td><td>Easy</td></tr>
+          <tr><td>Best for</td><td>Small businesses and creators who want a clean, affordable platform</td></tr>
+        </tbody>
+      </table>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Start your Free plan up to 1,000 subscribers and follow along as you set up.</span>
+        <div>
+          <a class="inline-cta-btn" href="https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite" target="_blank">→ Try MailerLite free</a>
+          <div class="inline-cta-note">affiliate link</div>
+        </div>
       </div>
 
-      <h2>Tips for getting the most out of MailerLite</h2>
-      <div class="tip-box">
-        <div class="tip-box-title">Things worth knowing before you start</div>
-        <ul class="tip-list"><li>MailerLite's account approval can take a few hours - start your setup as early as possible so you are not waiting when you want to send</li><li>Set up double opt-in on your signup form - MailerLite makes this easy and it significantly improves list quality</li><li>The free plan includes MailerLite branding in emails - upgrading removes it and adds more sending volume</li><li>MailerLite's landing page builder is included free and is genuinely good - use it for lead capture pages rather than just relying on your website</li><li>Check your automation is firing correctly by using the Test Subscriber feature before publishing</li></ul>
+      <h2>How to set up MailerLite in 6 steps</h2>
+
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 1</span>
+          <span class="step-title">Create your account</span>
+          <span class="step-time">5-10 min</span>
+        </div>
+        <p class="step-body">Go to <a href="https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite" target="_blank">mailerlite.com</a> and sign up. The free plan covers up to 1,000 subscribers with 12,000 monthly emails -- enough to get started and grow for a while. Enter your name, company, and website. MailerLite will ask a few onboarding questions and then review your account before activating it. This review typically takes a few hours.</p>
       </div>
-      <h2>The bottom line</h2>
-      <p><a href="https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite" target="_blank">MailerLite</a> is the easiest platform on this list to set up and the free plan is genuinely useful. Have your domain authenticated and your welcome automation running before you drive any traffic to your signup form. The whole setup takes two to three hours done properly.</p><p>Not sure MailerLite is right for you? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 2</span>
+          <span class="step-title">Authenticate your sending domain</span>
+          <span class="step-time">15-20 min</span>
+        </div>
+        <p class="step-body">Go to Domains > Add domain. Enter your domain and MailerLite will provide DKIM records to add to your DNS. Log in to your domain registrar and add the TXT records, then return to MailerLite and click Verify. Once verified, set up your sending email address using your domain. MailerLite requires a domain email for sending -- you cannot use a free Gmail or Yahoo address.</p>
+      </div>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 3</span>
+          <span class="step-title">Import your contacts</span>
+          <span class="step-time">10-20 min</span>
+        </div>
+        <p class="step-body">Go to Subscribers > Import Subscribers. Upload your CSV and map the columns to MailerLite fields. You can assign subscribers to groups during import -- groups are MailerLite's equivalent of lists or tags. Create at least one group for your main list. After import, check the import report for any invalid or duplicate addresses.</p>
+      </div>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 4</span>
+          <span class="step-title">Create a signup form</span>
+          <span class="step-time">15-20 min</span>
+        </div>
+        <p class="step-body">Go to Forms > Create form. MailerLite offers four types: embedded form, pop-up form, promoted popup, and landing page. The landing page builder is included on all plans and creates a full hosted opt-in page you can share directly. Customize the design using the editor, connect the form to a group, configure the confirmation email, and publish.</p>
+      </div>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 5</span>
+          <span class="step-title">Set up a welcome automation</span>
+          <span class="step-time">20-40 min</span>
+        </div>
+        <p class="step-body">Go to Automation > Create Automation. Set the trigger to 'When a subscriber joins a group'. Add a Send email step for your welcome email, then a Wait step (e.g., 1 day), then another email. MailerLite's automation builder is clean and visual. You can add condition steps to branch the sequence based on whether a subscriber opened the previous email.</p>
+      </div>
+      <div class="step-block">
+        <div class="step-header">
+          <span class="step-num">STEP 6</span>
+          <span class="step-title">Send your first campaign</span>
+          <span class="step-time">15-30 min</span>
+        </div>
+        <p class="step-body">Go to Campaigns > Create campaign > Regular campaign. Choose a template from the library or start with a blank layout. MailerLite's drag-and-drop editor is easy to use and well-designed. Set your subject line and preview text, select which groups to send to, preview on mobile and desktop, then schedule or send. Check the campaign report after delivery for opens, clicks, and unsubscribes.</p>
+      </div>
+
+      <div class="tips-box">
+        <h3>Tips before you start</h3>
+        <ul>
+          <li>MailerLite's account activation review is manual -- apply with a complete, professional profile to get approved faster.</li>
+          <li>Use groups to organize your subscribers instead of creating separate lists for everything.</li>
+          <li>MailerLite's website and blog builder is included on paid plans -- useful if you want everything in one place.</li>
+        </ul>
+      </div>
+
+      <h2>Next steps</h2>
+
+      <p>Once your account is set up, focus on building your first automation before sending any broadcast campaigns. A working welcome sequence ensures every new subscriber gets a consistent first experience. After that, review your <a href="/guides.html">migration guide</a> if you are moving contacts from another platform, and use the <a href="/recommendations.html">recommendations quiz</a> to confirm MailerLite is the right long-term fit.</p>
+
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
         <div class="useful-links-sub">Everything you need to get started with MailerLite.</div>
-        <div class="useful-link-row"><span class="useful-link-label">Get started with MailerLite</span><span><span class="useful-link-note">affiliate link</span><a class="useful-link-url" href="https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite" target="_blank">Try MailerLite free →</a></span></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full MailerLite review</span><a class="useful-link-url" href="/review-mailerlite.html">Read review →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Not sure MailerLite is right for you?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Try MailerLite free</span><span><span class="useful-link-note">affiliate link</span><a class="useful-link-url" href="https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite" target="_blank">View &#8594;</a></span></div>
+        <div class="useful-link-row"><span class="useful-link-label">Compare MailerLite with other tools</span><a class="useful-link-url" href="/comparisons.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz &#8594;</a></div>
       </div>
+
+      <div class="related-section" id="related-section"></div>
     </div>
-    <div class="related-section" id="related-section"></div>
   </div>
-<footer class="site-footer">
+</main>
+  <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
-      <span class="footer-copy">© 2026 MABG</span><span class="dot">|</span>
-      <a href="/about.html">About</a><span class="dot">|</span>
-      <a href="/affiliate-disclosure.html">Disclosure</a><span class="dot">|</span>
-      <a href="/privacy-policy.html">Privacy</a><span class="dot">|</span>
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
       <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
     </div>
   </div>
 </footer>
+
 <script>
 const THIS_ARTICLE_TOOLS = ["mailerlite"];
 const THIS_ARTICLE_URL = window.location.pathname;
-const ALL_ARTICLES = [
-  { title: "MailerLite Review 2026", url: "/review-mailerlite.html", tools: ["mailerlite"], status: "live" },
-  { title: "Moosend vs MailerLite", url: "/comparison-moosend-vs-mailerlite.html", tools: ["moosend","mailerlite"], status: "live" },
-  { title: "How to Migrate from Mailchimp to MailerLite", url: "/migration-mailchimp-to-mailerlite.html", tools: ["mailchimp","mailerlite"], status: "live" },
-];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend"};
-function renderRelated(){
-  const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
-  if(related.length===0)return;
-  const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on MailerLite</div>';
-  related.forEach(a=>{
-    const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
-    html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';
-  });
-  section.innerHTML=html;
+const ALL_ARTICLES = [];
+const TOOL_LABELS = { mailerlite: "MailerLite" };
+function renderRelated() {
+  const section = document.getElementById('related-section');
+  if (!section) return;
+  section.innerHTML = '';
 }
 renderRelated();
 </script>
