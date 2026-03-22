@@ -85,7 +85,7 @@
   .estimator-pickers { grid-template-columns: 1fr; }
   .arrow-divider { display: none; }
   .estimate-grid { grid-template-columns: 1fr; }
-  .guide-toggle { flex-direction: column; max-width: 100%; margin-bottom: 24px; }
+  .guide-toggle { flex-direction: column; max-width: 100%; margin-bottom: 20px; }
   .toggle-btn { text-align: left; padding: 14px 16px; position: relative; z-index: 1; }
   .estimator { position: relative; z-index: 0; }
 }
@@ -126,13 +126,14 @@
       <p class="hero-sub">Step-by-step guides for setting up a new marketing automation platform or migrating from one tool to another. Choose your tool below to get started.</p>
     </div>
 
-    <div class="guide-toggle">
+<div class="estimator">
+      <div class="estimator-inner">
+
+        <div class="guide-toggle">
       <button class="toggle-btn active" id="btn-setup" onclick="switchMode('setup')">Setting up a new tool</button>
       <button class="toggle-btn" id="btn-migration" onclick="switchMode('migration')">Migrating from another tool</button>
     </div>
 
-    <div class="estimator">
-      <div class="estimator-inner">
 
         <!-- SETUP MODE -->
         <div id="setup-pickers">

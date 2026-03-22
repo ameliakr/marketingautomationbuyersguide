@@ -100,7 +100,7 @@
 .runner-up-cta:hover { text-decoration: underline; }
 
 /* Avoid -->
-.avoid-section { border: 1px solid var(--rule); padding: 22px; margin-bottom: 28px; }
+.avoid-section { border: 1px solid var(--rule) !important; padding: 22px !important; margin-bottom: 28px; }
 .avoid-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .avoid-item { display: flex; gap: 8px; margin-bottom: 8px; font-size: 13px; line-height: 1.5; font-family: 'DM Sans', sans-serif; }
 .avoid-item:last-child { margin-bottom: 0; }
@@ -120,7 +120,7 @@
 
 /* Retake -->
 .retake-wrap { text-align: center; padding-top: 16px; padding-bottom: 8px; }
-.retake-btn { font-size: 13px; color: var(--accent); cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0; }
+.retake-btn { font-size: 13px; color: var(--accent) !important; cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0; }
 .retake-btn:hover { color: var(--ink); }
 .useful-links-section { border-top: 1px solid var(--rule); padding-top: 32px; }
 .useful-links-section .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
@@ -513,7 +513,7 @@ const TOOLS = {
   },
   brevo: {
     name: "Brevo",
-    tagline: "Affordable all-in-one platform with email, SMS, and CRM, priced by sends, not contacts",
+    tagline: "Affordable all-in-one with email, SMS, and CRM, priced by sends, not contacts, not contacts",
     why: [],
     pricing: { free: true, freeLimit: "unlimited contacts, 300 emails/day", trial: "Free plan available", starting: "$9/mo" },
     trialUrl: "https://get.brevo.com/hjl3lwlukji3",
@@ -825,7 +825,7 @@ function showResults() {
   document.getElementById('progress-wrap').style.display = 'none';
   document.querySelectorAll('.question-block').forEach(q => q.classList.remove('active'));
 
-  resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
 }
 
 function getRunnerupDiff(primaryKey, runnerupKey) {
@@ -875,17 +875,19 @@ function nextQ(current) {
   nextEl.classList.add('active');
   currentQ = current + 1;
   updateProgress();
+  document.querySelector('.quiz-shell').scrollIntoView({ behavior: 'instant', block: 'start' });
 }
 
 function backQ(current) {
   document.getElementById(`q${current}`).classList.remove('active');
-  document.getElementById(`q${current, 1}`).classList.add('active');
-  currentQ = current, 1;
+  document.getElementById(`q${current - 1}`).classList.add('active');
+  currentQ = current - 1;
   updateProgress();
+  document.querySelector('.quiz-shell').scrollIntoView({ behavior: 'instant', block: 'start' });
 }
 
 function updateProgress() {
-  const pct = ((currentQ, 1) / TOTAL_Q) * 100;
+  const pct = ((currentQ - 1) / TOTAL_Q) * 100;
   document.getElementById('progress-fill').style.width = pct + '%';
   document.getElementById('progress-label').textContent = `Question ${currentQ} of ${TOTAL_Q}`;
 }
