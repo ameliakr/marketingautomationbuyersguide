@@ -3,18 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Set Up HubSpot Enterprise: A Step-by-Step Getting Started Guide</title>
-<meta name="description" content="How to set up HubSpot Enterprise from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<title>Setting Up HubSpot Enterprise: What the Implementation Involves (2026)</title>
+<meta name="description" content="What a HubSpot Enterprise implementation involves: phases, timeline, team requirements, and what to expect at each stage of setup.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="How to Set Up HubSpot Enterprise: A Step-by-Step Getting Started Guide">
-<meta property="og:description" content="How to set up HubSpot Enterprise from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<meta property="og:title" content="Setting Up HubSpot Enterprise: What the Implementation Involves (2026)">
+<meta property="og:description" content="What a HubSpot Enterprise implementation involves: phases, timeline, team requirements, and what to expect at each stage of setup.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-.article-wrap{max-width:680px;margin:0 auto}.article-hero{margin-bottom:40px}.article-hero h1{font-family:"DM Serif Display",serif;font-size:clamp(28px, 5vw, 44px);line-height:1.15;font-weight:400;margin-bottom:16px}.article-meta{display:flex;gap:12px;flex-wrap:wrap}.article-tag{font-size:11px;padding:3px 9px;background:#f5f5f3;color:var(--muted)}.article-tag.tool{background:#f1f8f1;color:var(--accent)}.article-body h2 { font-family: "DM Serif Display", serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }.article-body p{font-size:15px;line-height:1.8;margin-bottom:18px;color:var(--ink)}.article-body ul{margin:0 0 18px 20px}.article-body li{font-size:15px;line-height:1.8;margin-bottom:6px}.article-body a{color:var(--accent);text-decoration:underline}.article-body strong{font-weight:500}.step-block{border-left:3px solid var(--accent);padding:20px 24px;margin:24px 0;background:#f8f8f6}.step-block-num{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.step-block-title{font-size:16px;font-weight:500;margin-bottom:8px}.step-block-time{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:10px}.step-block p{font-size:14px;line-height:1.7;margin-bottom:0;color:var(--ink)}.tip-box{border:1px solid var(--rule);background:#f8f8f6;padding:20px 24px;margin:32px 0}.tip-box-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.tip-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}.tip-list li{font-size:14px;line-height:1.5;padding-left:18px;position:relative}.tip-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}.inline-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:#f8f8f6;border-left:3px solid var(--accent);margin:32px 0;flex-wrap:wrap}.inline-cta-text{font-size:14px}.inline-cta-btn{font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;flex-shrink:0;text-decoration:none}.inline-cta-btn:hover{text-decoration:underline}.inline-cta-note{font-size:10px;color:var(--muted);font-style:italic}.useful-links-section{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px}.useful-links-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.useful-links-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.useful-link-row{display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px}.useful-link-label{color:var(--muted)}.useful-link-url{color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px}.useful-link-url:hover{text-decoration:underline}.useful-link-note{font-size:10px;color:var(--muted);font-style:italic;margin-left:4px}.related-section{border-top:2px solid var(--ink);padding-top:32px;margin-top:48px}.related-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.related-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.related-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink);transition:all .2s}.related-row.live{text-decoration:none}.related-row.live:hover .related-row-title{color:var(--accent)}.related-row.live:hover .related-row-arrow{transform:translateX(4px);color:var(--accent)}.related-row-left{display:flex;flex-direction:column;gap:4px}.related-row-title{font-size:14px;transition:color .2s}.related-row-tools{font-size:11px;color:var(--muted)}.related-row-arrow{font-size:15px;color:var(--rule);transition:all .2s;flex-shrink:0;margin-left:16px}
+.article-wrap { max-width: 750px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; text-wrap: balance; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.phase-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 0 0 24px; background: #fafaf9; }
+.phase-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.phase-label { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0; }
+.phase-title { font-size: 16px; font-weight: 500; color: var(--ink); }
+.phase-time { font-size: 11px; color: var(--muted); margin-left: auto; flex-shrink: 0; }
+.phase-body { font-size: 14px; line-height: 1.75; color: var(--ink); margin: 0; }
+.notice-box { background: #f5f5f3; border: 1px solid var(--rule); padding: 20px 24px; margin: 32px 0; font-size: 14px; line-height: 1.7; }
+.notice-box strong { font-weight: 500; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
+.quick-table th:first-child { color: var(--muted); }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 </style>
 </head>
 <body>
@@ -24,126 +74,161 @@
     <nav class="nav-links">
       <a href="/all-tools.html">Tools</a>
       <a href="/comparisons.html">Comparisons</a>
-      <a href="/quiz.html">Recommendations</a>
+      <a href="/recommendations.html">Recommendations</a>
       <a href="/guides.html">Guides</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/articles.html">Articles</a>
     </nav>
-    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <div class="mobile-menu" id="mobile-nav">
     <a href="/all-tools.html">Tools</a>
     <a href="/comparisons.html">Comparisons</a>
-    <a href="/quiz.html">Recommendations</a>
+    <a href="/recommendations.html">Recommendations</a>
     <a href="/guides.html">Guides</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/articles.html">Articles</a>
   </div>
 </header>
+
 <main class="page-body">
   <div class="article-wrap">
     <div class="article-hero">
-      <h1>How to Set Up HubSpot Enterprise: A Step-by-Step Getting Started Guide</h1>
+      <h1>Setting up HubSpot Enterprise: what the implementation involves</h1>
       <div class="article-meta">
         <span class="article-tag tool">HubSpot Enterprise</span>
-        <span class="article-tag">Setup Guide</span>
+        <span class="article-tag">Setup overview</span>
+        <span class="article-tag">Enterprise</span><span class="article-tag">B2B</span><span class="article-tag">Mid-market</span>
         <span class="article-tag">Updated March 2026</span>
       </div>
     </div>
+
     <div class="article-body">
-      <p>HubSpot Marketing Hub Enterprise is the full-featured version of HubSpot for larger teams. It includes advanced features like multi-touch revenue attribution, custom event triggers, and partitioning for large organizations. Setup at the enterprise level requires significant planning.</p>
-      <div class="inline-cta"><span class="inline-cta-text">Contact HubSpot sales to get started with Enterprise.</span><div><a class="inline-cta-btn" href="https://www.hubspot.com" target="_blank">→ Contact HubSpot sales</a></div></div>
-      <h2>Step-by-step setup guide</h2>
-      <div class="step-block">
-        <div class="step-block-num">Step 1</div>
-        <div class="step-block-title">Complete account setup with HubSpot</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Work with your HubSpot account team to provision your account, configure user roles and permissions, and set up your business units if applicable.</p>
+
+      <p>HubSpot Marketing Hub Enterprise is the top tier of HubSpot's marketing product. It adds multi-touch revenue attribution, custom behavioral events, partitioning for multi-team organizations, and advanced reporting on top of the Professional plan. While HubSpot is more approachable than Marketo or Eloqua, an Enterprise implementation is still a substantial project. This overview covers what to expect.</p>
+
+      <div class="notice-box">
+        <strong>Note:</strong> This is an overview of what a HubSpot Marketing Hub Enterprise implementation involves. Unlike fully self-serve platforms, Enterprise onboarding involves a mandatory HubSpot onboarding fee (typically $6,000+) or working with a certified HubSpot Solutions Partner. This page explains what the implementation covers.
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 2</div>
-        <div class="step-block-title">Configure your CRM data model</div>
-        <div class="step-block-time">1-3 days</div>
-        <p>Set up your contact, company, and deal properties. Define your lifecycle stages and lead status values. This is foundational - get it right before importing data.</p>
+
+      <h2>HubSpot Enterprise implementation at a glance</h2>
+
+      <table class="quick-table">
+        <thead><tr><th>Detail</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Typical timeline</td><td>2-3 months</td></tr>
+          <tr><td>Team required</td><td>HubSpot Administrator + HubSpot onboarding team or partner</td></tr>
+          <tr><td>Pricing</td><td>From $3,600/mo (Marketing Hub Enterprise, 10,000 contacts)</td></tr>
+          <tr><td>Best for</td><td>Mid-market and enterprise companies wanting an all-in-one CRM and marketing platform</td></tr>
+        </tbody>
+      </table>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Evaluating HubSpot Enterprise? Start with a demo to assess fit before committing to implementation.</span>
+        <a class="inline-cta-btn" href="https://www.hubspot.com/products/marketing" target="_blank">→ Request a HubSpot Enterprise demo</a>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 3</div>
-        <div class="step-block-title">Authenticate your sending domains</div>
-        <div class="step-block-time">15-30 minutes</div>
-        <p>Go to Settings, then Email, then Sending Domains. Add and verify your domains with DKIM authentication.</p>
+
+      <h2>What implementation involves</h2>
+
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 1</span>
+          <span class="phase-title">Account setup and CRM configuration</span>
+          <span class="phase-time">2-3 weeks</span>
+        </div>
+        <p class="phase-body">HubSpot Enterprise starts with the CRM foundation. Configure contact, company, and deal properties to match your data model. Set up your sales pipelines and lifecycle stage definitions. Create user accounts and configure team permissions -- HubSpot Enterprise supports granular permission sets and team-level data partitioning, which is important for multi-team or multi-region organizations. Connect your website by installing the HubSpot tracking code, which starts capturing visitor behavior data from day one. HubSpot's mandatory Enterprise onboarding covers this phase with dedicated guidance from a HubSpot onboarding specialist.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 4</div>
-        <div class="step-block-title">Import your contacts and companies</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Import your contacts and companies via CSV. Map fields carefully. Use HubSpot's import templates for large datasets.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 2</span>
+          <span class="phase-title">Domain authentication and sending setup</span>
+          <span class="phase-time">1-2 weeks</span>
+        </div>
+        <p class="phase-body">Go to Settings > Marketing > Email > Configuration > Authentication and connect your sending domain. Add the DKIM records to your DNS and verify. HubSpot also supports connecting a custom domain for landing pages and website pages -- configure this in Settings > Website > Domains & URLs. If you are coming from another platform with a large list, plan for a soft IP warm-up period. HubSpot uses a shared IP pool for most accounts but can arrange dedicated IPs for high-volume Enterprise senders.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 5</div>
-        <div class="step-block-title">Set up your tracking code and integrations</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Install HubSpot's tracking code on your website. Connect your key integrations (Salesforce, Slack, etc.). Configure your ad integrations for revenue attribution.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 3</span>
+          <span class="phase-title">Data migration and contact import</span>
+          <span class="phase-time">2-3 weeks</span>
+        </div>
+        <p class="phase-body">Import your existing contacts through Settings > Import. Map all fields carefully -- any custom data needs custom properties created in HubSpot first. HubSpot's deduplication tools help merge duplicate records on import. If you are migrating from Salesforce or another CRM, HubSpot has native integrations that sync bidirectionally. For organizations with complex historical data, a data migration specialist (from your HubSpot partner) can handle the import and ensure data integrity. After import, use lists to verify the data looks correct before running any automations.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 6</div>
-        <div class="step-block-title">Build your core workflows</div>
-        <div class="step-block-time">2-5 days</div>
-        <p>Go to Automation, then Workflows. Build your core nurture sequences, lead routing workflows, and lifecycle stage transitions. Start with the highest-priority journeys.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 4</span>
+          <span class="phase-title">Lead scoring, attribution, and reporting</span>
+          <span class="phase-time">2-4 weeks</span>
+        </div>
+        <p class="phase-body">HubSpot Enterprise includes predictive lead scoring (AI-driven) in addition to manual scoring rules. Configure your scoring model in Settings > Properties > Contact Scoring. Set up your attribution reporting -- Enterprise supports multi-touch revenue attribution across up to 40 touchpoints, which helps you understand which marketing activities are driving closed deals. Custom dashboards can be built to surface the metrics your team cares about. If you use UTM parameters consistently, HubSpot's original source and utm tracking works automatically from the tracking code.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 7</div>
-        <div class="step-block-title">Configure reporting and dashboards</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Set up your reporting dashboards for marketing performance. Configure multi-touch attribution if relevant. Build your key reports before going live.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 5</span>
+          <span class="phase-title">Workflows, campaigns, and content</span>
+          <span class="phase-time">3-5 weeks</span>
+        </div>
+        <p class="phase-body">Build your core workflows: welcome and nurture sequences, lead scoring update workflows, lifecycle stage progression workflows, and sales handoff notifications. HubSpot Enterprise's workflows support custom behavioral event triggers -- if you instrument your product or website with the HubSpot custom events API, you can trigger workflows based on in-app behavior. Build out your email template library using the drag-and-drop email editor. Create landing page templates for campaigns. Set up your blog and SEO tools if content marketing is part of your strategy -- HubSpot Enterprise includes advanced SEO recommendations and content strategy tools.</p>
       </div>
-      <h2>Tips for getting the most out of HubSpot Enterprise</h2>
-      <div class="tip-box">
-        <div class="tip-box-title">Things worth knowing before you start</div>
-        <ul class="tip-list"><li>Enterprise setup is a project - assign a dedicated internal owner and work with HubSpot's implementation support</li><li>Get your data model right before importing - retroactively changing property structures is painful</li><li>Partitioning (available in Enterprise) is powerful for large teams - configure it early if you need it</li><li>Multi-touch revenue attribution requires proper integration with your CRM - set this up before you start running campaigns</li></ul>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 6</span>
+          <span class="phase-title">Training, testing, and go-live</span>
+          <span class="phase-time">2-3 weeks</span>
+        </div>
+        <p class="phase-body">Train your team on HubSpot's interface. HubSpot Academy has extensive free courses and certifications -- the HubSpot Marketing Software and Marketing Hub certifications are good starting points for your team. Test your workflows end-to-end before going live. Verify that lifecycle stage transitions are working correctly. Check that form submissions trigger the right workflows. HubSpot Enterprise's sandbox environment (available on Enterprise plans) lets you test major changes safely before deploying to production.</p>
       </div>
-      <h2>The bottom line</h2>
-      <p>HubSpot Enterprise setup is a significant project. Work with your HubSpot implementation partner or customer success manager to plan the rollout properly. The platform is comprehensive - do not try to configure everything at once.</p>
-      <p>Not sure HubSpot Enterprise is right for you? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+
+      <h2>Ongoing administration</h2>
+
+      <p>HubSpot Enterprise requires a dedicated HubSpot Administrator, though the day-to-day complexity is lower than Marketo or Eloqua. HubSpot releases updates on a rolling basis -- the admin needs to stay on top of new features and updates. Most mid-market organizations on HubSpot Enterprise have one dedicated RevOps or marketing ops person who owns the platform.</p>
+
+      <h2>Is HubSpot Enterprise the right tool for your organization?</h2>
+
+      <p>Tools at this level are not right for every organization. If you are still evaluating whether HubSpot Enterprise fits your needs, compare it against other options using the <a href="/comparisons.html">comparisons hub</a>, or take the <a href="/recommendations.html">recommendations quiz</a> to get a personalized suggestion based on your team size, budget, and use case.</p>
+
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to get started with HubSpot Enterprise.</div>
-        <div class="useful-link-row"><span class="useful-link-label">Get started with HubSpot Enterprise</span><a class="useful-link-url" href="https://www.hubspot.com" target="_blank">Contact HubSpot sales →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full HubSpot Enterprise review</span><a class="useful-link-url" href="/review-hubspot-enterprise.html">Read review →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Not sure HubSpot Enterprise is right for you?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+        <div class="useful-links-sub">Resources for evaluating and implementing HubSpot Enterprise.</div>
+        <div class="useful-link-row"><span class="useful-link-label">Request a HubSpot Enterprise demo</span><a class="useful-link-url" href="https://www.hubspot.com/products/marketing" target="_blank">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Read the HubSpot Enterprise review</span><a class="useful-link-url" href="/review-hubspot-enterprise.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">HubSpot Professional vs Enterprise: which do you need?</span><a class="useful-link-url" href="/comparison-activecampaign-vs-hubspot.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Compare marketing automation tools</span><a class="useful-link-url" href="/comparisons.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Not sure which tool is right for you?</span><a class="useful-link-url" href="/recommendations.html">Take the quiz &#8594;</a></div>
       </div>
+
+      <div class="related-section" id="related-section"></div>
     </div>
-    <div class="related-section" id="related-section"></div>
   </div>
+</main>
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
-      <span class="footer-copy">© 2026 MABG</span><span class="dot">|</span>
-      <a href="/about.html">About</a><span class="dot">|</span>
-      <a href="/affiliate-disclosure.html">Disclosure</a><span class="dot">|</span>
-      <a href="/privacy-policy.html">Privacy</a><span class="dot">|</span>
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
       <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
     </div>
   </div>
 </footer>
+
 <script>
 const THIS_ARTICLE_TOOLS = ["hubspot-enterprise"];
 const THIS_ARTICLE_URL = window.location.pathname;
-const ALL_ARTICLES = [
-  { title: "HubSpot Enterprise Review 2026", url: "/review-hubspot-enterprise.html", tools: ["hubspot-enterprise"], status: "live" },
-];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",aweber:"AWeber",campaignmonitor:"Campaign Monitor",constantcontact:"Constant Contact",flodesk:"Flodesk",keap:"Keap",zoho:"Zoho Campaigns",dotdigital:"Dotdigital",iterable:"Iterable",ortto:"Ortto",hubspotenterprise:"HubSpot Enterprise",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics365:"Microsoft Dynamics 365"};
-function renderRelated(){
-  const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
-  if(related.length===0)return;
-  const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on HubSpot Enterprise</div>';
-  related.forEach(a=>{
-    const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
-    html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';
-  });
-  section.innerHTML=html;
+const ALL_ARTICLES = [];
+const TOOL_LABELS = { hubspot-enterprise: "HubSpot Enterprise" };
+function renderRelated() {
+  const section = document.getElementById('related-section');
+  if (!section) return;
+  section.innerHTML = '';
 }
 renderRelated();
 </script>

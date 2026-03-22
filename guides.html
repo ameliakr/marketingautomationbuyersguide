@@ -647,6 +647,157 @@ const SETUP_DATA = {
       { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '15-30 min' },
     ]
   },
+  marketo: {
+    name: 'Marketo',
+    time: '3-6 months',
+    difficulty: 'hard',
+    trialUrl: 'https://business.adobe.com/products/marketo',
+    trialLabel: 'Request a Marketo demo',
+    affiliate: false,
+    staticPage: '/setup-marketo.html',
+    steps: [
+      { num: 1, title: 'Discovery and scoping', desc: 'Document your lead lifecycle, scoring model, and integration requirements with a certified Marketo partner.', time: '2-4 weeks' },
+      { num: 2, title: 'Technical setup and CRM integration', desc: 'Configure workspaces, sending domains, and the Salesforce or Dynamics CRM sync.', time: '3-6 weeks' },
+      { num: 3, title: 'Data migration', desc: 'Clean and import your contact database, map custom fields.', time: '2-4 weeks' },
+      { num: 4, title: 'Lead scoring and lifecycle', desc: 'Configure behavioral and demographic scoring rules and MQL thresholds.', time: '2-4 weeks' },
+      { num: 5, title: 'Program build-out', desc: 'Build email programs, engagement programs, and landing page templates.', time: '4-8 weeks' },
+      { num: 6, title: 'Testing and go-live', desc: 'UAT, team training, and phased rollout.', time: '2-4 weeks' },
+    ]
+  },
+  eloqua: {
+    name: 'Eloqua',
+    time: '3-6 months',
+    difficulty: 'hard',
+    trialUrl: 'https://www.oracle.com/cx/marketing/automation/',
+    trialLabel: 'Request an Eloqua demo',
+    affiliate: false,
+    staticPage: '/setup-eloqua.html',
+    steps: [
+      { num: 1, title: 'Discovery and stakeholder alignment', desc: 'Document processes, lead flow, and integration requirements with an Oracle-certified partner.', time: '3-5 weeks' },
+      { num: 2, title: 'Instance configuration and CRM integration', desc: 'Configure security groups, sending domains, and the CRM connector.', time: '4-6 weeks' },
+      { num: 3, title: 'Data migration', desc: 'Clean, deduplicate, and import your contact database.', time: '3-5 weeks' },
+      { num: 4, title: 'Lead scoring and Program Canvas', desc: 'Configure scoring models and build core automation programs.', time: '4-6 weeks' },
+      { num: 5, title: 'Reporting and integrations', desc: 'Set up Insight reporting and additional integrations.', time: '2-4 weeks' },
+      { num: 6, title: 'UAT, training, and go-live', desc: 'End-to-end testing, team training, and phased rollout.', time: '2-4 weeks' },
+    ]
+  },
+  pardot: {
+    name: 'Pardot',
+    time: '2-4 months',
+    difficulty: 'hard',
+    trialUrl: 'https://www.salesforce.com/products/marketing-cloud/marketing-automation/',
+    trialLabel: 'Request a Pardot demo',
+    affiliate: false,
+    staticPage: '/setup-pardot.html',
+    steps: [
+      { num: 1, title: 'Salesforce connection', desc: 'Connect Pardot to your Salesforce org and configure user access.', time: '1-2 weeks' },
+      { num: 2, title: 'Domain setup', desc: 'Configure sending domain and tracker domain with DNS records.', time: '1-2 weeks' },
+      { num: 3, title: 'Prospect import and field mapping', desc: 'Import contacts and map fields between Pardot and Salesforce.', time: '2-3 weeks' },
+      { num: 4, title: 'Scoring and grading', desc: 'Configure behavioral scoring and demographic grading models.', time: '2-3 weeks' },
+      { num: 5, title: 'Forms, landing pages, and templates', desc: 'Build gated content assets and branded email templates.', time: '2-4 weeks' },
+      { num: 6, title: 'Engagement Studio and go-live', desc: 'Build nurture programs, test end-to-end, and launch.', time: '2-4 weeks' },
+    ]
+  },
+  salesforce: {
+    name: 'Salesforce Marketing Cloud',
+    time: '4-9 months',
+    difficulty: 'hard',
+    trialUrl: 'https://www.salesforce.com/products/marketing-cloud/',
+    trialLabel: 'Request a Salesforce Marketing Cloud demo',
+    affiliate: false,
+    staticPage: '/setup-salesforce.html',
+    steps: [
+      { num: 1, title: 'Architecture and business unit setup', desc: 'Design multi-BU structure, permissions, and data sharing with a Salesforce SI.', time: '3-5 weeks' },
+      { num: 2, title: 'SAP and sending configuration', desc: 'Configure dedicated IP, sending domain, and CRM connector.', time: '3-5 weeks' },
+      { num: 3, title: 'Data architecture and contact model', desc: 'Design Data Extensions and configure CRM data sync.', time: '4-6 weeks' },
+      { num: 4, title: 'Journey Builder setup', desc: 'Build core customer journeys across email, SMS, and other channels.', time: '4-8 weeks' },
+      { num: 5, title: 'Content and templates', desc: 'Build email templates and reusable content blocks in Content Builder.', time: '3-5 weeks' },
+      { num: 6, title: 'UAT and go-live', desc: 'End-to-end testing and phased go-live with monitoring.', time: '3-4 weeks' },
+    ]
+  },
+  dynamics365: {
+    name: 'Microsoft Dynamics 365',
+    time: '2-5 months',
+    difficulty: 'hard',
+    trialUrl: 'https://www.microsoft.com/en-us/dynamics-365/products/marketing',
+    trialLabel: 'Request a Dynamics 365 demo',
+    affiliate: false,
+    staticPage: '/setup-dynamics365.html',
+    steps: [
+      { num: 1, title: 'Licensing and environment setup', desc: 'Provision Customer Insights - Journeys in the Power Platform Admin Center.', time: '1-2 weeks' },
+      { num: 2, title: 'Domain authentication', desc: 'Configure sending domain DKIM records and sender details.', time: '1-2 weeks' },
+      { num: 3, title: 'Data model and contact import', desc: 'Review Dataverse schema, create custom fields, and import contacts.', time: '2-4 weeks' },
+      { num: 4, title: 'Segments and lead scoring', desc: 'Build dynamic segments and configure lead scoring models.', time: '2-3 weeks' },
+      { num: 5, title: 'Journeys and email content', desc: 'Build Real-time journeys and email templates.', time: '3-5 weeks' },
+      { num: 6, title: 'Testing and go-live', desc: 'End-to-end testing, compliance verification, and launch.', time: '1-3 weeks' },
+    ]
+  },
+  iterable: {
+    name: 'Iterable',
+    time: '2-4 months',
+    difficulty: 'hard',
+    trialUrl: 'https://iterable.com',
+    trialLabel: 'Request an Iterable demo',
+    affiliate: false,
+    staticPage: '/setup-iterable.html',
+    steps: [
+      { num: 1, title: 'Data architecture planning', desc: 'Define user schema, event taxonomy, and data pipeline approach.', time: '1-2 weeks' },
+      { num: 2, title: 'API integration', desc: 'Engineering instruments product events and syncs user profile data via API.', time: '3-5 weeks' },
+      { num: 3, title: 'Sending domain and deliverability', desc: 'Configure sending domain and IP warm-up schedule.', time: '1-2 weeks' },
+      { num: 4, title: 'Templates and content', desc: 'Build email and push templates with dynamic personalization.', time: '2-4 weeks' },
+      { num: 5, title: 'Workflow build-out', desc: 'Build onboarding, re-engagement, and transactional workflows.', time: '3-5 weeks' },
+      { num: 6, title: 'QA and go-live', desc: 'End-to-end testing and monitored launch.', time: '2-3 weeks' },
+    ]
+  },
+  'hubspot-enterprise': {
+    name: 'HubSpot Enterprise',
+    time: '2-3 months',
+    difficulty: 'moderate',
+    trialUrl: 'https://www.hubspot.com/products/marketing',
+    trialLabel: 'Request a HubSpot Enterprise demo',
+    affiliate: false,
+    staticPage: '/setup-hubspot-enterprise.html',
+    steps: [
+      { num: 1, title: 'Account setup and CRM configuration', desc: 'Configure properties, pipelines, permissions, and the tracking code.', time: '2-3 weeks' },
+      { num: 2, title: 'Domain authentication', desc: 'Set up sending domain and landing page domain with DNS records.', time: '1-2 weeks' },
+      { num: 3, title: 'Data migration and contact import', desc: 'Import contacts, map fields, and deduplicate records.', time: '2-3 weeks' },
+      { num: 4, title: 'Lead scoring and attribution', desc: 'Configure predictive scoring and multi-touch attribution reporting.', time: '2-4 weeks' },
+      { num: 5, title: 'Workflows and content', desc: 'Build core workflows, email templates, and landing pages.', time: '3-5 weeks' },
+      { num: 6, title: 'Training and go-live', desc: 'Team training via HubSpot Academy and sandbox-tested launch.', time: '2-3 weeks' },
+    ]
+  },
+  dotdigital: {
+    name: 'Dotdigital',
+    time: '4-8 weeks',
+    difficulty: 'moderate',
+    trialUrl: 'https://dotdigital.com',
+    trialLabel: 'Request a Dotdigital demo',
+    affiliate: false,
+    staticPage: '/setup-dotdigital.html',
+    steps: [
+      { num: 1, title: 'Onboarding kickoff', desc: 'Kickoff call with Dotdigital onboarding specialist to review goals and tech stack.', time: '1 week' },
+      { num: 2, title: 'Domain setup and IP warmup', desc: 'Configure sending domain and follow IP warming schedule.', time: '1-2 weeks' },
+      { num: 3, title: 'Integration and data import', desc: 'Connect e-commerce or CRM platform and import contacts.', time: '1-3 weeks' },
+      { num: 4, title: 'Program and template build-out', desc: 'Build welcome, abandoned cart, and post-purchase automation programs.', time: '2-3 weeks' },
+      { num: 5, title: 'Testing and go-live', desc: 'End-to-end program testing and specialist sign-off before launch.', time: '1 week' },
+    ]
+  },
+  ortto: {
+    name: 'Ortto',
+    time: '3-6 weeks',
+    difficulty: 'moderate',
+    trialUrl: 'https://ortto.com',
+    trialLabel: 'Request an Ortto demo',
+    affiliate: false,
+    staticPage: '/setup-ortto.html',
+    steps: [
+      { num: 1, title: 'Data source connection', desc: 'Connect your CRM, product data, or CDP to Ortto.', time: '1-2 weeks' },
+      { num: 2, title: 'Person schema and segmentation', desc: 'Review synced attributes, add custom fields, build core audience segments.', time: '1-2 weeks' },
+      { num: 3, title: 'Sending domain setup', desc: 'Configure sending domain DKIM records.', time: '1 week' },
+      { num: 4, title: 'Journey and campaign build-out', desc: 'Build onboarding, feature adoption, and churn prevention journeys.', time: '2-3 weeks' },
+      { num: 5, title: 'Analytics and go-live', desc: 'Configure reporting dashboards, test journeys, and launch.', time: '1-2 weeks' },
+    ]
+  },
 };
 
 function buildSetup() {

@@ -3,18 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Set Up Iterable: A Step-by-Step Getting Started Guide</title>
-<meta name="description" content="How to set up Iterable from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<title>Setting Up Iterable: What the Implementation Involves (2026)</title>
+<meta name="description" content="What a Iterable implementation involves: phases, timeline, team requirements, and what to expect at each stage of setup.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="How to Set Up Iterable: A Step-by-Step Getting Started Guide">
-<meta property="og:description" content="How to set up Iterable from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<meta property="og:title" content="Setting Up Iterable: What the Implementation Involves (2026)">
+<meta property="og:description" content="What a Iterable implementation involves: phases, timeline, team requirements, and what to expect at each stage of setup.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-.article-wrap{max-width:680px;margin:0 auto}.article-hero{margin-bottom:40px}.article-hero h1{font-family:"DM Serif Display",serif;font-size:clamp(28px, 5vw, 44px);line-height:1.15;font-weight:400;margin-bottom:16px}.article-meta{display:flex;gap:12px;flex-wrap:wrap}.article-tag{font-size:11px;padding:3px 9px;background:#f5f5f3;color:var(--muted)}.article-tag.tool{background:#f1f8f1;color:var(--accent)}.article-body h2 { font-family: "DM Serif Display", serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }.article-body p{font-size:15px;line-height:1.8;margin-bottom:18px;color:var(--ink)}.article-body ul{margin:0 0 18px 20px}.article-body li{font-size:15px;line-height:1.8;margin-bottom:6px}.article-body a{color:var(--accent);text-decoration:underline}.article-body strong{font-weight:500}.step-block{border-left:3px solid var(--accent);padding:20px 24px;margin:24px 0;background:#f8f8f6}.step-block-num{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.step-block-title{font-size:16px;font-weight:500;margin-bottom:8px}.step-block-time{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:10px}.step-block p{font-size:14px;line-height:1.7;margin-bottom:0;color:var(--ink)}.tip-box{border:1px solid var(--rule);background:#f8f8f6;padding:20px 24px;margin:32px 0}.tip-box-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.tip-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}.tip-list li{font-size:14px;line-height:1.5;padding-left:18px;position:relative}.tip-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}.inline-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:#f8f8f6;border-left:3px solid var(--accent);margin:32px 0;flex-wrap:wrap}.inline-cta-text{font-size:14px}.inline-cta-btn{font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;flex-shrink:0;text-decoration:none}.inline-cta-btn:hover{text-decoration:underline}.inline-cta-note{font-size:10px;color:var(--muted);font-style:italic}.useful-links-section{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px}.useful-links-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.useful-links-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.useful-link-row{display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px}.useful-link-label{color:var(--muted)}.useful-link-url{color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px}.useful-link-url:hover{text-decoration:underline}.useful-link-note{font-size:10px;color:var(--muted);font-style:italic;margin-left:4px}.related-section{border-top:2px solid var(--ink);padding-top:32px;margin-top:48px}.related-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.related-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.related-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink);transition:all .2s}.related-row.live{text-decoration:none}.related-row.live:hover .related-row-title{color:var(--accent)}.related-row.live:hover .related-row-arrow{transform:translateX(4px);color:var(--accent)}.related-row-left{display:flex;flex-direction:column;gap:4px}.related-row-title{font-size:14px;transition:color .2s}.related-row-tools{font-size:11px;color:var(--muted)}.related-row-arrow{font-size:15px;color:var(--rule);transition:all .2s;flex-shrink:0;margin-left:16px}
+.article-wrap { max-width: 750px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; text-wrap: balance; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.phase-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 0 0 24px; background: #fafaf9; }
+.phase-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.phase-label { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0; }
+.phase-title { font-size: 16px; font-weight: 500; color: var(--ink); }
+.phase-time { font-size: 11px; color: var(--muted); margin-left: auto; flex-shrink: 0; }
+.phase-body { font-size: 14px; line-height: 1.75; color: var(--ink); margin: 0; }
+.notice-box { background: #f5f5f3; border: 1px solid var(--rule); padding: 20px 24px; margin: 32px 0; font-size: 14px; line-height: 1.7; }
+.notice-box strong { font-weight: 500; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
+.quick-table th:first-child { color: var(--muted); }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 </style>
 </head>
 <body>
@@ -24,126 +74,161 @@
     <nav class="nav-links">
       <a href="/all-tools.html">Tools</a>
       <a href="/comparisons.html">Comparisons</a>
-      <a href="/quiz.html">Recommendations</a>
+      <a href="/recommendations.html">Recommendations</a>
       <a href="/guides.html">Guides</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/articles.html">Articles</a>
     </nav>
-    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <div class="mobile-menu" id="mobile-nav">
     <a href="/all-tools.html">Tools</a>
     <a href="/comparisons.html">Comparisons</a>
-    <a href="/quiz.html">Recommendations</a>
+    <a href="/recommendations.html">Recommendations</a>
     <a href="/guides.html">Guides</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/articles.html">Articles</a>
   </div>
 </header>
+
 <main class="page-body">
   <div class="article-wrap">
     <div class="article-hero">
-      <h1>How to Set Up Iterable: A Step-by-Step Getting Started Guide</h1>
+      <h1>Setting up Iterable: what the implementation involves</h1>
       <div class="article-meta">
         <span class="article-tag tool">Iterable</span>
-        <span class="article-tag">Setup Guide</span>
+        <span class="article-tag">Setup overview</span>
+        <span class="article-tag">Enterprise</span><span class="article-tag">B2C</span><span class="article-tag">Growth</span>
         <span class="article-tag">Updated March 2026</span>
       </div>
     </div>
+
     <div class="article-body">
-      <p>Iterable is an enterprise-grade cross-channel marketing platform. It is powerful and flexible, but setup requires technical resources - plan for involvement from your engineering team, particularly for API integration and event data setup.</p>
-      <div class="inline-cta"><span class="inline-cta-text">Contact Iterable to get started.</span><div><a class="inline-cta-btn" href="https://iterable.com" target="_blank">→ Contact Iterable</a></div></div>
-      <h2>Step-by-step setup guide</h2>
-      <div class="step-block">
-        <div class="step-block-num">Step 1</div>
-        <div class="step-block-title">Complete account provisioning</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Iterable accounts are provisioned through the sales process. Work with your account team to configure your account settings, user permissions, and initial project setup.</p>
+
+      <p>Iterable is a cross-channel marketing platform built for B2C companies that need to send high-volume, personalized messaging across email, SMS, push notifications, and in-app. It is API-first by design, which means it integrates deeply with your product and customer data but requires technical resource to implement. This overview explains what an Iterable implementation looks like.</p>
+
+      <div class="notice-box">
+        <strong>Note:</strong> This is an overview of what an Iterable implementation involves, not a step-by-step setup guide. Iterable implementations require technical resource -- typically a marketing engineer or developer -- working alongside your marketing team. This page will help you understand the scope.
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 2</div>
-        <div class="step-block-title">Set up your data model</div>
-        <div class="step-block-time">1-3 days</div>
-        <p>Define your user fields and event schema before importing any data. This is the most important step - a well-designed data model makes everything else easier. Work with your engineering team on this.</p>
+
+      <h2>Iterable implementation at a glance</h2>
+
+      <table class="quick-table">
+        <thead><tr><th>Detail</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Typical timeline</td><td>2-4 months</td></tr>
+          <tr><td>Team required</td><td>Marketing Engineer or technical marketing ops lead + Iterable CSM</td></tr>
+          <tr><td>Pricing</td><td>Custom, typically $20,000+/year</td></tr>
+          <tr><td>Best for</td><td>Growth-stage and enterprise B2C companies with high-volume, data-driven messaging</td></tr>
+        </tbody>
+      </table>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Evaluating Iterable? Start with a demo to assess fit before committing to implementation.</span>
+        <a class="inline-cta-btn" href="https://iterable.com" target="_blank">→ Request an Iterable demo</a>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 3</div>
-        <div class="step-block-title">Configure sending infrastructure</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Set up your sending domains with DKIM authentication. Configure dedicated IPs if applicable and follow the IP warming schedule.</p>
+
+      <h2>What implementation involves</h2>
+
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 1</span>
+          <span class="phase-title">Account setup and data architecture planning</span>
+          <span class="phase-time">1-2 weeks</span>
+        </div>
+        <p class="phase-body">Iterable's data model is user-centric: every user has a profile (email address plus any custom fields you define), and events are associated with users. Before any technical work begins, you need to define your user schema -- what fields and events you need to track -- and decide how data will flow into Iterable. Most companies send data to Iterable via the API, through a Customer Data Platform (Segment, mParticle), or through a data warehouse connection. Designing this data architecture upfront saves significant rework later. Iterable assigns a Customer Success Manager (CSM) who works closely with you through the implementation.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 4</div>
-        <div class="step-block-title">Integrate your data sources</div>
-        <div class="step-block-time">2-5 days</div>
-        <p>Connect Iterable to your data sources via API or native integrations (Segment, mParticle, etc.). Work with your engineering team to instrument events correctly.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 2</span>
+          <span class="phase-title">API integration and data pipeline setup</span>
+          <span class="phase-time">3-5 weeks</span>
+        </div>
+        <p class="phase-body">This is the most technically intensive phase. Your engineering team (or your marketing engineer) integrates your product or website with Iterable's API to send user events in real time. Key events to instrument include user sign-up, purchase, product usage milestones, and any behavior you want to trigger messaging from. User profile data -- subscription status, preferences, product usage data -- also needs to be synced to Iterable, either via API or batch CSV upload. If you are using a CDP, configuring the Iterable destination is done here.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 5</div>
-        <div class="step-block-title">Import your user base</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Upload your existing users via CSV or API. Map your user fields to the schema you defined earlier.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 3</span>
+          <span class="phase-title">Sending domain configuration and deliverability</span>
+          <span class="phase-time">1-2 weeks</span>
+        </div>
+        <p class="phase-body">Configure your sending domain in Iterable's Settings. Add DKIM records to your DNS and verify the domain in Iterable. If you are on a plan with dedicated IP addresses, your IPs need to be warmed before sending at full volume. Iterable provides IP warming schedules and monitors deliverability through their Deliverability team, who is available for consultation on higher-tier plans. Set up your default sender name, from address, and reply-to address.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 6</div>
-        <div class="step-block-title">Build your first journey</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Go to Journeys and build your first workflow. Iterable's workflow builder is powerful - start with a welcome series and expand from there.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 4</span>
+          <span class="phase-title">Templates and content setup</span>
+          <span class="phase-time">2-4 weeks</span>
+        </div>
+        <p class="phase-body">Build your email and push notification templates in Iterable's template editor, which supports both drag-and-drop and HTML authoring. Iterable's Handlebars-based personalization language allows dynamic content blocks, conditional logic, and data lookups against user profiles and event data. Build a core set of templates for your main use cases before starting campaign build-out. For mobile push and in-app messaging, your engineers need to integrate the Iterable SDK into your mobile app.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 7</div>
-        <div class="step-block-title">Send your first campaign</div>
-        <div class="step-block-time">30-60 minutes</div>
-        <p>Go to Campaigns and create your first email campaign. Select your audience using Iterable's segmentation tools, design your email, and send or schedule.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 5</span>
+          <span class="phase-title">Workflows and campaign build-out</span>
+          <span class="phase-time">3-5 weeks</span>
+        </div>
+        <p class="phase-body">Iterable's Workflow Studio is a visual canvas for building triggered and scheduled multi-step campaigns across channels. Workflows are triggered by API events, user properties, or list membership. Build your highest-priority workflows first: onboarding sequences, re-engagement campaigns, and transactional confirmations. Iterable's A/B testing is built into the workflow canvas -- set up experiments from the start rather than adding them later. Catalog is Iterable's product recommendation engine for e-commerce and subscription businesses -- if you have a product catalog, integrating it enables personalized product recommendations in emails.</p>
       </div>
-      <h2>Tips for getting the most out of Iterable</h2>
-      <div class="tip-box">
-        <div class="tip-box-title">Things worth knowing before you start</div>
-        <ul class="tip-list"><li>Iterable setup requires engineering involvement - plan for it from the start</li><li>Your data model is the foundation of everything - spend time on it before building any campaigns</li><li>Use Iterable's Catalog feature for personalization at scale - it is one of the platform's strongest capabilities</li><li>The customer success team is knowledgeable - use them during onboarding</li><li>Start with simpler journeys and build complexity once the team is comfortable with the platform</li></ul>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 6</span>
+          <span class="phase-title">QA, testing, and go-live</span>
+          <span class="phase-time">2-3 weeks</span>
+        </div>
+        <p class="phase-body">Test every workflow end-to-end by triggering test events through the API. Verify that user profile data is populating correctly in templates. Check that unsubscribe links and preference center pages work correctly. For mobile channels, test push notifications on both iOS and Android devices. Monitor event ingestion logs for errors during the first days of live traffic. Iterable's CSM typically reviews your setup and provides feedback before you go live at full scale.</p>
       </div>
-      <h2>The bottom line</h2>
-      <p>Iterable is built for teams with technical resources. The platform is highly capable but the setup complexity reflects that. Work with your Iterable customer success manager and involve your engineering team from day one.</p>
-      <p>Not sure Iterable is right for you? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+
+      <h2>Ongoing administration</h2>
+
+      <p>Iterable's API-first architecture means ongoing operations have a technical component. New events need to be instrumented by engineering. Template updates requiring new data fields need API changes. Your marketing team handles day-to-day campaign management; your marketing engineer handles data and integration maintenance. Iterable releases updates continuously -- the CSM keeps you informed of relevant changes.</p>
+
+      <h2>Is Iterable the right tool for your organization?</h2>
+
+      <p>Tools at this level are not right for every organization. If you are still evaluating whether Iterable fits your needs, compare it against other options using the <a href="/comparisons.html">comparisons hub</a>, or take the <a href="/recommendations.html">recommendations quiz</a> to get a personalized suggestion based on your team size, budget, and use case.</p>
+
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to get started with Iterable.</div>
-        <div class="useful-link-row"><span class="useful-link-label">Get started with Iterable</span><a class="useful-link-url" href="https://iterable.com" target="_blank">Contact Iterable →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full Iterable review</span><a class="useful-link-url" href="/review-iterable.html">Read review →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Not sure Iterable is right for you?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+        <div class="useful-links-sub">Resources for evaluating and implementing Iterable.</div>
+        <div class="useful-link-row"><span class="useful-link-label">Request an Iterable demo</span><a class="useful-link-url" href="https://iterable.com" target="_blank">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Read the Iterable review</span><a class="useful-link-url" href="/review-iterable.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Compare marketing automation tools</span><a class="useful-link-url" href="/comparisons.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Not sure which tool is right for you?</span><a class="useful-link-url" href="/recommendations.html">Take the quiz &#8594;</a></div>
       </div>
+
+      <div class="related-section" id="related-section"></div>
     </div>
-    <div class="related-section" id="related-section"></div>
   </div>
+</main>
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
-      <span class="footer-copy">© 2026 MABG</span><span class="dot">|</span>
-      <a href="/about.html">About</a><span class="dot">|</span>
-      <a href="/affiliate-disclosure.html">Disclosure</a><span class="dot">|</span>
-      <a href="/privacy-policy.html">Privacy</a><span class="dot">|</span>
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
       <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
     </div>
   </div>
 </footer>
+
 <script>
 const THIS_ARTICLE_TOOLS = ["iterable"];
 const THIS_ARTICLE_URL = window.location.pathname;
-const ALL_ARTICLES = [
-  { title: "Iterable Review 2026", url: "/review-iterable.html", tools: ["iterable"], status: "live" },
-];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",aweber:"AWeber",campaignmonitor:"Campaign Monitor",constantcontact:"Constant Contact",flodesk:"Flodesk",keap:"Keap",zoho:"Zoho Campaigns",dotdigital:"Dotdigital",iterable:"Iterable",ortto:"Ortto",hubspotenterprise:"HubSpot Enterprise",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics365:"Microsoft Dynamics 365"};
-function renderRelated(){
-  const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
-  if(related.length===0)return;
-  const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on Iterable</div>';
-  related.forEach(a=>{
-    const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
-    html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';
-  });
-  section.innerHTML=html;
+const ALL_ARTICLES = [];
+const TOOL_LABELS = { iterable: "Iterable" };
+function renderRelated() {
+  const section = document.getElementById('related-section');
+  if (!section) return;
+  section.innerHTML = '';
 }
 renderRelated();
 </script>

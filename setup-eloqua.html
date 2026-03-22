@@ -3,18 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Set Up Eloqua: A Step-by-Step Getting Started Guide</title>
-<meta name="description" content="How to set up Eloqua from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<title>Setting Up Eloqua: What the Implementation Involves (2026)</title>
+<meta name="description" content="What a Eloqua implementation involves: phases, timeline, team requirements, and what to expect at each stage of setup.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="How to Set Up Eloqua: A Step-by-Step Getting Started Guide">
-<meta property="og:description" content="How to set up Eloqua from scratch. Account creation, domain authentication, and step-by-step setup guide.">
+<meta property="og:title" content="Setting Up Eloqua: What the Implementation Involves (2026)">
+<meta property="og:description" content="What a Eloqua implementation involves: phases, timeline, team requirements, and what to expect at each stage of setup.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
-.article-wrap{max-width:680px;margin:0 auto}.article-hero{margin-bottom:40px}.article-hero h1{font-family:"DM Serif Display",serif;font-size:clamp(28px, 5vw, 44px);line-height:1.15;font-weight:400;margin-bottom:16px}.article-meta{display:flex;gap:12px;flex-wrap:wrap}.article-tag{font-size:11px;padding:3px 9px;background:#f5f5f3;color:var(--muted)}.article-tag.tool{background:#f1f8f1;color:var(--accent)}.article-body h2 { font-family: "DM Serif Display", serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }.article-body p{font-size:15px;line-height:1.8;margin-bottom:18px;color:var(--ink)}.article-body ul{margin:0 0 18px 20px}.article-body li{font-size:15px;line-height:1.8;margin-bottom:6px}.article-body a{color:var(--accent);text-decoration:underline}.article-body strong{font-weight:500}.step-block{border-left:3px solid var(--accent);padding:20px 24px;margin:24px 0;background:#f8f8f6}.step-block-num{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}.step-block-title{font-size:16px;font-weight:500;margin-bottom:8px}.step-block-time{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:10px}.step-block p{font-size:14px;line-height:1.7;margin-bottom:0;color:var(--ink)}.tip-box{border:1px solid var(--rule);background:#f8f8f6;padding:20px 24px;margin:32px 0}.tip-box-title{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}.tip-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px}.tip-list li{font-size:14px;line-height:1.5;padding-left:18px;position:relative}.tip-list li::before{content:"→";position:absolute;left:0;color:var(--accent)}.inline-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:#f8f8f6;border-left:3px solid var(--accent);margin:32px 0;flex-wrap:wrap}.inline-cta-text{font-size:14px}.inline-cta-btn{font-size:13px;font-weight:500;color:var(--accent);white-space:nowrap;flex-shrink:0;text-decoration:none}.inline-cta-btn:hover{text-decoration:underline}.inline-cta-note{font-size:10px;color:var(--muted);font-style:italic}.useful-links-section{border-top:1px solid var(--rule);margin-top:56px;padding-top:32px}.useful-links-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.useful-links-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.useful-link-row{display:flex;align-items:baseline;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--rule);font-size:13px}.useful-link-label{color:var(--muted)}.useful-link-url{color:var(--accent);font-weight:500;text-decoration:none;flex-shrink:0;margin-left:16px}.useful-link-url:hover{text-decoration:underline}.useful-link-note{font-size:10px;color:var(--muted);font-style:italic;margin-left:4px}.related-section{border-top:2px solid var(--ink);padding-top:32px;margin-top:48px}.related-title{font-family:"DM Serif Display",serif;font-size:20px;font-weight:400;margin-bottom:4px}.related-sub{font-size:13px;color:var(--muted);margin-bottom:24px}.related-row{display:flex;align-items:baseline;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink);transition:all .2s}.related-row.live{text-decoration:none}.related-row.live:hover .related-row-title{color:var(--accent)}.related-row.live:hover .related-row-arrow{transform:translateX(4px);color:var(--accent)}.related-row-left{display:flex;flex-direction:column;gap:4px}.related-row-title{font-size:14px;transition:color .2s}.related-row-tools{font-size:11px;color:var(--muted)}.related-row-arrow{font-size:15px;color:var(--rule);transition:all .2s;flex-shrink:0;margin-left:16px}
+.article-wrap { max-width: 750px; margin: 0 auto; }
+.article-hero { margin-bottom: 40px; }
+.article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 5vw, 44px); line-height: 1.15; font-weight: 400; margin-bottom: 16px; text-wrap: balance; }
+.article-meta { display: flex; gap: 12px; flex-wrap: wrap; }
+.article-tag { font-size: 11px; padding: 3px 9px; background: #f5f5f3; color: var(--muted); }
+.article-tag.tool { background: #f1f8f1; color: var(--accent); }
+.article-body h2 { font-family: 'DM Serif Display', serif; font-size: clamp(20px, 3vw, 24px); font-weight: 400; margin: 48px 0 16px; max-width: 560px; text-wrap: balance; }
+.article-body h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; }
+.article-body p { font-size: 15px; line-height: 1.8; margin-bottom: 18px; color: var(--ink); }
+.article-body ul { margin: 0 0 18px 20px; }
+.article-body li { font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+.article-body a { color: var(--accent); text-decoration: underline; }
+.article-body strong { font-weight: 500; }
+.phase-block { border-left: 3px solid var(--accent); padding: 20px 24px; margin: 0 0 24px; background: #fafaf9; }
+.phase-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.phase-label { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.05em; flex-shrink: 0; }
+.phase-title { font-size: 16px; font-weight: 500; color: var(--ink); }
+.phase-time { font-size: 11px; color: var(--muted); margin-left: auto; flex-shrink: 0; }
+.phase-body { font-size: 14px; line-height: 1.75; color: var(--ink); margin: 0; }
+.notice-box { background: #f5f5f3; border: 1px solid var(--rule); padding: 20px 24px; margin: 32px 0; font-size: 14px; line-height: 1.7; }
+.notice-box strong { font-weight: 500; }
+.quick-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 13px; }
+.quick-table th { font-size: 13px; font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--ink); font-family: 'DM Sans', sans-serif; }
+.quick-table th:first-child { color: var(--muted); }
+.quick-table td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; font-size: 13px; font-family: 'DM Sans', sans-serif; }
+.quick-table td:first-child { color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
+.quick-table tr:nth-child(even) td { background: #f8f8f7; }
+.cell-yes { color: var(--yes); font-weight: 500; }
+.cell-no { color: var(--no); }
+.inline-cta { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px; background: #f8f8f6; border-left: 3px solid var(--accent); margin: 32px 0; flex-wrap: wrap; }
+.inline-cta-text { font-size: 14px; }
+.inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
+.inline-cta-btn:hover { text-decoration: underline; }
+.useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
+.useful-link-label { color: var(--muted); }
+.useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
+.useful-link-url:hover { text-decoration: underline; }
+.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+.related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
+.related-row.live { text-decoration: none; }
+.related-row.live:hover .related-row-title { color: var(--accent); }
+.related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
+.related-row-left { display: flex; flex-direction: column; gap: 4px; }
+.related-row-title { font-size: 14px; transition: color 0.2s; }
+.related-row-tools { font-size: 11px; color: var(--muted); }
+.related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
 </style>
 </head>
 <body>
@@ -24,126 +74,161 @@
     <nav class="nav-links">
       <a href="/all-tools.html">Tools</a>
       <a href="/comparisons.html">Comparisons</a>
-      <a href="/quiz.html">Recommendations</a>
+      <a href="/recommendations.html">Recommendations</a>
       <a href="/guides.html">Guides</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/articles.html">Articles</a>
     </nav>
-    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="hamburger" onclick="document.getElementById('mobile-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
   <div class="mobile-menu" id="mobile-nav">
     <a href="/all-tools.html">Tools</a>
     <a href="/comparisons.html">Comparisons</a>
-    <a href="/quiz.html">Recommendations</a>
+    <a href="/recommendations.html">Recommendations</a>
     <a href="/guides.html">Guides</a>
     <a href="/pricing.html">Pricing</a>
     <a href="/articles.html">Articles</a>
   </div>
 </header>
+
 <main class="page-body">
   <div class="article-wrap">
     <div class="article-hero">
-      <h1>How to Set Up Eloqua: A Step-by-Step Getting Started Guide</h1>
+      <h1>Setting up Eloqua: what the implementation involves</h1>
       <div class="article-meta">
         <span class="article-tag tool">Eloqua</span>
-        <span class="article-tag">Setup Guide</span>
+        <span class="article-tag">Setup overview</span>
+        <span class="article-tag">Enterprise</span><span class="article-tag">B2B</span>
         <span class="article-tag">Updated March 2026</span>
       </div>
     </div>
+
     <div class="article-body">
-      <p>Eloqua is an enterprise B2B marketing automation platform with deep lead management and integration capabilities. It is one of the most mature platforms available and is suited to large organizations with dedicated marketing operations resources.</p>
-      <div class="inline-cta"><span class="inline-cta-text">Contact Oracle to get started with Eloqua.</span><div><a class="inline-cta-btn" href="https://www.oracle.com/cx/marketing/automation" target="_blank">→ Contact Oracle sales</a></div></div>
-      <h2>Step-by-step setup guide</h2>
-      <div class="step-block">
-        <div class="step-block-num">Step 1</div>
-        <div class="step-block-title">Engage Oracle and implementation partner</div>
-        <div class="step-block-time">1-2 weeks</div>
-        <p>Work with Oracle sales to scope your implementation. Engage a certified Oracle CX implementation partner. Define your scope, timeline, and success metrics.</p>
+
+      <p>Oracle Eloqua is an enterprise-grade marketing automation platform built for large B2B organizations with complex, multi-touch demand generation programs. Implementations are significant undertakings -- typically led by certified Oracle partners and involving multiple stakeholders across marketing, sales, and IT. This overview explains what an Eloqua implementation involves so you can plan accordingly.</p>
+
+      <div class="notice-box">
+        <strong>Note:</strong> This is an overview of what an Eloqua implementation involves, not a step-by-step setup guide. Eloqua implementations are led by Oracle-certified partners or experienced in-house teams. If you are evaluating Eloqua, this page will help you understand the scope of the project.
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 2</div>
-        <div class="step-block-title">Configure your instance</div>
-        <div class="step-block-time">1-3 days</div>
-        <p>Work with your Oracle team to configure instance settings, user roles, security groups, and field-level security.</p>
+
+      <h2>Eloqua implementation at a glance</h2>
+
+      <table class="quick-table">
+        <thead><tr><th>Detail</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Typical timeline</td><td>3-6 months</td></tr>
+          <tr><td>Team required</td><td>Dedicated Eloqua Administrator + Oracle implementation partner</td></tr>
+          <tr><td>Pricing</td><td>Custom, typically $36,000+/year</td></tr>
+          <tr><td>Best for</td><td>Large enterprise B2B organizations with complex marketing operations</td></tr>
+        </tbody>
+      </table>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Evaluating Eloqua? Start with a demo to assess fit before committing to implementation.</span>
+        <a class="inline-cta-btn" href="https://www.oracle.com/cx/marketing/automation/" target="_blank">→ Request an Eloqua demo</a>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 3</div>
-        <div class="step-block-title">Set up email infrastructure</div>
-        <div class="step-block-time">2-3 days</div>
-        <p>Configure your sending domains with DKIM. Set up dedicated IP addresses and follow the IP warming schedule. Configure your email footers and unsubscribe management.</p>
+
+      <h2>What implementation involves</h2>
+
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 1</span>
+          <span class="phase-title">Discovery, scoping, and stakeholder alignment</span>
+          <span class="phase-time">3-5 weeks</span>
+        </div>
+        <p class="phase-body">Eloqua implementations start with a thorough discovery process. This involves documenting your current marketing processes, lead flow, scoring model, and integration landscape. Key stakeholders from marketing, sales operations, and IT need to be involved from the start -- Eloqua touches all three teams. The output of discovery is a detailed requirements document and implementation plan. Oracle typically assigns a Customer Success Manager to enterprise accounts; this person is your primary contact through the project.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 4</div>
-        <div class="step-block-title">Design your contact model</div>
-        <div class="step-block-time">2-5 days</div>
-        <p>Define your contact fields, account fields, and custom objects. Eloqua's flexible data model is powerful but requires careful planning.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 2</span>
+          <span class="phase-title">Instance configuration and CRM integration</span>
+          <span class="phase-time">4-6 weeks</span>
+        </div>
+        <p class="phase-body">Eloqua's technical setup includes configuring security groups and user access, setting up sending domains and IP addresses, and establishing the CRM integration. Eloqua has native integrations with Salesforce and Microsoft Dynamics, plus an Oracle CRM integration for Oracle sales customers. The CRM sync configuration is critical -- field mapping, sync frequency, and data flow direction need to be carefully planned. Eloqua also integrates with data enrichment tools (Dun & Bradstreet, Bombora) which are commonly configured in this phase for enterprise deployments.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 5</div>
-        <div class="step-block-title">Import and sync your data</div>
-        <div class="step-block-time">2-5 days</div>
-        <p>Import contacts via CSV or configure your CRM sync (Salesforce, Oracle Sales Cloud, etc.). Validate data quality after import.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 3</span>
+          <span class="phase-title">Data migration and contact import</span>
+          <span class="phase-time">3-5 weeks</span>
+        </div>
+        <p class="phase-body">Importing existing contacts requires data cleaning, deduplication, and field mapping. Eloqua uses a contact model with standard and custom fields -- any custom data your organization tracks needs to be mapped to custom fields created during this phase. Eloqua's data import tools support CSV upload and direct CRM sync. Large databases (500,000+ contacts) require phased imports and careful monitoring of deliverability impact. Suppression lists and global unsubscribe lists also need to be configured before any sending begins.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 6</div>
-        <div class="step-block-title">Build your first campaign canvas</div>
-        <div class="step-block-time">3-7 days</div>
-        <p>Use Eloqua's Campaign Canvas to build your first campaign. The visual canvas is one of Eloqua's signature features. Start with a lead nurture program.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 4</span>
+          <span class="phase-title">Lead scoring and program canvas build-out</span>
+          <span class="phase-time">4-6 weeks</span>
+        </div>
+        <p class="phase-body">Eloqua's lead scoring model supports both behavioral and demographic scoring with multiple score models running simultaneously -- useful for organizations with multiple products or geographies. Program Canvas is Eloqua's automation builder, and it is powerful but requires training to use effectively. Core programs built in this phase typically include: welcome and nurture programs, lead scoring update programs, lifecycle stage transition programs, and sales alert notifications. Eloqua's email and landing page template system also needs to be built out -- most organizations develop a library of branded templates before rolling out to the full team.</p>
       </div>
-<div class="step-block">
-        <div class="step-block-num">Step 7</div>
-        <div class="step-block-title">Configure lead scoring</div>
-        <div class="step-block-time">1-2 days</div>
-        <p>Set up your lead scoring model using Eloqua's scoring rules. Define explicit and implicit scoring criteria aligned with your sales team's definition of a qualified lead.</p>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 5</span>
+          <span class="phase-title">Reporting and integration setup</span>
+          <span class="phase-time">2-4 weeks</span>
+        </div>
+        <p class="phase-body">Eloqua Insight is the built-in reporting engine. Standard reports cover email performance, form submissions, campaign influence, and lead lifecycle. Custom reports require Insight configuration. For organizations using business intelligence tools (Tableau, Power BI), Eloqua data can be exported via API or connected directly. This phase also covers any additional integrations beyond the CRM -- webinar platforms (Zoom, ON24), ad platforms, data enrichment services, and content management systems.</p>
       </div>
-      <h2>Tips for getting the most out of Eloqua</h2>
-      <div class="tip-box">
-        <div class="tip-box-title">Things worth knowing before you start</div>
-        <ul class="tip-list"><li>Eloqua implementation is a long-term project - set realistic expectations with stakeholders</li><li>The Oracle partner ecosystem is extensive - choose a partner with proven Eloqua experience</li><li>Eloqua's reporting is deep - configure your dashboards and reports before going live</li><li>The integration with Oracle Sales Cloud is tight if you are in the Oracle ecosystem - leverage it</li></ul>
+      <div class="phase-block">
+        <div class="phase-header">
+          <span class="phase-label">PHASE 6</span>
+          <span class="phase-title">UAT, training, and go-live</span>
+          <span class="phase-time">2-4 weeks</span>
+        </div>
+        <p class="phase-body">User acceptance testing (UAT) involves running every program end-to-end in a test environment before go-live. This includes testing the CRM sync with real records, verifying lead scoring is calculating correctly, and confirming all emails render correctly across clients. Training covers the full team: power users who will build programs, campaign managers who will execute campaigns, and reporting users who will pull data. Oracle offers both partner-led and self-service training through Oracle University.</p>
       </div>
-      <h2>The bottom line</h2>
-      <p>Eloqua is a mature, powerful platform with significant complexity. Implementation typically takes months and requires certified expertise. If you are at the scale and complexity where Eloqua makes sense, budget accordingly.</p>
-      <p>Not sure Eloqua is right for you? Take the <a href="/quiz.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+
+      <h2>Ongoing administration</h2>
+
+      <p>Eloqua requires dedicated marketing operations support. At enterprise scale, this is typically a team of two or more: a primary Eloqua Administrator who owns configuration and integrations, and campaign operations staff who build and execute programs day-to-day. Oracle support contracts provide access to technical support and a named Customer Success Manager.</p>
+
+      <h2>Is Eloqua the right tool for your organization?</h2>
+
+      <p>Tools at this level are not right for every organization. If you are still evaluating whether Eloqua fits your needs, compare it against other options using the <a href="/comparisons.html">comparisons hub</a>, or take the <a href="/recommendations.html">recommendations quiz</a> to get a personalized suggestion based on your team size, budget, and use case.</p>
+
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to get started with Eloqua.</div>
-        <div class="useful-link-row"><span class="useful-link-label">Get started with Eloqua</span><a class="useful-link-url" href="https://www.oracle.com/cx/marketing/automation" target="_blank">Contact Oracle sales →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full Eloqua review</span><a class="useful-link-url" href="/review-eloqua.html">Read review →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Not sure Eloqua is right for you?</span><a class="useful-link-url" href="/quiz.html">Take the quiz →</a></div>
+        <div class="useful-links-sub">Resources for evaluating and implementing Eloqua.</div>
+        <div class="useful-link-row"><span class="useful-link-label">Request an Eloqua demo</span><a class="useful-link-url" href="https://www.oracle.com/cx/marketing/automation/" target="_blank">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Read the Eloqua review</span><a class="useful-link-url" href="/review-eloqua.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Compare marketing automation tools</span><a class="useful-link-url" href="/comparisons.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">View &#8594;</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Not sure which tool is right for you?</span><a class="useful-link-url" href="/recommendations.html">Take the quiz &#8594;</a></div>
       </div>
+
+      <div class="related-section" id="related-section"></div>
     </div>
-    <div class="related-section" id="related-section"></div>
   </div>
+</main>
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
     <div class="footer-links">
-      <span class="footer-copy">© 2026 MABG</span><span class="dot">|</span>
-      <a href="/about.html">About</a><span class="dot">|</span>
-      <a href="/affiliate-disclosure.html">Disclosure</a><span class="dot">|</span>
-      <a href="/privacy-policy.html">Privacy</a><span class="dot">|</span>
+      <span class="footer-copy">© 2026 MABG</span>
+      <span class="dot">|</span>
+      <a href="/about.html">About</a>
+      <span class="dot">|</span>
+      <a href="/affiliate-disclosure.html">Disclosure</a>
+      <span class="dot">|</span>
+      <a href="/privacy-policy.html">Privacy</a>
+      <span class="dot">|</span>
       <a href="mailto:hello@marketingautomationbuyersguide.com">Contact</a>
     </div>
   </div>
 </footer>
+
 <script>
 const THIS_ARTICLE_TOOLS = ["eloqua"];
 const THIS_ARTICLE_URL = window.location.pathname;
-const ALL_ARTICLES = [
-  { title: "Eloqua Review 2026", url: "/review-eloqua.html", tools: ["eloqua"], status: "live" },
-];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",aweber:"AWeber",campaignmonitor:"Campaign Monitor",constantcontact:"Constant Contact",flodesk:"Flodesk",keap:"Keap",zoho:"Zoho Campaigns",dotdigital:"Dotdigital",iterable:"Iterable",ortto:"Ortto",hubspotenterprise:"HubSpot Enterprise",salesforce:"Salesforce Marketing Cloud",marketo:"Marketo",eloqua:"Eloqua",pardot:"Pardot",dynamics365:"Microsoft Dynamics 365"};
-function renderRelated(){
-  const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
-  if(related.length===0)return;
-  const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on Eloqua</div>';
-  related.forEach(a=>{
-    const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
-    html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';
-  });
-  section.innerHTML=html;
+const ALL_ARTICLES = [];
+const TOOL_LABELS = { eloqua: "Eloqua" };
+function renderRelated() {
+  const section = document.getElementById('related-section');
+  if (!section) return;
+  section.innerHTML = '';
 }
 renderRelated();
 </script>
