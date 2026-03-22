@@ -403,7 +403,31 @@ const SETUP_DATA = {
     name: 'MailerLite',
     time: '1-2 hours',
     difficulty: 'easy',
-    trialUrl: 'https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite"estimate-headline">
+    trialUrl: 'https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite',
+    trialLabel: 'Try MailerLite free',
+    affiliate: true,
+    staticPage: '/setup-mailerlite.html',
+    steps: [
+      { num: 1, title: 'Create your account', desc: 'Sign up at mailerlite.com: free plan up to 1,000 subscribers.', time: '5-10 min' },
+      { num: 2, title: 'Authenticate your sending domain', desc: 'Add DKIM records to your DNS settings.', time: '15-20 min' },
+      { num: 3, title: 'Import your contacts', desc: 'Upload your CSV and assign subscribers to groups.', time: '10-20 min' },
+      { num: 4, title: 'Create a signup form', desc: 'Build an embedded form or popup to grow your list.', time: '15-20 min' },
+      { num: 5, title: 'Set up a welcome automation', desc: 'Create a welcome email sequence in the automation builder.', time: '20-40 min' },
+      { num: 6, title: 'Send your first campaign', desc: 'Design and send your first email campaign.', time: '15-30 min' },
+    ]
+  },
+};
+
+function buildSetup() {
+  const toolKey = document.getElementById('setup-tool').value;
+  if (!toolKey) { alert('Please select a tool to set up.'); return; }
+  const tool = SETUP_DATA[toolKey];
+  if (!tool) { alert('Setup guide not available for this tool yet.'); return; }
+
+  const diffLabel = tool.difficulty === 'easy' ? 'Easy' : tool.difficulty === 'moderate' ? 'Moderate' : 'Challenging';
+
+  const html = `
+    <div class="estimate-headline">
       <span class="estimate-route">Setting up ${tool.name}</span>
       <span class="difficulty-badge ${tool.difficulty}">${diffLabel}</span>
       <span class="estimate-time">Estimated time: <span>${tool.time}</span></span>
@@ -419,7 +443,7 @@ const SETUP_DATA = {
     ${tool.affiliate ? '<p style="font-size:10px;color:var(--muted);font-style:italic;margin-top:8px;">affiliate link</p>' : ''}
   `;
 
-  const result = document.getElementById('setup-result');
+    const result = document.getElementById('setup-result');
   result.innerHTML = html;
   result.classList.add('visible');
   result.scrollIntoView({ behavior: 'smooth', block: 'start' });

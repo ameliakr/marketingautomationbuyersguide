@@ -119,7 +119,7 @@
 .link-url:hover { text-decoration: underline; }
 
 /* Retake */
-.retake-wrap { text-align: center; padding-top: 16px; padding-bottom: 8px; }
+.retake-wrap { text-align: left; padding: 16px 0 8px; }
 .retake-btn { font-size: 13px; color: var(--accent) !important; cursor: pointer; text-decoration: underline; background: none; border: none; font-family: 'DM Sans', sans-serif; line-height: 1; padding: 0; }
 .retake-btn:hover { color: var(--ink); }
 .useful-links-section { border-top: 1px solid var(--rule); padding-top: 32px; }
@@ -807,14 +807,15 @@ function showResults() {
       ${avoidList.map(a => `<div class="avoid-item"><span class="avoid-name">${TOOLS[a.key] ? TOOLS[a.key].name : a.key}</span><span style="color:var(--rule);flex-shrink:0;">|</span><span class="avoid-reason">${a.reason}</span></div>`).join('')}
     </div>` : ''}
 
+    <div class="retake-wrap">
+      <button class="retake-btn" onclick="retake()">Retake the quiz</button>
+    </div>
+
     <div class="useful-links">
       <div class="useful-links-title">Useful next steps</div>
       ${links.map(l => `<div class="link-row"><span class="link-label">${l.label}</span><a class="link-url" href="${l.url}">View →</a></div>`).join('')}
     </div>
 
-    <div class="retake-wrap">
-      <button class="retake-btn" onclick="retake()">Retake the quiz</button>
-    </div>
   `;
 
   const resultsEl = document.getElementById('results');
