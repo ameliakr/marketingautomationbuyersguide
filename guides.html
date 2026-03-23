@@ -301,8 +301,8 @@ const DEST_DATA = {
   mailchimp:      { name: 'Mailchimp',       learningCurve: 'low',    importEasy: true,  trialUrl: 'https://www.mailchimp.com',                           trialLabel: 'Try Mailchimp free',       affiliate: false, hasCRM: false },
   mailerlite:     { name: 'MailerLite',      learningCurve: 'low',    importEasy: true,  trialUrl: 'https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite', trialLabel: 'Try MailerLite free', affiliate: true, hasCRM: false },
   moosend:        { name: 'Moosend',         learningCurve: 'low',    importEasy: true,  trialUrl: 'https://trymoo.moosend.com/4e0kl2a449hd',              trialLabel: 'Try Moosend free',         affiliate: true,  hasCRM: false },
-  omnisend:       { name: 'Omnisend',        learningCurve: 'medium', importEasy: true,  trialUrl: 'https://www.omnisend.com',                            trialLabel: 'Try Omnisend free',        affiliate: false, hasCRM: false },
-  zoho:           { name: 'Zoho Campaigns',  learningCurve: 'medium', importEasy: true,  trialUrl: 'https://go.zoho.com/9NQS',                      trialLabel: 'Try Zoho Campaigns free',  affiliate: true, hasCRM: true },
+  omnisend:       { name: 'Omnisend',        learningCurve: 'medium', importEasy: true,  trialUrl: 'https://your.omnisend.com/WOynz3',                            trialLabel: 'Try Omnisend free',        affiliate: true, hasCRM: false },
+  zoho:           { name: 'Zoho Campaigns',  learningCurve: 'medium', importEasy: true,  trialUrl: 'https://go.zoho.com/PPYK',                      trialLabel: 'Try Zoho Campaigns free',  affiliate: true, hasCRM: true },
 };
 
 const MIGRATION_ARTICLES = {
@@ -618,9 +618,9 @@ const SETUP_DATA = {
     name: 'Omnisend',
     time: '2-3 hours',
     difficulty: 'easy',
-    trialUrl: 'https://www.omnisend.com',
+    trialUrl: 'https://your.omnisend.com/WOynz3',
     trialLabel: 'Try Omnisend free',
-    affiliate: false,
+    affiliate: true,
     staticPage: '/setup-omnisend.html',
     steps: [
       { num: 1, title: 'Create your account', desc: 'Sign up at omnisend.com: free plan up to 250 contacts.', time: '5-10 min' },
@@ -635,7 +635,7 @@ const SETUP_DATA = {
     name: 'Zoho Campaigns',
     time: '1-2 hours',
     difficulty: 'easy',
-    trialUrl: 'https://go.zoho.com/9NQS',
+    trialUrl: 'https://go.zoho.com/PPYK',
     trialLabel: 'Try Zoho Campaigns free',
     affiliate: true,
     staticPage: '/setup-zoho.html',
