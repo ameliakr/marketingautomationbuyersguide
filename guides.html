@@ -290,7 +290,7 @@ const DEST_DATA = {
   activecampaign: { name: 'ActiveCampaign', learningCurve: 'high',   importEasy: true,  trialUrl: 'https://try.activecampaign.com/d1eqanrpv66o-rvs4jt', trialLabel: 'Try ActiveCampaign free', affiliate: true,  hasCRM: true },
   aweber:         { name: 'AWeber',          learningCurve: 'low',    importEasy: true,  trialUrl: 'https://www.aweber.com/easy-email.htm?id=560468',     trialLabel: 'Try AWeber free',          affiliate: true,  hasCRM: false },
   brevo:          { name: 'Brevo',           learningCurve: 'low',    importEasy: true,  trialUrl: 'https://get.brevo.com/hjl3lwlukji3',                  trialLabel: 'Try Brevo free',           affiliate: true,  hasCRM: false },
-  campaignmonitor:{ name: 'Campaign Monitor',learningCurve: 'medium', importEasy: true,  trialUrl: 'https://www.campaignmonitor.com',                     trialLabel: 'Try Campaign Monitor',     affiliate: false, hasCRM: false },
+  campaignmonitor:{ name: 'Campaign Monitor',learningCurve: 'medium', importEasy: true,  trialUrl: 'https://partners.campaignmonitor.com/zlz92tqvtji3',                     trialLabel: 'Try Campaign Monitor',     affiliate: true, hasCRM: false },
   constantcontact:{ name: 'Constant Contact',learningCurve: 'low',    importEasy: true,  trialUrl: 'https://www.constantcontact.com',                     trialLabel: 'Try Constant Contact free',affiliate: false, hasCRM: false },
   flodesk:        { name: 'Flodesk',         learningCurve: 'low',    importEasy: true,  trialUrl: 'https://www.flodesk.com',                             trialLabel: 'Try Flodesk free',         affiliate: false, hasCRM: false },
   getresponse:    { name: 'GetResponse',     learningCurve: 'medium', importEasy: true,  trialUrl: 'https://try.getresponsetoday.com/wbg0pd66ibns',        trialLabel: 'Try GetResponse free',     affiliate: true,  hasCRM: false },
@@ -302,7 +302,7 @@ const DEST_DATA = {
   mailerlite:     { name: 'MailerLite',      learningCurve: 'low',    importEasy: true,  trialUrl: 'https://www.mailerlite.com/?linkId=lp_170762&sourceId=mabg&tenantId=mailerlite', trialLabel: 'Try MailerLite free', affiliate: true, hasCRM: false },
   moosend:        { name: 'Moosend',         learningCurve: 'low',    importEasy: true,  trialUrl: 'https://trymoo.moosend.com/4e0kl2a449hd',              trialLabel: 'Try Moosend free',         affiliate: true,  hasCRM: false },
   omnisend:       { name: 'Omnisend',        learningCurve: 'medium', importEasy: true,  trialUrl: 'https://www.omnisend.com',                            trialLabel: 'Try Omnisend free',        affiliate: false, hasCRM: false },
-  zoho:           { name: 'Zoho Campaigns',  learningCurve: 'medium', importEasy: true,  trialUrl: 'https://www.zoho.com/campaigns',                      trialLabel: 'Try Zoho Campaigns free',  affiliate: false, hasCRM: true },
+  zoho:           { name: 'Zoho Campaigns',  learningCurve: 'medium', importEasy: true,  trialUrl: 'https://go.zoho.com/9NQS',                      trialLabel: 'Try Zoho Campaigns free',  affiliate: true, hasCRM: true },
 };
 
 const MIGRATION_ARTICLES = {
@@ -335,7 +335,7 @@ const MIGRATION_ARTICLES = {
   'klaviyo|activecampaign': '/migration-klaviyo-to-activecampaign.html',
   'klaviyo|mailchimp': '/migration-klaviyo-to-mailchimp.html',
   'klaviyo|omnisend': '/migration-klaviyo-to-omnisend.html',
-  'mailchimp|activecampaign': '/migration-mailchimp-to-activecampaign.html',
+  'mailchimp|activecampaign': '/comparison-mailchimp-vs-activecampaign.html',
   'mailchimp|aweber': '/migration-mailchimp-to-aweber.html',
   'mailchimp|brevo': '/migration-mailchimp-to-brevo.html',
   'mailchimp|constantcontact': '/migration-mailchimp-to-constantcontact.html',
@@ -344,9 +344,10 @@ const MIGRATION_ARTICLES = {
   'mailchimp|hubspot': '/migration-mailchimp-to-hubspot.html',
   'mailchimp|kit': '/migration-mailchimp-to-kit.html',
   'mailchimp|klaviyo': '/migration-mailchimp-to-klaviyo.html',
-  'mailchimp|mailerlite': '/migration-mailchimp-to-mailerlite.html',
-  'mailchimp|moosend': '/migration-mailchimp-to-moosend.html',
+  'mailchimp|mailerlite': '/comparison-mailchimp-vs-mailerlite.html',
+  'mailchimp|moosend': '/comparison-mailchimp-vs-moosend.html',
   'mailchimp|omnisend': '/migration-mailchimp-to-omnisend.html',
+  'mailchimp|campaignmonitor': '/migration-mailchimp-to-campaignmonitor.html',
   'mailchimp|zoho': '/migration-mailchimp-to-zoho.html',
   'mailerlite|activecampaign': '/migration-mailerlite-to-activecampaign.html',
   'mailerlite|mailchimp': '/migration-mailerlite-to-mailchimp.html',
@@ -531,9 +532,9 @@ const SETUP_DATA = {
     name: 'Campaign Monitor',
     time: '1-2 hours',
     difficulty: 'easy',
-    trialUrl: 'https://www.campaignmonitor.com',
+    trialUrl: 'https://partners.campaignmonitor.com/zlz92tqvtji3',
     trialLabel: 'Try Campaign Monitor',
-    affiliate: false,
+    affiliate: true,
     staticPage: '/setup-campaignmonitor.html',
     steps: [
       { num: 1, title: 'Create your account', desc: 'Sign up at campaignmonitor.com.', time: '5-10 min' },
@@ -634,9 +635,9 @@ const SETUP_DATA = {
     name: 'Zoho Campaigns',
     time: '1-2 hours',
     difficulty: 'easy',
-    trialUrl: 'https://www.zoho.com/campaigns',
+    trialUrl: 'https://go.zoho.com/9NQS',
     trialLabel: 'Try Zoho Campaigns free',
-    affiliate: false,
+    affiliate: true,
     staticPage: '/setup-zoho.html',
     steps: [
       { num: 1, title: 'Create your account', desc: 'Sign up at zoho.com/campaigns: free plan up to 2,000 contacts.', time: '5-10 min' },
@@ -819,10 +820,12 @@ function buildSetup() {
       ${tool.steps.map(s => `<div class="step-row"><div class="step-num">${s.num}</div><div class="step-content"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div><div class="step-time">${s.time}</div></div></div>`).join('')}
     </div>
     <div class="estimate-cta">
-      <a class="estimate-cta-primary" href="${tool.trialUrl}" target="_blank">${tool.trialLabel} →</a>
+      <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+        ${tool.affiliate ? '<span style="font-size:10px;color:var(--muted);font-style:italic;">affiliate link</span>' : ''}
+        <a class="estimate-cta-primary" href="${tool.trialUrl}" target="_blank">${tool.trialLabel} →</a>
+      </div>
       ${tool.staticPage ? `<a class="estimate-cta-secondary" href="${tool.staticPage}">Read the full setup guide →</a>` : ''}
     </div>
-    ${tool.affiliate ? '<p style="font-size:10px;color:var(--muted);font-style:italic;margin-top:8px;">affiliate link</p>' : ''}
   `;
 
     const result = document.getElementById('setup-result');
@@ -929,8 +932,8 @@ function buildEstimate() {
     </div>
     <div class="estimate-cta">
       <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
-        <a class="estimate-cta-primary" href="${to.trialUrl}" target="_blank">${to.trialLabel} →</a>
         ${to.affiliate ? '<span style="font-size:10px;color:var(--muted);font-style:italic;">affiliate link</span>' : ''}
+        <a class="estimate-cta-primary" href="${to.trialUrl}" target="_blank">${to.trialLabel} →</a>
       </div>
       ${migrationArticle ? `<a class="estimate-cta-secondary" href="${migrationArticle}">Read the full migration guide →</a>` : ''}
       ${!migrationArticle && from.key !== 'nothing' ? `<a class="estimate-cta-secondary" href="/comparisons.html">Compare ${from.name} vs ${to.name} →</a>` : ''}

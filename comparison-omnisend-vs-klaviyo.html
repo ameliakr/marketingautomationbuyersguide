@@ -46,7 +46,7 @@
 .inline-cta-btn:hover { text-decoration: underline; }
 .inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
 .useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
-.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .useful-link-label { color: var(--muted); }
@@ -54,7 +54,7 @@
 .useful-link-url:hover { text-decoration: underline; }
 .useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
 .related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
-.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
 .related-row.live { text-decoration: none; cursor: pointer; }
@@ -74,9 +74,10 @@
 .score-bar-wrap { width: 120px; height: 4px; background: var(--rule); flex-shrink: 0; }
 .score-bar-fill { height: 4px; background: var(--accent); }
 .verdict-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 40px 0; }
-.verdict-col { display: flex; flex-direction: column; }
+.verdict-col { display: flex; flex-direction: column; justify-content: space-between; }
 .verdict-col .verdict-box { flex: 1; margin: 0; }
-.verdict-cta { display: block; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
+.verdict-cta-wrap { margin-top: 12px; }
+.verdict-cta { display: block; font-size: 13px; font-weight: 500; color: var(--accent); text-decoration: none; }
 .verdict-cta:hover { text-decoration: underline; }
 @media (max-width: 600px) { .verdict-grid { grid-template-columns: 1fr; } }
 
@@ -152,7 +153,9 @@
           <li>You run a Shopify or WooCommerce store and want a solid all-rounder</li>
                     </ul>
         </div>
+        <div class="verdict-cta-wrap">
         <a class="verdict-cta" href="https://www.omnisend.com" target="_blank">→ Try Omnisend free</a>
+        </div>
       </div>
       <div class="verdict-col">
         <div class="verdict-box">
@@ -165,14 +168,15 @@
           <li>You want predictive analytics and customer lifetime value built in</li>
                     </ul>
         </div>
+        <div class="verdict-cta-wrap">
         <a class="verdict-cta" href="https://www.klaviyo.com" target="_blank">→ Try Klaviyo free</a>
+        </div>
       </div>
     </div><h2>The bottom line</h2>
       <p>Both are excellent e-commerce tools. <a href="https://www.klaviyo.com" target="_blank">Klaviyo</a> is for stores serious about data and willing to pay for the best analytics. <a href="https://www.omnisend.com" target="_blank">Omnisend</a> is for stores that want strong e-commerce automation at a more accessible price.</p>
       <p>Still not sure? Take the <a href="/recommendations.html">Marketing Automation Buyer's Guide quiz</a>. It asks six questions and recommends the right platform based on your specific needs and budget.</p>
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to compare, decide, and get started.</div>
         <div class="useful-link-row">
           <span class="useful-link-label">Try Omnisend free</span>
           <span><a class="useful-link-url" href="https://www.omnisend.com" target="_blank">View →</a></span>
@@ -187,7 +191,7 @@
           <span><a class="useful-link-url" href="/pricing.html" target="_blank">View →</a></span>
         </div>
         <div class="useful-link-row">
-          <span class="useful-link-label">Take the quiz</span>
+          <span class="useful-link-label">Get a personalized recommendation</span>
           <span><a class="useful-link-url" href="/recommendations.html" target="_blank">View →</a></span>
         </div>
       </div>
@@ -215,7 +219,7 @@
 const THIS_ARTICLE_TOOLS = ["omnisend", "klaviyo"];
 const THIS_ARTICLE_URL = window.location.pathname;
 const ALL_ARTICLES = [
-  { title: "Moosend vs MailerLite: Which Is Actually Better Value?", url: "/comparison-moosend-vs-mailerlite.html", tools: ["moosend", "mailerlite"], status: "live" },
+  { title: "Moosend vs MailerLite: Which Is Actually Better Value?", url: "/comparison-mailerlite-vs-moosend.html", tools: ["moosend", "mailerlite"], status: "live" },
   { title: "ActiveCampaign vs HubSpot: CRM-Heavy Tools Compared", url: "/comparison-activecampaign-vs-hubspot.html", tools: ["activecampaign", "hubspot"], status: "live" },
   { title: "ActiveCampaign vs MailerLite: Power vs Simplicity", url: "/comparison-activecampaign-vs-mailerlite.html", tools: ["activecampaign", "mailerlite"], status: "live" },
   { title: "ActiveCampaign vs Moosend", url: "/comparison-activecampaign-vs-moosend.html", tools: ["activecampaign", "moosend"], status: "live" },
@@ -246,7 +250,8 @@ function renderRelated() {
   if (related.length === 0) return;
   const section = document.getElementById('related-section');
   const toolNames = THIS_ARTICLE_TOOLS.map(t => TOOL_LABELS[t] || t).join(' and ');
-  let html = `<div class="related-title">Related articles</div><div class="related-sub">More resources featuring ${toolNames}</div>`;
+  let html = `<div class="related-title">Related articles</div>
+`;
   related.forEach(a => {
     const toolStr = a.tools.map(t => TOOL_LABELS[t] || t).join(' vs ');
     if (a.status === 'live') {

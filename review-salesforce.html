@@ -84,8 +84,7 @@
       <p><a href="https://www.salesforce.com/products/marketing-cloud" target="_blank">Salesforce Marketing Cloud</a> is the right choice for large enterprises embedded in the Salesforce ecosystem that need marketing automation at scale. For everyone else, the cost and complexity are not justified. If you are a smaller business, take the <a href="/recommendations.html">Marketing Automation Buyer's Guide quiz</a> for a recommendation suited to your stage.</p>
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to evaluate Salesforce Marketing Cloud.</div>
-        <div class="useful-link-row"><span class="useful-link-label">Request a Salesforce demo</span><a class="useful-link-url" href="https://www.salesforce.com/products/marketing-cloud" target="_blank">View →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Request a Salesforce Marketing Cloud demo</span><a class="useful-link-url" href="https://www.salesforce.com/products/marketing-cloud" target="_blank">View →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Read the Salesforce Marketing Cloud setup guide</span><a class="useful-link-url" href="/setup-salesforce.html">Read guide →</a></div>
@@ -119,7 +118,8 @@ function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;
   const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on Salesforce Marketing Cloud</div>';
+  let html='<div class="related-title">Related articles</div>
+';
   related.forEach(a=>{
     const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
     if(a.status==="live")html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';

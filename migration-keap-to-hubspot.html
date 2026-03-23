@@ -50,7 +50,7 @@
 .inline-cta-btn:hover { text-decoration: underline; }
 .inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
 .useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
-.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .useful-link-label { color: var(--muted); }
@@ -58,7 +58,7 @@
 .useful-link-url:hover { text-decoration: underline; }
 .useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
 .related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
-.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
 .related-row.live { text-decoration: none; cursor: pointer; }
@@ -186,11 +186,9 @@
       <p>Not sure HubSpot is the right destination? Take the <a href="/recommendations.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to complete your migration to HubSpot.</div>
         <div class="useful-link-row"><span class="useful-link-label">Get started with HubSpot</span><a class="useful-link-url" href="https://www.hubspot.com" target="_blank">Try HubSpot free →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Read the full HubSpot setup guide</span><a class="useful-link-url" href="/setup-hubspot.html">Read guide →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Read the full HubSpot review</span><a class="useful-link-url" href="/review-hubspot.html">Read review →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Not sure HubSpot is right for you?</span><a class="useful-link-url" href="/recommendations.html">Take the quiz →</a></div>
       </div>
     </div>
     <div class="related-section" id="related-section"></div>
@@ -220,7 +218,8 @@ function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;
   const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on Keap and HubSpot</div>';
+  let html='<div class="related-title">Related articles</div>
+';
   related.forEach(a=>{
     const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
     html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';

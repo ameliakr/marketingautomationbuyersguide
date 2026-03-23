@@ -83,7 +83,6 @@
       <p><a href="https://www.hubspot.com/pricing/marketing" target="_blank">HubSpot Enterprise</a> is the right choice for organizations that have outgrown HubSpot Professional and want enterprise-grade features without the implementation overhead of Marketo or Salesforce Marketing Cloud. For most organizations, <a href="/review-hubspot.html">HubSpot's lower tiers</a> cover their needs. Take the <a href="/recommendations.html">quiz</a> for a personalized recommendation.</p>
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to evaluate HubSpot Enterprise.</div>
         <div class="useful-link-row"><span class="useful-link-label">Request a HubSpot Enterprise demo</span><a class="useful-link-url" href="https://www.hubspot.com/pricing/marketing" target="_blank">View →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
@@ -118,7 +117,8 @@ function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;
   const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on HubSpot Enterprise</div>';
+  let html='<div class="related-title">Related articles</div>
+';
   related.forEach(a=>{
     const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
     if(a.status==="live")html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';

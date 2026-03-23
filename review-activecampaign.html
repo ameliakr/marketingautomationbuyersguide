@@ -51,7 +51,7 @@
 .inline-cta-btn:hover { text-decoration: underline; }
 .inline-cta-note { font-size: 10px; color: var(--muted); font-style: italic; }
 .useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
-.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .useful-link-label { color: var(--muted); }
@@ -59,7 +59,7 @@
 .useful-link-url:hover { text-decoration: underline; }
 .useful-link-note { font-size: 10px; color: var(--muted); font-style: italic; margin-right: 4px; }
 .related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
-.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
 .related-row.live { text-decoration: none; }
@@ -184,7 +184,7 @@
 
       <p>ActiveCampaign is not beginner-friendly. The interface has improved significantly over the years, but the sheer number of features means there is a real learning curve. Expect to spend a few hours getting oriented, and a few more building your first serious automation. The onboarding is guided and the help documentation is thorough, but this is not a tool you pick up in an afternoon.</p>
 
-      <p>If you need something you can set up quickly and do not plan to use advanced features, look at <a href="/comparison-moosend-vs-mailerlite.html">Moosend or MailerLite</a> instead.</p>
+      <p>If you need something you can set up quickly and do not plan to use advanced features, look at <a href="/comparison-mailerlite-vs-moosend.html">Moosend or MailerLite</a> instead.</p>
 
       <h2>Deliverability</h2>
 
@@ -228,7 +228,6 @@
 
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to evaluate and get started.</div>
         <div class="useful-link-row"><span class="useful-link-label">Try ActiveCampaign free</span><span><span class="useful-link-note">affiliate link</span><a class="useful-link-url" href="https://try.activecampaign.com/d1eqanrpv66o-rvs4jt" target="_blank">View →</a></span></div>
         <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
@@ -260,7 +259,7 @@ const ALL_ARTICLES = [
   { title: "ActiveCampaign vs HubSpot", url: "/comparison-activecampaign-vs-hubspot.html", tools: ["activecampaign", "hubspot"], status: "live" },
   { title: "ActiveCampaign vs MailerLite", url: "/comparison-activecampaign-vs-mailerlite.html", tools: ["activecampaign", "mailerlite"], status: "live" },
   { title: "ActiveCampaign vs Moosend", url: "/comparison-activecampaign-vs-moosend.html", tools: ["activecampaign", "moosend"], status: "live" },
-  { title: "How to Migrate from Mailchimp to ActiveCampaign", url: "/migration-mailchimp-to-activecampaign.html", tools: ["mailchimp", "activecampaign"], status: "live" },
+  { title: "How to Migrate from Mailchimp to ActiveCampaign", url: "/comparison-mailchimp-vs-activecampaign.html", tools: ["mailchimp", "activecampaign"], status: "live" },
   { title: "GetResponse vs ActiveCampaign", url: "/comparison-getresponse-vs-activecampaign.html", tools: ["getresponse", "activecampaign"], status: "live" },
 ];
 const TOOL_LABELS = { activecampaign: "ActiveCampaign", hubspot: "HubSpot", mailerlite: "MailerLite", moosend: "Moosend", mailchimp: "Mailchimp", getresponse: "GetResponse" };
@@ -268,7 +267,8 @@ function renderRelated() {
   const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0, 5);
   if (related.length === 0) return;
   const section = document.getElementById('related-section');
-  let html = `<div class="related-title">Related articles</div><div class="related-sub">More on ActiveCampaign</div>`;
+  let html = `<div class="related-title">Related articles</div>
+`;
   related.forEach(a => {
     const toolStr = a.tools.map(t => TOOL_LABELS[t] || t).join(' vs ');
     if (a.status === 'live') {

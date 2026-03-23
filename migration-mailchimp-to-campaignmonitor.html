@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Migrate from Mailchimp to AWeber (2026 Guide)</title>
-<meta name="description" content="Step-by-step guide to migrating from Mailchimp to AWeber. What transfers, what you rebuild, and how to do it without losing subscribers.">
+<title>How to Migrate from Mailchimp to Campaign Monitor (2026 Guide)</title>
+<meta name="description" content="Step-by-step guide to migrating from Mailchimp to Campaign Monitor. What transfers, what you rebuild, and how to switch without losing subscribers.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Marketing Automation Buyer's Guide">
-<meta property="og:title" content="How to Migrate from Mailchimp to AWeber (2026 Guide)">
-<meta property="og:description" content="Step-by-step guide to migrating from Mailchimp to AWeber. What transfers, what you rebuild, and how to do it without losing subscribers.">
+<meta property="og:title" content="How to Migrate from Mailchimp to Campaign Monitor (2026 Guide)">
+<meta property="og:description" content="Step-by-step guide to migrating from Mailchimp to Campaign Monitor. What transfers, what you rebuild, and how to switch without losing subscribers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -68,7 +68,6 @@
 .related-row-title { font-size: 14px; transition: color 0.2s; }
 .related-row-tools { font-size: 11px; color: var(--muted); }
 .related-row-arrow { font-size: 15px; color: var(--rule); transition: all 0.2s; flex-shrink: 0; margin-left: 16px; }
-
 .quick-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px 0; }
 .quick-table-wrap .quick-table { margin: 0; }
 </style>
@@ -99,19 +98,30 @@
 <main class="page-body">
   <div class="article-wrap">
     <div class="article-hero">
-      <h1>How to Migrate from Mailchimp to AWeber</h1>
+      <h1>How to migrate from Mailchimp to Campaign Monitor</h1>
       <div class="article-meta">
         <span class="article-tag tool">Mailchimp</span>
-        <span class="article-tag tool">AWeber</span>
+        <span class="article-tag tool">Campaign Monitor</span>
         <span class="article-tag">Migration</span>
         <span class="article-tag">Updated March 2026</span>
       </div>
     </div>
     <div class="article-body">
-      <p>AWeber is one of the most established email marketing platforms and a natural landing spot for Mailchimp users who want something simple and reliable. The migration is straightforward: contacts move cleanly via CSV and AWeber's onboarding is well-guided.</p>
-      <p>This guide covers everything you need to migrate from Mailchimp to AWeber without losing subscribers or breaking your automations. Estimated time: <strong>2-4 hours</strong>.</p>
-      <div class="inline-cta"><span class="inline-cta-text">Start your free AWeber trial before beginning the migration.</span><div><a class="inline-cta-btn" href="https://www.aweber.com/easy-email.htm?id=560468" target="_blank">→ Try AWeber free</a><div class="inline-cta-note">affiliate link</div></div></div>
+
+      <p>The most common reason people move from Mailchimp to Campaign Monitor is email design. Campaign Monitor's template builder and template library are among the best in the industry, and for brands where the visual quality of email matters -- agencies, design studios, retail brands, creative businesses -- it is a meaningful upgrade.</p>
+
+      <p>The migration itself is straightforward. Both platforms use a standard list/audience model, and the data transfer process is simple CSV export and import. The main work is rebuilding your templates and automations, which you would expect any time you switch platforms. Estimated time: <strong>2-4 hours</strong>.</p>
+
+      <div class="inline-cta">
+        <span class="inline-cta-text">Start your Campaign Monitor trial before beginning the migration.</span>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+          <a class="inline-cta-btn" href="https://partners.campaignmonitor.com/zlz92tqvtji3" target="_blank">→ Try Campaign Monitor</a>
+          <div class="inline-cta-note">affiliate link</div>
+        </div>
+      </div>
+
       <h2>What transfers and what does not</h2>
+
       <div class="quick-table-wrap"><table class="quick-table">
         <thead>
           <tr>
@@ -122,77 +132,102 @@
         </thead>
         <tbody>
           <tr><td>Contacts and email addresses</td><td class="cell-yes">Yes</td><td>Via CSV export/import</td></tr>
-          <tr><td>Tags and segments</td><td class="cell-partial">Partial</td><td>Export as custom fields, remap on import</td></tr>
+          <tr><td>Tags and segments</td><td class="cell-partial">Partial</td><td>Export tags as custom fields, recreate segments manually</td></tr>
           <tr><td>Custom field data</td><td class="cell-partial">Partial</td><td>Transfers if mapped correctly during import</td></tr>
-          <tr><td>Unsubscribe history</td><td class="cell-yes">Yes</td><td>Import as suppressed contacts</td></tr>
-          <tr><td>Email templates</td><td class="cell-no">No</td><td>Need to be rebuilt in AWeber</td></tr>
-          <tr><td>Automation workflows</td><td class="cell-no">No</td><td>Need to be rebuilt from scratch</td></tr>
-          <tr><td>Campaign history</td><td class="cell-no">No</td><td>Historical stats stay in Mailchimp</td></tr>
-          
+          <tr><td>Unsubscribe history</td><td class="cell-yes">Yes</td><td>Import as suppressed contacts to stay compliant</td></tr>
+          <tr><td>Email templates</td><td class="cell-no">No</td><td>Need to be rebuilt in Campaign Monitor's template editor</td></tr>
+          <tr><td>Automation workflows</td><td class="cell-no">No</td><td>Need to be rebuilt from scratch in Journey builder</td></tr>
+          <tr><td>Campaign history and stats</td><td class="cell-no">No</td><td>Historical data stays in Mailchimp</td></tr>
         </tbody>
       </table></div>
-      
+
+      <div class="warning-box">
+        <div class="warning-box-title">BEFORE YOU START</div>
+        <p>Do not cancel Mailchimp until you have fully tested Campaign Monitor. Keep both accounts running in parallel until your signup forms are updated, your automations are live and tested, and you have sent at least one successful campaign from Campaign Monitor.</p>
+      </div>
+
       <h2>Step-by-step migration guide</h2>
+
       <div class="step-block">
         <div class="step-block-num">Step 1</div>
-        <div class="step-block-title">Start your AWeber free trial</div>
+        <div class="step-block-title">Set up your Campaign Monitor account</div>
         <div class="step-block-time">5-10 minutes</div>
-        <p>Sign up at www.aweber.com before doing anything else. Keep your Mailchimp account running throughout the migration: do not cancel it until everything is confirmed working in AWeber.</p>
+        <p>Sign up at <a href="https://partners.campaignmonitor.com/zlz92tqvtji3" target="_blank">campaignmonitor.com</a> and complete the account setup. Campaign Monitor offers a free trial that lets you explore the platform before upgrading. If you are setting up on behalf of a client, create a client account within your main agency account -- Campaign Monitor's multi-client structure is one of its strengths for agencies.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 2</div>
-        <div class="step-block-title">Authenticate your sending domain in AWeber</div>
+        <div class="step-block-title">Authenticate your sending domain</div>
         <div class="step-block-time">15-30 minutes</div>
-        <p>Add your domain to AWeber and follow the DKIM authentication instructions. This improves deliverability and ensures your emails arrive in inboxes, not spam folders. Complete this before importing any contacts.</p>
+        <p>Go to Account Settings and add your sending domain. Campaign Monitor provides DKIM records to add to your DNS -- add these as TXT records at your domain registrar and verify in Campaign Monitor. Domain authentication is required before sending at scale and significantly improves deliverability. DNS propagation can take up to 24 hours but usually completes in under an hour.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 3</div>
         <div class="step-block-title">Export your contacts from Mailchimp</div>
         <div class="step-block-time">15-30 minutes</div>
-        <p>In Mailchimp, go to your audience and export your full contact list as a CSV. Make sure to include all custom fields, tags, and segments. Export your unsubscribed contacts separately: you will need to suppress these in AWeber to stay compliant.</p>
+        <p>In Mailchimp, go to your Audience and export the full contact list as a CSV. Include all contact data: email address, first name, last name, all custom fields, and tags. Export your unsubscribed contacts as a separate CSV -- you will need to suppress these in Campaign Monitor to avoid sending to people who have opted out. If you use multiple Mailchimp audiences, export each one separately.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 4</div>
-        <div class="step-block-title">Import your contacts into AWeber</div>
+        <div class="step-block-title">Create your list and import contacts into Campaign Monitor</div>
         <div class="step-block-time">15-45 minutes</div>
-        <p>Upload your CSV into AWeber and map each column to the correct field. Import your unsubscribed contacts as suppressed. Review the import report carefully before proceeding: fix any mapping errors before building automations.</p>
+        <p>In Campaign Monitor, go to Lists and Subscribers and create a new list. Then import your CSV. Campaign Monitor's import tool lets you map each column in your CSV to a subscriber field -- create any custom fields you need before importing so they are available for mapping. After the main import, upload your unsubscribed contacts as suppressed. Review the import summary and fix any errors before proceeding.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 5</div>
-        <div class="step-block-title">Rebuild your automations in AWeber</div>
+        <div class="step-block-title">Rebuild your email templates</div>
         <div class="step-block-time">1-3 hours</div>
-        <p>Screenshot or document all your active automations in Mailchimp before rebuilding them in AWeber. Start with your highest-priority flows: typically your welcome series and any active nurture sequences. Do not activate them until you have tested them with your own email address.</p>
+        <p>This is where Campaign Monitor earns its reputation. Open the template editor and build your standard email layout -- header, content blocks, footer, and social links. Campaign Monitor's drag-and-drop editor is intuitive, and the template library has well-designed starting points across a range of styles. Build at least your core campaign template and a transactional/notification template before going live. Take screenshots of your Mailchimp templates first so you have a reference.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 6</div>
-        <div class="step-block-title">Recreate your signup forms and update your website</div>
-        <div class="step-block-time">30-60 minutes</div>
-        <p>Build your signup forms in AWeber and replace the Mailchimp embed codes on your website. Test each form to confirm subscribers land in the right list and trigger the correct automation.</p>
+        <div class="step-block-title">Rebuild your automations in Journey builder</div>
+        <div class="step-block-time">1-3 hours</div>
+        <p>Go to Journeys and recreate your automations. Start with the ones that affect new subscribers first -- your welcome series and any lead nurture sequences. Campaign Monitor's Journey builder uses a visual canvas with trigger, action, delay, and condition nodes. Document your existing Mailchimp automations before you rebuild them. Do not activate a journey until you have tested it end-to-end by subscribing a test email address and verifying the sequence fires correctly.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 7</div>
-        <div class="step-block-title">Send a test campaign and confirm everything works</div>
+        <div class="step-block-title">Recreate your signup forms and update your website</div>
         <div class="step-block-time">30-60 minutes</div>
-        <p>Send a test campaign to yourself. Trigger your automations manually. Check every link. Confirm your unsubscribe flow works correctly. Only cancel Mailchimp once you are fully satisfied that AWeber is working as expected.</p>
+        <p>Go to Lists and Subscribers, select your list, and click Sign Up Forms. Campaign Monitor provides a hosted form URL and an embed code. Build your form, replace the Mailchimp embed codes on your website, and test each one to confirm new subscribers land in the correct list and trigger the right journey. If you use a WordPress plugin or third-party form tool that integrates with Mailchimp, check whether it also has a Campaign Monitor integration.</p>
       </div>
+
       <div class="step-block">
         <div class="step-block-num">Step 8</div>
+        <div class="step-block-title">Send a test campaign and verify everything works</div>
+        <div class="step-block-time">30-60 minutes</div>
+        <p>Send a test campaign to yourself and a few colleagues. Check rendering across email clients -- Campaign Monitor's inbox preview tool shows how your email looks in Gmail, Outlook, Apple Mail, and mobile. Trigger your journeys with a test address. Verify the unsubscribe link works and removes the address from your list. Check that links track correctly in the campaign report.</p>
+      </div>
+
+      <div class="step-block">
+        <div class="step-block-num">Step 9</div>
         <div class="step-block-title">Cancel Mailchimp</div>
         <div class="step-block-time">5 minutes</div>
-        <p>Once AWeber is fully operational, cancel your Mailchimp account. Check your billing date to avoid being charged for another month. Download any historical reports or data you want to keep before cancelling.</p>
+        <p>Once Campaign Monitor is fully operational -- your list is imported, your forms are live, your automations are running, and you have sent at least one real campaign -- cancel your Mailchimp account. Check your Mailchimp billing date to avoid being charged for an extra month. Export and save any historical campaign reports or data you want to keep before you cancel.</p>
       </div>
+
       <h2>The bottom line</h2>
-      <p>AWeber is a solid choice if you want a simple, reliable platform with good deliverability and strong customer support. The migration from Mailchimp is one of the easier switches you can make.</p>
-      <p>Not sure AWeber is the right destination? Take the <a href="/recommendations.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+
+      <p>Campaign Monitor is a good fit if email design quality is a real priority for your brand. The template editor is polished, the sending infrastructure is reliable, and the interface is clean and professional. If you are primarily moving for design reasons, you will not be disappointed.</p>
+
+      <p>If your main priority is automation depth or lower pricing rather than design, <a href="/comparison-activecampaign-vs-mailerlite.html">ActiveCampaign or MailerLite</a> may be a better fit than Campaign Monitor. Not sure? Take the <a href="/recommendations.html">Marketing Automation Buyer's Guide quiz</a> for a personalized recommendation.</p>
+
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-link-row"><span class="useful-link-label">Get started with AWeber</span><span><span class="useful-link-note">affiliate link</span><a class="useful-link-url" href="https://www.aweber.com/easy-email.htm?id=560468" target="_blank">Try AWeber free →</a></span></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full AWeber setup guide</span><a class="useful-link-url" href="/setup-aweber.html">Read guide →</a></div>
-        <div class="useful-link-row"><span class="useful-link-label">Read the full AWeber review</span><a class="useful-link-url" href="/review-aweber.html">Read review →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Get started with Campaign Monitor</span><span><span class="useful-link-note">affiliate link</span><a class="useful-link-url" href="https://partners.campaignmonitor.com/zlz92tqvtji3" target="_blank">Try Campaign Monitor →</a></span></div>
+        <div class="useful-link-row"><span class="useful-link-label">Read the full Campaign Monitor setup guide</span><a class="useful-link-url" href="/setup-campaignmonitor.html">Read guide →</a></div>
+        <div class="useful-link-row"><span class="useful-link-label">Read the full Campaign Monitor review</span><a class="useful-link-url" href="/review-campaignmonitor.html">Read review →</a></div>
       </div>
+
     </div>
     <div class="related-section" id="related-section"></div>
   </div>
+</main>
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-disclosure">We earn a commission on some links at no cost to you.</p>
@@ -206,14 +241,15 @@
   </div>
 </footer>
 <script>
-const THIS_ARTICLE_TOOLS = ["mailchimp", "aweber"];
+const THIS_ARTICLE_TOOLS = ["mailchimp", "campaignmonitor"];
 const THIS_ARTICLE_URL = window.location.pathname;
 const ALL_ARTICLES = [
   { title: "Mailchimp Review 2026", url: "/review-mailchimp.html", tools: ["mailchimp"], status: "live" },
-  { title: "AWeber Review 2026", url: "/review-aweber.html", tools: ["aweber"], status: "live" },
-  { title: "How to Set Up AWeber", url: "/setup-aweber.html", tools: ["aweber"], status: "live" },
+  { title: "Campaign Monitor Review 2026", url: "/review-campaignmonitor.html", tools: ["campaignmonitor"], status: "live" },
+  { title: "How to Set Up Campaign Monitor", url: "/setup-campaignmonitor.html", tools: ["campaignmonitor"], status: "live" },
+  { title: "Best Mailchimp Alternatives 2026", url: "/best-mailchimp-alternatives.html", tools: ["mailchimp"], status: "live" },
 ];
-const TOOL_LABELS = {mailchimp:"Mailchimp",activecampaign:"ActiveCampaign",moosend:"Moosend",mailerlite:"MailerLite",brevo:"Brevo",hubspot:"HubSpot",getresponse:"GetResponse",klaviyo:"Klaviyo",omnisend:"Omnisend",kit:"Kit",aweber:"AWeber",constantcontact:"Constant Contact",flodesk:"Flodesk",zoho:"Zoho Campaigns",keap:"Keap"};
+const TOOL_LABELS = {mailchimp:"Mailchimp",campaignmonitor:"Campaign Monitor",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",brevo:"Brevo",moosend:"Moosend",getresponse:"GetResponse",hubspot:"HubSpot",klaviyo:"Klaviyo",omnisend:"Omnisend",kit:"Kit",aweber:"AWeber",constantcontact:"Constant Contact",flodesk:"Flodesk",zoho:"Zoho Campaigns",keap:"Keap"};
 function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;

@@ -84,7 +84,6 @@
       <p><a href="https://www.salesforce.com/products/marketing-cloud/marketing-automation" target="_blank">Pardot</a> is the right choice for B2B companies already running Salesforce CRM that need tightly integrated marketing automation. For everyone else, <a href="/review-hubspot.html">HubSpot</a> or <a href="/review-activecampaign.html">ActiveCampaign</a> provide better value. Take the <a href="/recommendations.html">quiz</a> for a personalized recommendation.</p>
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to evaluate Pardot.</div>
         <div class="useful-link-row"><span class="useful-link-label">Request a Pardot demo</span><a class="useful-link-url" href="https://www.salesforce.com/products/marketing-cloud/marketing-automation" target="_blank">View →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
@@ -119,7 +118,8 @@ function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;
   const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div><div class="related-sub">More on Pardot</div>';
+  let html='<div class="related-title">Related articles</div>
+';
   related.forEach(a=>{
     const toolStr=a.tools.map(t=>TOOL_LABELS[t]||t).join(" vs ");
     if(a.status==="live")html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span><span class="related-row-tools">'+toolStr+'</span></div><span class="related-row-arrow">→</span></a>';

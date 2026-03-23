@@ -49,14 +49,14 @@
 .inline-cta-btn { font-size: 13px; font-weight: 500; color: var(--accent); white-space: nowrap; flex-shrink: 0; text-decoration: none; }
 .inline-cta-btn:hover { text-decoration: underline; }
 .useful-links-section { border-top: 1px solid var(--rule); margin-top: 56px; padding-top: 32px; }
-.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.useful-links-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .useful-links-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .useful-link-row { display: flex; align-items: baseline; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 13px; }
 .useful-link-label { color: var(--muted); }
 .useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
 .useful-link-url:hover { text-decoration: underline; }
 .related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
-.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 4px; }
+.related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
 .related-row.live { text-decoration: none; }
@@ -218,7 +218,6 @@
 
       <div class="useful-links-section">
         <div class="useful-links-title">Useful next steps</div>
-        <div class="useful-links-sub">Everything you need to evaluate HubSpot.</div>
         <div class="useful-link-row"><span class="useful-link-label">Try HubSpot free</span><a class="useful-link-url" href="https://www.hubspot.com" target="_blank">View →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Get a personalized recommendation</span><a class="useful-link-url" href="/recommendations.html">Take the quiz →</a></div>
         <div class="useful-link-row"><span class="useful-link-label">Try the pricing calculator</span><a class="useful-link-url" href="/pricing.html">View pricing →</a></div>
@@ -250,7 +249,8 @@ function renderRelated() {
   const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0, 5);
   if (related.length === 0) return;
   const section = document.getElementById('related-section');
-  let html = `<div class="related-title">Related articles</div><div class="related-sub">More on HubSpot</div>`;
+  let html = `<div class="related-title">Related articles</div>
+`;
   related.forEach(a => {
     const toolStr = a.tools.map(t => TOOL_LABELS[t] || t).join(' vs ');
     if (a.status === 'live') {
