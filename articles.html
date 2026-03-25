@@ -770,10 +770,10 @@ ARTICLES.forEach(article => {
   el.className = 'article-card ' + (isLive ? 'live' : 'coming');
   if (article.url) el.href = article.url;
 
-  const toolTags = article.tools.map(t => `<span class="ac-tag tool">${TOOL_LABELS[t] || t}</span>`).join('');
-  const sizeTags = article.size.map(s => `<span class="ac-tag size">${SIZE_LABELS[s]}</span>`).join('');
-  const topicTags = article.topics.map(t => `<span class="ac-tag topic">${TOPIC_LABELS[t]}</span>`).join('');
-  const pricingTags = article.pricing.map(p => `<span class="ac-tag pricing">${PRICING_LABELS[p]}</span>`).join('');
+  const toolTags = toArray(article.tools).map(t => `<span class="ac-tag tool">${TOOL_LABELS[t] || t}</span>`).join('');
+  const sizeTags = toArray(article.size).map(s => `<span class="ac-tag size">${SIZE_LABELS[s] || s}</span>`).join('');
+  const topicTags = toArray(article.topics).map(t => `<span class="ac-tag topic">${TOPIC_LABELS[t] || t}</span>`).join('');
+  const pricingTags = toArray(article.pricing).map(p => `<span class="ac-tag pricing">${PRICING_LABELS[p] || p}</span>`).join('');
 
   el.innerHTML = `
     <div class="ac-left">
