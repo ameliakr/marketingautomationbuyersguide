@@ -709,6 +709,12 @@ function getArticleType(article) {
   return 'comparison';
 }
 
+function toArray(val) {
+  if (!val) return [];
+  if (Array.isArray(val)) return val.map(v => String(v).toLowerCase());
+  return [String(val).toLowerCase()];
+}
+
 function applyFilters() {
   const query = document.getElementById('search-input').value.toLowerCase().trim();
   const cards = document.querySelectorAll('.article-card');
@@ -717,14 +723,17 @@ function applyFilters() {
   ARTICLES.forEach((article, i) => {
     let show = true;
     const articleType = getArticleType(article);
+    const tools = toArray(article.tools);
+    const sizes = toArray(article.size);
+    const topics = toArray(article.topics);
+    const pricing = toArray(article.pricing);
 
     // Search
     if (query) {
-      // Normalize common variants
       const normalizedQuery = query.replace('set up', 'setup').replace('set-up', 'setup');
       const titleMatch = article.title.toLowerCase().includes(query);
-      const toolKeyMatch = article.tools.some(t => t.includes(normalizedQuery));
-      const toolLabelMatch = article.tools.some(t => (TOOL_LABELS[t] || t).toLowerCase().includes(normalizedQuery));
+      const toolKeyMatch = tools.some(t => t.includes(normalizedQuery));
+      const toolLabelMatch = tools.some(t => (TOOL_LABELS[t] || t).toLowerCase().includes(normalizedQuery));
       const urlMatch = article.url && article.url.toLowerCase().includes(normalizedQuery);
       const typeMatch = articleType.toLowerCase().includes(normalizedQuery);
       if (!titleMatch && !toolKeyMatch && !toolLabelMatch && !urlMatch && !typeMatch) show = false;
@@ -732,13 +741,13 @@ function applyFilters() {
     // Type filter
     if (active.type && active.type.length > 0 && !active.type.includes(articleType)) show = false;
     // Tool filter — AND logic: article must contain ALL selected tools
-    if (active.tool.length > 0 && !active.tool.every(t => article.tools.includes(t))) show = false;
+    if (active.tool.length > 0 && !active.tool.every(t => tools.includes(t.toLowerCase()))) show = false;
     // Size filter — OR logic within group
-    if (active.size.length > 0 && !active.size.some(s => article.size.includes(s))) show = false;
+    if (active.size.length > 0 && !active.size.some(s => sizes.includes(s.toLowerCase()))) show = false;
     // Topic filter — OR logic within group
-    if (active.topic.length > 0 && !active.topic.some(t => article.topics.includes(t))) show = false;
+    if (active.topic.length > 0 && !active.topic.some(t => topics.includes(t.toLowerCase()))) show = false;
     // Pricing filter — OR logic within group
-    if (active.pricing.length > 0 && !active.pricing.some(p => article.pricing.includes(p))) show = false;
+    if (active.pricing.length > 0 && !active.pricing.some(p => pricing.includes(p.toLowerCase()))) show = false;
 
     cards[i].classList.toggle('hidden', !show);
     if (show) visible++;
