@@ -225,9 +225,8 @@ function renderRelated() {
   let html = `<div class="related-title">Related articles</div>
 `;
   related.forEach(a => {
-    const toolStr = a.tools.map(t => TOOL_LABELS[t] || t).join(' vs ');
     if (a.status === 'live') {
-      html += `<a class="related-row live" href="${a.url}"><div class="related-row-left"><span class="related-row-title">${a.title}</span><span class="related-row-tools">${toolStr}</span></div><span class="related-row-arrow">→</span></a>`;
+      html += `<a class="related-row live" href="${a.url}"><div class="related-row-left"><span class="related-row-title">${a.title}</span></div><span class="related-row-arrow">→</span></a>`;
     }
   });
   section.innerHTML = html;
