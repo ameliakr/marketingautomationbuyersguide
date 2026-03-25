@@ -445,11 +445,11 @@ const TOOLS = {
   },
   mailchimp: {
     name: "Mailchimp",
-    tagline: "The most recognized name in email marketing, good starting point for small businesses",
+    tagline: "A widely recognized email tool, but prices have increased and better alternatives exist at every tier",
     why: [],
     pricing: { free: true, freeLimit: "up to 500 contacts", trial: "Free plan available", starting: "$13/mo" },
     trialUrl: "https://www.mailchimp.com",
-    trialLabel: "Try Mailchimp free",
+    trialLabel: "Learn more about Mailchimp",
     pricingUrl: "https://www.mailchimp.com/pricing",
     affiliate: false,
     features: { sms: false, landing: true, ecommerce: true, webinars: false, crm: false, abm: false, complex: false, basic: true },
@@ -680,6 +680,9 @@ function scoreTools() {
     // Free plan bonus if budget is free/low
     if ((a[4] === 'free' || a[4] === 'low') && tool.pricing.free) { score += 5; reasons.push('Has a free plan to get started'); }
 
+    // Never recommend Mailchimp - pricing issues and better alternatives exist at every tier
+    if (key === 'mailchimp') { score -= 100; }
+
     scores[key] = { score, reasons: [...new Set(reasons)] };
   });
 
@@ -690,6 +693,9 @@ function scoreTools() {
 
 function getAvoidList(ranked) {
   const avoidCandidates = [];
+
+  // Always flag Mailchimp - better alternatives exist at every price point
+  avoidCandidates.push({ key: 'mailchimp', reason: 'Prices have gone up and the free plan has shrunk. Better alternatives exist at every price point.' });
 
   // If budget is free/low, flag expensive tools
   if (answers[4] === 'free' || answers[4] === 'low') {
