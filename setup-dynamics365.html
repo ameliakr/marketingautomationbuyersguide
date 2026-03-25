@@ -54,7 +54,7 @@
 .useful-link-label { color: var(--muted); }
 .useful-link-url { color: var(--accent); font-weight: 500; text-decoration: none; flex-shrink: 0; margin-left: 16px; }
 .useful-link-url:hover { text-decoration: underline; }
-.related-section { border-top: 2px solid var(--ink); padding-top: 32px; margin-top: 48px; }
+.related-section { border-top: 1px solid var(--rule); padding-top: 32px; margin-top: 48px; }
 .related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
@@ -110,7 +110,7 @@
       <p>Microsoft Dynamics 365 Customer Insights -- Journeys (formerly Dynamics 365 Marketing) is the marketing automation component of the Dynamics 365 suite. If your organization runs Dynamics 365 Sales or other Dynamics CRM products, this is the most natural marketing automation choice -- the data model is shared and integration is native. This overview explains what an implementation looks like.</p>
 
       <div class="notice-box">
-        <strong>Note:</strong> This is an overview of what a Dynamics 365 Customer Insights - Journeys implementation involves, not a step-by-step setup guide. Implementations are typically handled by a certified Microsoft partner or experienced Dynamics 365 Administrator. This page will help you understand the scope.
+        <strong>Note:</strong> This is an overview of what a Dynamics 365 Customer Insights, Journeys implementation involves, not a step-by-step setup guide. Implementations are typically handled by a certified Microsoft partner or experienced Dynamics 365 Administrator. This page will help you understand the scope.
       </div>
 
       <h2>Microsoft Dynamics 365 implementation at a glance</h2>
@@ -138,7 +138,7 @@
           <span class="phase-title">Licensing, environment setup, and CRM connection</span>
           <span class="phase-time">1-2 weeks</span>
         </div>
-        <p class="phase-body">Dynamics 365 Customer Insights - Journeys is provisioned as an add-on to your existing Dynamics 365 environment. Your Microsoft Administrator provisions the app through the Power Platform Admin Center and assigns licenses to relevant users. Because Customer Insights - Journeys runs within the same Dataverse environment as your CRM, contact, account, and lead data is shared natively without a separate sync setup -- this is one of the major advantages over third-party marketing automation tools when your CRM is already Dynamics 365.</p>
+        <p class="phase-body">Dynamics 365 Customer Insights, Journeys is provisioned as an add-on to your existing Dynamics 365 environment. Your Microsoft Administrator provisions the app through the Power Platform Admin Center and assigns licenses to relevant users. Because Customer Insights, Journeys runs within the same Dataverse environment as your CRM, contact, account, and lead data is shared natively without a separate sync setup -- this is one of the major advantages over third-party marketing automation tools when your CRM is already Dynamics 365.</p>
       </div>
       <div class="phase-block">
         <div class="phase-header">
@@ -154,7 +154,7 @@
           <span class="phase-title">Data model review and contact import</span>
           <span class="phase-time">2-4 weeks</span>
         </div>
-        <p class="phase-body">Because Customer Insights - Journeys uses the same Dataverse tables as your CRM, contact import is typically done through the standard Dynamics 365 import process rather than a separate marketing-specific import. Review your existing contact and lead records for data quality before building segments -- duplicate records and missing fields cause issues in segmentation and journey triggering. Create any custom fields needed for marketing-specific data that does not already exist in your CRM. Consent management configuration (required for GDPR compliance) also happens in this phase.</p>
+        <p class="phase-body">Because Customer Insights, Journeys uses the same Dataverse tables as your CRM, contact import is typically done through the standard Dynamics 365 import process rather than a separate marketing-specific import. Review your existing contact and lead records for data quality before building segments -- duplicate records and missing fields cause issues in segmentation and journey triggering. Create any custom fields needed for marketing-specific data that does not already exist in your CRM. Consent management configuration (required for GDPR compliance) also happens in this phase.</p>
       </div>
       <div class="phase-block">
         <div class="phase-header">
@@ -162,7 +162,7 @@
           <span class="phase-title">Segments, lead scoring, and qualification</span>
           <span class="phase-time">2-3 weeks</span>
         </div>
-        <p class="phase-body">Dynamics 365 Customer Insights - Journeys has two segment types: static segments (manually curated lists) and dynamic segments (query-based, automatically updated). Dynamic segments are built using a graphical query builder against your Dataverse contact data -- any field on the contact or related records can be used as a filter. Lead scoring models are configured separately and evaluate behavioral and demographic criteria to score leads. When a lead reaches the threshold score, it is marked as sales-ready and can trigger a CRM notification or task.</p>
+        <p class="phase-body">Dynamics 365 Customer Insights, Journeys has two segment types: static segments (manually curated lists) and dynamic segments (query-based, automatically updated). Dynamic segments are built using a graphical query builder against your Dataverse contact data -- any field on the contact or related records can be used as a filter. Lead scoring models are configured separately and evaluate behavioral and demographic criteria to score leads. When a lead reaches the threshold score, it is marked as sales-ready and can trigger a CRM notification or task.</p>
       </div>
       <div class="phase-block">
         <div class="phase-header">
@@ -183,7 +183,7 @@
 
       <h2>Ongoing administration</h2>
 
-      <p>Dynamics 365 Customer Insights - Journeys is updated monthly through Microsoft's release cadence. Your Dynamics 365 Administrator needs to stay current with release notes and test updates in a sandbox environment before they roll out to production. Marketing operations tasks (segment maintenance, journey optimization, deliverability monitoring) typically fall to a dedicated marketing ops resource or shared with the Dynamics Administrator.</p>
+      <p>Dynamics 365 Customer Insights, Journeys is updated monthly through Microsoft's release cadence. Your Dynamics 365 Administrator needs to stay current with release notes and test updates in a sandbox environment before they roll out to production. Marketing operations tasks (segment maintenance, journey optimization, deliverability monitoring) typically fall to a dedicated marketing ops resource or shared with the Dynamics Administrator.</p>
 
       <h2>Is Microsoft Dynamics 365 the right tool for your organization?</h2>
 

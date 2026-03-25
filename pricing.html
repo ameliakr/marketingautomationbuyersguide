@@ -386,7 +386,7 @@ function sortCards() {
     const toolB = TOOLS.find(t => t.key === keyB);
     const priceA = toolA?._estimatedPrice ?? 99999;
     const priceB = toolB?._estimatedPrice ?? 99999;
-    return sortVal === 'price-asc' ? priceA - priceB : priceB - priceA;
+    return sortVal === 'price-asc' ? priceA, priceB : priceB, priceA;
   });
   cards.forEach(card => grid.appendChild(card));
 }

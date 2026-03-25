@@ -725,7 +725,7 @@ const SETUP_DATA = {
     affiliate: false,
     staticPage: '/setup-dynamics365.html',
     steps: [
-      { num: 1, title: 'Licensing and environment setup', desc: 'Provision Customer Insights - Journeys in the Power Platform Admin Center.', time: '1-2 weeks' },
+      { num: 1, title: 'Licensing and environment setup', desc: 'Provision Customer Insights, Journeys in the Power Platform Admin Center.', time: '1-2 weeks' },
       { num: 2, title: 'Domain authentication', desc: 'Configure sending domain DKIM records and sender details.', time: '1-2 weeks' },
       { num: 3, title: 'Data model and contact import', desc: 'Review Dataverse schema, create custom fields, and import contacts.', time: '2-4 weeks' },
       { num: 4, title: 'Segments and lead scoring', desc: 'Build dynamic segments and configure lead scoring models.', time: '2-3 weeks' },
@@ -873,7 +873,7 @@ function buildEstimate() {
   const losses = [];
   if (!isFromNothing) {
     if (from.automationComplex === 'high' && to.learningCurve === 'low') {
-      losses.push(from.name + ' has a sophisticated automation engine. ' + to.name + ' is simpler - some of your existing workflows may not be fully replicable.');
+      losses.push(from.name + ' has a sophisticated automation engine. ' + to.name + ' is simpler, some of your existing workflows may not be fully replicable.');
     }
     if (from.hasCRM && !to.hasCRM) {
       losses.push(from.name + ' has a built-in CRM. ' + to.name + ' does not. CRM data (deals, pipeline, notes) will not transfer and you will need a separate CRM.');

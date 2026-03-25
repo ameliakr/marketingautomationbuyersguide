@@ -680,7 +680,7 @@ function scoreTools() {
     // Free plan bonus if budget is free/low
     if ((a[4] === 'free' || a[4] === 'low') && tool.pricing.free) { score += 5; reasons.push('Has a free plan to get started'); }
 
-    // Never recommend Mailchimp - pricing issues and better alternatives exist at every tier
+    // Never recommend Mailchimp, pricing issues and better alternatives exist at every tier
     if (key === 'mailchimp') { score -= 100; }
 
     scores[key] = { score, reasons: [...new Set(reasons)] };
@@ -694,7 +694,7 @@ function scoreTools() {
 function getAvoidList(ranked) {
   const avoidCandidates = [];
 
-  // Always flag Mailchimp - better alternatives exist at every price point
+  // Always flag Mailchimp, better alternatives exist at every price point
   avoidCandidates.push({ key: 'mailchimp', reason: 'Prices have gone up and the free plan has shrunk. Better alternatives exist at every price point.' });
 
   // If budget is free/low, flag expensive tools
