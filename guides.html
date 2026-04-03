@@ -911,12 +911,12 @@ function buildSetup() {
       <div class="estimate-steps-title">Step-by-step checklist</div>
       ${tool.steps.map(s => `<div class="step-row"><div class="step-num">${s.num}</div><div class="step-content"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div><div class="step-time">${s.time}</div></div></div>`).join('')}
     </div>
-    <div class="estimate-cta">
-      <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
-        ${tool.affiliate ? '<span style="font-size:10px;color:var(--muted);font-style:italic;">affiliate link</span>' : ''}
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      ${tool.affiliate ? '<span style="font-size:10px;color:var(--muted);font-style:italic;">affiliate link</span>' : ''}
+      <div class="estimate-cta">
         <a class="estimate-cta-primary" href="${tool.trialUrl}" target="_blank">${tool.trialLabel} →</a>
+        ${tool.staticPage ? `<a class="estimate-cta-secondary" href="${tool.staticPage}">Read the full setup guide →</a>` : ''}
       </div>
-      ${tool.staticPage ? `<a class="estimate-cta-secondary" href="${tool.staticPage}">Read the full setup guide →</a>` : ''}
     </div>
   `;
 
@@ -1022,13 +1022,13 @@ function buildEstimate() {
       <div class="estimate-steps-title">Step-by-step checklist</div>
       ${steps.map(s => `<div class="step-row"><div class="step-num">${s.num}</div><div class="step-content"><div class="step-title">${s.title}</div><div class="step-desc">${s.desc}</div><div class="step-time">${s.time}</div></div></div>`).join('')}
     </div>
-    <div class="estimate-cta">
-      <div style="display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
-        ${to.affiliate ? '<span style="font-size:10px;color:var(--muted);font-style:italic;">affiliate link</span>' : ''}
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      ${to.affiliate ? '<span style="font-size:10px;color:var(--muted);font-style:italic;">affiliate link</span>' : ''}
+      <div class="estimate-cta">
         <a class="estimate-cta-primary" href="${to.trialUrl}" target="_blank">${to.trialLabel} →</a>
+        ${migrationArticle ? `<a class="estimate-cta-secondary" href="${migrationArticle}">Read the full migration guide →</a>` : ''}
+        ${!migrationArticle && from.key !== 'nothing' ? `<a class="estimate-cta-secondary" href="/comparisons.html">Compare ${from.name} vs ${to.name} →</a>` : ''}
       </div>
-      ${migrationArticle ? `<a class="estimate-cta-secondary" href="${migrationArticle}">Read the full migration guide →</a>` : ''}
-      ${!migrationArticle && from.key !== 'nothing' ? `<a class="estimate-cta-secondary" href="/comparisons.html">Compare ${from.name} vs ${to.name} →</a>` : ''}
     </div>
   `;
 
