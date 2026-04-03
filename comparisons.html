@@ -61,8 +61,9 @@
 .comp-table tr { border-bottom: 1px solid var(--rule); }
 .comp-table tr:last-child { border-bottom: none; }
 .comp-table tr.cat-row td { background: #efefec; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 8px 24px; }
-.comp-table thead th { padding: 20px 16px; vertical-align: top; background: #f8f8f6; border-bottom: 2px solid var(--ink); text-align: left; font-weight: 400; font-size: 14px; font-family: 'DM Sans', sans-serif; overflow: hidden; }
-.comp-table thead th > div { height: 100%; }
+.comp-table thead th { padding: 20px 16px; vertical-align: top; background: #f8f8f6; text-align: left; font-weight: 400; font-size: 14px; font-family: 'DM Sans', sans-serif; overflow: hidden; }
+.comp-table thead tr:last-child th { border-bottom: 2px solid var(--ink); padding-top: 12px; padding-bottom: 16px; }
+.comp-table thead tr:first-child th { border-bottom: none; }
 .comp-table thead th:first-child { width: 140px; background: white; border-right: 1px solid var(--rule); }
 .comp-table td { padding: 14px 16px; vertical-align: top; }
 .comp-table td:first-child { width: 140px; font-size: 12px; color: var(--muted); background: #fafaf8; border-right: 1px solid var(--rule); }
@@ -1279,16 +1280,13 @@ function removeThirdTool() {
 }
 
 function toolHeader(t) {
-  return `<div style="display:flex;flex-direction:column;height:100%;">
-    <div>
-      <div class="comp-tool-name">${t.name}</div>
-      <div class="comp-tool-tagline">${t.tagline}</div>
-    </div>
-    <div style="margin-top:auto;padding-top:12px;">
-      <a class="comp-tool-cta" href="${t.trialUrl}" target="_blank">${t.trialLabel} →</a>
-      ${t.affiliate ? '<span class="comp-affiliate">affiliate link</span>' : ''}
-    </div>
-  </div>`;
+  return `<div class="comp-tool-name">${t.name}</div>
+    <div class="comp-tool-tagline">${t.tagline}</div>`;
+}
+
+function toolCta(t) {
+  return `<a class="comp-tool-cta" href="${t.trialUrl}" target="_blank">${t.trialLabel} →</a>
+    ${t.affiliate ? '<span class="comp-affiliate">affiliate link</span>' : ''}`;
 }
 
 function buildComparison() {
@@ -1306,10 +1304,11 @@ function buildComparison() {
   const tools = keys.map(k => TOOLS[k]);
   const n = tools.length;
 
-  // Build header as thead
-  const thead = '<thead><tr><th></th>' +
-    tools.map(t => `<th>${toolHeader(t)}</th>`).join('') +
-    '</tr></thead>';
+  // Build header as thead (two rows: names/taglines, then CTA buttons)
+  const thead = '<thead>' +
+    '<tr><th></th>' + tools.map(t => `<th>${toolHeader(t)}</th>`).join('') + '</tr>' +
+    '<tr><th></th>' + tools.map(t => `<th class="comp-cta-th">${toolCta(t)}</th>`).join('') + '</tr>' +
+    '</thead>';
 
   // Build table: colspan for cat rows = n+1
   let rows = '';
