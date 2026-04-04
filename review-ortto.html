@@ -252,8 +252,7 @@ function renderRelated(){
   const related=ALL_ARTICLES.filter(a=>a.url!==THIS_ARTICLE_URL&&a.tools.some(t=>THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
   if(related.length===0)return;
   const section=document.getElementById("related-section");
-  let html='<div class="related-title">Related articles</div>
-';
+  let html='<div class="related-title">Related articles</div>\n';
   related.forEach(a=>{
     if(a.status==="live")html+='<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span></div><span class="related-row-arrow">→</span></a>';
     else html+='<div class="related-row coming"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span></div><span class="related-coming">Coming soon</span></div>';
