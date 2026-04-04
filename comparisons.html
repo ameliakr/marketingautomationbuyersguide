@@ -1329,7 +1329,7 @@ function buildComparison() {
       <ul class="verdict-list">${t.bestFor.map(item => `<li>${item}</li>`).join('')}</ul>
       <div style="padding-top:16px;">
         <a class="comp-tool-cta" href="${t.trialUrl}" target="_blank">${t.trialLabel} →</a>
-        ${t.affiliate ? '<span class="comp-affiliate">affiliate link</span>' : ''}
+        <span class="comp-affiliate" style="${t.affiliate ? '' : 'visibility:hidden'}">affiliate link</span>
       </div>
     </div>`
   ).join('');
