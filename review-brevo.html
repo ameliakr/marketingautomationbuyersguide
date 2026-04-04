@@ -62,7 +62,7 @@
 .related-title { font-family: 'DM Serif Display', serif; font-size: 20px; font-weight: 400; margin-bottom: 20px; }
 .related-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
 .related-row { display: flex; align-items: baseline; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--rule); color: var(--ink); transition: all 0.2s; }
-.related-row.live { text-decoration: none; }
+.related-row.live { text-decoration: none; color: var(--ink); }
 .related-row.live:hover .related-row-title { color: var(--accent); }
 .related-row.live:hover .related-row-arrow { transform: translateX(4px); color: var(--accent); }
 .related-row.coming .related-row-title { color: var(--muted); }
@@ -212,7 +212,7 @@ function renderRelated() {
   const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0, 5);
   if (related.length === 0) return;
   const section = document.getElementById("related-section");
-  let html = "<div class=\"related-title\">Related articles</div><div class=\"related-sub\">More on Brevo</div>";
+  let html = "<div class=\"related-title\">Related articles</div>";
   related.forEach(a => {
     if (a.status === "live") {
       html += "<a class=\"related-row live\" href=\"" + a.url + "\"><div class=\"related-row-left\"><span class=\"related-row-title\">" + a.title + "</span></div><span class=\"related-row-arrow\">→</span></a>";
