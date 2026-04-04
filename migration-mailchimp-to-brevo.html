@@ -245,7 +245,7 @@ function renderRelated(){
   if(related.length===0)return;
   const section=document.getElementById("related-section");
   let html='<div class="related-title">Related articles</div>\n';
-  related.forEach(a=>{html+='<a class="related-row" href="'+a.url+'"><span class="related-row-title">'+a.title+'</span><span class="related-row-arrow">→</span></a>';});
+  related.forEach(a=>{html+='<a class="related-row live" href="'+a.url+'"><span class="related-row-title">'+a.title+'</span><span class="related-row-arrow">→</span></a>';});
   section.innerHTML=html;
 }
 renderRelated();
