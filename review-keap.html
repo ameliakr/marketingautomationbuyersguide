@@ -314,15 +314,19 @@ const ALL_ARTICLES = [
   { title: "Microsoft Dynamics 365 Review 2026", url: "/review-dynamics365.html", tools: ["dynamics"], status: "live" },
   { title: "HubSpot Enterprise Review 2026", url: "/review-hubspot-enterprise.html", tools: ["hubspotenterprise"], status: "live" },
 ];
-const TOOL_LABELS = {moosend:"Moosend",activecampaign:"ActiveCampaign",mailerlite:"MailerLite",mailchimp:"Mailchimp",hubspot:"HubSpot",getresponse:"GetResponse",brevo:"Brevo",kit:"Kit",klaviyo:"Klaviyo",omnisend:"Omnisend",keap:"Keap",campaignmonitor:"Campaign Monitor"};
+const TOOL_LABELS = { hubspot: "HubSpot", activecampaign: "ActiveCampaign", mailerlite: "MailerLite", mailchimp: "Mailchimp" };
 function renderRelated() {
-  const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0,5);
-  if (related.length===0) return;
-  const section = document.getElementById("related-section");
-  let html = '<div class="related-title">Related articles</div>\n';
+  const related = ALL_ARTICLES.filter(a => a.url !== THIS_ARTICLE_URL && a.tools.some(t => THIS_ARTICLE_TOOLS.includes(t))).slice(0, 5);
+  if (related.length === 0) return;
+  const section = document.getElementById('related-section');
+  let html = `<div class="related-title">Related articles</div>
+`;
   related.forEach(a => {
-    if (a.status==="live") html += '<a class="related-row live" href="'+a.url+'"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span></div><span class="related-row-arrow">→</span></a>';
-    else html += '<div class="related-row coming"><div class="related-row-left"><span class="related-row-title">'+a.title+'</span></div><span class="related-coming">Coming soon</span></div>';
+    if (a.status === 'live') {
+      html += `<a class="related-row live" href="${a.url}"><div class="related-row-left"><span class="related-row-title">${a.title}</span></div><span class="related-row-arrow">→</span></a>`;
+    } else {
+      html += `<div class="related-row coming"><div class="related-row-left"><span class="related-row-title">${a.title}</span></div><span class="related-coming">Coming soon</span></div>`;
+    }
   });
   section.innerHTML = html;
 }
